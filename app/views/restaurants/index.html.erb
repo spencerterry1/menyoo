@@ -2,7 +2,9 @@
 <h1>Restaurant Index</h1>
 
 <% @restaurants.each do |restaurant| %>
-  <h2>Name: <%= restaurant.name %></h2>
+  <%= link_to restaurant_path(restaurant) do %>
+    <h2>Name: <%= restaurant.name %></h2>
+  <% end %>
   <p>Address: <%= restaurant.address %></p>
   <p>Category: <%= restaurant.category %></p>
 <% end %>
