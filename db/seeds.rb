@@ -1,5 +1,6 @@
 puts 'Cleaning databases...'
 User.destroy_all
+Restaurant.destroy_all
 
 puts 'Creating Users...'
 
@@ -35,3 +36,43 @@ simona = User.new(first_name: 'Simona',
   password: 'secret')
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
+
+puts 'Creating Restaurants...'
+
+italian = Restaurant.new(name: "Padella",
+  address: "6 Southwark St, London",
+  category: "italian")
+
+italian.remote_photo_url = "https://media.timeout.com/images/104828760/630/472/image.jpg"
+italian.save
+
+french = Restaurant.new(name: "Monsieur Le Duck",
+  address: "27 Clerkenwell Rd, London",
+  category: "french")
+
+french.remote_photo_url = "https://urbanologie.com/media_cache/inner_slider/media/0_Dubai_April/mons.jpg"
+french.save
+
+british = Restaurant.new(name: "Rules",
+  address: "34-35 Maiden Lane, London",
+  category: "british")
+
+british.remote_photo_url = "https://rules.co.uk/wp-content/uploads/2014/01/Hare.jpg"
+british.save
+
+vegan = Restaurant.new(name: "Kalifornia Kitchen",
+  address: "19 Percy St, London",
+  category: "vegan")
+
+vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/LRG_DSC02751.jpg"
+vegan.save
+
+
+italian_dish_one = Dish.new
+  italian_dish_one.restaurant = italian
+  italian_dish_one.name ="Pici cacio e pepe"
+  italian_dish_one.description = ""
+  italian_dish_one.price = 6
+  italian_dish_one.prep_time = 15
+  italian_dish_one_photo_url = "https://cdn.shopify.com/s/files/1/1725/5449/products/cacio_for_website_edited.jpg?v=1563466037"
+  italian_dish_one.save
