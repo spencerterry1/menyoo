@@ -20,6 +20,10 @@
   align-items: top;
   height: 88px;
   background-color: $navbar-gray;
+  position: fixed;
+  // left: 0;
+  bottom: 0;
+  width: $width-iphone;
 }
 
 .tabbar-content {
