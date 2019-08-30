@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :dishes, only: [:index, :show]
   end
 
+  resources :bookings, only: [:show, :new, :create, :edit , :update, :delete]
 
   resources :users, only: :show
 
