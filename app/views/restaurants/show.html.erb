@@ -2,7 +2,7 @@
   <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
 </div>
 
-<h1>Name: <%= @restaurant.name %></h1>
+<h1><%= @restaurant.name %></h1>
 <p>Address: <%= @restaurant.address %></p>
 <p>Category: <%= @restaurant.category %></p>
 <p>Latitude: <%= @restaurant.latitude %></p>
@@ -11,7 +11,7 @@
 <h2>Menu</h2>
 
 <% @restaurant.dishes.each do |dish|  %>
-  <h3>Name: <%= dish.name %></h3>
+  <h3><%= dish.name %></h3>
   <%= cl_image_tag(dish.photo, crop: :fill) %>
   <p>Description: <%= dish.description %></p>
   <p>Price: <%= dish.price %></p>
