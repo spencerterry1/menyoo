@@ -13,7 +13,10 @@
     <div class="container">
       <%= render 'shared/navbar_ios' %>
       <%= render 'shared/flashes' %>
-      <%= yield %>
+      <!-- screen-content css in _navbar.css with top and bottom navbars -->
+      <div class="screen-content">
+        <%= yield %>
+      </div>
       <%= render 'shared/tabbar_ios' %>
     </div>
     <%= javascript_include_tag 'application' %>

@@ -3,6 +3,9 @@
   align-items: bottom;
   height: 88px;
   background-color: $navbar-gray;
+  position: fixed;
+  top: 0;
+  width: $width-iphone;
 }
 
 .navbar-content {
@@ -13,6 +16,10 @@
   padding: 8px;
   margin-top: 36px;
   margin-bottom: 16px;
+}
+
+.screen-content {
+  padding: 96px 8px;
 }
 
 .tabbar-ios {
