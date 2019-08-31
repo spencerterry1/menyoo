@@ -207,4 +207,16 @@ puts "Creating Reviews..."
 
 puts "Finished!"
 
+# ORDERS
+puts "Creating Orders..."
+
+
+order_one = Order.new
+order_one.ordered = true
+order_one.quantity = 2
+order_one.price = french_dish_four.price
+order_one.dish = french_dish_four
+order_one.save
+
+puts "Finished!"
 
