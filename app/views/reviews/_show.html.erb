@@ -1,0 +1,16 @@
+<div class= "review-card">
+  <div class="review-avatar">
+    <%= cl_image_tag review.user.photo, class: "avatar" %>
+  </div>
+  <div class="review-whole">
+    <div class="review-content-stars">
+      <p><%= review.content %></p>
+      <div style="display:flex;">
+          <% review.rating.times do %>
+          <i class="fas fa-star icon-stars"></i>
+          <% end %>
+      </div>
+    </div>
+    <small><%= review.user.name %></small>
+  </div>
+</div>
