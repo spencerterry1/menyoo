@@ -5,10 +5,10 @@ Dish.destroy_all
 Booking.destroy_all
 Review.destroy_all
 
+
 puts 'Creating Users...'
 
-# user seeds
-
+# USERS
 spencer = User.new(first_name: 'Spencer',
   last_name: 'Terry',
   email: 'spencer@test.com',
@@ -43,7 +43,7 @@ simona.save
 
 puts "Finished!"
 
-
+# RESTAURANTS
 puts 'Creating Restaurants...'
 
 italian = Restaurant.new(name: "Gloria",
@@ -77,6 +77,7 @@ vegan.save
 puts "Finished!"
 
 
+# DISHES
 puts 'Creating Dishes...'
 
 italian_dish_one = Dish.new(name: "La gran carbonara",
@@ -155,20 +156,31 @@ french_dish_four.save
 puts "Finished!"
 
 
+
+
+
+# BOOKINGS
 puts "Creating Bookings..."
 
-  booking_one = Booking.new
-  booking_one.user = walter
-  booking_one.restaurant = french
-  booking_one.date = DateTime.strptime("08/25/2019", "%m/%d/%Y")
+booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
+booking_one.user = walter
+booking_one.restaurant = french
+booking_one.save
 
-  booking_two = Booking.new
-  booking_two.user = spencer
-  booking_two.restaurant = italian
-  booking_two.date = DateTime.strptime("08/10/2019", "%m/%d/%Y")
+booking_two = Booking.new(date: DateTime.strptime("11/16/2019", "%m/%d/%Y"))
+booking_two.user = spencer
+booking_two.restaurant = italian
+booking_two.save
 
-puts "Finished!"
+booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
+booking_three.user = walter
+booking_three.restaurant = british
+booking_three.save
 
+booking_four = Booking.new(date: DateTime.strptime("11/18/2019", "%m/%d/%Y"))
+booking_four.user = simona
+booking_four.restaurant = vegan
+booking_four.save
 
 puts "Creating Reviews..."
 
@@ -191,6 +203,7 @@ puts "Creating Reviews..."
   review_two.rating = random_rating
   review_two.user = spencer
   review_two.save
+
 
 puts "Finished!"
 

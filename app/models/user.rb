@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name_and_last_name, against: [:first_name, :last_name]
+
   mount_uploader :photo, PhotoUploader
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
