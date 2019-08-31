@@ -4,7 +4,12 @@
       <p>Back</p>
     </div>
     <div class="navbar-title">
-      <p><strong><%= @page_title %></strong></p>
+      <% if current_page?('/') %>
+        <div class="menyoo-title"><strong>Menyoo</strong></div>
+      <% else %>
+        <p><strong><%= @page_title %></strong></p>
+      <% end %>
+
     </div>
     <div class="navbar-checkin">
       <p>Check-in</p>

@@ -30,8 +30,20 @@ p {
   color: $font-color-body;
 }
 
+.menyoo-title {
+  font-family: $menyoo-font;
+  font-size: 28px;
+  font-weight: bolder;
+  color: $menyoo-blue;
+}
+
 .banner-img img {
   width: 100%;
   height: 160px;
   object-fit: cover;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
