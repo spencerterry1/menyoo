@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :restaurants , only: [:index, :show] do
-      resources :dishes, only: [:index, :show]
+      resources :dishes
   end
 
-  resources :bookings, only: [:show, :new, :create, :edit , :update, :delete]
+  resources :bookings, only: [:show, :new, :create, :edit , :update, :delete] do
+    resources :reviews, only: [:create, :delete]
+  end
 
   resources :users, only: :show
 
