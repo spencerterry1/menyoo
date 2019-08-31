@@ -2,11 +2,11 @@ puts 'Cleaning databases...'
 User.destroy_all
 Restaurant.destroy_all
 Dish.destroy_all
+Booking.destroy_all
 
 puts 'Creating Users...'
 
-# user seeds
-
+# USERS
 spencer = User.new(first_name: 'Spencer',
   last_name: 'Terry',
   email: 'spencer@test.com',
@@ -41,7 +41,7 @@ simona.save
 
 
 
-
+# RESTAURANTS
 puts 'Creating Restaurants...'
 
 italian = Restaurant.new(name: "Gloria",
@@ -73,6 +73,7 @@ vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/
 vegan.save
 
 
+# DISHES
 puts 'Creating Dishes...'
 
 italian_dish_one = Dish.new(name: "La gran carbonara",
@@ -149,9 +150,28 @@ french_dish_four.remote_photo_url = "https://static.cuisineaz.com/610x610/i94023
 french_dish_four.save
 
 
+# BOOKINGS
+puts "Creating Bookings..."
 
+booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
+booking_one.user = spencer
+booking_one.restaurant = italian
+booking_one.save
 
+booking_two = Booking.new(date: DateTime.strptime("11/16/2019", "%m/%d/%Y"))
+booking_two.user = ana
+booking_two.restaurant = french
+booking_two.save
 
+booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
+booking_three.user = walter
+booking_three.restaurant = british
+booking_three.save
+
+booking_four = Booking.new(date: DateTime.strptime("11/18/2019", "%m/%d/%Y"))
+booking_four.user = simona
+booking_four.restaurant = vegan
+booking_four.save
 
 puts "finished creating seeds"
 
