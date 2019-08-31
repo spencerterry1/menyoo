@@ -5,7 +5,7 @@
   background-color: $navbar-gray;
   position: fixed;
   top: 0;
-  width: $width-iphone;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -33,7 +33,7 @@
   position: fixed;
   // left: 0;
   bottom: 0;
-  width: $width-iphone;
+  width: 100vw;
 }
 
 .tabbar-content {
