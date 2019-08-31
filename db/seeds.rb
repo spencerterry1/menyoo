@@ -5,6 +5,7 @@ Dish.destroy_all
 
 puts 'Creating Users...'
 
+# user seeds
 
 spencer = User.new(first_name: 'Spencer',
   last_name: 'Terry',
@@ -37,6 +38,7 @@ simona = User.new(first_name: 'Simona',
   password: 'secret')
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
+
 
 
 
@@ -150,5 +152,7 @@ french_dish_four.save
 
 
 
+
+puts "finished creating seeds"
 
 
