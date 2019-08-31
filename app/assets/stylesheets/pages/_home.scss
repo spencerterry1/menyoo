@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+
+body {
+  background-color: rgba(0,0,0,0.9);
+}
+
+.container {
+  width: $width-iphone;
+  padding: 0;
+}
+
+h1 {
+  font-size: $font-size-title-lg;
+  color: $font-color-light-grey;
+}
+
+h2 {
+  font-size: $font-size-title;
+  color: $font-color-dark-grey;
+}
+
+h3 {
+  font-size: $font-size-body;
+  font-weight: bolder;
+  color: $font-color-body;
+}
+
+p {
+  font-size: $font-size-body;
+  color: $font-color-body;
+}
