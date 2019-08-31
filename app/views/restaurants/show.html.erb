@@ -1,3 +1,5 @@
+<%  @page_title = "Restaurant Page" %>
+
 <div class="banner-img">
   <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
 </div>
@@ -10,15 +12,21 @@
   <p>Longitude: <%= @restaurant.longitude %></p>
 </div>
 
-<div class="card-box-shadow">
-  <h2>Menu</h2>
+<h1>Menu</h1>
 
-  <% @restaurant.dishes.each do |dish|  %>
-    <h3><%= dish.name %></h3>
-    <p>Description: <%= dish.description %></p>
-    <p><i class="fas fa-pound-sign"></i><%= dish.price %></p>
-    <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
-    <%= cl_image_tag(dish.photo, crop: :fill) %>
-  <% end %>
-</div>
+
+<% @restaurant.dishes.each do |dish|  %>
+  <p>New dish</p>
+  <div class="card-box-shadow card-large">
+    <div class="card-large-img">
+      <%= cl_image_tag(dish.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content">
+      <h3><%= dish.name %></h3>
+      <p>Description: <%= dish.description %></p>
+      <p><i class="fas fa-pound-sign"></i><%= dish.price %></p>
+      <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
+    </div>
+  </div>
+<% end %>
 

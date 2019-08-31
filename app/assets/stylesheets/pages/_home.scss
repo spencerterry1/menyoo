@@ -29,3 +29,9 @@ p {
   font-size: $font-size-body;
   color: $font-color-body;
 }
+
+.banner-img img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
