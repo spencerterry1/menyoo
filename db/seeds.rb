@@ -3,6 +3,7 @@ User.destroy_all
 
 puts 'Creating Users...'
 
+# user seeds
 
 spencer = User.new(first_name: 'Spencer',
   last_name: 'Terry',
@@ -35,3 +36,50 @@ simona = User.new(first_name: 'Simona',
   password: 'secret')
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
+
+
+# fake restaurant seeds
+
+Restaurant.destroy_all
+
+restaurant_one = Restaurant.new(name: "XXX")
+restaurant_one.save
+
+restaurant_two = Restaurant.new(name:"YYY")
+restaurant_two.save
+
+restaurant_three = Restaurant.new(name: "ZZZ")
+restaurant_three.save
+
+restaurant_four = Restaurant.new(name: "Testaurant")
+restaurant_four.save
+
+# bookings seeds
+
+puts "creating bookings"
+
+Booking.destroy_all
+
+test_booking_one = Booking.new(user: spencer,
+  restaurant: restaurant_one,
+  date: Time.new)
+test_booking_one.save
+
+test_booking_two = Booking.new(user: ana,
+  restaurant: restaurant_two,
+  date: Time.new)
+test_booking_two.save
+
+test_booking_three = Booking.new(user: walter,
+  restaurant: restaurant_three,
+  date: Time.new)
+test_booking_three.save
+
+test_booking_four = Booking.new(user: simona,
+  restaurant: restaurant_four,
+  date: Time.new)
+test_booking_four.save
+
+
+puts "finished creating seeds"
+
