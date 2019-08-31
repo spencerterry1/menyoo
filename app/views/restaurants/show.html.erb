@@ -16,8 +16,8 @@
   <% @restaurant.dishes.each do |dish|  %>
     <h3><%= dish.name %></h3>
     <p>Description: <%= dish.description %></p>
-    <p>Price: <%= dish.price %></p>
-    <p>Prep time: <%= dish.prep_time %></p>
+    <p><i class="fas fa-pound-sign"></i><%= dish.price %></p>
+    <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
     <%= cl_image_tag(dish.photo, crop: :fill) %>
   <% end %>
 </div>
