@@ -1,13 +1,21 @@
 <%  @page_title = "Restaurant Page" %>
 
-<div class="banner-img">
-  <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
+
+<div class="restaurant-header">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.address %></p>
 </div>
 
+<div button-area>
+  <%= link_to new_restaurant_booking_path(@restaurant) do %>
+    <button class = "button button-long">Open a Table</button>
+  <% end %>
+</div>
 
-<h1><%= @restaurant.name %></h1>
-<p><%= @restaurant.address %></p>
-<p>Category: <%= @restaurant.category %></p>
+<div>
+  < Search bar - Dishes >
+</div>
+
 
 
 <h2>Menu</h2>

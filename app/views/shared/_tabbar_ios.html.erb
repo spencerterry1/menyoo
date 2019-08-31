@@ -6,7 +6,19 @@
       <% end %>
     </div>
     <div class="navbar-title">
-      <p>Current Table</p>
+      <% if user_signed_in? %>
+        <% if current_user.bookings.count != 0 %>
+          <% @booking = current_user.bookings.last %>
+          <% @restaurant = current_user.bookings.last.restaurant %>
+          <%=  link_to restaurant_booking_path(@restaurant, @booking) do %>
+            <p>Your Table</p>
+          <% end %>
+        <% else %>
+          <p class = "tab-unavailable">No Table</p>
+        <% end %>
+      <% else %>
+        <p class = "tab-unavailable">No Table</p>
+      <% end %>
     </div>
     <div class="navbar-checkin">
       <p>User Profile</p>
