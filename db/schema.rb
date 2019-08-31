@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_192502) do
+
+ActiveRecord::Schema.define(version: 2019_08_31_105245) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +31,11 @@ ActiveRecord::Schema.define(version: 2019_08_29_192502) do
     t.string "name"
     t.text "description"
     t.string "photo"
-    t.integer "price"
     t.integer "prep_time"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
@@ -46,6 +48,17 @@ ActiveRecord::Schema.define(version: 2019_08_29_192502) do
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,4 +79,6 @@ ActiveRecord::Schema.define(version: 2019_08_29_192502) do
   add_foreign_key "bookings", "restaurants"
   add_foreign_key "bookings", "users"
   add_foreign_key "dishes", "restaurants"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
 end

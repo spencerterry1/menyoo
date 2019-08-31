@@ -1,24 +1,31 @@
+<%  @page_title = "Restaurant Page" %>
+
 <div class="banner-img">
   <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
 </div>
 
-<div class="card-box-shadow">
-  <h1><%= @restaurant.name %></h1>
-  <p>Address: <%= @restaurant.address %></p>
-  <p>Category: <%= @restaurant.category %></p>
-  <p>Latitude: <%= @restaurant.latitude %></p>
-  <p>Longitude: <%= @restaurant.longitude %></p>
-</div>
 
-<div class="card-box-shadow">
-  <h2>Menu</h2>
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p>Category: <%= @restaurant.category %></p>
 
-  <% @restaurant.dishes.each do |dish|  %>
-    <h3><%= dish.name %></h3>
-    <p>Description: <%= dish.description %></p>
-    <p><i class="fas fa-pound-sign"></i><%= dish.price %></p>
-    <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
-    <%= cl_image_tag(dish.photo, crop: :fill) %>
-  <% end %>
-</div>
+
+<h2>Menu</h2>
+
+
+<% @restaurant.dishes.each do |dish|  %>
+  <div class="card-box-shadow card-large">
+    <div class="card-large-img">
+      <%= cl_image_tag(dish.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content">
+      <h3><%= dish.name %></h3>
+      <p> <%= dish.description %></p>
+      <div class="flex-between">
+        <p><%= humanized_money_with_symbol(dish.price) %></p>
+        <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
 

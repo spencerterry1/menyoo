@@ -3,6 +3,8 @@ User.destroy_all
 Restaurant.destroy_all
 Dish.destroy_all
 Booking.destroy_all
+Review.destroy_all
+
 
 puts 'Creating Users...'
 
@@ -39,38 +41,40 @@ simona = User.new(first_name: 'Simona',
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
 
-
+puts "Finished!"
 
 # RESTAURANTS
 puts 'Creating Restaurants...'
 
 italian = Restaurant.new(name: "Gloria",
   address: "54-56 Great Eastern St, Hackney, London",
-  category: "italian")
+  category: "Italian")
 
 italian.remote_photo_url = "https://media.timeout.com/images/105478409/630/472/image.jpg"
 italian.save
 
 french = Restaurant.new(name: "Brasserie Zédel",
   address: "20 Sherwood St, Soho, London",
-  category: "french")
+  category: "French")
 
 french.remote_photo_url = "https://blog.opentable.co.uk/wp-content/uploads/sites/110/2018/04/BrasserieZedel.jpg"
 french.save
 
 british = Restaurant.new(name: "Dean Street Townhouse",
   address: "69 - 71 Dean St, London",
-  category: "british")
+  category: "British")
 
 british.remote_photo_url = "https://assets.londonist.com/uploads/2018/09/i875/35082736_1720743961366613_6460102714125713408_n.jpg"
 british.save
 
 vegan = Restaurant.new(name: "Kalifornia Kitchen",
   address: "19 Percy St, London",
-  category: "vegan")
+  category: "Vegan")
 
 vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/LRG_DSC02751.jpg"
 vegan.save
+
+puts "Finished!"
 
 
 # DISHES
@@ -149,18 +153,23 @@ french_dish_four.restaurant = french
 french_dish_four.remote_photo_url = "https://static.cuisineaz.com/610x610/i94023-profiteroles-au-chocolat-maison.jpg"
 french_dish_four.save
 
+puts "Finished!"
+
+
+
+
 
 # BOOKINGS
 puts "Creating Bookings..."
 
 booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
-booking_one.user = spencer
-booking_one.restaurant = italian
+booking_one.user = walter
+booking_one.restaurant = french
 booking_one.save
 
 booking_two = Booking.new(date: DateTime.strptime("11/16/2019", "%m/%d/%Y"))
-booking_two.user = ana
-booking_two.restaurant = french
+booking_two.user = spencer
+booking_two.restaurant = italian
 booking_two.save
 
 booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
@@ -173,6 +182,29 @@ booking_four.user = simona
 booking_four.restaurant = vegan
 booking_four.save
 
-puts "finished creating seeds"
+puts "Creating Reviews..."
+
+  def random_rating
+    result = Random.new
+    result = result.rand(3..5)
+    return result
+  end
+
+  review_one = Review.new
+  review_one.booking = booking_one
+  review_one.content = "Recommended in a magazine as a great late night venture, this was just the most amazing place."
+  review_one.rating = random_rating
+  review_one.user = walter
+  review_one.save
+
+  review_two = Review.new
+  review_two.booking = booking_two
+  review_two.content = "Loved the food and atmosphere, great music too!"
+  review_two.rating = random_rating
+  review_two.user = spencer
+  review_two.save
+
+
+puts "Finished!"
 
 

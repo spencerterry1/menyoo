@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   resources :restaurants , only: [:index, :show] do
       resources :dishes, only: [:index, :show]
-      resources :bookings
+      resources :bookings, only: [:new, :create]  do
+        resources :reviews, only: [:create, :delete]
+      end
   end
-
-
 
   resources :users, only: :show
 
