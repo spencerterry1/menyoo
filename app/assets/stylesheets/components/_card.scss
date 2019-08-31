@@ -5,6 +5,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   align-items: center;
   border-radius: 8px;
+}
+
+.card-large {
+  display: flex;
+  height: $card-large-height;
   margin: 16px 0px;
+}
+
+.card-large img {
+  height: $card-large-height;
+  width: $card-large-height;
+  object-fit: cover;
+}
+
+.card-large-content {
   padding: 16px;
 }
