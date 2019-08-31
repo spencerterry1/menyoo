@@ -1,6 +1,7 @@
 puts 'Cleaning databases...'
 User.destroy_all
 Restaurant.destroy_all
+Dish.destroy_all
 
 puts 'Creating Users...'
 
@@ -37,27 +38,29 @@ simona = User.new(first_name: 'Simona',
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
 
+
+
 puts 'Creating Restaurants...'
 
-italian = Restaurant.new(name: "Padella",
-  address: "6 Southwark St, London",
+italian = Restaurant.new(name: "Gloria",
+  address: "54-56 Great Eastern St, Hackney, London",
   category: "italian")
 
-italian.remote_photo_url = "https://media.timeout.com/images/104828760/630/472/image.jpg"
+italian.remote_photo_url = "https://media.timeout.com/images/105478409/630/472/image.jpg"
 italian.save
 
-french = Restaurant.new(name: "Monsieur Le Duck",
-  address: "27 Clerkenwell Rd, London",
+french = Restaurant.new(name: "Brasserie Zédel",
+  address: "20 Sherwood St, Soho, London",
   category: "french")
 
-french.remote_photo_url = "https://urbanologie.com/media_cache/inner_slider/media/0_Dubai_April/mons.jpg"
+french.remote_photo_url = "https://blog.opentable.co.uk/wp-content/uploads/sites/110/2018/04/BrasserieZedel.jpg"
 french.save
 
-british = Restaurant.new(name: "Rules",
-  address: "34-35 Maiden Lane, London",
+british = Restaurant.new(name: "Dean Street Townhouse",
+  address: "69 - 71 Dean St, London",
   category: "british")
 
-british.remote_photo_url = "https://rules.co.uk/wp-content/uploads/2014/01/Hare.jpg"
+british.remote_photo_url = "https://assets.londonist.com/uploads/2018/09/i875/35082736_1720743961366613_6460102714125713408_n.jpg"
 british.save
 
 vegan = Restaurant.new(name: "Kalifornia Kitchen",
@@ -68,11 +71,76 @@ vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/
 vegan.save
 
 
-italian_dish_one = Dish.new
-  italian_dish_one.restaurant = italian
-  italian_dish_one.name ="Pici cacio e pepe"
-  italian_dish_one.description = ""
-  italian_dish_one.price = 6
-  italian_dish_one.prep_time = 15
-  italian_dish_one_photo_url = "https://cdn.shopify.com/s/files/1/1725/5449/products/cacio_for_website_edited.jpg?v=1563466037"
-  italian_dish_one.save
+puts 'Creating Dishes...'
+
+italian_dish_one = Dish.new(name: "Pici cacio e pepe",
+  description: "Pasta, pecorino romano, parmesan, butter, black pepper",
+  price: 6,
+  prep_time: 15,
+  )
+
+italian_dish_one.restaurant = italian
+italian_dish_one.remote_photo_url = "https://cdn.shopify.com/s/files/1/1725/5449/products/cacio_for_website_edited.jpg?v=1563466037"
+italian_dish_one.save
+
+# italian_dish_one.restaurant = italian
+#italian_dish_one.name ="Pici cacio e pepe"
+#italian_dish_one.description = "Pasta, pecorino romano, parmesan, butter, black pepper"
+#italian_dish_one.price = 6
+#italian_dish_one.prep_time = 15
+#italian_dish_one.remote_photo_url = "https://cdn.shopify.com/s/files/1/1725/5449/products/cacio_for_website_edited.jpg?v=1563466037"
+#italian_dish_one.save
+
+
+
+####italian
+La gran carbonara
+12
+homemade spaghetti chitarra, pecorino,
+crispy guanciale, egg yolk, parmigiano,
+a lot of pepper
+https://s23209.pcdn.co/wp-content/uploads/2014/03/IMG_2622edit.jpg
+
+Filippo spicy balls
+14
+spicy slow-cooked pork and nduja meat
+balls, three hour San Marzano tomato sauce,
+rainbow chard, pecorino
+https://www.flavcity.com/wp-content/uploads/2018/06/meatballs-tomato-sauce.jpg
+
+Polpo caesar
+13
+octopus, little gem, chicory, crispy
+Tuscan ham, punchy anchovy-garlic
+dressing, pane carasau
+https://www.cucinare.it/uploads/wp-content/uploads/2015/04/Insalata_di_Polpo_Prezzemolata-1-1.jpg
+
+Pizza fritta
+7
+fried mini pizza filled with
+ricotta, burned tomato sauce
+with anchovies
+https://www.foodiecrush.com/wp-content/uploads/2015/10/Fried-Pizza-foodiecrush.com-011-1-500x500.jpg
+
+####french
+Soupe à l’Oignon Gratinée
+5.95
+https://www.papillesetpupilles.fr/wp-content/uploads/2018/02/Soupe-a%CC%80-loignon-gratine%CC%81e.jpg
+
+Boeuf Bourguignon
+15.50
+beef braised in a Burgundy wine sauce
+https://www.cookomix.com/wp-content/uploads/2017/08/boeuf-bourguinon-thermomix-800x600.jpg
+
+Sardines à la Provençale
+12.75
+butterflied’ sardines, tomatoes and olives
+https://www.soleou.fr/img/cms/fotolia_98188624.jpg
+
+Profiteroles, Sauce au Chocolat
+6.50
+https://static.cuisineaz.com/610x610/i94023-profiteroles-au-chocolat-maison.jpg
+
+
+
+
