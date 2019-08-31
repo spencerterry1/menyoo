@@ -1,8 +1,12 @@
 
-<h1>Restaurant Index</h1>
+<%  @page_title = "Welcome to Menyoo" %>
 
+<p>What are you in the mood for ?</p>
+<p>SEARCH BAR</p>
+<h1>Featured</h1>
 <% @restaurants.each do |restaurant| %>
   <div class="card-box-shadow">
+    <%= cl_image_tag(restaurant.photo, crop: :fill, width: 50) %>
     <%= link_to restaurant_path(restaurant) do %>
       <h2>Name: <%= restaurant.name %></h2>
     <% end %>

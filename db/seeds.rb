@@ -46,28 +46,28 @@ puts 'Creating Restaurants...'
 
 italian = Restaurant.new(name: "Gloria",
   address: "54-56 Great Eastern St, Hackney, London",
-  category: "italian")
+  category: "Italian")
 
 italian.remote_photo_url = "https://media.timeout.com/images/105478409/630/472/image.jpg"
 italian.save
 
 french = Restaurant.new(name: "Brasserie Zédel",
   address: "20 Sherwood St, Soho, London",
-  category: "french")
+  category: "French")
 
 french.remote_photo_url = "https://blog.opentable.co.uk/wp-content/uploads/sites/110/2018/04/BrasserieZedel.jpg"
 french.save
 
 british = Restaurant.new(name: "Dean Street Townhouse",
   address: "69 - 71 Dean St, London",
-  category: "british")
+  category: "British")
 
 british.remote_photo_url = "https://assets.londonist.com/uploads/2018/09/i875/35082736_1720743961366613_6460102714125713408_n.jpg"
 british.save
 
 vegan = Restaurant.new(name: "Kalifornia Kitchen",
   address: "19 Percy St, London",
-  category: "vegan")
+  category: "Vegan")
 
 vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/LRG_DSC02751.jpg"
 vegan.save
