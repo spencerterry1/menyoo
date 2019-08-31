@@ -5,12 +5,16 @@
 <p>SEARCH BAR</p>
 <h1>Featured</h1>
 <% @restaurants.each do |restaurant| %>
-  <div class="card-box-shadow">
-    <%= cl_image_tag(restaurant.photo, crop: :fill, width: 50) %>
-    <%= link_to restaurant_path(restaurant) do %>
-      <h2>Name: <%= restaurant.name %></h2>
-    <% end %>
-    <p>Address: <%= restaurant.address %></p>
-    <p>Category: <%= restaurant.category %></p>
+  <div class="card-box-shadow card-large">
+    <div class="card-large-img">
+      <%= cl_image_tag(restaurant.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content">
+      <%= link_to restaurant_path(restaurant) do %>
+        <h3><%= restaurant.name %></h3>
+      <% end %>
+      <p><%= restaurant.address %></p>
+      <p>Category: <%= restaurant.category %></p>
+    </div>
   </div>
 <% end %>
