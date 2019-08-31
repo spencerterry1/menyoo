@@ -1,5 +1,7 @@
 puts 'Cleaning databases...'
 User.destroy_all
+Restaurant.destroy_all
+Dish.destroy_all
 
 puts 'Creating Users...'
 
@@ -38,48 +40,119 @@ simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v15
 simona.save
 
 
-# fake restaurant seeds
 
-Restaurant.destroy_all
 
-restaurant_one = Restaurant.new(name: "XXX")
-restaurant_one.save
+puts 'Creating Restaurants...'
 
-restaurant_two = Restaurant.new(name:"YYY")
-restaurant_two.save
+italian = Restaurant.new(name: "Gloria",
+  address: "54-56 Great Eastern St, Hackney, London",
+  category: "italian")
 
-restaurant_three = Restaurant.new(name: "ZZZ")
-restaurant_three.save
+italian.remote_photo_url = "https://media.timeout.com/images/105478409/630/472/image.jpg"
+italian.save
 
-restaurant_four = Restaurant.new(name: "Testaurant")
-restaurant_four.save
+french = Restaurant.new(name: "Brasserie Zédel",
+  address: "20 Sherwood St, Soho, London",
+  category: "french")
 
-# bookings seeds
+french.remote_photo_url = "https://blog.opentable.co.uk/wp-content/uploads/sites/110/2018/04/BrasserieZedel.jpg"
+french.save
 
-puts "creating bookings"
+british = Restaurant.new(name: "Dean Street Townhouse",
+  address: "69 - 71 Dean St, London",
+  category: "british")
 
-Booking.destroy_all
+british.remote_photo_url = "https://assets.londonist.com/uploads/2018/09/i875/35082736_1720743961366613_6460102714125713408_n.jpg"
+british.save
 
-test_booking_one = Booking.new(user: spencer,
-  restaurant: restaurant_one,
-  date: Time.new)
-test_booking_one.save
+vegan = Restaurant.new(name: "Kalifornia Kitchen",
+  address: "19 Percy St, London",
+  category: "vegan")
 
-test_booking_two = Booking.new(user: ana,
-  restaurant: restaurant_two,
-  date: Time.new)
-test_booking_two.save
+vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/LRG_DSC02751.jpg"
+vegan.save
 
-test_booking_three = Booking.new(user: walter,
-  restaurant: restaurant_three,
-  date: Time.new)
-test_booking_three.save
 
-test_booking_four = Booking.new(user: simona,
-  restaurant: restaurant_four,
-  date: Time.new)
-test_booking_four.save
+puts 'Creating Dishes...'
+
+italian_dish_one = Dish.new(name: "La gran carbonara",
+  description: "Homemade spaghetti chitarra, pecorino, crispy guanciale, egg yolk, parmigiano, a lot of pepper",
+  price: 12,
+  prep_time: 15)
+
+italian_dish_one.restaurant = italian
+italian_dish_one.remote_photo_url = "https://s23209.pcdn.co/wp-content/uploads/2014/03/IMG_2622edit.jpg"
+italian_dish_one.save
+
+italian_dish_two = Dish.new(name: "Filippo spicy balls",
+  description: "Spicy slow-cooked pork and nduja meatballs, three hour San Marzano tomato sauce,rainbow chard, pecorino",
+  price: 14,
+  prep_time: 10)
+
+italian_dish_two.restaurant = italian
+italian_dish_two.remote_photo_url = "https://www.flavcity.com/wp-content/uploads/2018/06/meatballs-tomato-sauce.jpg"
+italian_dish_two.save
+
+italian_dish_three = Dish.new(name: "Polpo caesar",
+  description: "Octopus, little gem, chicory, crispy Tuscan ham, punchy anchovy-garlic dressing, pane carasau",
+  price: 13,
+  prep_time: 10)
+
+italian_dish_three.restaurant = italian
+italian_dish_three.remote_photo_url = "https://www.cucinare.it/uploads/wp-content/uploads/2015/04/Insalata_di_Polpo_Prezzemolata-1-1.jpg"
+italian_dish_three.save
+
+italian_dish_four = Dish.new(name: "Pizza fritta",
+  description: "Fried mini pizza filled with ricotta, burned tomato sauce with anchovies",
+  price: 7,
+  prep_time: 15)
+
+italian_dish_four.restaurant = italian
+italian_dish_four.remote_photo_url = "https://www.foodiecrush.com/wp-content/uploads/2015/10/Fried-Pizza-foodiecrush.com-011-1-500x500.jpg"
+italian_dish_four.save
+
+
+french_dish_one = Dish.new(name: "Soupe à l’Oignon Gratinée",
+  description: "",
+  price: 5.95,
+  prep_time: 10)
+
+french_dish_one.restaurant = french
+french_dish_one.remote_photo_url = "https://static.cuisineaz.com/610x610/i22753-soupe-a-l-oignon-gratinee.jpg"
+french_dish_one.save
+
+french_dish_two = Dish.new(name: "Boeuf Bourguignon",
+  description: "Beef braised in a Burgundy wine sauce",
+  price: 15.50,
+  prep_time: 15)
+
+french_dish_two.restaurant = french
+french_dish_two.remote_photo_url = "https://www.cookomix.com/wp-content/uploads/2017/08/boeuf-bourguinon-thermomix-800x600.jpg"
+french_dish_two.save
+
+french_dish_three = Dish.new(name: "Sardines à la Provençale",
+  description: "Butterflied’ sardines, tomatoes and olives",
+  price: 12.75,
+  prep_time: 15)
+
+french_dish_three.restaurant = french
+french_dish_three.remote_photo_url = "https://www.soleou.fr/img/cms/fotolia_98188624.jpg"
+french_dish_three.save
+
+french_dish_four = Dish.new(name: "Profiteroles, Sauce au Chocolat",
+  description: "",
+  price: 6.5,
+  prep_time: 10)
+
+french_dish_four.restaurant = french
+french_dish_four.remote_photo_url = "https://static.cuisineaz.com/610x610/i94023-profiteroles-au-chocolat-maison.jpg"
+french_dish_four.save
+
+
+
+
 
 
 puts "finished creating seeds"
+
 
