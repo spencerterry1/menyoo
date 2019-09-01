@@ -10,5 +10,6 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
   has_many :bookings, dependent: :destroy
+  has_many :attendees, dependent: :destroy
   has_many :reviews, dependent: :destroy
 end
