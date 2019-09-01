@@ -19,6 +19,12 @@
   margin: 16px 0px;
 }
 
+.card-small {
+  display: flex;
+  height: $card-small-height;
+  margin: 16px 0px;
+}
+
 .card-large img {
   height: $card-large-height;
   width: $card-large-height;
