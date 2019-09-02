@@ -1,3 +1,4 @@
 class Order < ApplicationRecord
-  belongs_to :dish
+  belongs_to :dishes
+  #belongs_to :attendees
 end
