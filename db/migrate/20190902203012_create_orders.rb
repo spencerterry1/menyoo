@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :quantity
       t.integer :price
       t.references :dish, foreign_key: true
+      t.references :attendee, foreign_key: true
 
       t.timestamps
     end

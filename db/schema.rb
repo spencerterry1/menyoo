@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_152120) do
+ActiveRecord::Schema.define(version: 2019_09_02_203012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendees", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "booking_id"
+    t.boolean "accepted"
+    t.boolean "payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_attendees_on_booking_id"
+    t.index ["user_id"], name: "index_attendees_on_user_id"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
@@ -42,8 +53,10 @@ ActiveRecord::Schema.define(version: 2019_08_31_152120) do
     t.integer "quantity"
     t.integer "price"
     t.bigint "dish_id"
+    t.bigint "attendee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["attendee_id"], name: "index_orders_on_attendee_id"
     t.index ["dish_id"], name: "index_orders_on_dish_id"
   end
 
@@ -84,9 +97,12 @@ ActiveRecord::Schema.define(version: 2019_08_31_152120) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attendees", "bookings"
+  add_foreign_key "attendees", "users"
   add_foreign_key "bookings", "restaurants"
   add_foreign_key "bookings", "users"
   add_foreign_key "dishes", "restaurants"
+  add_foreign_key "orders", "attendees"
   add_foreign_key "orders", "dishes"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
