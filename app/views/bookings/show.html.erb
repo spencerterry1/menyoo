@@ -1,7 +1,14 @@
 
 <div>
-  <p><%= @booking.user.first_name %></p>
-  <p><%= @booking.user.last_name %></p>
-  <p><%= @booking.restaurant.name %></p>
-  <p><%= @booking.date %></p>
+  <div class="restaurant-header">
+    <h1><%= @booking.restaurant.name %></h1>
+    <p><%= @booking.restaurant.address %></p>
+  </div>
+
+<!-- TODO: Formatting to be updated given changes done by Spencer in other branch -->
+  <div class="card-box-shadow" style="text-align: center; margin: 16px auto; padding: 16px;">
+    <p><%= @booking.user.first_name %></p>
+    <p><%= @booking.user.last_name %></p>
+    <p><%= @booking.date %></p>
+  </div>
 </div>
