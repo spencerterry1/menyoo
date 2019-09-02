@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_151913) do
-
+ActiveRecord::Schema.define(version: 2019_08_31_152120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +46,16 @@ ActiveRecord::Schema.define(version: 2019_08_31_151913) do
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.boolean "ordered"
+    t.integer "quantity"
+    t.integer "price"
+    t.bigint "dish_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dish_id"], name: "index_orders_on_dish_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -91,6 +100,7 @@ ActiveRecord::Schema.define(version: 2019_08_31_151913) do
   add_foreign_key "bookings", "restaurants"
   add_foreign_key "bookings", "users"
   add_foreign_key "dishes", "restaurants"
+  add_foreign_key "orders", "dishes"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
 end
