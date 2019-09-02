@@ -161,7 +161,7 @@ puts "Finished!"
 puts "Creating Bookings..."
 
 booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
-booking_one.user = walter
+booking_one.user = ana
 booking_one.restaurant = french
 booking_one.save
 
@@ -171,7 +171,7 @@ booking_two.restaurant = italian
 booking_two.save
 
 booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
-booking_three.user = walter
+booking_three.user = ana
 booking_three.restaurant = british
 booking_three.save
 

@@ -1,0 +1,23 @@
+.button-area {
+  text-align: center;
+}
+
+.button {
+  height: 32px;
+  background-color: $menyoo-blue;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 16px auto;
+  cursor: pointer;
+  border-radius: 50px;
+
+}
+
+.button-long {
+  padding: 0px 112px;
+}
+
+
