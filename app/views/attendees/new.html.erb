@@ -1,0 +1,20 @@
+
+<em><%= @booking.user.first_name %>'s </em> table
+
+<div>
+  <% @users.each do |user| %>
+      <% if user != current_user %>
+        <div class="card-small card-box-shadow user">
+        <%= cl_image_tag(user.photo, :transformation=>[
+          {:gravity=>"face", :radius=>"max"},
+          {:width=>35, :crop=>"thumb"}
+          ])
+         %>
+        <div>
+          <strong><p><%= user.first_name %> <%= user.last_name %></p></strong>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
