@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_09_02_200229) do
+=======
+ActiveRecord::Schema.define(version: 2019_08_31_151913) do
+>>>>>>> 11e89a224590d73cd94cb0cca5b76a23e41e118e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +57,17 @@ ActiveRecord::Schema.define(version: 2019_09_02_200229) do
     t.integer "quantity"
     t.integer "price"
     t.bigint "dish_id"
+<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "attendees_id"
     t.index ["attendees_id"], name: "index_orders_on_attendees_id"
+=======
+    t.bigint "attendee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attendee_id"], name: "index_orders_on_attendee_id"
+>>>>>>> 11e89a224590d73cd94cb0cca5b76a23e41e118e
     t.index ["dish_id"], name: "index_orders_on_dish_id"
   end
 
@@ -102,6 +113,10 @@ ActiveRecord::Schema.define(version: 2019_09_02_200229) do
   add_foreign_key "bookings", "restaurants"
   add_foreign_key "bookings", "users"
   add_foreign_key "dishes", "restaurants"
+<<<<<<< HEAD
+=======
+  add_foreign_key "orders", "attendees"
+>>>>>>> 11e89a224590d73cd94cb0cca5b76a23e41e118e
   add_foreign_key "orders", "dishes"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
