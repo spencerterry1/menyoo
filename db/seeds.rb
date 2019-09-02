@@ -4,6 +4,7 @@ Restaurant.destroy_all
 Dish.destroy_all
 Booking.destroy_all
 Review.destroy_all
+Attendee.destroy_all
 
 
 puts 'Creating Users...'
@@ -156,14 +157,11 @@ french_dish_four.save
 puts "Finished!"
 
 
-
-
-
 # BOOKINGS
 puts "Creating Bookings..."
 
 booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
-booking_one.user = walter
+booking_one.user = ana
 booking_one.restaurant = french
 booking_one.save
 
@@ -173,7 +171,7 @@ booking_two.restaurant = italian
 booking_two.save
 
 booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
-booking_three.user = walter
+booking_three.user = ana
 booking_three.restaurant = british
 booking_three.save
 
@@ -182,6 +180,9 @@ booking_four.user = simona
 booking_four.restaurant = vegan
 booking_four.save
 
+puts "Finished!"
+
+# REVIEWS
 puts "Creating Reviews..."
 
   def random_rating
@@ -219,4 +220,35 @@ order_one.dish = french_dish_four
 order_one.save
 
 puts "Finished!"
+
+
+# ATTENDEES
+puts "Creating attendees"
+
+attendee_one = Attendee.new(accepted: false,
+  payment: false)
+attendee_one.user = spencer
+attendee_one.booking = booking_four
+attendee_one.save
+
+attendee_two = Attendee.new(accepted: false,
+  payment: false)
+attendee_two.user = ana
+attendee_two.booking = booking_three
+attendee_two.save
+
+attendee_three = Attendee.new(accepted: false,
+  payment: false)
+attendee_three.user = walter
+attendee_three.booking = booking_two
+attendee_three.save
+
+attendee_four = Attendee.new(accepted: false,
+  payment: false)
+attendee_four.user = simona
+attendee_four.booking = booking_one
+attendee_four.save
+
+puts "Finished!"
+
 

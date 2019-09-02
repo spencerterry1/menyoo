@@ -2,26 +2,23 @@
 
 
    <div class="new-booking">
-          <div class="detail-box new-booking-content">
-            <div>
-              <h3>Restaurant</h3>
-            </div>
-            <div class="target-restaurant">
-              <p><%= @restaurant.name %> </p>
-              <p><%= @restaurant.address %></p>
-            </div>
+      <div class="card-box">
+           <div class="restaurant-header">
+            <h1><%= @restaurant.name %></h1>
+            <p><%= @restaurant.address %></p>
+          </div>
 
             <div class="container">
-              <div class="form-wrapper" style=" padding-right: 18px; margin: 0 auto;">
+              <div class="form-wrapper button-area" style=" padding-right: 18px; margin: 0 auto;">
                 <h2>Select Date & Time</h2>
 
                 <%= simple_form_for [@restaurant, @booking]  do |f| %>
                   <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                  <%= f.button :submit, "Own my own", class: "btn btn-primary" %>
+                  <%= f.button :submit, "Own my own", class: "button button-long" %>
                 <% end %>
               </div>
             </div>
-
           </div>
       </div>
 </div>
+
