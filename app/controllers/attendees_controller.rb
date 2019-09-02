@@ -1,6 +1,8 @@
 class AttendeesController < ApplicationController
 
   def new
+    @booking = Booking.find(params[:booking_id])
+    @users = User.all
     @attendee = Attendee.new()
   end
 
