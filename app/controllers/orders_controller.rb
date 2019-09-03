@@ -1,4 +1,4 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
 
   before_action :set_attendee, except: [:destroy]
 
@@ -6,9 +6,16 @@ class OrderController < ApplicationController
   end
 
   def new
+    @order = Order.new
   end
 
   def create
+     @order = Order.new(order_params)
+     # raise
+     @order.attendee = @attendee
+     if @order.save
+      flash[:notice] = 'Your new order has been placed'
+    end
   end
 
   def edit
@@ -27,5 +34,5 @@ def order_params
 end
 
 def set_attendee
-  @attendee = current_user
+  @attendee = current_user.attendees.last
 end
