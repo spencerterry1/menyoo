@@ -1,0 +1,17 @@
+
+<% @orders.each do |order|  %>
+  <div class="card-box-shadow card-large">
+    <div class="card-large-img">
+      <%= cl_image_tag(order.dish.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content">
+      <h3><%= order.dish.name %></h3>
+      <p> <%= order.dish.description %></p>
+      <div class="flex-between">
+        <p>Quantity: 1</p>
+        <p><%= humanized_money_with_symbol(order.dish.price) %></p>
+        <p><i class="far fa-clock"></i> <%= order.dish.prep_time %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

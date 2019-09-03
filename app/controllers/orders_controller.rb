@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
 
   before_action :set_attendee, except: [:destroy]
 
+  def index
+    @orders = @attendee.orders.all
+  end
+
   def show
   end
 
@@ -10,11 +14,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-     @order = Order.new(order_params)
-     # raise
-     @order.attendee = @attendee
-     if @order.save
-      flash[:notice] = 'Your new order has been placed'
+    @order = Order.new(order_params)
+    # raise
+    @order.attendee = @attendee
+    @booking = @attendee.booking
+    @restaurant = @booking.restaurant
+    if @order.save
+      redirect_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee), notice: 'Your new order has been placed'
     end
   end
 
