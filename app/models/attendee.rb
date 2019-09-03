@@ -1,7 +1,7 @@
 class Attendee < ApplicationRecord
   belongs_to :user
   belongs_to :booking
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   before_save :default_values
 
