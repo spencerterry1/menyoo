@@ -5,6 +5,7 @@ Dish.destroy_all
 Booking.destroy_all
 Review.destroy_all
 Attendee.destroy_all
+Order.destroy_all
 
 
 puts 'Creating Users...'
