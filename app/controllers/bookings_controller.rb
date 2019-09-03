@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @restaurant = @booking.restaurant
     @users = User.all
     @attendee = Attendee.new
+    @attendee_user = current_user.attendees.last
   end
 
   def new

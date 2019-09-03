@@ -1,3 +1,4 @@
+<%  @page_title = "Table Page" %>
 
 <div>
   <div class="restaurant-header">
@@ -22,13 +23,16 @@
   <h3>View Attendees</h3>
 </div>
 
-<div class="card-medium card-box-shadow">
-  <h3>Make your selection</h3>
-</div>
-
-<div class="card-medium card-box-shadow">
-  <h3>Table order</h3>
-</div>
+<%= link_to restaurant_path(@restaurant) do %>
+  <div class="card-medium card-box-shadow">
+    <h3>Make your selection</h3>
+  </div>
+<% end %>
+<%= link_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee_user) do %>
+  <div class="card-medium card-box-shadow">
+    <h3>Your order</h3>
+  </div>
+<% end %>
 
 <h3>Add Attendees</h3>
 

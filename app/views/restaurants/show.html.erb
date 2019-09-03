@@ -33,10 +33,14 @@
         <p><%= humanized_money_with_symbol(dish.price) %></p>
         <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
         <div>
-          <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
-              <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-              <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-              <%= f.submit "Order", class: "btn btn-dark" %>
+          <% if user_signed_in? %>
+            <% if current_user.bookings.count != 0 %>
+              <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
+                  <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+                  <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+                  <%= f.submit "Order", class: "btn btn-dark" %>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>
