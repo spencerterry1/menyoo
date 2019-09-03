@@ -10,6 +10,9 @@
   <%= link_to new_restaurant_booking_path(@restaurant) do %>
     <button class = "button button-long">Open a Table</button>
   <% end %>
+  <% if current_user.attendees %>
+    <div> + </div>
+  <% end %>
 </div>
 
 <div>
