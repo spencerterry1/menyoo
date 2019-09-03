@@ -10,7 +10,7 @@ class AttendeesController < ApplicationController
 
   def create
      @attendee = Attendee.new(attendee_params)
-     raise
+     # raise
      @attendee.booking = @booking
      if @attendee.save
       flash[:notice] = 'Your new attendee is invited'
