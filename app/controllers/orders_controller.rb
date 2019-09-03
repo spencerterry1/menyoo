@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
 
   def index
     @orders = @attendee.orders.all
+    @booking = @attendee.booking
+    @restaurant = @booking.restaurant
   end
 
   def show

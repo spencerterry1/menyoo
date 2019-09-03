@@ -6,11 +6,21 @@
   <p><%= @restaurant.address %></p>
 </div>
 
-<div class="button-area">
-  <%= link_to new_restaurant_booking_path(@restaurant) do %>
-    <button class = "button button-long">Open a Table</button>
+<% if user_signed_in? %>
+  <% if current_user.bookings.count ==0 %>
+    <div class="button-area">
+      <%= link_to new_restaurant_booking_path(@restaurant) do %>
+        <button class = "button button-long">Open a Table</button>
+      <% end %>
+    </div>
   <% end %>
-</div>
+<% else %>
+  <div class="button-area">
+    <%= link_to new_restaurant_booking_path(@restaurant) do %>
+      <button class = "button button-long">Open a Table</button>
+    <% end %>
+  </div>
+<% end %>
 
 <div>
   < Search bar - Dishes >
