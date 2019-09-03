@@ -1,5 +1,19 @@
 <%  @page_title = "Your Order Summary" %>
 
+<!-- Calculation the total for the orders -->
+<% @order_total = 0 %>
+<% @orders.each do |order|  %>
+  <% @order_total = @order_total + order.dish.price %>
+<% end %>
+<!-- End Calculation -->
+
+
+<%= link_to estaurant_path(@restaurant) do %>
+    <button class = "button button-long">Add to Order</button>
+  <% end %>
+</div>
+
+<h3>Total cost: £<%= @order_total %></h3>
 
 <% @orders.each do |order|  %>
   <div class="card-box-shadow card-large">
