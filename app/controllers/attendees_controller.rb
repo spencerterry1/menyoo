@@ -2,6 +2,16 @@ class AttendeesController < ApplicationController
 
   before_action :set_booking, except: [:destroy]
 
+  def index
+    @booking = Booking.find(params[:booking_id])
+    @attendees = Attendee.all
+    @search = params[:search]
+    if @search.present?
+      @name = @search[:name].capitalize
+      @user = User.where(first_name: @name).first
+    end
+  end
+
   def new
     @booking = Booking.find(params[:booking_id])
     @users = User.all
