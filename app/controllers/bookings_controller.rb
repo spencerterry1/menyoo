@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @users = User.all
+    @attendee = Attendee.new
   end
 
   def new
