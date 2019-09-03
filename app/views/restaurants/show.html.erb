@@ -32,13 +32,13 @@
       <div class="flex-between">
         <p><%= humanized_money_with_symbol(dish.price) %></p>
         <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
-      </div>
-      </div>
-        <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
-            <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-            <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-            <%= f.submit "Order", class: "btn btn-dark" %>
-        <% end %>
+        <div>
+          <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
+              <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+              <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+              <%= f.submit "Order", class: "btn btn-dark" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
