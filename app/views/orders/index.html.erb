@@ -11,9 +11,9 @@
   <%= link_to restaurant_path(@restaurant) do %>
       <button class = "button button-long">Add to Order</button>
   <% end %>
+  <h3>Total cost: £<%= @order_total %></h3>
 </div>
 
-<h3>Total cost: £<%= @order_total %></h3>
 
 <% @orders.each do |order|  %>
   <div class="card-box-shadow card-large">
