@@ -1,10 +1,13 @@
 <div class="tabbar-ios">
   <div class="tabbar-content">
+    <!-- Home Tab -->
     <div class="navbar-back">
       <%= link_to root_path do %>
         <p>Home</p>
       <% end %>
     </div>
+
+    <!-- Your Table Tab -->
     <div class="navbar-title">
       <% if user_signed_in? %>
         <% if current_user.bookings.count != 0 %>
@@ -20,8 +23,20 @@
         <p class = "tab-unavailable">No Table</p>
       <% end %>
     </div>
-    <div class="navbar-checkin">
-      <p>User Profile</p>
-    </div>
+
+    <!-- User Profile Tab -->
+    <% if user_signed_in? %>
+      <%=  link_to user_path(current_user) do %>
+        <div class="navbar-checkin">
+          <p>User Profile</p>
+        </div>
+      <% end %>
+    <% else %>
+      <%=  link_to new_user_session_path do %>
+        <div class="navbar-checkin">
+          <p class="tab-unavailable">User Profile</p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
