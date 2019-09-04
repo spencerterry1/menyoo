@@ -3,7 +3,7 @@
     <!-- Home Tab -->
     <div class="navbar-back">
       <%= link_to root_path do %>
-        <p>Home</p>
+        <p><i class="fas fa-home"></i></p>
       <% end %>
     </div>
 
@@ -14,13 +14,13 @@
           <% @booking = current_user.bookings.last %>
           <% @restaurant = current_user.bookings.last.restaurant %>
           <%=  link_to restaurant_booking_path(@restaurant, @booking) do %>
-            <p>Your Table</p>
+            <p><i class="fas fa-utensils"></i></p>
           <% end %>
         <% else %>
-          <p class = "tab-unavailable">No Table</p>
+          <p class = "tab-unavailable"><i class="fas fa-utensils"></i></p>
         <% end %>
       <% else %>
-        <p class = "tab-unavailable">No Table</p>
+        <p class = "tab-unavailable"><i class="fas fa-utensils"></i></p>
       <% end %>
     </div>
 
@@ -28,13 +28,13 @@
     <% if user_signed_in? %>
       <%=  link_to user_path(current_user) do %>
         <div class="navbar-checkin">
-          <p>User Profile</p>
+          <p><i class="fas fa-user"></i></p>
         </div>
       <% end %>
     <% else %>
       <%=  link_to new_user_session_path do %>
         <div class="navbar-checkin">
-          <p class="tab-unavailable">User Profile</p>
+          <p class="tab-unavailable"><i class="fas fa-user-times"></i></p>
         </div>
       <% end %>
     <% end %>
