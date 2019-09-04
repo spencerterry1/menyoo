@@ -5,6 +5,9 @@ class BookingsController < ApplicationController
     @restaurant = @booking.restaurant
     @users = User.all
     @attendee = Attendee.new
+
+    # calls search_for_users method if a user tries to type in the search bar to add another use to the table
+    search_for_users if params[:search]
   end
 
   def new
@@ -30,6 +33,15 @@ class BookingsController < ApplicationController
 
 
   private
+
+  def search_for_users
+    @attendees = Attendee.all
+    @search = params[:search]
+    if @search.present?
+      @name = @search[:name].capitalize
+      @user = User.where(first_name: @name).first
+    end
+  end
 
   def booking_params
     params.require(:booking).permit(:date)

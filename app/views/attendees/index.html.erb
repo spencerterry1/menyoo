@@ -1,6 +1,5 @@
-<%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
- <%= f.input :name, input_html: {value: ""} %>
- <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
 
-<%= @user.first_name if @user %>
+
+<% @booking.attendees.map do |attendee| %>
+  <p><strong> <%= attendee.user.first_name %> <%= attendee.user.last_name %></strong> </p>
+<% end%>
