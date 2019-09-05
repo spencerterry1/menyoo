@@ -1,4 +1,39 @@
 
+<h1>Add Attendees</h1>
+
+<div>
+  <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
+<%# if a user searches to add a guest to the table  %>
+<% if @user && @user != current_user %>
+
+  <div class="card-small card-box-shadow user">
+    <%= cl_image_tag(@user.photo, :transformation=>[
+      {:gravity=>"face", :radius=>"max"},
+      {:width=>35, :crop=>"thumb"}
+      ])
+    %>
+    <div>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+    </div>
+
+    <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
+      <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
+      <%= f.submit "Invite Now", class: "btn btn-dark" %>
+    <% end %>
+
+  </div>
+
+<% end %>
+
+
+<h1>Current Attendees</h1>
+
 
 <% @booking.attendees.map do |attendee| %>
   <p><strong> <%= attendee.user.first_name %> <%= attendee.user.last_name %></strong> </p>
