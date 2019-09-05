@@ -20,5 +20,12 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    if user_signed_in?
+      @attendee = current_user.attendees.last
+      if current_user.bookings.count !=0
+        @booking = @attendee.booking
+      end
+      @order = Order.new
+    end
   end
 end
