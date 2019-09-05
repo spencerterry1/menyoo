@@ -8,7 +8,7 @@
 
 <!-- TODO: Formatting to be updated given changes done by Spencer in other branch -->
   <div class="card-box-shadow" style="text-align: center; margin: 16px auto; padding: 16px;">
-    <p><%= @booking.date %></p>
+    <p>Table opened on <%= @booking.date.to_s(:table_time) %></p>
   </div>
 
 </div>
