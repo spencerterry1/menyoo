@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
+  get "previous-bookings", to: "users#previous_bookings", as: :previous_bookings
 
 
 end

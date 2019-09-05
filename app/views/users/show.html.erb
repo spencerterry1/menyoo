@@ -5,7 +5,9 @@
   <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large button-area") %>
   </div>
   <div class="card-small card-box-shadow button-area">
-    <h3 style="margin: 16px auto;">Previous bookings</h3>
+    <%= link_to previous_bookings_path, class: "previous-bookings-link" do %>
+      <h3>Previous bookings</h3>
+    <% end %>
   </div>
   <div class="card-small card-box-shadow button-area">
     <h3 style="margin: 16px auto;">Yours details</h3>
