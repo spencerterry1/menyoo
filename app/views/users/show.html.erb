@@ -1,12 +1,17 @@
 <%  @page_title = "#{@user.first_name}'s profile" %>
 
 <div>
-  <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large") %>
+  <div class="text-center">
+  <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large button-area") %>
+  </div>
+  <div class="card-small card-box-shadow button-area">
+    <h3 style="margin: 16px auto;">Previous bookings</h3>
+  </div>
+  <div class="card-small card-box-shadow button-area">
+    <h3 style="margin: 16px auto;">Yours details</h3>
+  </div>
+  <div class="card-small card-box-shadow button-area">
+    <h3 style="margin: 16px auto;">Help</h3>
+  </div>
 </div>
-
-<div>
-  <p><%= @user.first_name %></p>
-  <p><%= @user.last_name %></p>
-</div>
-
 
