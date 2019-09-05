@@ -12,6 +12,10 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @users = User.all
     @attendee = Attendee.new
@@ -22,7 +26,8 @@ class AttendeesController < ApplicationController
      # raise
      @attendee.booking = @booking
      if @attendee.save
-      flash[:notice] = 'Your new attendee is invited'
+      flash[:notice] = "#{@attendee.user.first_name} has been invited"
+      redirect_to restaurant_booking_path(@booking.restaurant, @booking)
     end
   end
 

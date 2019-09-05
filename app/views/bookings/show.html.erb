@@ -14,13 +14,13 @@
 </div>
 
 <div class="card-medium card-box-shadow ">
-  <%= link_to new_restaurant_booking_attendee_path(@restaurant, @booking) do %>
-    <h3> Add Attendee</h3>
-  <% end %>
+  <h3> Add Attendee</h3>
 </div>
 
 <div class="card-medium card-box-shadow">
-  <h3>View Attendees</h3>
+  <%= link_to restaurant_booking_attendees_path(@restaurant, @booking) do %>
+    <h3>View Attendees</h3>
+  <% end %>
 </div>
 
 <%= link_to restaurant_path(@restaurant) do %>
@@ -37,24 +37,33 @@
 <h3>Add Attendees</h3>
 
 <div>
-  <% @users.each do |user| %>
-      <% if user != current_user %>
-        <div class="card-small card-box-shadow user">
-        <%= cl_image_tag(user.photo, :transformation=>[
-          {:gravity=>"face", :radius=>"max"},
-          {:width=>35, :crop=>"thumb"}
-          ])
-         %>
-        <div>
-          <strong><p><%= user.first_name %> <%= user.last_name %></p></strong>
-        </div>
-          <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
-            <%= f.input :user_id , as: :hidden, input_html: { value: user.id } %>
-            <%= f.submit "Invite Now", class: "btn btn-dark" %>
-          <% end %>
-      </div>
-    <% end %>
+  <%= simple_form_for :search, url: restaurant_booking_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
+
+
+<%# if a user searches to add a guest to the table  %>
+<% if @user && @user != current_user %>
+
+  <div class="card-small card-box-shadow user">
+    <%= cl_image_tag(@user.photo, :transformation=>[
+      {:gravity=>"face", :radius=>"max"},
+      {:width=>35, :crop=>"thumb"}
+      ])
+    %>
+    <div>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+    </div>
+
+    <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
+      <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
+      <%= f.submit "Invite Now", class: "btn btn-dark" %>
+    <% end %>
+
+  </div>
+
+<% end %>
 
 
