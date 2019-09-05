@@ -1,6 +1,7 @@
 .navbar-ios {
   display: flex;
-  align-items: bottom;
+  justify-content: center;
+  align-items: center;
   height: 88px;
   background-color: $navbar-gray;
   position: fixed;
@@ -11,13 +12,33 @@
 
 .navbar-content {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   width: 100%;
   height: 36px;
   padding: 8px;
   margin-top: 36px;
   margin-bottom: 16px;
 }
+
+.navbar-back {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-checkin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 
 .screen-content {
   padding: 96px 8px;
@@ -66,3 +87,15 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.same-space {
+  min-width: 33% !important;
+}
+
+
+
+
+
+
+
+
