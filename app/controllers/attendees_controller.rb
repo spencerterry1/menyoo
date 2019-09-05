@@ -6,6 +6,7 @@ class AttendeesController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @attendees = Attendee.all
     @search = params[:search]
+    @attendee = Attendee.new
     if @search.present?
       @name = @search[:name].capitalize
       @user = User.where(first_name: @name).first
