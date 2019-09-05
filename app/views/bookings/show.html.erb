@@ -13,24 +13,27 @@
 
 </div>
 
-<div class="card-medium card-box-shadow ">
-  <h3> Add Attendee</h3>
-</div>
-
-<div class="card-medium card-box-shadow">
-  <%= link_to restaurant_booking_attendees_path(@restaurant, @booking) do %>
-    <h3>View Attendees</h3>
-  <% end %>
-</div>
-
-<%= link_to restaurant_path(@restaurant) do %>
-  <div class="card-medium card-box-shadow">
-    <h3>Make your selection</h3>
+<%= link_to restaurant_booking_attendees_path(@restaurant, @booking) do %>
+  <div class="card-medium card-box-shadow flex-between card-submenu">
+    <h3><i class="fas fa-user-friends"></i></h3>
+    <h3>Add and View Attendees</h3>
+    <h3><i class="fas fa-chevron-right"></i></h3>
   </div>
 <% end %>
+
+<%= link_to restaurant_path(@restaurant) do %>
+  <div class="card-medium card-box-shadow flex-between card-submenu">
+    <h3><i class="fas fa-book-open"></i></h3>
+    <h3>Make your selection</h3>
+    <h3><i class="fas fa-chevron-right"></i></h3>
+  </div>
+<% end %>
+
 <%= link_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee_user) do %>
-  <div class="card-medium card-box-shadow">
+  <div class="card-medium card-box-shadow flex-between card-submenu">
+    <h3><i class="fas fa-utensils"></i></h3>
     <h3>Your order</h3>
+    <h3><i class="fas fa-chevron-right"></i></h3>
   </div>
 <% end %>
 
