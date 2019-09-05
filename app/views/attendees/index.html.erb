@@ -1,0 +1,5 @@
+
+
+<% @booking.attendees.map do |attendee| %>
+  <p><strong> <%= attendee.user.first_name %> <%= attendee.user.last_name %></strong> </p>
+<% end%>
