@@ -13,8 +13,7 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :users, only: :show
+  resources :users, only: [:show, :edit]
   get "previous-bookings", to: "users#previous_bookings", as: :previous_bookings
-
 
 end
