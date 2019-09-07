@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   resources :restaurants , only: [:index, :show] do
       resources :dishes, only: [:index, :show]
       resources :bookings, only: [:show, :new, :create]  do
+        post 'pay', to: 'bookings#pay'
         get 'summary', to: 'bookings#summary'
         resources :reviews, only: [:create, :delete]
         resources :attendees, only: [:index, :new, :create, :destroy] do
           get 'accept', to: 'attendees#accept'
           resources :orders
-          resources :payments, only: [:new, :create]
         end
       end
   end

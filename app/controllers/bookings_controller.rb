@@ -12,17 +12,6 @@ class BookingsController < ApplicationController
     search_for_users if params[:search]
   end
 
-  def summary
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @booking = Booking.find(params[:booking_id])
-    @orders = @booking.orders
-
-    # calculates total order price, stored in @order_total
-    @order_total = 0
-    @orders.each do |order|
-      @order_total += order.dish.price
-    end
-  end
 
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -46,7 +35,57 @@ class BookingsController < ApplicationController
   end
 
 
+  def summary
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking = Booking.find(params[:booking_id])
+    @orders = @booking.orders
+    @attendees = @booking.attendees
+
+    # calculates total order price, stored in @order_total
+    @order_total = 0
+    @orders.each do |order|
+      @order_total += order.dish.price
+    end
+  end
+
+  def pay
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking = Booking.find(params[:booking_id])
+    @orders = @booking.orders
+    @attendees = @booking.attendees
+    @order_total = 0
+
+    @orders.each do |order|
+      order_price = order.dish.price.to_i
+      @order_total += order_price
+    end
+
+    customer = Stripe::Customer.create(
+    source: params[:stripeToken],
+    email:  params[:stripeEmail]
+  )
+
+    charge = Stripe::Charge.create(
+      customer:     customer.id,  # You should store this customer id and re-use it.
+      amount:       @order_total,
+      description:  "Payment for Table Booking #{@booking}",
+      currency:     "gbp"
+    )
+
+    @attendees.each do |attendee|
+      attendee.payment = true
+      attendee.save
+    end
+    # @order.update(payment: charge.to_json, state: 'paid')
+    redirect_to restaurants_path
+
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to restaurant_booking_summary_path(@restaurant, @booking)
+  end
+
   private
+
 
   def search_for_users
     @attendees = Attendee.all
