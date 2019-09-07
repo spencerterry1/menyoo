@@ -10,9 +10,9 @@
     <!-- Your Table Tab -->
     <div class="navbar-title">
       <% if user_signed_in? %>
-        <% if current_user.bookings.count != 0 %>
-          <% @booking = current_user.bookings.last %>
-          <% @restaurant = current_user.bookings.last.restaurant %>
+        <% if bookings_open_for_user(current_user).count != 0 %>
+          <% @booking = bookings_open_for_user(current_user).last %>
+          <% @restaurant = @booking.restaurant %>
           <%=  link_to restaurant_booking_path(@restaurant, @booking) do %>
             <p><i class="fas fa-utensils"></i></p>
           <% end %>

@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @users = User.all
     @attendee = Attendee.new
 
-    @attendee_user = current_user.attendees.last
+    @attendee_user = Attendee.where(user: current_user, booking: @booking)
 
     # calls search_for_users method if a user tries to type in the search bar to add another use to the table
     search_for_users if params[:search]
@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @booking.restaurant = @restaurant
     @booking.save
 
-    @attendee = Attendee.new(accepted: false, payment: false)
+    @attendee = Attendee.new(accepted: true, payment: false)
     @attendee.user = current_user
     @attendee.booking = @booking
     @attendee.save

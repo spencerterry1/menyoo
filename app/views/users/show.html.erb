@@ -4,6 +4,18 @@
   <div class="text-center">
   <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large button-area") %>
   </div>
+
+  <!-- Section to show Invitations -->
+  <div>
+    <h1>Invitations</h1>
+    <% if @attendee_invitation %>
+      <p><%= @attendee_invitation.booking.restaurant.name %></p>
+      <p><%= @attendee_invitation.booking.date %></p>
+    <% else %>
+      <p>No invitation</p>
+    <% end %>
+  </div>
+
   <div class="card-small card-box-shadow button-area">
     <%= link_to previous_bookings_path, class: "previous-bookings-link" do %>
       <h3>Previous bookings</h3>
