@@ -1,12 +1,31 @@
 <%  @page_title = "#{@user.first_name}'s profile" %>
 
 <div>
-  <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large") %>
-</div>
+  <div class="text-center">
+  <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large button-area") %>
+  </div>
 
-<div>
-  <p><%= @user.first_name %></p>
-  <p><%= @user.last_name %></p>
-</div>
+  <!-- Section to show Invitations -->
+  <div>
+    <h1>Invitations</h1>
+    <% if @attendee_invitation %>
+      <p><%= @attendee_invitation.booking.restaurant.name %></p>
+      <p><%= @attendee_invitation.booking.date %></p>
+    <% else %>
+      <p>No invitation</p>
+    <% end %>
+  </div>
 
+  <div class="card-small card-box-shadow button-area">
+    <%= link_to previous_bookings_path, class: "previous-bookings-link" do %>
+      <h3>Previous bookings</h3>
+    <% end %>
+  </div>
+  <div class="card-small card-box-shadow button-area">
+    <h3 class="previous-bookings-link">Yours details</h3>
+  </div>
+  <div class="card-small card-box-shadow button-area">
+    <h3 class="previous-bookings-link">Help</h3>
+  </div>
+</div>
 

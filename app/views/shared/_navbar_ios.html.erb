@@ -1,18 +1,23 @@
 <div class="navbar-ios">
   <div class="navbar-content">
-    <div class="navbar-back">
-      <p><i class="fas fa-chevron-left"></i></p>
+
+    <div class="navbar-back same-space">
+      <p>
+        <i class="fas fa-chevron-left"></i>
+      </p>
     </div>
-    <div class="navbar-title">
+
+    <div class="navbar-title same-space">
       <% if current_page?('/') %>
-        <div class="menyoo-title"><strong>Menyoo</strong></div>
+        <p class="menyoo-title"><strong>Menyoo</strong></p>
       <% else %>
         <p><strong><%= @page_title %></strong></p>
       <% end %>
+    </div>
 
+    <div class="navbar-checkin same-space">
+      <p><i class="fas fa-toggle-off"></i></p>
     </div>
-    <div class="navbar-checkin">
-      <p>Check-in</p>
-    </div>
+
   </div>
 </div>
