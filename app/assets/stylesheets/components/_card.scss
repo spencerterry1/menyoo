@@ -19,6 +19,16 @@
   margin: 16px 0px;
 }
 
+.card-medium-attendees {
+  display: flex;
+  height: $card-medium-height;
+  margin: 16px 0px;
+  width: 100%;
+  img {
+    margin-right: 24px;
+  }
+}
+
 .card-small {
   display: flex;
   height: $card-small-height;
@@ -46,6 +56,7 @@
 
 .card-large-content {
   padding: 16px;
+  width: 100%;
 }
 
 

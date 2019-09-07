@@ -5,7 +5,7 @@
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
     <%= f.input :name, input_html: {value: ""} %>
-    <%= f.submit "Search", class: "button" %>
+    <%= f.submit "Search", class: "button button-medium" %>
   <% end %>
 </div>
 
@@ -13,12 +13,8 @@
 <%# if a user searches to add a guest to the table  %>
 <% if @user && @user != current_user %>
 
-  <div class="card-small card-box-shadow user">
-    <%= cl_image_tag(@user.photo, :transformation=>[
-      {:gravity=>"face", :radius=>"max"},
-      {:width=>35, :crop=>"thumb"}
-      ])
-    %>
+  <div class="card-small card-box-shadow card-submenu user flex-between">
+    <%= cl_image_tag(@user.photo, :class => "avatar button-area") %>
     <div>
       <p><%= @user.first_name %> <%= @user.last_name %></p>
     </div>
@@ -37,7 +33,21 @@
 
 
 <% @booking.attendees.map do |attendee| %>
-  <div class="card-box-shadow card-small">
-    <p><strong> <%= attendee.user.first_name %> - Attend:<%= attendee.accepted %></strong> </p>
+  <div class="card-box-shadow card-medium-attendees card-submenu">
+    <div>
+      <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
+    </div>
+    <div>
+      <p><strong> <%= attendee.user.first_name %></strong></p>
+      <div class="flex-between">
+        <p style="margin-right: 24px;">Confirmed ?</p>
+        <% if attendee.accepted %>
+          <p><i class="fas fa-check"></i></p>
+        <% else %>
+          <p><i class="fas fa-times"></i></p>
+        <% end %>
+
+      </div>
+    </div>
   </div>
 <% end%>
