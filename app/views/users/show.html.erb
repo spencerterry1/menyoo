@@ -33,15 +33,24 @@
 
 
   <div class="card-small card-box-shadow button-area">
-    <%= link_to previous_bookings_path, class: "previous-bookings-link" do %>
-      <h3>Previous bookings</h3>
+    <%= link_to edit_user_registration_path, class: "link" do %>
+      <h3>Yours details</h3>
     <% end %>
   </div>
   <div class="card-small card-box-shadow button-area">
-    <h3 class="previous-bookings-link">Yours details</h3>
+    <%= link_to user_reviews_path(@user), class: "link" do %>
+      <h3>Yours reviews</h3>
+    <% end %>
   </div>
   <div class="card-small card-box-shadow button-area">
-    <h3 class="previous-bookings-link">Help</h3>
+    <%= link_to user_bookings_path(@user), class: "link" do %>
+      <h3>Your bookings</h3>
+    <% end %>
+  </div>
+  <div class="card-small card-box-shadow button-area">
+    <%= link_to destroy_user_session_path, method: :delete, class: "link" do %>
+      <h3>Log out</h3>
+    <% end %>
   </div>
 </div>
 

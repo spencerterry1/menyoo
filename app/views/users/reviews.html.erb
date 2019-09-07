@@ -1,0 +1,6 @@
+<%  @page_title = "My reviews" %>
+
+<% @user.reviews.each do |review| %>
+  <h3><%= review.booking.restaurant.name %></h3>
+  <p><%= review.content %></p>
+<% end %>

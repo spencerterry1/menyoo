@@ -185,6 +185,15 @@ booking_four.restaurant = vegan
 booking_four.open = false
 booking_four.save
 
+vegan_dish_one = Dish.new(name: "Roast vegetable tagine",
+  description: "Chickpeas, roasted cauliflower, dates, tomatoes & preserved lemon",
+  price: 11,
+  prep_time: 15)
+
+vegan_dish_one.restaurant = vegan
+vegan_dish_one.remote_photo_url = "https://1033651.v1.pressablecdn.com/wp-content/uploads/2017/01/roasted-vegetable-and-chickpea-tagine-with-harissa-b-1200x750.jpg"
+vegan_dish_one.save
+
 puts "Finished!"
 
 # REVIEWS
@@ -210,7 +219,12 @@ puts "Creating Reviews..."
   review_two.user = spencer
   review_two.save
 
-
+  review_three = Review.new
+  review_three.booking = booking_four
+  review_three.content = "Absolutely one of the best vegan restaurants in the city"
+  review_three.rating = random_rating
+  review_three.user = simona
+  review_three.save
 puts "Finished!"
 
 # ORDERS

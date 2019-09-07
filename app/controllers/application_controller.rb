@@ -1,9 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :bookings_open_for_user
   helper_method :booking_open_for_user_restaurant
   helper_method :attendee_invitations_for_user
+  
+  def configure_permitted_parameters
+    # For additional fields in app/views/devise/registrations/new.html.erb
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :photo])
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+  end
+
+
 
   # Returns an array of Open Bookings for the given User
   def bookings_open_for_user(user)
@@ -46,6 +56,7 @@ class ApplicationController < ActionController::Base
       end
     end
     return @attendees_user_invitations
+
   end
 
 end
