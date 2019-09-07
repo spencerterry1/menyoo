@@ -1,0 +1,7 @@
+<%  @page_title = "My bookings" %>
+
+<% @user.bookings.each do |booking| %>
+  <p><%= booking.date %></p>
+  <p><%= booking.restaurant.name %></p>
+<% end %>
+

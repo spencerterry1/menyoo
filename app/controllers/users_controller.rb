@@ -4,8 +4,9 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def previous_bookings
-    @bookings = current_user.bookings
+  def bookings
+    @user = User.find(params[:user_id])
+    @bookings = @user.bookings
   end
 
   def reviews

@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit] do
     get "reviews", to: "users#reviews", as: :reviews
+    get "bookings", to: "users#bookings", as: :bookings
   end
-  get "previous-bookings", to: "users#previous_bookings", as: :previous_bookings
-
 end
