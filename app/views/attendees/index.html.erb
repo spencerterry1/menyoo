@@ -1,6 +1,6 @@
 <%  @page_title = "Attendees" %>
 
-<h1>Add Attendees</h1>
+<h1>Invite Attendees</h1>
 
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
@@ -37,5 +37,7 @@
 
 
 <% @booking.attendees.map do |attendee| %>
-  <p><strong> <%= attendee.user.first_name %> <%= attendee.user.last_name %></strong> </p>
+  <div class="card-box-shadow card-small">
+    <p><strong> <%= attendee.user.first_name %> - Attend:<%= attendee.accepted %></strong> </p>
+  </div>
 <% end%>

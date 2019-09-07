@@ -1,4 +1,4 @@
-<%  @page_title = "#{@user.first_name}'s profile" %>
+<%  @page_title = "#{@user.first_name}'s Profile" %>
 
 <div>
   <div class="text-center">
@@ -6,15 +6,26 @@
   </div>
 
   <!-- Section to show Invitations -->
-  <div>
-    <h1>Invitations</h1>
-    <% if @attendee_invitation %>
-      <p><%= @attendee_invitation.booking.restaurant.name %></p>
-      <p><%= @attendee_invitation.booking.date %></p>
-    <% else %>
-      <p>No invitation</p>
-    <% end %>
-  </div>
+
+  <% if @attendee_invitation %>
+    <h1>New invitation</h1>
+    <div class="card-box-shadow card-large">
+      <div class="card-large-img">
+        <%= cl_image_tag(@attendee_invitation.booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
+      </div>
+      <div class="card-large-content">
+        <p>From: <%= @attendee_invitation.booking.user.first_name %></p>
+        <p>Restaurant: <%= @attendee_invitation.booking.restaurant.name %></p>
+        <p>Date: <%= @attendee_invitation.booking.date.to_s(:table_time) %></p>
+      </div>
+    </div>
+  <% else %>
+      <p>No outsanding invitation</p>
+  <% end %>
+
+
+
+
 
   <div class="card-small card-box-shadow button-area">
     <%= link_to previous_bookings_path, class: "previous-bookings-link" do %>
