@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @booking.restaurant = @restaurant
     @booking.save
 
-    @attendee = Attendee.new(accepted: false, payment: false)
+    @attendee = Attendee.new(accepted: true, payment: false)
     @attendee.user = current_user
     @attendee.booking = @booking
     @attendee.save
