@@ -18,6 +18,9 @@
         <p>Restaurant: <%= @attendee_invitation.booking.restaurant.name %></p>
         <p>Date: <%= @attendee_invitation.booking.date.to_s(:table_time) %></p>
       </div>
+      <div class="button-area">
+        <button class = "button button-medium">Accept</button>
+      </div>
     </div>
   <% else %>
       <p>No outsanding invitation</p>
