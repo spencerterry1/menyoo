@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
 
   def set_order
     # need to include Order where Order.attendee.payment =
-    @order = Order.find(params[:order_id])
+    @order = Attendee.where(payment: false)
   end
 
 end
