@@ -22,7 +22,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     if user_signed_in?
       @attendee = current_user.attendees.last
-      @booking = booking_open(current_user, @restaurant).last
+      @booking_array = booking_open(current_user, @restaurant)
+      @booking = @booking_array.last
       @order = Order.new
     end
   end
@@ -36,7 +37,7 @@ class RestaurantsController < ApplicationController
     attendees_user_accepted = Attendee.where(user: user, accepted: true)
     # Create array of Bookings if Booking for that restaurant and Booking open
     attendees_user_accepted.each do |attendee|
-      if attendee.booking.restaurant == restaurant && attendee.booking.open
+      if attendee.booking.restaurant == restaurant && attendee.booking.open == true
         bookings_open << attendee.booking
       end
     end
