@@ -32,6 +32,17 @@ class AttendeesController < ApplicationController
     end
   end
 
+  # Custom method to accept an invitation
+  def accept
+    @user = current_user
+    @attendee_invitation = attendee_invitations_for_user(@user).last
+    @attendee_invitation.accepted = true
+    @attendee_invitation.save
+    @booking = @attendee_invitation.booking
+    @restaurant = @booking.restaurant
+    redirect_to restaurant_booking_path(@restaurant, @booking)
+  end
+
   def destroy
   end
 

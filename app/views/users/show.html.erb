@@ -19,7 +19,9 @@
         <p>Date: <%= @attendee_invitation.booking.date.to_s(:table_time) %></p>
       </div>
       <div class="button-area">
-        <button class = "button button-medium">Accept</button>
+        <%= link_to restaurant_booking_attendee_accept_path(@attendee_invitation.booking.restaurant, @attendee_invitation.booking, @attendee_invitation) do %>
+          <button class = "button button-medium invitation-buton">Accept</button>
+        <% end %>
       </div>
     </div>
   <% else %>
