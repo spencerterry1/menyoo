@@ -162,23 +162,27 @@ puts "Finished!"
 puts "Creating Bookings..."
 
 booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
-booking_one.user = ana
+booking_one.user = walter
 booking_one.restaurant = french
+booking_one.open = false
 booking_one.save
 
 booking_two = Booking.new(date: DateTime.strptime("11/16/2019", "%m/%d/%Y"))
 booking_two.user = spencer
 booking_two.restaurant = italian
+booking_two.open = false
 booking_two.save
 
 booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
 booking_three.user = ana
 booking_three.restaurant = british
+booking_three.open = false
 booking_three.save
 
 booking_four = Booking.new(date: DateTime.strptime("11/18/2019", "%m/%d/%Y"))
 booking_four.user = simona
 booking_four.restaurant = vegan
+booking_four.open = false
 booking_four.save
 
 vegan_dish_one = Dish.new(name: "Roast vegetable tagine",

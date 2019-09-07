@@ -1,9 +1,37 @@
-<%  @page_title = "#{@user.first_name}'s profile" %>
+<%  @page_title = "#{@user.first_name}'s Profile" %>
 
 <div>
   <div class="text-center">
   <%= cl_image_tag(current_user.photo, :class => "avatar-extra-large button-area") %>
   </div>
+
+  <!-- Section to show Invitations -->
+
+  <% if @attendee_invitation %>
+    <h1>New invitation</h1>
+    <div class="card-box-shadow card-large">
+      <div class="card-large-img">
+        <%= cl_image_tag(@attendee_invitation.booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
+      </div>
+      <div class="card-large-content">
+        <p>From: <%= @attendee_invitation.booking.user.first_name %></p>
+        <p>Restaurant: <%= @attendee_invitation.booking.restaurant.name %></p>
+        <p>Date: <%= @attendee_invitation.booking.date.to_s(:table_time) %></p>
+      </div>
+      <div class="button-area">
+        <%= link_to restaurant_booking_attendee_accept_path(@attendee_invitation.booking.restaurant, @attendee_invitation.booking, @attendee_invitation) do %>
+          <button class = "button button-medium invitation-buton">Accept</button>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+      <p>No outsanding invitation</p>
+  <% end %>
+
+
+
+
+
   <div class="card-small card-box-shadow button-area">
     <%= link_to edit_user_registration_path, class: "link" do %>
       <h3>Yours details</h3>

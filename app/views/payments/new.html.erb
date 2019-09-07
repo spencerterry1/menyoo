@@ -1,0 +1,17 @@
+<h1>Pay bill for your booking %></h1>
+<%= form_tag restaurant_booking_attendee_payments_path(@attendees) do %>
+  <article>
+    <label class="amount">
+      <span>Amount: <%= humanized_money_with_symbol(@order_total) %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="My Teddy"
+    data-email="<%= current_user.email %>"
+    data-description="ORDER %>"
+    data-amount="<%= @order_total %>"
+    data-currency="<%= @order.amount.currency %>"></script>
+
+<% end %>

@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    # Get the Attendee where User is Attendee, not yet accepted and Booking open (Add opento Booking model)
+    @attendee_invitation = attendee_invitations_for_user(@user).last
   end
 
   def bookings
@@ -33,4 +35,5 @@ class UsersController < ApplicationController
   def users_params
     params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
+
 end

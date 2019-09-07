@@ -7,14 +7,14 @@
 </div>
 
 <% if user_signed_in? %>
-  <% if current_user.bookings.count ==0 %>
+
+  <% if @booking_array.count ==0 %>
     <div class="button-area">
       <%= link_to new_restaurant_booking_path(@restaurant) do %>
         <button class = "button button-long">Open a Table</button>
       <% end %>
     </div>
   <% end %>
-
 <% else %>
   <div class="button-area">
     <%= link_to new_restaurant_booking_path(@restaurant) do %>
@@ -46,11 +46,13 @@
         <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
         <div>
           <% if user_signed_in? %>
-            <% if current_user.bookings.count != 0 %>
-              <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
-                  <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-                  <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                  <%= f.submit "Order", class: "btn btn-dark" %>
+            <% if @booking %>
+              <% if @booking.restaurant == @restaurant %>
+                <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
+                    <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+                    <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+                    <%= f.submit "Order", class: "btn btn-dark" %>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>

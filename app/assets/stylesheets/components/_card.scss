@@ -19,6 +19,16 @@
   margin: 16px 0px;
 }
 
+.card-medium-attendees {
+  display: flex;
+  height: $card-medium-height;
+  margin: 16px 0px;
+  width: 100%;
+  img {
+    margin-right: 24px;
+  }
+}
+
 .card-small {
   display: flex;
   height: $card-small-height;
@@ -31,8 +41,31 @@
   object-fit: cover;
 }
 
+.card-medium img {
+  height: $card-large-height;
+  width: $card-large-height;
+  object-fit: cover;
+}
+
+
+.card-small img {
+  height: $card-small-height;
+  width: $card-small-height;
+  object-fit: cover;
+}
+
 .card-large-content {
   padding: 16px;
+  width: 100%;
+}
+
+
+.order-status-card {
+  display: flex;
+}
+
+.card-order {
+  flex-direction: row;
 }
 
 .card-submenu {
@@ -41,5 +74,9 @@
     margin-bottom: 0;
     color: $font-color-dark-grey;
   }
+}
+
+.card-invitation{
+  padding: 16px;
 }
 

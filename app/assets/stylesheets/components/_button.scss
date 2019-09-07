@@ -16,8 +16,41 @@
 
 }
 
+.button-medium {
+  padding: 0px 48px;
+}
+
 .button-long {
   padding: 0px 112px;
+}
+
+
+.button-place-order {
+  background-color: #D4D7DC;
+  padding: 0px 112px;
+}
+
+.order-status {
+  height: 50px;
+  width: 80px;
+  font-size: $font-size-small;
+  border: solid 1px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.order-status-ordered {
+  background-color: #9CF196;
+  color: white;
+}
+
+.order-status-not-ordered {
+  background-color: #D4D7DC;
+  color: white;
 }
 
 

@@ -22,10 +22,10 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     if user_signed_in?
       @attendee = current_user.attendees.last
-      if current_user.bookings.count !=0
-        @booking = @attendee.booking
-      end
+      @booking_array = bookings_open_for_user(current_user)
+      @booking = @booking_array.last
       @order = Order.new
     end
   end
+
 end

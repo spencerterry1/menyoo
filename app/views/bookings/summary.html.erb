@@ -1,0 +1,79 @@
+
+<h2>Order Summary</h2>
+
+<% @orders.each do |order|  %>
+
+  <div class="card-box-shadow card-medium card-order">
+
+    <div class="card-medium-img">
+      <%= cl_image_tag(order.dish.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content">
+      <h3><%= order.dish.name %></h3>
+      <div class="flex-between">
+        <p>Quantity: 1</p>
+        <p><%= humanized_money_with_symbol(order.dish.price) %></p>
+        <p><i class="far fa-clock"></i> <%= order.dish.prep_time %></p>
+      </div>
+
+    </div>
+
+    <div class="order-status-card">
+      <% if order.ordered %>
+        <div class="order-status order-status-ordered">
+          Order placed
+        </div>
+      <% else %>
+        <div class="order-status order-status-not-ordered">
+          Order to be placed
+        </div>
+      <% end %>
+      </div>
+  </div>
+
+
+<% end %>
+
+
+
+<%#= if not everyone has ordered then grey out %>
+
+<div>
+  <% if @booking.orders.all? {|order| order.ordered == true }%>
+
+
+  <%= form_tag restaurant_booking_pay_path(@restaurant, @booking) do %>
+  <article>
+      <label class="amount">
+        <h2><span>Amount: <strong><%= humanized_money_with_symbol(@order_total) %></span></h2></label></strong>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="Table bill"
+    data-email="<%= current_user.email %>"
+    data-description="Pay Your Bill"
+    data-amount="<%= @order_total * 100 %>"
+    data-currency="GBP"></script>
+  <% end %>
+
+  <% else %>
+    <button class="button button-place-order">Finish placing orders</button>
+  <% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<%#= if everyone ordered then give option to place order%>
+
+<%#= if placed ordered then give option to pay %>
