@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         get 'summary', to: 'bookings#summary'
         resources :reviews, only: [:create, :delete]
         resources :attendees, only: [:index, :new, :create, :destroy] do
+          get 'accept', to: 'attendees#accept'
           resources :orders
           resources :payments, only: [:new, :create]
         end

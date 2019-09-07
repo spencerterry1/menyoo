@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   helper_method :bookings_open_for_user
   helper_method :booking_open_for_user_restaurant
+  helper_method :attendee_invitations_for_user
 
   # Returns an array of Open Bookings for the given User
   def bookings_open_for_user(user)
@@ -34,4 +35,17 @@ class ApplicationController < ActionController::Base
     end
     return bookings_open_restaurant
   end
+
+  # Get the Attendee where User is Attendee, not yet accepted and Booking open (Add opento Booking model)
+  def attendee_invitations_for_user(user)
+    @attendees_user_unaccepted = Attendee.where(user: user, accepted: false)
+    @attendees_user_invitations = []
+    @attendees_user_unaccepted.each do |attendee|
+      if attendee.booking.open
+        @attendees_user_invitations << attendee
+      end
+    end
+    return @attendees_user_invitations
+  end
+
 end
