@@ -17,7 +17,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    # raise
+    # for now, order status is set to true so user can progress to payment - to be changed
+    @order.ordered = true
     @order.attendee = @attendee
     @booking = @attendee.booking
     @restaurant = @booking.restaurant

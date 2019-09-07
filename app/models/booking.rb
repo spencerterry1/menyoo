@@ -4,6 +4,9 @@ class Booking < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :attendees, dependent: :destroy
 
+  has_many :orders, through: :attendees
+
+
   before_save :default_values
 
   def default_values

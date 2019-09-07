@@ -1,0 +1,48 @@
+
+<h2>Order Summary</h2>
+
+<% @orders.each do |order|  %>
+
+  <div class="card-box-shadow card-medium card-order">
+
+    <div class="card-medium-img">
+      <%= cl_image_tag(order.dish.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content">
+      <h3><%= order.dish.name %></h3>
+      <div class="flex-between">
+        <p>Quantity: 1</p>
+        <p><%= humanized_money_with_symbol(order.dish.price) %></p>
+        <p><i class="far fa-clock"></i> <%= order.dish.prep_time %></p>
+      </div>
+
+    </div>
+
+    <div class="order-status-card">
+      <% if order.ordered %>
+        <div class="order-status order-status-ordered">
+          Order placed
+        </div>
+      <% else %>
+        <div class="order-status order-status-not-ordered">
+          Order to be placed
+        </div>
+      <% end %>
+      </div>
+  </div>
+
+
+<% end %>
+
+
+
+<%#= if not everyone has ordered then grey out %>
+<% if @booking.orders.all? {|order| order.ordered == true }%>
+  <button class="button button-long">Pay bill: £<%= @order_total %></button>
+<% else %>
+  <button class="button button-place-order">Finish placing orders</button>
+<% end %>
+
+<%#= if everyone ordered then give option to place order%>
+
+<%#= if placed ordered then give option to pay %>

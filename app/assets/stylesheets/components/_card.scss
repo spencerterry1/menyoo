@@ -31,8 +31,30 @@
   object-fit: cover;
 }
 
+.card-medium img {
+  height: $card-large-height;
+  width: $card-large-height;
+  object-fit: cover;
+}
+
+
+.card-small img {
+  height: $card-small-height;
+  width: $card-small-height;
+  object-fit: cover;
+}
+
 .card-large-content {
   padding: 16px;
+}
+
+
+.order-status-card {
+  display: flex;
+}
+
+.card-order {
+  flex-direction: row;
 }
 
 .card-submenu {
