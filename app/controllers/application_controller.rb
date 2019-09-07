@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   # Returns an array of Bookings: all the open Bookings for that User, where the User has accepted to be an Attendee.
-  def booking_open_for_user_restaurant(user, restaurant)
+  def bookings_open_for_user_restaurant(user, restaurant)
     # Using method defined in Application controller
     bookings_open_restaurant = []
     bookings_open_user = bookings_open_for_user(user)
