@@ -28,11 +28,20 @@
     <h3>Make your selection</h3>
   </div>
 <% end %>
-<%= link_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee_user) do %>
+<%= link_to  restaurant_booking_attendee_order_path(@restaurant, @booking, @attendee_user) do %>
   <div class="card-medium card-box-shadow">
     <h3>Your order</h3>
   </div>
 <% end %>
+
+<%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees) do %>
+  <div class="card-medium card-box-shadow">
+    <h3>Table order</h3>
+  </div>
+<% end %>
+
+
+
 
 <h3>Add Attendees</h3>
 

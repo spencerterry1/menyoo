@@ -12,6 +12,18 @@ class BookingsController < ApplicationController
     search_for_users if params[:search]
   end
 
+  def summary
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking = Booking.find(params[:booking_id])
+    @orders = @booking.orders
+
+    # calculates total order price, stored in @order_total
+    @order_total = 0
+    @orders.each do |order|
+      @order_total += order.dish.price
+    end
+  end
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.new()
