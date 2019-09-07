@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def reviews
+    @user = User.find(params[:user_id])
+    @reviews = @user.reviews
+  end
+
   def edit
     @user = current_user
   end

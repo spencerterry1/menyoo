@@ -22,6 +22,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  #def show
+    #@user = current_user
+    #@reviews = Review.find(user_id:@user)
+  #end
 
   def destroy
     @review.destroy
