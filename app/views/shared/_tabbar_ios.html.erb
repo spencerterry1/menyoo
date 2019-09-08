@@ -3,7 +3,7 @@
     <!-- Home Tab -->
     <div class="navbar-back">
       <%= link_to root_path do %>
-        <p><i class="fas fa-home"></i></p>
+        <p class="<%= yield(:tab_home_class) %>"><i class="fas fa-home"></i></p>
       <% end %>
     </div>
 
@@ -14,7 +14,7 @@
           <% @booking = bookings_open_for_user(current_user).last %>
           <% @restaurant = @booking.restaurant %>
           <%=  link_to restaurant_booking_path(@restaurant, @booking) do %>
-            <p><i class="fas fa-utensils"></i></p>
+            <p class="<%= yield(:tab_table_class) %>"><i class="fas fa-utensils"></i></p>
           <% end %>
         <% else %>
           <p class = "tab-unavailable"><i class="fas fa-utensils"></i></p>
@@ -28,7 +28,7 @@
     <% if user_signed_in? %>
       <%=  link_to user_path(current_user) do %>
         <div class="navbar-checkin">
-          <p><i class="fas fa-user"></i></p>
+          <p class="<%= yield(:tab_user_class) %>"><i class="fas fa-user"></i></p>
         </div>
       <% end %>
     <% else %>

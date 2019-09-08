@@ -1,3 +1,7 @@
+<!-- Conditional formatting of the tab buttons -->
+<% content_for(:tab_user_class, "tab_user_active") %>
+<!-- end -->
+
 <%  @page_title = "My bookings" %>
 
 <% @user.bookings.each do |booking| %>

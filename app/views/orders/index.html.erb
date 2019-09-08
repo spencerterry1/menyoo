@@ -1,5 +1,9 @@
 <%  @page_title = "Your Order Summary" %>
 
+<!-- Conditional formatting of the tab buttons -->
+<% content_for(:tab_table_class, "tab_table_active") %>
+<!-- end -->
+
 <!-- Calculation the total for the orders -->
 <% @order_total = 0 %>
 <% @orders.each do |order|  %>
