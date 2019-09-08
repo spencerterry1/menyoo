@@ -31,20 +31,22 @@
 }
 
 .order-status {
-  height: 50px;
   width: 80px;
   font-size: $font-size-small;
+  margin-right: 7px;
+  line-height: 2.5rem;
   border: solid 1px;
   border-radius: 8px;
   text-align: center;
-  margin-bottom: 15px;
   padding-top: 5px;
   padding-bottom: 10px;
-  justify-content: center;
+  display: inline-block;
+  vertical-align: middle;
 }
 
+
 .order-status-ordered {
-  background-color: #9CF196;
+  background-color: #33BC29;
   color: white;
 }
 
