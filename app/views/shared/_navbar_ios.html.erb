@@ -2,9 +2,11 @@
   <div class="navbar-content">
 
     <div class="navbar-back same-space">
-      <p class="<%= yield(:nav_chevron_class) %>">
-        <i class="fas fa-chevron-left"></i>
-      </p>
+      <%= link_to root_path do %>
+        <p class="<%= yield(:nav_chevron_class) %>">
+          <i class="fas fa-chevron-left"></i>
+        </p>
+      <% end %>
     </div>
 
     <div class="navbar-title same-space">
