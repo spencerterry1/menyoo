@@ -24,7 +24,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  p {
+    font-size: 19px;
+  }
+}
 
+.nav_chevron_invisible {
+  display: none;
 }
 
 .navbar-title {
@@ -37,6 +43,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  p {
+    font-size: 19px;
+  }
 }
 
 
@@ -72,6 +81,18 @@
 
 .tab-unavailable {
   color: $font-color-light-grey;
+}
+
+.tab_home_active {
+  color: $menyoo-blue;
+}
+
+.tab_table_active {
+  color: $menyoo-blue;
+}
+
+.tab_user_active {
+  color: $menyoo-blue;
 }
 
 

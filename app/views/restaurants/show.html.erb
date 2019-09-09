@@ -1,5 +1,20 @@
 <%  @page_title = "Restaurant Page" %>
 
+<!-- Conditional formatting of the tab buttons -->
+<% if user_signed_in? %>
+  <% if @booking %>
+    <% if @booking.restaurant == @restaurant %>
+      <% content_for(:tab_table_class, "tab_table_active") %>
+    <% else %>
+      <% content_for(:tab_home_class, "tab_home_active") %>
+    <% end %>
+  <% else %>
+    <% content_for(:tab_home_class, "tab_home_active") %>
+  <% end %>
+<% else %>
+  <% content_for(:tab_home_class, "tab_home_active") %>
+<% end %>
+<!-- end -->
 
 <div class="restaurant-header">
   <h1><%= @restaurant.name %></h1>

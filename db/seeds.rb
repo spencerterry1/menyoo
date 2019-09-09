@@ -85,7 +85,9 @@ puts 'Creating Dishes...'
 italian_dish_one = Dish.new(name: "La gran carbonara",
   description: "Homemade spaghetti chitarra, pecorino, crispy guanciale, egg yolk, parmigiano, a lot of pepper",
   price: 12.00,
-  prep_time: 15)
+  prep_time: 15,
+  category:"main")
+
 
 italian_dish_one.restaurant = italian
 italian_dish_one.remote_photo_url = "https://s23209.pcdn.co/wp-content/uploads/2014/03/IMG_2622edit.jpg"
@@ -94,7 +96,9 @@ italian_dish_one.save
 italian_dish_two = Dish.new(name: "Filippo spicy balls",
   description: "Spicy slow-cooked pork and nduja meatballs, three hour San Marzano tomato sauce,rainbow chard, pecorino",
   price: 14.00,
-  prep_time: 10)
+  prep_time: 10,
+  category:"main")
+
 
 italian_dish_two.restaurant = italian
 italian_dish_two.remote_photo_url = "https://www.flavcity.com/wp-content/uploads/2018/06/meatballs-tomato-sauce.jpg"
@@ -103,7 +107,9 @@ italian_dish_two.save
 italian_dish_three = Dish.new(name: "Polpo caesar",
   description: "Octopus, little gem, chicory, crispy Tuscan ham, punchy anchovy-garlic dressing, pane carasau",
   price: 13.00,
-  prep_time: 10)
+  prep_time: 10,
+  category:"appetizer")
+
 
 italian_dish_three.restaurant = italian
 italian_dish_three.remote_photo_url = "https://www.cucinare.it/uploads/wp-content/uploads/2015/04/Insalata_di_Polpo_Prezzemolata-1-1.jpg"
@@ -112,7 +118,9 @@ italian_dish_three.save
 italian_dish_four = Dish.new(name: "Pizza fritta",
   description: "Fried mini pizza filled with ricotta, burned tomato sauce with anchovies",
   price: 7.00,
-  prep_time: 15)
+  prep_time: 15,
+  category:"appetizer")
+
 
 italian_dish_four.restaurant = italian
 italian_dish_four.remote_photo_url = "https://www.foodiecrush.com/wp-content/uploads/2015/10/Fried-Pizza-foodiecrush.com-011-1-500x500.jpg"
@@ -122,7 +130,8 @@ italian_dish_four.save
 french_dish_one = Dish.new(name: "Soupe à l’Oignon Gratinée",
   description: "",
   price: 5.95,
-  prep_time: 10)
+  prep_time: 10,
+  category:"appetizer")
 
 french_dish_one.restaurant = french
 french_dish_one.remote_photo_url = "https://static.cuisineaz.com/610x610/i22753-soupe-a-l-oignon-gratinee.jpg"
@@ -131,7 +140,8 @@ french_dish_one.save
 french_dish_two = Dish.new(name: "Boeuf Bourguignon",
   description: "Beef braised in a Burgundy wine sauce",
   price: 15.50,
-  prep_time: 15)
+  prep_time: 15,
+  category:"main")
 
 french_dish_two.restaurant = french
 french_dish_two.remote_photo_url = "https://www.cookomix.com/wp-content/uploads/2017/08/boeuf-bourguinon-thermomix-800x600.jpg"
@@ -140,7 +150,8 @@ french_dish_two.save
 french_dish_three = Dish.new(name: "Sardines à la Provençale",
   description: "Butterflied’ sardines, tomatoes and olives",
   price: 12.75,
-  prep_time: 15)
+  prep_time: 15,
+  category:"appetizer")
 
 french_dish_three.restaurant = french
 french_dish_three.remote_photo_url = "https://www.soleou.fr/img/cms/fotolia_98188624.jpg"
@@ -149,7 +160,8 @@ french_dish_three.save
 french_dish_four = Dish.new(name: "Profiteroles, Sauce au Chocolat",
   description: "",
   price: 6.50,
-  prep_time: 10)
+  prep_time: 10,
+  category:"dessert")
 
 french_dish_four.restaurant = french
 french_dish_four.remote_photo_url = "https://static.cuisineaz.com/610x610/i94023-profiteroles-au-chocolat-maison.jpg"

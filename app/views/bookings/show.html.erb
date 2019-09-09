@@ -1,5 +1,13 @@
 <%  @page_title = "Table Page" %>
 
+<!-- Conditional formatting of the tab buttons -->
+<% content_for(:tab_table_class, "tab_table_active") %>
+<!-- end -->
+
+<!-- Path for back button -->
+<% content_for(:nav_back_path_class, "root_path") %>
+<!-- end -->
+
 <div>
   <div class="restaurant-header">
     <h1><%= @restaurant.name %></h1>
