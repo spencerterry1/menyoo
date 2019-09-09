@@ -12,7 +12,19 @@
 
 
 <p>What are you in the mood for ?</p>
-<p>SEARCH BAR</p>
+<%= form_tag restaurants_path, method: :get do %>
+  <div class="search-form-control">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search for restaurant name, location or category"
+      %>
+
+    <%= submit_tag "Search", class: "btn btn-secondary search-button" %>
+  </div>
+<% end %>
+
+
 <h1>Featured</h1>
 <% @restaurants.each do |restaurant| %>
   <div class="card-box-shadow card-large">
