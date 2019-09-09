@@ -48,6 +48,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking.ordered = true
+    @booking.save
+    redirect_to restaurant_booking_summary_path(@restaurant, @booking)
+  end
+
   def pay
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.find(params[:booking_id])
@@ -59,6 +67,8 @@ class BookingsController < ApplicationController
       order_price = order.dish.price.to_i
       @order_total += order_price
     end
+
+    # call function 'convert_to_pence'
 
     customer = Stripe::Customer.create(
     source: params[:stripeToken],
@@ -76,7 +86,10 @@ class BookingsController < ApplicationController
       attendee.payment = true
       attendee.save
     end
+
     # @order.update(payment: charge.to_json, state: 'paid')
+    flash[:alert] = "Your bill has been paid"
+
     redirect_to restaurants_path
 
   rescue Stripe::CardError => e
@@ -84,8 +97,8 @@ class BookingsController < ApplicationController
     redirect_to restaurant_booking_summary_path(@restaurant, @booking)
   end
 
-  private
 
+  private
 
   def search_for_users
     @attendees = Attendee.all
