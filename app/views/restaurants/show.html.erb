@@ -39,8 +39,18 @@
 <% end %>
 
 
-<div>
-  < Search bar - Dishes >
+<div class="search-section">
+  <%= form_tag restaurant_path(@restaurant), method: :get do %>
+    <div class="search-form-control button-area">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Healthy or decadent ?"
+        %>
+
+      <%= submit_tag "Search", class: "button button-medium" %>
+    </div>
+  <% end %>
 </div>
 
 
@@ -48,7 +58,7 @@
 <h2>Menu</h2>
 
 
-<% @restaurant.dishes.each do |dish|  %>
+<% @dishes_for_restaurant.each do |dish|  %>
   <div class="card-box-shadow card-large">
     <div class="card-large-img">
       <%= cl_image_tag(dish.photo,width: 400, height: 300, crop: :fill) %>

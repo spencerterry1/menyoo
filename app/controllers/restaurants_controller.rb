@@ -2,10 +2,10 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     if params[:query].present?
-      @restaurants = Restaurant.search_by_restaurant(params[:query]).geocoded.reverse
+      @restaurants = Restaurant.search_by_restaurant(params[:query]).geocoded
       @restaurants_all = Restaurant.geocoded
     else
-      @restaurants = Restaurant.geocoded.reverse
+      @restaurants = Restaurant.geocoded
       @restaurants_all = Restaurant.geocoded
     end
 
@@ -20,6 +20,16 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+
+    if params[:query].present?
+      @dishes_for_restaurant = @restaurant.dishes.search_by_dish(params[:query])
+      @dishes_for_restaurant_all = @restaurant.dishes
+    else
+      @dishes_for_restaurant = @restaurant.dishes
+      @dishes_for_restaurant_all = @restaurant.dishes
+    end
+
+
     if user_signed_in?
       @attendee = current_user.attendees.last
       @booking_array = bookings_open_for_user(current_user)
