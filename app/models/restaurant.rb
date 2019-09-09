@@ -12,4 +12,12 @@ class Restaurant < ApplicationRecord
   validates :category, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_restaurant,
+    against: [:name, :address, :category],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
