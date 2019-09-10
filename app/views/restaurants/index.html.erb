@@ -20,13 +20,17 @@
         %>
 
       <%= submit_tag "Search", class: "button button-medium" %>
+
     </div>
   <% end %>
-  <button class="button map-button">Show / Hide Map</button>
 </div>
 
+
 <div class="home-featured-section">
-  <h1>Featured</h1>
+  <div class="home-header flex-between">
+    <h1>Featured</h1>
+    <div class="map-button">Search near me</div>
+  </div>
   <% @restaurants.each do |restaurant| %>
     <div class="card-box-shadow card-large">
       <div class="card-large-img">
@@ -44,7 +48,10 @@
 </div>
 
 <div class="home-map-section hide">
-  <h1>Map</h1>
+  <div class="home-header flex-between">
+    <h1>Map</h1>
+    <div class="map-button">See Featured</div>
+  </div>
   <div class="card-box-shadow">
     <div
       id="map"

@@ -8,12 +8,15 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 // Toggle showing Restaurants on Map vs Featured on Home page
-const mapButton = document.querySelector(".map-button");
+const mapButtons = document.querySelectorAll(".map-button");
 const featuredSection = document.querySelector(".home-featured-section");
 const mapSection = document.querySelector(".home-map-section");
-mapButton.addEventListener("click", (event) => {
-  mapSection.classList.toggle("show");
-  mapSection.classList.toggle("hide");
-  featuredSection.classList.toggle("show");
-  featuredSection.classList.toggle("hide");
+
+mapButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    mapSection.classList.toggle("show");
+    mapSection.classList.toggle("hide");
+    featuredSection.classList.toggle("show");
+    featuredSection.classList.toggle("hide");
+  });
 });
