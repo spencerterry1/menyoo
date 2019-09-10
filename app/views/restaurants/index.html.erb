@@ -22,30 +22,36 @@
       <%= submit_tag "Search", class: "button button-medium" %>
     </div>
   <% end %>
+  <button class="button map-button">Show / Hide Map</button>
 </div>
 
+<div class="home-featured-section">
+  <h1>Featured</h1>
+  <% @restaurants.each do |restaurant| %>
+    <div class="card-box-shadow card-large">
+      <div class="card-large-img">
+        <%= cl_image_tag(restaurant.photo,width: 400, height: 300, crop: :fill) %>
+      </div>
+      <div class="card-large-content">
+        <%= link_to restaurant_path(restaurant) do %>
+          <h3><%= restaurant.name %></h3>
+        <% end %>
+        <p><%= restaurant.address %></p>
+        <p>Category: <%= restaurant.category %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<h1>Featured</h1>
-<% @restaurants.each do |restaurant| %>
-  <div class="card-box-shadow card-large">
-    <div class="card-large-img">
-      <%= cl_image_tag(restaurant.photo,width: 400, height: 300, crop: :fill) %>
-    </div>
-    <div class="card-large-content">
-      <%= link_to restaurant_path(restaurant) do %>
-        <h3><%= restaurant.name %></h3>
-      <% end %>
-      <p><%= restaurant.address %></p>
-      <p>Category: <%= restaurant.category %></p>
-    </div>
+<div class="home-map-section hide">
+  <h1>Map</h1>
+  <div class="card-box-shadow">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
-<% end %>
-
-<h1>Map</h1>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+</div>
