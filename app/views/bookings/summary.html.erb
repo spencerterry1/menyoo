@@ -68,8 +68,13 @@
       flash[:alert] = "Your table's order has been sent to the kitchen"
     <% end %>
 
-
   <% end %>
+
+  <div class="button-area">
+    <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
+      <button class = "button button-long">Pay</button>
+    <% end %>
+  </div>
 
 </div>
 
