@@ -6,42 +6,68 @@
 <!-- end -->
 
 
-<% @attendees.each do |attendee| %>
+<%#= show div with people yet to place order %>
+<div class="card-orders">
+  <% if @orders_not_sent_to_kitchen %>
+    <% @orders_not_sent_to_kitchen.each do |order| %>
+  <div class="card-order-container card-box-shadow">
 
-  <div class="card-order-container">
-
-    <div class="card-order-summary">
-      <h3><%= attendee.user.first_name %>'s order</h3>
-    </div>
-
-    <% attendee.orders.each do |order|  %>
-
-      <div class="card-box-shadow card-small card-order">
-        <div class="card-medium-img">
-          <%= cl_image_tag(order.dish.photo,width: 400, height: 300, crop: :fill) %>
-        </div>
-        <div class="card-large-content">
-          <h3><%= order.dish.name %></h3>
+      <div class="card-small card-order">
+        <div class="card-medium-content">
+          <strong> <%= order.dish.name %></strong>
           <div class="flex-between">
             <p>Quantity: 1</p>
             <p><%= humanized_money_with_symbol(order.dish.price) %></p>
-            <p><i class="far fa-clock"></i> <%= order.dish.prep_time %></p>
+          </div>
+          <div>
+            <p> Ordered by: <em><%= order.attendee.user.first_name %></em></p>
           </div>
         </div>
       </div>
+  </div>
+
+  <%#= button to change order statuses to 'ordered' %>
+  <div class="button-area">
+    <%= simple_form_for [@restaurant, @booking] do |f| %>
+      <%= f.input :ordered, as: :hidden, value: true %>
+      <%= f.submit "Place order with kitchen", class: "button button-long" %>
     <% end %>
   </div>
-<% end %>
+
+  <% end %>
+  <% end %>
+</div>
 
 
 
 
 
 
-<%#= if not everyone has ordered then grey out %>
+<%#= div with users that have placed their orders%>
 
-<div class="button-area">
-  <% if @booking.ordered == true %>
+<div class="card-orders">
+  <% @orders_sent_to_kitchen.each do |order| %>
+  <div class="card-order-container card-box-shadow">
+
+      <div class="card-small card-order">
+        <div class="card-medium-content">
+          <strong> <%= order.dish.name %></strong>
+          <div class="flex-between">
+            <p>Quantity: 1</p>
+            <p><%= humanized_money_with_symbol(order.dish.price) %></p>
+          </div>
+          <div>
+            <p> Ordered by: <em><%= order.attendee.user.first_name %></em></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+
+
+  <% if @orders_sent_to_kitchen %>
 
     <%= form_tag restaurant_booking_pay_path(@restaurant, @booking) do %>
     <article>
@@ -65,9 +91,8 @@
     <%= simple_form_for [@restaurant, @booking] do |f| %>
       <%= f.input :ordered, as: :hidden, value: true %>
       <%= f.submit "Place table order", class: "button button-long" %>
-      flash[:alert] = "Your table's order has been sent to the kitchen"
-    <% end %>
 
+      <% end %>
 
   <% end %>
 

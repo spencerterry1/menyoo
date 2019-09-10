@@ -59,6 +59,11 @@
   width: 100%;
 }
 
+.card-medium-content {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
 
 .order-status-card {
   display: flex;
@@ -82,7 +87,11 @@
 
 .card-order-summary {
   padding-top: 10px;
+  padding-left: 10px;
   width: 100%;
 }
 
+.card-order-container {
+  margin-bottom: 20px;
+}
 
