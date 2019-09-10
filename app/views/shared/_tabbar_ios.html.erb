@@ -25,18 +25,20 @@
     </div>
 
     <!-- User Profile Tab -->
-    <% if user_signed_in? %>
-      <%=  link_to user_path(current_user) do %>
-        <div class="navbar-checkin">
-          <p class="<%= yield(:tab_user_class) %>"><i class="fas fa-user"></i></p>
-        </div>
+    <div class="navbar-title">
+      <% if user_signed_in? %>
+        <%=  link_to user_path(current_user) do %>
+          <div class="navbar-checkin">
+            <p class="<%= yield(:tab_user_class) %>"><i class="fas fa-user"></i></p>
+          </div>
+        <% end %>
+      <% else %>
+        <%=  link_to new_user_session_path do %>
+          <div class="navbar-checkin">
+            <p class="tab-unavailable"><i class="fas fa-user-times"></i></p>
+          </div>
+        <% end %>
       <% end %>
-    <% else %>
-      <%=  link_to new_user_session_path do %>
-        <div class="navbar-checkin">
-          <p class="tab-unavailable"><i class="fas fa-user-times"></i></p>
-        </div>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
