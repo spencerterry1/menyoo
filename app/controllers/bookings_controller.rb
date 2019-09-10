@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings_open = bookings_open(current_user)
+  end
+
   def show
     @booking = Booking.find(params[:id])
     @restaurant = @booking.restaurant
@@ -111,6 +115,20 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:date)
+  end
+
+  def bookings_open(user)
+    # Array of all Attendees for given user
+    @attendees_user = Attendee.where(user: user)
+    # Initialise list of all open bookings for the user
+    @bookings_open = []
+    # Retrieve array of open bookings from each attendee
+    @attendees_user.each do |attendee|
+      if attendee.booking.open
+        @bookings_open << attendee.booking
+      end
+    end
+    return @bookings_open
   end
 
 end
