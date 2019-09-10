@@ -2,12 +2,8 @@
 
 <!-- Conditional formatting of the tab buttons -->
 <% if user_signed_in? %>
-  <% if @booking %>
-    <% if @booking.restaurant == @restaurant %>
-      <% content_for(:tab_table_class, "tab_table_active") %>
-    <% else %>
-      <% content_for(:tab_home_class, "tab_home_active") %>
-    <% end %>
+  <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
+    <% content_for(:tab_table_class, "tab_table_active") %>
   <% else %>
     <% content_for(:tab_home_class, "tab_home_active") %>
   <% end %>
@@ -23,7 +19,7 @@
 
 <% if user_signed_in? %>
 
-  <% if @booking_array.count ==0 %>
+  <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
     <div class="button-area">
       <%= link_to new_restaurant_booking_path(@restaurant) do %>
         <button class = "button button-long">Open a Table</button>
@@ -71,14 +67,12 @@
         <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
         <div>
           <% if user_signed_in? %>
-            <% if @booking %>
-              <% if @booking.restaurant == @restaurant %>
+            <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
                 <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
                     <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
                     <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
                     <%= f.submit "Order", class: "btn btn-dark" %>
                 <% end %>
-              <% end %>
             <% end %>
           <% end %>
         </div>

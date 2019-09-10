@@ -31,9 +31,8 @@ class RestaurantsController < ApplicationController
 
 
     if user_signed_in?
-      @attendee = current_user.attendees.last
-      @booking_array = bookings_open_for_user(current_user)
-      @booking = @booking_array.last
+      @booking = bookings_open_for_user_restaurant(current_user, @restaurant).last
+      @attendee = Attendee.where(user: current_user, booking: @booking).last
       @order = Order.new
     end
   end

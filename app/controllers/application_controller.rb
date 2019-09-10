@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :bookings_open_for_user
-  helper_method :booking_open_for_user_restaurant
+  helper_method :bookings_open_for_user_restaurant
+  helper_method :any_booking_open_for_user_restaurant?
   helper_method :attendee_invitations_for_user
 
   def configure_permitted_parameters
