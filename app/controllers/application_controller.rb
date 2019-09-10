@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
-
-
   # Returns an array of Open Bookings for the given User
   def bookings_open_for_user(user)
     bookings_open = []
