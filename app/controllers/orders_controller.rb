@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def index
     # @restaurant = @booking.restaurant
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
 
     # @booking = @attendee.booking
     @booking = bookings_open_for_user_restaurant(current_user, @restaurant).last
@@ -27,17 +27,17 @@ class OrdersController < ApplicationController
     # for now, order status is set to true so user can progress to payment - to be changed
     @order.ordered = true
 
-    @attendee = Attendee.where(user: current_user, booking: @booking).last
-    @order.attendee = @attendee
-
     # @restaurant = @booking.restaurant
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
 
     # @booking = @attendee.booking
     @booking = bookings_open_for_user_restaurant(current_user, @restaurant).last
 
+    @attendee = Attendee.where(user: current_user, booking: @booking).last
+    @order.attendee = @attendee
+
     if @order.save
-      redirect_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee), notice: 'Your new order has been placed'
+      redirect_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee)
     end
   end
 

@@ -43,6 +43,15 @@ simona = User.new(first_name: 'Simona',
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
 
+walter_test = User.new(
+  first_name: 'Walter Test',
+  last_name: 'Cegarra',
+  email: 'walter@test.com',
+  password: 'secret'
+  )
+walter_test.remote_photo_url =  'http://res.cloudinary.com/bywalterc/image/upload/v1565440435/uppm4cqhkiyobjurvrw7.jpg'
+walter_test.save
+
 puts "Finished!"
 
 # RESTAURANTS
