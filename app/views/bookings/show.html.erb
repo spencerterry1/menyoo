@@ -16,41 +16,41 @@
 
 <!-- TODO: Formatting to be updated given changes done by Spencer in other branch -->
   <div class="card-box-shadow" style="text-align: center; margin: 16px auto; padding: 16px;">
-    <p>Table opened on <%= @booking.date.to_s(:table_time) %></p>
+    <p class="blue-font">Table opened on <%= @booking.date.to_s(:table_time) %></p>
   </div>
 
 </div>
 
 <%= link_to restaurant_booking_attendees_path(@restaurant, @booking) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu">
-    <h3><i class="fas fa-user-friends"></i></h3>
+    <div class="body-icon"><i class="fas fa-user-friends"></i></div>
     <h3>Invite and View attendees</h3>
-    <h3><i class="fas fa-chevron-right"></i></h3>
+    <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
 
 <%= link_to restaurant_path(@restaurant) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu">
-    <h3><i class="fas fa-book-open"></i></h3>
+    <div class="body-icon"><i class="fas fa-book-open"></i></div>
     <h3>View menu</h3>
-    <h3><i class="fas fa-chevron-right"></i></h3>
+    <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
 
 
 <%= link_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee_user) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu">
-    <h3><i class="fas fa-utensils"></i></h3>
+    <div class="body-icon"><i class="fas fa-utensils"></i></div>
     <h3>Your order</h3>
-    <h3><i class="fas fa-chevron-right"></i></h3>
+    <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
 
 <%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu">
-    <h3><i class="fas fa-dollar-sign"></i></h3>
+    <div class="body-icon"><i class="fas fa-dollar-sign"></i></div>
     <h3>Table order</h3>
-    <h3><i class="fas fa-chevron-right"></i></h3>
+    <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
 

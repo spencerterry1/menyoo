@@ -3,17 +3,16 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :bookings_open_for_user
-  helper_method :booking_open_for_user_restaurant
+  helper_method :bookings_open_for_user_restaurant
+  helper_method :any_booking_open_for_user_restaurant?
   helper_method :attendee_invitations_for_user
-  
+
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :photo])
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
-
-
 
   # Returns an array of Open Bookings for the given User
   def bookings_open_for_user(user)
@@ -44,6 +43,11 @@ class ApplicationController < ActionController::Base
       end
     end
     return bookings_open_restaurant
+  end
+
+  # True if there are open bookings for this user in that restaurant
+  def any_booking_open_for_user_restaurant?(user, restaurant)
+    bookings_open_for_user_restaurant(user, restaurant).count != 0
   end
 
   # Get the Attendee where User is Attendee, not yet accepted and Booking open (Add opento Booking model)

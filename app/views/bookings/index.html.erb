@@ -1,0 +1,21 @@
+<%  @page_title = "Your Open Tables" %>
+
+<!-- Conditional formatting of the tab buttons -->
+<% content_for(:tab_table_class, "tab_table_active") %>
+<!-- end -->
+
+
+<% @bookings_open.each do |booking| %>
+  <%= link_to restaurant_booking_path(booking.restaurant, booking) do %>
+    <div class="card-box-shadow card-large">
+      <div class="card-large-img">
+        <%= cl_image_tag(booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
+      </div>
+      <div class="card-large-content">
+        <p>From: <%= booking.user.first_name %></p>
+        <p>Restaurant: <%= booking.restaurant.name %></p>
+        <p>Date: <%= booking.date.to_s(:table_time) %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

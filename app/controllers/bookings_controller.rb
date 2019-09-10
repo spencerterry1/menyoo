@@ -1,12 +1,16 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings_open = bookings_open_for_user(current_user)
+  end
+
   def show
     @booking = Booking.find(params[:id])
     @restaurant = @booking.restaurant
     @users = User.all
     @attendee = Attendee.new
 
-    @attendee_user = Attendee.where(user: current_user, booking: @booking)
+    @attendee_user = Attendee.where(user: current_user, booking: @booking).last
 
     # calls search_for_users method if a user tries to type in the search bar to add another use to the table
     search_for_users if params[:search]
