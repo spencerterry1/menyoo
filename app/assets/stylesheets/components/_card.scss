@@ -95,3 +95,22 @@
   margin-bottom: 20px;
 }
 
+.container-to-order {
+  border-bottom: solid 1px black;
+  padding-top: 10px;
+}
+
+.container-ordered {
+  border-bottom: solid 1px black;
+  padding-top: 10px;
+}
+
+.button-payment {
+  padding-top: 10px;
+}
+
+.card-bill-paid {
+  text-align: center;
+  height: $card-medium-height;
+  margin: 16px 0px;
+}
