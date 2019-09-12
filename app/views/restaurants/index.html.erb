@@ -24,7 +24,6 @@
   <% end %>
 </div>
 
-
 <div class="home-featured-section">
   <div class="home-header flex-between">
     <h1>Featured</h1>
@@ -43,6 +42,11 @@
         <% end %>
         <p><%= restaurant.address %></p>
         <p>Category: <%= restaurant.category %></p>
+        <% if restaurant.avarage_rating.zero? %>
+          <button class="button-avarage-rating">No reviews yet</button>
+        <% else %>
+          <button class="button-avarage-rating"><%= restaurant.avarage_rating %></button>
+        <% end %>
       </div>
     </div>
   <% end %>

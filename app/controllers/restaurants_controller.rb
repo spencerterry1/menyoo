@@ -34,6 +34,7 @@ class RestaurantsController < ApplicationController
       @booking = bookings_open_for_user_restaurant(current_user, @restaurant).last
       @attendee = Attendee.where(user: current_user, booking: @booking).last
       @order = Order.new
+
     end
   end
 

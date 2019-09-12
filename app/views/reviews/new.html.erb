@@ -1,9 +1,10 @@
-<div>
+<div style=>
+
   <%= simple_form_for([@restaurant, @booking, @review]) do |f| %>
-    <h1>How was your experience?</h1>
-    <h1>Leave a review</h1>
-    <%= f.input :content %>
-    <%= f.input :rating %>
-    <%= f.submit "Submit", class: "button button-long" %>
+   <h1>How was your experience?</h1>
+   <br>
+   <%= f.input :content %>
+   <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+   <%= f.submit "Submit", class: "button button-medium" %>
   <% end %>
 </div>
