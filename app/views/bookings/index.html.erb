@@ -11,10 +11,15 @@
       <div class="card-large-img">
         <%= cl_image_tag(booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
       </div>
-      <div class="card-large-content">
-        <p>From: <%= booking.user.first_name %></p>
-        <p>Restaurant: <%= booking.restaurant.name %></p>
-        <p>Date: <%= booking.date.to_s(:table_time) %></p>
+      <div class="card-large-content-bookings flex-between vertical-center">
+        <div>
+          <h2><%= booking.restaurant.name %></h2>
+          <p class="blue-font">Date: <%= booking.date.to_s(:table_time) %></p>
+        </div>
+        <div class="button-area">
+          <%= cl_image_tag(booking.user.photo, :class => "avatar-small") %>
+          <p>Host: <%= booking.user.first_name %></p>
+        </div>
       </div>
     </div>
   <% end %>
