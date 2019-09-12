@@ -24,8 +24,6 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    # for now, order status is set to true so user can progress to payment - to be changed
-    @order.ordered = true
 
     # @restaurant = @booking.restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
