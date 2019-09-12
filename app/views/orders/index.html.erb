@@ -4,6 +4,7 @@
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
 
+
 <!-- Calculation the total for the orders -->
 <% @order_total = 0 %>
 <% @orders.each do |order|  %>
@@ -30,7 +31,14 @@
       <%= cl_image_tag(order.dish.photo,width: 400, height: 300, crop: :fill) %>
     </div>
     <div class="card-large-content">
-      <h3><%= order.dish.name %></h3>
+      <div class="card-order-add-remove">
+        <h3><%= order.dish.name %></h3>
+
+        <%= link_to ('<i class="fas fa-minus-circle button-delete"></i>').html_safe, restaurant_booking_attendee_order_path(@restaurant, @booking, @attendee, order),
+          method: :delete,
+          data: {confirm: "Are you sure?"}  %>
+      </div>
+
       <p> <%= order.dish.description %></p>
 
       <div class="flex-between">
@@ -41,5 +49,6 @@
     </div>
   </div>
 <% end %>
+
 
 

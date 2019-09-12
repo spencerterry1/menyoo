@@ -46,6 +46,12 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    order = Order.find(params[:id])
+    order.delete
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking = Booking.find(params[:booking_id])
+    @attendee = Attendee.find(params[:attendee_id])
+    redirect_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee)
   end
 
 end
