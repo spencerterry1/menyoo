@@ -49,6 +49,11 @@
   <% end %>
 </div>
 
+  <% if @restaurant.reviews.empty? %>
+    <button class="button-avarage-rating">No reviews yet</button>
+      <% else %>
+        <button class="button-avarage-rating"><%= pluralize(@restaurant.reviews.size, "review") %> </button>
+  <% end %>
 
 
 <h2>Menu</h2>

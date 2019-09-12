@@ -27,4 +27,5 @@ class Restaurant < ApplicationRecord
     ratings = reviews.map(&:rating).compact
     (ratings.sum / ratings.size.to_f).round(1)
   end
+
 end

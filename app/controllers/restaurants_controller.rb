@@ -38,4 +38,9 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def reviews
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reviews = @restaurant.reviews
+  end
+
 end

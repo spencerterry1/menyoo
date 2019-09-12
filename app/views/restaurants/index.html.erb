@@ -43,14 +43,25 @@
         <p><%= restaurant.address %></p>
         <p>Category: <%= restaurant.category %></p>
         <% if restaurant.avarage_rating.zero? %>
-          <button class="button-avarage-rating">No reviews yet</button>
+          <div>
+            <button class = "button-avarage-rating">No reviews yet</button>
+          </div>
         <% else %>
-          <button class="button-avarage-rating"><%= restaurant.avarage_rating %></button>
+        <div>
+          <%= link_to restaurant_reviews_path(restaurant) do %>
+            <button class="button-avarage-rating"><%= restaurant.avarage_rating %></button>
+          <% end %>
+        </div>
         <% end %>
       </div>
     </div>
   <% end %>
 </div>
+
+
+
+
+
 
 <div class="home-map-section hide">
   <div class="home-header flex-between">
