@@ -2,7 +2,7 @@
   <div class="navbar-content">
 
     <div class="navbar-back same-space">
-      <%= link_to root_path do %>
+      <%= link_to request.referer.present? ? request.referer : root_path do %>
         <p class="<%= yield(:nav_chevron_class) %>">
           <i class="fas fa-chevron-left"></i>
         </p>
@@ -23,3 +23,4 @@
 
   </div>
 </div>
+

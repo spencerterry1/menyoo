@@ -11,6 +11,11 @@
 <% end %>
 <!-- End Calculation -->
 
+<div class="table-header">
+  <h1><%= @restaurant.name %></h1>
+  <p class="blue-font">Table opened on <%= @booking.date.to_s(:table_time) %></p>
+</div>
+
 <div class="button-area">
   <%= link_to restaurant_path(@restaurant) do %>
       <button class = "button button-long">Add to Order</button>
