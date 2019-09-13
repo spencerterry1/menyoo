@@ -112,7 +112,7 @@ puts 'Creating Dishes...'
 
 italian_dish_one = Dish.new(name: "La gran carbonara",
   description: "Homemade spaghetti chitarra, pecorino, crispy guanciale, egg and parmesan",
-  price: 12,
+  price: 12.00,
   prep_time: 15,
   category:"main")
 
@@ -180,7 +180,7 @@ italianPolpo_dish_two.save
 
 italianPolpo_dish_three = Dish.new(name: "Duck Gnocchi",
   description: "Fresh potato gnocchi served with black olive & tomato ragù",
-  price: 9 ,
+  price: 9.00 ,
   prep_time: 13,
   category:"main")
 
@@ -191,7 +191,7 @@ italianPolpo_dish_three.save
 
 italianPolpo_dish_four = Dish.new(name: "Pizzette",
   description: "Fresh mini pizzas with asparagus, prosciutto and tallegio",
-  price: 12 ,
+  price: 12.00 ,
   prep_time: 15,
   category:"main")
 
@@ -240,7 +240,7 @@ italianEmilias_dish_two.save
 
 italianEmilias_dish_three = Dish.new(name: "Mushroom Linguini",
   description: "Creamy walnut and chesnut Mushroom sauce",
-  price: 12 ,
+  price: 12.00,
   prep_time: 15,
   category:"main")
 
@@ -251,7 +251,7 @@ italianEmilias_dish_three.save
 
 italianEmilias_dish_four = Dish.new(name: "Tuna Steak",
   description: "Tuna fillet with homemade tomato sauce,peperoncino and chopped parsley",
-  price: 12 ,
+  price: 12.00,
   prep_time: 15,
   category:"main")
 
@@ -262,7 +262,7 @@ italianEmilias_dish_four.save
 
 italianEmilias_dish_five = Dish.new(name: "Tiramisu",
   description: "Coffee, cream and chocolate cake",
-  price: 8.50 ,
+  price: 8.50,
   prep_time: 5 ,
   category:"dessert")
 
@@ -317,7 +317,7 @@ french_dish_four.save
 
 british_dish_one = Dish.new(name: "Duck & Pork Terrine",
   description: "Terrine served with crispy Sourdough, pistachios and prunes",
-  price: 10,
+  price: 10.00,
   prep_time: 10,
   category:"appetizer")
 
@@ -328,7 +328,7 @@ british_dish_one.save
 
 british_dish_two = Dish.new(name: "Mushroom Pate",
   description: "Pate served with crispy sourdough and tomato jam (v)",
-  price: 9,
+  price: 9.00,
   prep_time: 9,
   category:"appetizer")
 
@@ -339,7 +339,7 @@ british_dish_two.save
 
 british_dish_three = Dish.new(name: "Monkfish & Prawn Curry",
   description: "British take on an Indian classic, served on a bed of wild rice",
-  price:20,
+  price: 20.00,
   prep_time:25 ,
   category:"main")
 
@@ -350,7 +350,7 @@ british_dish_three.save
 
 british_dish_four = Dish.new(name: "Rib-eye steak",
   description: "Prime aged steak served with hand cut chips and  béarnaise sauce",
-  price:29,
+  price: 29.00,
   prep_time: 20,
   category:"main")
 
@@ -361,7 +361,7 @@ british_dish_four.save
 
 british_dish_five = Dish.new(name: "Sticky Toffee Pudding",
   description: "Traditional British dessert served with Devon Clotted Cream",
-  price:7.50,
+  price: 7.50,
   prep_time: 10,
   category:"dessert")
 
@@ -388,7 +388,7 @@ vegan_dish_one.save
 
 vegan_dish_two = Dish.new(name: "Jackfruit Tacos",
   description: "Pulled jackfruit, fennel caper salad and roasted tomatoes",
-  price: 13,
+  price: 13.00,
   prep_time:15,
   category: "main")
 
@@ -411,7 +411,7 @@ vegan_dish_three.save
 
 vegan_dish_four = Dish.new(name: "Chocolate Orange Mousse Cake",
   description: "Delicious, creamy, refined sugar free and gluten free",
-  price: 8,
+  price: 8.00,
   prep_time: 5,
   category: "dessert")
 
