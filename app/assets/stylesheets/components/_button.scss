@@ -23,6 +23,9 @@
   padding: 0px 112px;
 }
 
+.button-short {
+  padding: 0px 25px;
+}
 
 .button-place-order {
   background-color: #D4D7DC;
@@ -68,6 +71,7 @@
   border-radius: 50px;
 }
 
+
 .button-avarage-rating {
   height: 20px;
   background-color: $menyoo-blue;
@@ -81,4 +85,8 @@
   cursor: pointer;
   border-radius: 5px;
   font-size: $font-size-small;
+}
+
+.button-delete {
+  color: black;
 }

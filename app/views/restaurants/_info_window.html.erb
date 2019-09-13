@@ -1,2 +1,5 @@
-<h2><%= restaurant.name %></h2>
-<p><%= restaurant.address %></p>
+
+<%= link_to restaurant_path(restaurant), {class: "info-window"} do %>
+  <h2><%= restaurant.name %></h2>
+  <p><%= restaurant.category %></p>
+<% end %>

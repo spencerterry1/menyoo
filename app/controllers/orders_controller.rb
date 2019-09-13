@@ -24,8 +24,6 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    # for now, order status is set to true so user can progress to payment - to be changed
-    @order.ordered = true
 
     # @restaurant = @booking.restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -48,6 +46,12 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    order = Order.find(params[:id])
+    order.delete
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking = Booking.find(params[:booking_id])
+    @attendee = Attendee.find(params[:attendee_id])
+    redirect_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee)
   end
 
 end
