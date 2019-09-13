@@ -1,17 +1,19 @@
 class ReviewsController < ApplicationController
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
   def create
     @booking = Booking.find(params[:booking_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
     @review.booking = @booking
     @review.user = current_user
     if @review.save
       respond_to do |format|
-        format.html { redirect_to restaurant_path(@restaurant) }
+        format.html { redirect_to restaurant_booking_summary_path(@restaurant, @booking) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
     else

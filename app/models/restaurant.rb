@@ -20,4 +20,12 @@ class Restaurant < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  def avarage_rating
+    return 0 if reviews.empty?
+
+    ratings = reviews.map(&:rating).compact
+    (ratings.sum / ratings.size.to_f).round(1)
+  end
+
 end

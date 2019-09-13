@@ -71,6 +71,22 @@
   border-radius: 50px;
 }
 
+
+.button-avarage-rating {
+  height: 20px;
+  background-color: $menyoo-blue;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 8px auto;
+  padding: 0px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: $font-size-small;
+}
+
 .button-delete {
   color: black;
 }
