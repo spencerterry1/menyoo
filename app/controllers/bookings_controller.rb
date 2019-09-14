@@ -54,6 +54,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def checkin
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking = Booking.find(params[:booking_id])
+    @booking.checkedin = true
+    @booking.save
+    redirect_to restaurant_bookings_path(@restaurant)
+  end
+
   def update
     @booking = Booking.find(params[:id])
     @restaurant = Restaurant.find(params[:restaurant_id])

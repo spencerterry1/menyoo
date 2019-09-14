@@ -2,10 +2,8 @@
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
 
-<!-- Partial for the Modal -->
-<div class="checkedin-popup hide">
-  <%= render 'shared/checkedin' %>
-</div>
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
 
 <div class="booking-container">
