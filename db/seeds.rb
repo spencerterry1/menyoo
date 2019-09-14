@@ -111,7 +111,7 @@ puts 'Creating Dishes...'
 #italiandishes
 
 italian_dish_one = Dish.new(name: "La gran carbonara",
-  description: "Homemade spaghetti chitarra, pecorino, crispy guanciale, egg and parmesan",
+  description: "Homemade spaghetti chitarra, pecorino, egg and parmesan",
   price: 12.00,
   prep_time: 15,
   category:"main")
@@ -122,7 +122,7 @@ italian_dish_one.save
 
 
 italian_dish_two = Dish.new(name: "Filippo spicy balls",
-  description: "Spicy slow-cooked pork & nduja meatballs topped with rich tomato sauce",
+  description: "Spicy pork & nduja meatballs topped with rich tomato sauce",
   price: 14.00,
   prep_time: 10,
   category:"main")
@@ -190,7 +190,7 @@ italianPolpo_dish_three.save
 
 
 italianPolpo_dish_four = Dish.new(name: "Pizzette",
-  description: "Fresh mini pizzas with asparagus, prosciutto and tallegio",
+  description: "Mini pizzas with asparagus, prosciutto & tallegio",
   price: 12.00 ,
   prep_time: 15,
   category:"main")
@@ -216,7 +216,7 @@ italianPolpo_dish_five.save
 
 
 italianEmilias_dish_one = Dish.new(name: "Finely Sliced Bresaol",
-  description: "cured beef with rocket and parmesan salad and toasted ciabatta",
+  description: "cured beef with rocket & parmesan salad on toasted ciabatta",
   price: 7.50,
   prep_time: 15,
   category:"appetizer")
@@ -227,7 +227,7 @@ italianEmilias_dish_one.save
 
 
 italianEmilias_dish_two = Dish.new(name: "Burrata with toasted ciabatta",
-  description: "Creamy Cheese drizzeled with virgin Olive Oil",
+  description: "Creamy cheese drizzeled with virgin Olive Oil",
   price: 9.50,
   prep_time: 10,
   category:"appetizer")
@@ -250,7 +250,7 @@ italianEmilias_dish_three.save
 
 
 italianEmilias_dish_four = Dish.new(name: "Tuna Steak",
-  description: "Tuna fillet with homemade tomato sauce,peperoncino and chopped parsley",
+  description: "Tuna fillet with tomato sauce, peperoncino and chopped parsley",
   price: 12.00,
   prep_time: 15,
   category:"main")
@@ -272,7 +272,7 @@ italianEmilias_dish_five.save
 
 
 french_dish_one = Dish.new(name: "Soupe à l’Oignon Gratinée",
-  description: "slow-cooked caramelized onions, French bread, gruyere and Parmesan cheese",
+  description: "Slow-cooked caramelized onions, gruyere and Parmesan cheese",
   price: 5.95,
   prep_time: 10,
   category:"appetizer")
@@ -338,7 +338,7 @@ british_dish_two.save
 
 
 british_dish_three = Dish.new(name: "Monkfish & Prawn Curry",
-  description: "British take on an Indian classic, served on a bed of wild rice",
+  description: "British take on an Indian classic, on a bed of wild rice",
   price: 20.00,
   prep_time:25 ,
   category:"main")
@@ -349,7 +349,7 @@ british_dish_three.save
 
 
 british_dish_four = Dish.new(name: "Rib-eye steak",
-  description: "Prime aged steak served with hand cut chips and  béarnaise sauce",
+  description: "Prime aged steak served with chips and  béarnaise sauce",
   price: 29.00,
   prep_time: 20,
   category:"main")
