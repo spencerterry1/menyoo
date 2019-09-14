@@ -122,7 +122,7 @@
 
 .icon-stars{
     font-size: 11px;
-    color: #ffe74c;
+    color: $menyoo-blue;
 }
 
 .restaurant-name-card{
@@ -137,4 +137,12 @@
 
 .reviews-count{
   line-height: 18px;
+  }
+
+  .my-review-content-stars{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    margin-bottom: 4px;
   }
