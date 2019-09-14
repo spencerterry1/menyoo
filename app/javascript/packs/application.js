@@ -10,6 +10,8 @@ initStarRating();
 
 initMapbox();
 
+// =======> Show / hide Map
+
 // Toggle showing Restaurants on Map vs Featured on Home page
 const mapButtons = document.querySelectorAll(".map-button");
 const featuredSection = document.querySelector(".home-featured-section");
@@ -22,5 +24,30 @@ mapButtons.forEach((button) => {
     featuredSection.classList.toggle("show");
     featuredSection.classList.toggle("hide");
   });
+});
+
+
+// =======> CheckedIn Modal
+
+const checkedinModal = document.querySelector(".checkedin-popup");
+
+
+// Toggle CheckedIn Modal from NavBar
+const checkedinButtons = document.querySelectorAll(".checkin-button");
+
+checkedinButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    checkedinModal.classList.toggle("show");
+    checkedinModal.classList.toggle("hide");
+  });
+});
+
+// Modal Cancel Button
+
+const checkedinCancelButton = document.querySelector(".button-modal-cancel");
+
+checkedinCancelButton.addEventListener("click", (event) => {
+  checkedinModal.classList.toggle("show");
+  checkedinModal.classList.toggle("hide");
 });
 

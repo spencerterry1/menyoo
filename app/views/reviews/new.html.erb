@@ -1,3 +1,7 @@
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 <div style=>
 
   <%= simple_form_for([@restaurant, @booking, @review]) do |f| %>

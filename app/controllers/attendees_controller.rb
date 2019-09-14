@@ -4,6 +4,7 @@ class AttendeesController < ApplicationController
 
   def index
     @booking = Booking.find(params[:booking_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @attendees = Attendee.all
     @search = params[:search]
     @attendee = Attendee.new
