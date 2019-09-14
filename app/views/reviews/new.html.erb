@@ -1,14 +1,37 @@
+
 <!-- Hide CheckedIn Button on Pages other than specific booking -->
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
 
-<div style=>
+<div>
+
 
   <%= simple_form_for([@restaurant, @booking, @review]) do |f| %>
    <h1>How was your experience?</h1>
    <br>
    <%= f.input :content %>
    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-   <%= f.submit "Submit", class: "button button-medium" %>
+   <%= f.submit "Submit", class: "button button-medium" do%>
+   <% end %>
   <% end %>
+</div>
+
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <h1>Checkout summary</h1>
+      <p><strong><%= humanized_money_with_symbol @orders.map(&:price).sum %></strong></p>
+      <button id="pay" class="btn btn-primary">Pay</button>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @payment.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  </div>
 </div>

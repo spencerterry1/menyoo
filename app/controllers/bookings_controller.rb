@@ -29,11 +29,11 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.restaurant = @restaurant
     @booking.save
+
     @attendee = Attendee.new(accepted: true, payment: false)
     @attendee.user = current_user
     @attendee.booking = @booking
     @attendee.save
-
     redirect_to restaurant_booking_path(@restaurant, @booking)
   end
 
@@ -45,7 +45,24 @@ class BookingsController < ApplicationController
     @attendees = @booking.attendees
 
     @orders_not_sent_to_kitchen = @orders.where(ordered: false)
+    @orders_not_sent_to_kitchen_hash = {}
+    @orders_not_sent_to_kitchen.each do |order|
+      if (@orders_not_sent_to_kitchen_hash[order.attendee_id])
+        @orders_not_sent_to_kitchen_hash[order.attendee_id] << order
+      else
+        @orders_not_sent_to_kitchen_hash[order.attendee_id] = [order]
+      end
+    end
+
     @orders_sent_to_kitchen = @orders.where(ordered: true)
+    @orders_sent_to_kitchen_hash = {}
+    @orders_sent_to_kitchen.each do |order|
+      if (@orders_sent_to_kitchen_hash[order.attendee_id])
+        @orders_sent_to_kitchen_hash[order.attendee_id] << order
+      else
+        @orders_sent_to_kitchen_hash[order.attendee_id] = [order]
+      end
+    end
 
     # calculates total order price, stored in @order_total
     @order_total = 0

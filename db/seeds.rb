@@ -4,6 +4,7 @@ Restaurant.destroy_all
 Dish.destroy_all
 Booking.destroy_all
 Review.destroy_all
+Payment.destroy_all
 Attendee.destroy_all
 Order.destroy_all
 
