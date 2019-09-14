@@ -1,0 +1,56 @@
+.checkedin-modal {
+  display: flex;
+  justify-content: space-around; /* ====> centered horizontally */
+  // align-items: center; /* ====> centered vertically */
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0px;
+  top: 48px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-box {
+  margin-top: 100px;
+  width: 300px;
+  height: 400px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.model-content {
+}
+
+.qr-code img {
+  width: 200px;
+  height: 200px;
+  margin: 16px auto;
+}
+
+.button-modal {
+  height: 40px;
+  background-color: $menyoo-blue;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 16px auto;
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button-modal-cancel {
+  width: 78px;
+  background-color: $font-color-light-grey;
+}
+
+.button-modal-checkedin {
+    width: 120px;
+    background-color: $menyoo-blue;
+}

@@ -5,6 +5,13 @@
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
 
+<!-- Partial for the Modal -->
+<div class="checkedin-popup hide">
+  <%= render 'shared/checkedin' %>
+</div>
+<!-- end -->
+
+
 <div class="table-header">
   <h1><%= @restaurant.name %></h1>
   <p class="blue-font">Table opened on <%= @booking.date.to_s(:table_time) %></p>
@@ -31,13 +38,20 @@
       </div>
     <% end %>
 
+    <!-- Show Checkin Button or Send to Kitchen Button conditional on checkedin status -->
+    <% if @booking.checkedin %>
+      <div class="button-area">
+        <%= simple_form_for [@restaurant, @booking] do |f| %>
+          <%= f.input :ordered, as: :hidden, value: true %>
+          <%= f.submit "Send orders to the kitchen", class: "button button-medium" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="button-area">
+        <button class = "button button-checkin-summary checkin-button">Check in to place order</button>
+      </div>
+    <% end %>
     <%#= button to change order statuses to 'ordered' %>
-    <div class="button-area">
-      <%= simple_form_for [@restaurant, @booking] do |f| %>
-        <%= f.input :ordered, as: :hidden, value: true %>
-        <%= f.submit "Send orders to the kitchen", class: "button button-long" %>
-      <% end %>
-    </div>
 
 
   </div>

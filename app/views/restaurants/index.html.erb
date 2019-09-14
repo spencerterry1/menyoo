@@ -9,6 +9,10 @@
 <% content_for(:nav_chevron_class, "nav_chevron_invisible") %>
 <!-- end -->
 
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 <div class="search-section">
   <%= form_tag restaurants_path, method: :get do %>
     <div class="search-form-control button-area">
@@ -60,9 +64,6 @@
     </div>
   <% end %>
 </div>
-
-
-
 
 <div class="home-map-section hide">
   <div class="home-header flex-between">

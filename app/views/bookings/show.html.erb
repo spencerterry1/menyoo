@@ -8,6 +8,12 @@
 <% content_for(:nav_back_path_class, "root_path") %>
 <!-- end -->
 
+<!-- Partial for the Modal -->
+<div class="checkedin-popup hide">
+  <%= render 'shared/checkedin' %>
+</div>
+<!-- end -->
+
 <div>
   <div class="restaurant-header">
     <h1><%= @restaurant.name %></h1>

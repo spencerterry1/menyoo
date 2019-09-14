@@ -25,11 +25,15 @@
   align-items: center;
   justify-content: flex-start;
   p {
-    font-size: 19px;
+    font-size: 24px;
   }
 }
 
 .nav_chevron_invisible {
+  display: none;
+}
+
+.nav_checkedin_invisible {
   display: none;
 }
 
@@ -44,8 +48,12 @@
   align-items: center;
   justify-content: flex-end;
   p {
-    font-size: 19px;
+    font-size: 26px;
   }
+}
+
+.checkedin-true {
+  color: $menyoo-blue;
 }
 
 

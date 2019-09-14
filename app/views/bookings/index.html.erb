@@ -4,6 +4,10 @@
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
 
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 
 <% @bookings_open.each do |booking| %>
   <%= link_to restaurant_booking_path(booking.restaurant, booking) do %>
@@ -15,6 +19,15 @@
         <div>
           <h2><%= booking.restaurant.name %></h2>
           <p class="blue-font">Date: <%= booking.date.to_s(:table_time) %></p>
+          <div class="flex-between" style="margin-top: 16px; margin-right: 8px;">
+            <p>Checked-in</p>
+            <% if booking.checkedin %>
+              <p><i class="fas fa-check"></i></p>
+            <% else %>
+              <p><i class="fas fa-times"></i></p>
+            <% end %>
+
+          </div>
         </div>
         <div class="button-area">
           <%= cl_image_tag(booking.user.photo, :class => "avatar-small") %>
@@ -24,3 +37,4 @@
     </div>
   <% end %>
 <% end %>
+

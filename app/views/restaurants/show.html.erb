@@ -11,7 +11,11 @@
   <% content_for(:tab_home_class, "tab_home_active") %>
 <% end %>
 <!-- end -->
-​
+
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 <div class="restaurant-header">
   <h1><%= @restaurant.name %></h1>
   <p><%= @restaurant.address %></p>
