@@ -19,7 +19,15 @@
 
 
     <div class="navbar-checkin same-space">
-      <p class="<%= yield(:nav_checkedin_class) %>"><i class="fas fa-toggle-off"></i></p>
+      <% if @booking %>
+        <% if @booking.checkedin %>
+          <p class="<%= yield(:nav_checkedin_class) %> checkedin-true"><i class="fas fa-toggle-on"></i></p>
+        <% else %>
+          <p class="<%= yield(:nav_checkedin_class) %>"><i class="fas fa-toggle-off"></i></p>
+        <% end %>
+      <% else %>
+        <p class="<%= yield(:nav_checkedin_class) %>"><i class="fas fa-toggle-off"></i></p>
+      <% end %>
     </div>
 
   </div>

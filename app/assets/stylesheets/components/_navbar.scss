@@ -25,7 +25,7 @@
   align-items: center;
   justify-content: flex-start;
   p {
-    font-size: 19px;
+    font-size: 24px;
   }
 }
 
@@ -48,8 +48,12 @@
   align-items: center;
   justify-content: flex-end;
   p {
-    font-size: 19px;
+    font-size: 30px;
   }
+}
+
+.checkedin-true {
+  color: $menyoo-blue;
 }
 
 
