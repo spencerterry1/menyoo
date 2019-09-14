@@ -1,7 +1,14 @@
 .button-area {
   text-align: center;
   align-items: center;
+  .invitation-buton{
+    margin:40px;
+  }
 }
+
+
+
+
 
 .button {
   height: 32px;
@@ -95,3 +102,9 @@
 .button-delete {
   color: black;
 }
+
+.button_height > div {
+  margin-bottom:0;
+}
+
+

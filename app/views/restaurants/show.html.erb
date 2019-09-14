@@ -78,19 +78,20 @@
       <h3><%= dish.name %></h3>
       <p> <%= dish.description %></p>
       <div class="flex-between">
-        <p><%= humanized_money_with_symbol(dish.price) %></p>
-        <p><i class="far fa-clock"></i> <%= dish.prep_time %></p>
-        <div>
+           <div class="timeprice">
+          <p><%= humanized_money_with_symbol(dish.price)%></p>
+          <p><i class="far fa-clock "></i> <%= dish.prep_time %></p>
+           </div>
           <% if user_signed_in? %>
             <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
-                <%= simple_form_for [@restaurant, @booking, @attendee, @order] do |f| %>
+                <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"} do |f| %>
                     <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
                     <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
                     <%= f.submit "Order", class: "btn btn-dark" %>
                 <% end %>
             <% end %>
           <% end %>
-        </div>
+
       </div>
     </div>
   </div>
