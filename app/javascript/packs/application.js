@@ -33,7 +33,7 @@ const checkedinModal = document.querySelector(".checkedin-popup");
 
 
 // Toggle CheckedIn Modal from NavBar
-const checkedinButton = document.querySelector(".navbar-checkin");
+const checkedinButton = document.querySelector(".checkin-button");
 
 checkedinButton.addEventListener("click", (event) => {
   checkedinModal.classList.toggle("show");

@@ -38,13 +38,22 @@
       </div>
     <% end %>
 
+    <!-- Show Checkin Button or Send to Kitchen Button conditional on checkedin status -->
+    <% if @booking.checkedin %>
+      <div class="button-area">
+        <%= simple_form_for [@restaurant, @booking] do |f| %>
+          <%= f.input :ordered, as: :hidden, value: true %>
+          <%= f.submit "Send orders to the kitchen", class: "button button-long" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="button-area">
+        <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
+          <button class = "button button-long checkin-button">Check in to place order</button>
+        <% end %>
+      </div>
+    <% end %>
     <%#= button to change order statuses to 'ordered' %>
-    <div class="button-area">
-      <%= simple_form_for [@restaurant, @booking] do |f| %>
-        <%= f.input :ordered, as: :hidden, value: true %>
-        <%= f.submit "Send orders to the kitchen", class: "button button-long" %>
-      <% end %>
-    </div>
 
 
   </div>
