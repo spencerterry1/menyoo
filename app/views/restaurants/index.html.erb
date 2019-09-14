@@ -43,9 +43,9 @@
           <% end %>
           <div>
             <% if restaurant.avarage_rating.zero? %>
-              <button class = "button-avarage-rating">No reviews yet</button>
+              <p style="color: #1D5CA3; font-size: 10px; width: 50px">No reviews</p>
             <% else %>
-            <div>
+            <div style="line-height: 18px; font-size: 15px;">
               <% restaurant.avarage_rating.round.times do %>
                 <i class="rating-stars fas fa-star"></i>
               <% end %>
