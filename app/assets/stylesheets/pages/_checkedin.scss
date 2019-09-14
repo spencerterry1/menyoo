@@ -6,7 +6,7 @@
   width: 100vw;
   position: fixed;
   left: 0px;
-  top: 0px;
+  top: 48px;
   background-color: rgba(0,0,0,0.4);
 }
 
@@ -15,7 +15,12 @@
   width: 300px;
   height: 400px;
   padding: 24px;
+  display: flex;
+  align-items: center;
   text-align: center;
+}
+
+.model-content {
 }
 
 .qr-code img {
