@@ -2,9 +2,23 @@
 <% content_for(:tab_user_class, "tab_user_active") %>
 <!-- end -->
 
-<%  @page_title = "Restaurant reviews" %>
+<%  @page_title = @restaurant.name %>
 
 <% @restaurant.reviews.each do |review| %>
-  <p><%= review.content %></p>
+  <div class= "review-card">
+    <div class>
+      <%= cl_image_tag review.user.photo, class: "avatar" %>
+    </div>
+  <div class="review-whole">
+    <small><%= review.user.first_name %></small>
+    <div class="review-content-stars">
+      <p><%= review.content %></p>
+      <div style="display:flex;">
+          <% review.rating.times do %>
+          <i class="fas fa-star icon-stars"></i>
+          <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>
-
+</div>
