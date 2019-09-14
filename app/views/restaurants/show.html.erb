@@ -1,5 +1,5 @@
 <%  @page_title = "Restaurant Page" %>
-
+​
 <!-- Conditional formatting of the tab buttons -->
 <% if user_signed_in? %>
   <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
@@ -16,14 +16,13 @@
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
 
-
 <div class="restaurant-header">
   <h1><%= @restaurant.name %></h1>
   <p><%= @restaurant.address %></p>
 </div>
-
+​
 <% if user_signed_in? %>
-
+​
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
     <div class="button-area">
       <%= link_to new_restaurant_booking_path(@restaurant) do %>
@@ -38,8 +37,8 @@
     <% end %>
   </div>
 <% end %>
-
-
+​
+​
 <div class="search-section">
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
@@ -48,12 +47,12 @@
         class: "form-control",
         placeholder: "Healthy or decadent ?"
         %>
-
+​
       <%= submit_tag "Search", class: "button button-medium" %>
     </div>
   <% end %>
 </div>
-
+​
   <% if @restaurant.reviews.empty? %>
       <button class="button-avarage-rating">No reviews yet</button>
   <% else %>
@@ -63,12 +62,12 @@
       <% end %>
     </div>
   <% end %>
-
-
-
+​
+​
+​
 <h2>Menu</h2>
-
-
+​
+​
 <% @dishes_for_restaurant.each do |dish|  %>
   <div class="card-box-shadow card-large">
     <div class="card-large-img">
@@ -96,4 +95,6 @@
     </div>
   </div>
 <% end %>
+​
+
 
