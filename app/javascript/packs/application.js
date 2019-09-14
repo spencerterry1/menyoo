@@ -33,11 +33,13 @@ const checkedinModal = document.querySelector(".checkedin-popup");
 
 
 // Toggle CheckedIn Modal from NavBar
-const checkedinButton = document.querySelector(".checkin-button");
+const checkedinButtons = document.querySelectorAll(".checkin-button");
 
-checkedinButton.addEventListener("click", (event) => {
-  checkedinModal.classList.toggle("show");
-  checkedinModal.classList.toggle("hide");
+checkedinButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    checkedinModal.classList.toggle("show");
+    checkedinModal.classList.toggle("hide");
+  });
 });
 
 // Modal Cancel Button

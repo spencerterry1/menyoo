@@ -59,7 +59,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.checkedin = true
     @booking.save
-    redirect_to restaurant_bookings_path(@restaurant)
+    redirect_to restaurant_booking_path(@restaurant, @booking)
   end
 
   def update

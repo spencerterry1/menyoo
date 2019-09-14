@@ -18,12 +18,12 @@
     </div>
 
 
-    <div class="checkin-button navbar-checkin same-space">
+    <div class="navbar-checkin same-space">
       <% if @booking %>
         <% if @booking.checkedin %>
           <p class="<%= yield(:nav_checkedin_class) %> checkedin-true"><i class="fas fa-toggle-on"></i></p>
         <% else %>
-          <p class="<%= yield(:nav_checkedin_class) %>"><i class="fas fa-toggle-off"></i></p>
+          <p class="<%= yield(:nav_checkedin_class) %> checkin-button"><i class="fas fa-toggle-off"></i></p>
         <% end %>
       <% else %>
         <p class="<%= yield(:nav_checkedin_class) %>"><i class="fas fa-toggle-off"></i></p>
