@@ -10,24 +10,29 @@
   <p class="blue-font">Table opened on <%= @booking.date.to_s(:table_time) %></p>
 </div>
 
-<%#= show div with people yet to place order %>
+<%#= show div with ORDERS NOT YET SENT to kitchen %>
+
 <% if @orders_not_sent_to_kitchen.count > 0 %>
   <div class="card-orders container-to-order">
    <h2>Orders to be placed</h2>
-    <% @orders_not_sent_to_kitchen.each do |order| %>
+
+    <% @orders_not_sent_to_kitchen_hash.each do |attendee_id, order_array| %>
+
       <div class="card-order-container card-box-shadow">
-        <div class="card-small card-order">
-          <div class="card-medium-content">
-            <strong> <%= order.dish.name %></strong>
-            <div class="flex-between">
-              <p>Quantity: 1</p>
-              <p><%= humanized_money_with_symbol(order.dish.price) %></p>
-            </div>
-            <div>
-              <p> Ordered by: <em><%= order.attendee.user.first_name %></em></p>
+        <h2><%= Attendee.find(attendee_id).user.first_name %>'s order</h2>
+        <% order_array.each do |order| %>
+          <div class="card-order-container">
+            <div class="card-small card-order">
+              <div class="card-medium-content">
+                <strong> <%= order.dish.name %></strong>
+                <div class="flex-between">
+                  <p>Quantity: 1</p>
+                  <p><%= humanized_money_with_symbol(order.dish.price) %></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
 
@@ -38,71 +43,66 @@
         <%= f.submit "Send orders to the kitchen", class: "button button-long" %>
       <% end %>
     </div>
-
-
   </div>
+
 <% end %>
 
 
-
-
-<%#= div with users that have placed their orders%>
+<%#= div with users that have SENT ORDERS TO KITCHEN%>
 
 <% if @orders_sent_to_kitchen.count > 0 %>
   <div class="card-orders container-ordered">
       <h2>Orders placed with kitchen</h2>
-      <% @orders_sent_to_kitchen.each do |order| %>
-      <div class="card-order-container card-box-shadow">
 
-          <div class="card-small card-order">
-            <div class="card-medium-content">
-              <strong> <%= order.dish.name %></strong>
-              <div class="flex-between">
-                <p>Quantity: 1</p>
-                <p><%= humanized_money_with_symbol(order.dish.price) %></p>
-              </div>
-              <div>
-                <p> Ordered by: <em><%= order.attendee.user.first_name %></em></p>
+      <% @orders_sent_to_kitchen_hash.each do |attendee_id, order_array| %>
+
+      <div class="card-order-container card-box-shadow">
+        <h2><%= Attendee.find(attendee_id).user.first_name %>'s order</h2>
+        <% unless order_array.first.attendee.payment %>
+          <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
+            <button class = "button">Pay</button>
+          <% end %>
+        <% end %>
+        <% order_array.each do |order| %>
+          <div class="card-order-container">
+            <div class="card-small card-order">
+              <div class="card-medium-content">
+                <strong> <%= order.dish.name %></strong>
+                <div class="flex-between">
+                  <p>Quantity: 1</p>
+                  <p><%= humanized_money_with_symbol(order.dish.price) %></p>
+                </div>
               </div>
             </div>
           </div>
+        <% end %>
       </div>
-      <% end %>
-  </div>
+    <% end %>
 <% end %>
-
 
 
 
 <% if @orders.all? {|order| order.ordered == true}  && @attendees.all? {|attendee| attendee.payment == false } %>
-  <div class="button-payment button-area">
-
-    <%= form_tag restaurant_booking_pay_path(@restaurant, @booking) do %>
-      <article>
-        <label class="amount">
-          <h2><span>Bill amount: <strong><%= humanized_money_with_symbol(@order_total.to_f) %></span></h2></label></strong>
-      </article>
-     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-       data-name="Table bill"
-       data-email="<%= current_user.email %>"
-       data-description="Pay Your Bill"
-       data-amount="<%= @order_total * 100 %>"
-       data-currency="GBP"></script>
-      <% end %>
-   </div>
+  <% unless @attendees.find_by(user: current_user).payment  %>
+    <%= link_to new_restaurant_booking_review_path(@restaurant,@booking, pay_for_all: true) do %>
+    <button class = "button">Pay for all</button>
+  <% end %>
+  <% end %>
 
 <% elsif @attendees.all? {|attendee| attendee.payment == true} %>
     <div class="card-bill-paid">
-      <p><h2>Table bill paid</h2></p>
+      <div class="card-bill-paid-items">
+        <i class="far fa-check-circle"></i>
+        <p><h2>Table bill paid</h2></p>
+      </div>
     </div>
 <% end %>
 
-<div class="button-area">
+<!-- <div class="button-area">
   <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
     <button class = "button button-long">Pay</button>
   <% end %>
-</div>
+</div> -->
 
 
 

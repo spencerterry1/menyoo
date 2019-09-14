@@ -78,6 +78,11 @@
   display: flex;
 }
 
+.card-flex {
+  display: flex;
+  align-items: center;
+}
+
 .card-order {
   flex-direction: row;
 }
@@ -120,8 +125,22 @@
 
 .card-bill-paid {
   text-align: center;
+  display: flex;
+  justify-content: text-around;
   height: $card-medium-height;
   margin: 16px 0px;
+  margin: 0 auto;
+}
+
+.card-bill-paid-items{
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 20px;
+  width: 200px;
+
 }
 
 .card-order-add-remove {
