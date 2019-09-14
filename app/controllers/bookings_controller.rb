@@ -29,7 +29,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.restaurant = @restaurant
     @booking.save
-
     @attendee = Attendee.new(accepted: true, payment: false)
     @attendee.user = current_user
     @attendee.booking = @booking
@@ -45,6 +44,9 @@ class BookingsController < ApplicationController
     @orders = @booking.orders
     @attendees = @booking.attendees
 
+    @orders_not_sent_to_kitchen = @orders.where(ordered: false)
+    @orders_sent_to_kitchen = @orders.where(ordered: true)
+
     # calculates total order price, stored in @order_total
     @order_total = 0
     @orders.each do |order|
@@ -55,8 +57,14 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @booking.ordered = true
-    @booking.save
+    @orders = @booking.orders
+
+    @orders.each do |order|
+      order.ordered = true
+      order.save
+    end
+
+    flash[:alert] = "Your table's order has been sent to the kitchen"
     redirect_to restaurant_booking_summary_path(@restaurant, @booking)
   end
 

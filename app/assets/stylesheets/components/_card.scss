@@ -57,8 +57,39 @@
 .card-large-content {
   padding: 16px;
   width: 100%;
+  max-height: 145px;
+    p {
+    font-size: 13px;
+    }
+    .timeprice{
+      display:flex;
+      justify-content:space-between;
+      width: 100px;
+      p {
+        color: $menyoo-blue;
+        font-weight:bold;
+        padding:5px;
+      }
+    }
+
+  }
+
+
+
+.card-large-content-bookings {
+  padding: 16px;
+  width: 100%;
+  img {
+    height: 48px;
+    width: 48px;
+  }
 }
 
+.card-medium-content {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
 
 .order-status-card {
   display: flex;
@@ -82,6 +113,7 @@
 
 .card-order-summary {
   padding-top: 10px;
+  padding-left: 10px;
   width: 100%;
 }
 
@@ -146,3 +178,34 @@
     width:100%;
     margin-bottom: 4px;
   }
+
+.card-order-container {
+  margin-bottom: 20px;
+}
+
+.container-to-order {
+  border-bottom: solid 1px black;
+  padding-top: 10px;
+}
+
+.container-ordered {
+  border-bottom: solid 1px black;
+  padding-top: 10px;
+}
+
+.button-payment {
+  padding-top: 10px;
+}
+
+.card-bill-paid {
+  text-align: center;
+  height: $card-medium-height;
+  margin: 16px 0px;
+}
+
+.card-order-add-remove {
+  display: flex;
+  justify-content: space-between;
+}
+
+

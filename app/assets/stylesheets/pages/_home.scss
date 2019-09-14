@@ -42,6 +42,11 @@ p {
 .flex-between {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.vertical-center {
+  align-items: center;
 }
 
 .search-section {
