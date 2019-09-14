@@ -61,7 +61,7 @@ italian = Restaurant.new(name: "Gloria",
   address: "54-56 Great Eastern St, Hackney, London",
   category: "Italian")
 
-italian.remote_photo_url = "https://media.timeout.com/images/105478409/630/472/image.jpg"
+italian.remote_photo_url = "https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/06/20/09/circolo-popolare-2006f.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5"
 italian.save
 
 
@@ -85,21 +85,41 @@ french = Restaurant.new(name: "Brasserie Zédel",
   address: "20 Sherwood St, Soho, London",
   category: "French")
 
-french.remote_photo_url = "https://blog.opentable.co.uk/wp-content/uploads/sites/110/2018/04/BrasserieZedel.jpg"
+french.remote_photo_url = "http://www.sorted-pa.com/Brasserie%20Zedel_interior_2%20-%20Copy.jpg"
 french.save
+
+
+french2 = Restaurant.new(name: "Côte Brasserie",
+  address: "57 Whitecross St, London",
+  category: "French")
+
+french2.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZsKER0t0noNrpT7VvxuHlY1Og6t_iptfbmtEAo3gX8DezrDuN"
+french2.save
+
 
 british = Restaurant.new(name: "Dean Street Townhouse",
   address: "69 - 71 Dean St, London",
   category: "British")
 
-british.remote_photo_url = "https://assets.londonist.com/uploads/2018/09/i875/35082736_1720743961366613_6460102714125713408_n.jpg"
+british.remote_photo_url = "https://www.hot-dinners.com/media/reviews/photos/original/d2/f3/2d/deanst-89-1550062352.jpg"
 british.save
+
+
+british2 = Restaurant.new(name: "The Golden Chippy",
+  address: "62 Greenwich High Road, London",
+  category: "British")
+
+british2.remote_photo_url = "https://images.ctfassets.net/8vtyxq21iryq/7enojhT4PeKmG4wCEek2WO/473a92e084d25ea2abd841de6069011b/Copyright_TheNed_Zoblers-04.jpg"
+british2.save
+
+
+
 
 vegan = Restaurant.new(name: "Kalifornia Kitchen",
   address: "19 Percy St, London",
   category: "Vegan")
 
-vegan.remote_photo_url = "https://camillajlovell.com/wp-content/uploads/2019/07/LRG_DSC02751.jpg"
+vegan.remote_photo_url = "https://assets.londonist.com/uploads/2019/01/i875/0h3a1641.jpg"
 vegan.save
 
 puts "Finished!"
@@ -200,6 +220,29 @@ italianPolpo_dish_four.remote_photo_url = "https://assets.epicurious.com/photos/
 italianPolpo_dish_four.save
 
 
+
+italianPolpo_dish_six = Dish.new(name: "Sea Bass",
+  description: "Pan-fried sea bass with broad bean & artichoke vignole",
+  price: 11.00,
+  prep_time: 20,
+  category:"main")
+
+italianPolpo_dish_six.restaurant = italianPolpo
+italianPolpo_dish_six.remote_photo_url = "https://gbc-cdn-public-media.azureedge.net/img49327.768x512.jpg"
+italianPolpo_dish_six.save
+
+italianPolpo_dish_seven = Dish.new(name: "Flank Steak",
+  description: "Premium steak with watercress & Portobello mushrooms",
+  price: 15.00 ,
+  prep_time: 15 ,
+  category:"main")
+
+italianPolpo_dish_seven.restaurant = italianPolpo
+italianPolpo_dish_seven.remote_photo_url = "https://img.maximummedia.ie/her_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtaGVyLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDEzXFxcLzEyXFxcL1NjcmVlbi1zaG90LTIwMTMtMTItMDgtYXQtMTEuMTIuNDkucG5nXCIsXCJ3aWR0aFwiOjc2NyxcImhlaWdodFwiOjQzMSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lmhlci5pZVxcXC9hc3NldHNcXFwvaW1hZ2VzXFxcL2hlclxcXC9uby1pbWFnZS5wbmc_aWQ9MGQyZDYyN2MwNTliOWVkY2FiMGRcIixcIm9wdGlvbnNcIjpbXX0iLCJoYXNoIjoiMjUzZWE3MDBhNjBhZTc3NzNhZGFhNjA0NmI3MzEyMzAwYjM4ZDA4ZSJ9/screen-shot-2013-12-08-at-11-12-49.png"
+italianPolpo_dish_seven.save
+
+
+
 italianPolpo_dish_five = Dish.new(name: "Panna cotta",
   description: "Creamy dessert served with cream and strawberries",
   price: 7.50 ,
@@ -209,8 +252,6 @@ italianPolpo_dish_five = Dish.new(name: "Panna cotta",
 italianPolpo_dish_five.restaurant = italianPolpo
 italianPolpo_dish_five.remote_photo_url = "https://gbc-cdn-public-media.azureedge.net/img24987.1426x713.jpg"
 italianPolpo_dish_five.save
-
-
 
 
 
@@ -317,7 +358,7 @@ french_dish_four.save
 
 british_dish_one = Dish.new(name: "Duck & Pork Terrine",
   description: "Terrine served with crispy Sourdough, pistachios and prunes",
-  price: 10.00,
+  price: 10.90,
   prep_time: 10,
   category:"appetizer")
 
