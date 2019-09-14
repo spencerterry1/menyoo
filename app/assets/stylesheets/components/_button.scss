@@ -1,6 +1,14 @@
 .button-area {
   text-align: center;
+  align-items: center;
+  .invitation-buton{
+    margin:40px;
+  }
 }
+
+
+
+
 
 .button {
   height: 32px;
@@ -25,6 +33,10 @@
 
 .button-short {
   padding: 0px 25px;
+}
+
+.button-checkin-summary {
+  padding: 0px 92px;
 }
 
 .button-place-order {
@@ -90,3 +102,9 @@
 .button-delete {
   color: black;
 }
+
+.button_height > div {
+  margin-bottom:0;
+}
+
+

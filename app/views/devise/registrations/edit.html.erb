@@ -1,6 +1,10 @@
 <%  @page_title = "Edit profile" %>
 <%#= resource_name.to_s.humanize %>
 
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 

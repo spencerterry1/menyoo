@@ -11,5 +11,6 @@ class Booking < ApplicationRecord
   def default_values
     self.open = true if self.open.nil?
     self.ordered = false if self.ordered.nil?
+    self.checkedin = false if self.checkedin.nil?
   end
 end

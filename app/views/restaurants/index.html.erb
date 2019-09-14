@@ -9,6 +9,10 @@
 <% content_for(:nav_chevron_class, "nav_chevron_invisible") %>
 <!-- end -->
 
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 <div class="search-section">
   <%= form_tag restaurants_path, method: :get do %>
     <div class="search-form-control button-area">
@@ -37,29 +41,29 @@
         <%= cl_image_tag(restaurant.photo,width: 400, height: 300, crop: :fill) %>
       </div>
       <div class="card-large-content">
-        <%= link_to restaurant_path(restaurant) do %>
-          <h3><%= restaurant.name %></h3>
-        <% end %>
+        <div class="restaurant-name-card">
+          <%= link_to restaurant_path(restaurant) do %>
+            <h3><%= restaurant.name %></h3>
+          <% end %>
+          <div>
+            <% if restaurant.avarage_rating.zero? %>
+              <p style="color: #1D5CA3; font-size: 10px; width: 50px">No reviews</p>
+            <% else %>
+            <div style="line-height: 18px; font-size: 15px;">
+              <% restaurant.avarage_rating.round.times do %>
+                <i class="rating-stars fas fa-star"></i>
+              <% end %>
+              (<%= link_to restaurant.reviews.size, restaurant_reviews_path(restaurant) %>)
+            </div>
+          <% end %>
+          </div>
+        </div>
         <p><%= restaurant.address %></p>
         <p>Category: <%= restaurant.category %></p>
-        <% if restaurant.avarage_rating.zero? %>
-          <button class = "button-avarage-rating">No reviews yet</button>
-        <% else %>
-        <div>
-          <%= link_to restaurant_reviews_path(restaurant) do %>
-            <button class="button-avarage-rating"><%= restaurant.avarage_rating %></button>
-          <% end %>
-        </div>
-        <% end %>
       </div>
     </div>
   <% end %>
 </div>
-
-
-
-
-
 
 <div class="home-map-section hide">
   <div class="home-header flex-between">
@@ -79,3 +83,4 @@
     ></div>
   </div>
 </div>
+

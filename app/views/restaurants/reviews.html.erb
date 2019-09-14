@@ -2,9 +2,31 @@
 <% content_for(:tab_user_class, "tab_user_active") %>
 <!-- end -->
 
-<%  @page_title = "Restaurant reviews" %>
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
+<%  @page_title = @restaurant.name %>
 
 <% @restaurant.reviews.each do |review| %>
-  <p><%= review.content %></p>
+  <div class= "review-card">
+    <div class>
+      <%= cl_image_tag review.user.photo, class: "avatar" %>
+    </div>
+    <div class="review-whole">
+      <div class="restaurant-name-card">
+        <small><%= review.user.first_name %></small>
+        <div style="line-height: 18px; font-size: 15px;">
+          <div class="review-content-stars">
+            <div style="display:flex;">
+              <% review.rating.times do %>
+                <i class="fas fa-star icon-stars"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><%= review.content %></p>
+    </div>
+  </div>
 <% end %>
-

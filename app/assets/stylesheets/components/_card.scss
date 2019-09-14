@@ -57,7 +57,24 @@
 .card-large-content {
   padding: 16px;
   width: 100%;
-}
+  max-height: 145px;
+    p {
+    font-size: 13px;
+    }
+    .timeprice{
+      display:flex;
+      justify-content:space-between;
+      width: 100px;
+      p {
+        color: $menyoo-blue;
+        font-weight:bold;
+        padding:5px;
+      }
+    }
+
+  }
+
+
 
 .card-large-content-bookings {
   padding: 16px;
@@ -105,6 +122,68 @@
   width: 100%;
 }
 
+.review-card{
+  overflow: hidden;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  border-radius: 8px;
+  img {
+    margin: 4px;
+  }
+}
+.review-content-stars{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  margin-bottom: 8px;
+  p{
+    margin:0;
+
+  }
+
+}
+
+.review-whole{
+  width: 100%;
+  padding: 16px;
+  small{
+    color: gray;
+
+  }
+}
+
+.icon-stars{
+    font-size: 11px;
+    color: $menyoo-blue;
+}
+
+.restaurant-name-card{
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+  margin-bottom: 8px;
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+.reviews-count{
+  line-height: 18px;
+  }
+
+  .my-review-content-stars{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    margin-bottom: 4px;
+  }
+
 .card-order-container {
   margin-bottom: 20px;
 }
@@ -147,4 +226,5 @@
   display: flex;
   justify-content: space-between;
 }
+
 
