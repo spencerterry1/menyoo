@@ -57,7 +57,24 @@
 .card-large-content {
   padding: 16px;
   width: 100%;
-}
+  max-height: 145px;
+    p {
+    font-size: 13px;
+    }
+    .timeprice{
+      display:flex;
+      justify-content:space-between;
+      width: 100px;
+      p {
+        color: $menyoo-blue;
+        font-weight:bold;
+        padding:5px;
+      }
+    }
+
+  }
+
+
 
 .card-large-content-bookings {
   padding: 16px;
