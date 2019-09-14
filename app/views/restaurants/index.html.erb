@@ -9,7 +9,9 @@
 <% content_for(:nav_chevron_class, "nav_chevron_invisible") %>
 <!-- end -->
 
-<%= render 'shared/checkedin' %>
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
 
 <div class="search-section">
   <%= form_tag restaurants_path, method: :get do %>

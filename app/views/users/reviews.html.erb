@@ -2,6 +2,10 @@
 <% content_for(:tab_user_class, "tab_user_active") %>
 <!-- end -->
 
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 <%  @page_title = "My reviews" %>
 
 <% @user.reviews.each do |review| %>

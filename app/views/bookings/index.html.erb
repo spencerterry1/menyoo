@@ -4,6 +4,10 @@
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
 
+<!-- Hide CheckedIn Button on Pages other than specific booking -->
+<% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+<!-- end -->
+
 
 <% @bookings_open.each do |booking| %>
   <%= link_to restaurant_booking_path(booking.restaurant, booking) do %>
