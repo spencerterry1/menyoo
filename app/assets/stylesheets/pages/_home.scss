@@ -26,6 +26,18 @@ p {
   margin-bottom: 0;
 }
 
+.grey-font {
+  color: $font-color-light-grey;
+}
+
+.blue-font {
+  color: $menyoo-blue;
+}
+
+.accent-font {
+  color: $menyoo-accent;
+}
+
 .menyoo-title {
   font-family: $menyoo-font;
   font-size: 28px;
