@@ -48,7 +48,7 @@
       <div class="button-area">
         <%= simple_form_for [@restaurant, @booking] do |f| %>
           <%= f.input :ordered, as: :hidden, value: true %>
-          <%= f.submit "Send orders to the kitchen", class: "button button-medium" %>
+          <%= f.submit "Send orders to the kitchen", class: "button-accent button-medium" %>
         <% end %>
       </div>
     <% else %>
@@ -56,15 +56,6 @@
         <button class = "button button-checkin-summary checkin-button">Check in to place order</button>
       </div>
     <% end %>
-    <%#= button to change order statuses to 'ordered' %>
-
-    <div class="button-area">
-      <%= simple_form_for [@restaurant, @booking] do |f| %>
-        <%= f.input :ordered, as: :hidden, value: true %>
-        <%= f.submit "Send orders to the kitchen", class: "button button-long" %>
-      <% end %>
-    </div>
-  </div>
 
 <% end %>
 
