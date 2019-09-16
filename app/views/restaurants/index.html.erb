@@ -49,7 +49,7 @@
             <% if restaurant.avarage_rating.zero? %>
               <p style="color: #1D5CA3; font-size: 10px; width: 50px">No reviews</p>
             <% else %>
-            <div style="line-height: 18px; font-size: 15px;">
+            <div class="stars">
               <% restaurant.avarage_rating.round.times do %>
                 <i class="rating-stars fas fa-star"></i>
               <% end %>
