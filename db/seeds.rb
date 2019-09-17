@@ -470,32 +470,281 @@ puts "Finished!"
 # BOOKINGS
 puts "Creating Bookings..."
 
-booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
+booking_one = Booking.new(date: DateTime.strptime("06/14/2019", "%m/%d/%Y"))
 booking_one.user = walter
 booking_one.restaurant = french
 booking_one.open = false
 booking_one.save
 
-booking_two = Booking.new(date: DateTime.strptime("11/16/2019", "%m/%d/%Y"))
+booking_two = Booking.new(date: DateTime.strptime("07/16/2019", "%m/%d/%Y"))
 booking_two.user = spencer
 booking_two.restaurant = italian
 booking_two.open = false
 booking_two.save
 
-booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
+booking_three = Booking.new(date: DateTime.strptime("04/15/2019", "%m/%d/%Y"))
 booking_three.user = ana
 booking_three.restaurant = british
 booking_three.open = false
 booking_three.save
 
-booking_four = Booking.new(date: DateTime.strptime("11/18/2019", "%m/%d/%Y"))
+booking_four = Booking.new(date: DateTime.strptime("08/18/2019", "%m/%d/%Y"))
 booking_four.user = simona
 booking_four.restaurant = vegan
 booking_four.open = false
 booking_four.save
 
+booking_five = Booking.new(date: DateTime.strptime("01/02/2019", "%m/%d/%Y"))
+booking_five.user = walter
+booking_five.restaurant = italianPolpo
+booking_five.open = false
+booking_five.save
 
+booking_six = Booking.new(date: DateTime.strptime("01/15/2019", "%m/%d/%Y"))
+booking_six.user = spencer
+booking_six.restaurant = italianPolpo
+booking_six.open = false
+booking_six.save
 
+booking_seven = Booking.new(date: DateTime.strptime("01/18/2019", "%m/%d/%Y"))
+booking_seven .user = ana
+booking_seven .restaurant = italianPolpo
+booking_seven .open = false
+booking_seven .save
+
+booking_eight = Booking.new(date: DateTime.strptime("01/30/2019", "%m/%d/%Y"))
+booking_eight.user = simona
+booking_eight.restaurant = italianPolpo
+booking_eight.open = false
+booking_eight.save
+
+booking_nine = Booking.new(date: DateTime.strptime("02/03/2019", "%m/%d/%Y"))
+booking_nine.user = walter
+booking_nine.restaurant = italianPolpo
+booking_nine.open = false
+booking_nine.save
+
+booking_ten = Booking.new(date: DateTime.strptime("02/16/2019", "%m/%d/%Y"))
+booking_ten.user = spencer
+booking_ten.restaurant = italianPolpo
+booking_ten.open = false
+booking_ten.save
+
+booking_eleven = Booking.new(date: DateTime.strptime("02/19/2019", "%m/%d/%Y"))
+booking_eleven.user = ana
+booking_eleven.restaurant = italianPolpo
+booking_eleven.open = false
+booking_eleven.save
+
+booking_twelve = Booking.new(date: DateTime.strptime("02/25/2019", "%m/%d/%Y"))
+booking_twelve .user = simona
+booking_twelve .restaurant = italianPolpo
+booking_twelve .open = false
+booking_twelve .save
+
+booking_thirteen = Booking.new(date: DateTime.strptime("03/04/2019", "%m/%d/%Y"))
+booking_thirteen.user = walter
+booking_thirteen.restaurant = italianPolpo
+booking_thirteen.open = false
+booking_thirteen.save
+
+booking_fourteen = Booking.new(date: DateTime.strptime("03/17/2019", "%m/%d/%Y"))
+booking_fourteen.user = spencer
+booking_fourteen.restaurant = italianEmilias
+booking_fourteen.open = false
+booking_fourteen.save
+
+booking_fifteen = Booking.new(date: DateTime.strptime("03/20/2019", "%m/%d/%Y"))
+booking_fifteen.user = ana
+booking_fifteen.restaurant = italianEmilias
+booking_fifteen.open = false
+booking_fifteen.save
+
+booking_sixteen = Booking.new(date: DateTime.strptime("03/29/2019", "%m/%d/%Y"))
+booking_sixteen.user = simona
+booking_sixteen.restaurant = italianEmilias
+booking_sixteen.open = false
+booking_sixteen.save
+
+booking_seventeen = Booking.new(date: DateTime.strptime("04/01/2019", "%m/%d/%Y"))
+booking_seventeen.user = walter
+booking_seventeen.restaurant = italianEmilias
+booking_seventeen.open = false
+booking_seventeen.save
+
+booking_eighteen = Booking.new(date: DateTime.strptime("04/16/2019", "%m/%d/%Y"))
+booking_eighteen.user = spencer
+booking_eighteen.restaurant = italianEmilias
+booking_eighteen.open = false
+booking_eighteen.save
+
+booking_nineteen = Booking.new(date: DateTime.strptime("04/21/2019", "%m/%d/%Y"))
+booking_nineteen.user = ana
+booking_nineteen.restaurant = italianEmilias
+booking_nineteen.open = false
+booking_nineteen.save
+
+booking_twenty = Booking.new(date: DateTime.strptime("04/28/2019", "%m/%d/%Y"))
+booking_twenty.user = simona
+booking_twenty.restaurant = italianEmilias
+booking_twenty.open = false
+booking_twenty.save
+
+booking_twentyone = Booking.new(date: DateTime.strptime("05/05/2019", "%m/%d/%Y"))
+booking_twentyone.user = walter
+booking_twentyone.restaurant = italianEmilias
+booking_twentyone.open = false
+booking_twentyone.save
+
+booking_twentytwo = Booking.new(date: DateTime.strptime("09/06/2019", "%m/%d/%Y"))
+booking_twentytwo.user = spencer
+booking_twentytwo.restaurant = italian
+booking_twentytwo.open = false
+booking_twentytwo.save
+
+booking_twentythree = Booking.new(date: DateTime.strptime("05/15/2019", "%m/%d/%Y"))
+booking_twentythree.user = ana
+booking_twentythree.restaurant = italian
+booking_twentythree.open = false
+booking_twentythree.save
+
+booking_twentyfour = Booking.new(date: DateTime.strptime("05/24/2019", "%m/%d/%Y"))
+booking_twentyfour.user = simona
+booking_twentyfour.restaurant = italian
+booking_twentyfour.open = false
+booking_twentyfour.save
+
+booking_twentyfive = Booking.new(date: DateTime.strptime("06/07/2019", "%m/%d/%Y"))
+booking_twentyfive.user = walter
+booking_twentyfive.restaurant = italian
+booking_twentyfive.open = false
+booking_twentyfive.save
+
+booking_twentysix = Booking.new(date: DateTime.strptime("05/01/2019", "%m/%d/%Y"))
+booking_twentysix.user = spencer
+booking_twentysix.restaurant = french
+booking_twentysix.open = false
+booking_twentysix.save
+
+booking_twentyseven = Booking.new(date: DateTime.strptime("08/23/2019", "%m/%d/%Y"))
+booking_twentyseven.user = ana
+booking_twentyseven.restaurant = french
+booking_twentyseven.open = false
+booking_twentyseven.save
+
+booking_twentyeight = Booking.new(date: DateTime.strptime("06/30/2019", "%m/%d/%Y"))
+booking_twentyeight.user = simona
+booking_twentyeight.restaurant = french2
+booking_twentyeight.open = false
+booking_twentyeight.save
+
+booking_twentynine = Booking.new(date: DateTime.strptime("06/11/2019", "%m/%d/%Y"))
+booking_twentynine.user = walter
+booking_twentynine.restaurant = french2
+booking_twentynine.open = false
+booking_twentynine.save
+
+booking_thirty = Booking.new(date: DateTime.strptime("07/29/2019", "%m/%d/%Y"))
+booking_thirty.user = spencer
+booking_thirty.restaurant = french2
+booking_thirty.open = false
+booking_thirty.save
+
+booking_thirtyone = Booking.new(date: DateTime.strptime("07/04/2019", "%m/%d/%Y"))
+booking_thirtyone.user = ana
+booking_thirtyone.restaurant = french2
+booking_thirtyone.open = false
+booking_thirtyone.save
+
+booking_thirtytwo = Booking.new(date: DateTime.strptime("07/08/2019", "%m/%d/%Y"))
+booking_thirtytwo.user = simona
+booking_thirtytwo.restaurant = french2
+booking_thirtytwo.open = false
+booking_thirtytwo.save
+
+booking_thirtythree = Booking.new(date: DateTime.strptime("08/31/2019", "%m/%d/%Y"))
+booking_thirtythree.user = walter
+booking_thirtythree.restaurant = french2
+booking_thirtythree.open = false
+booking_thirtythree.save
+
+booking_thirtyfour = Booking.new(date: DateTime.strptime("08/22/2019", "%m/%d/%Y"))
+booking_thirtyfour.user = spencer
+booking_thirtyfour.restaurant = french2
+booking_thirtyfour.open = false
+booking_thirtyfour.save
+
+booking_thirtyfive = Booking.new(date: DateTime.strptime("08/10/2019", "%m/%d/%Y"))
+booking_thirtyfive.user = ana
+booking_thirtyfive.restaurant = british
+booking_thirtyfive.open = false
+booking_thirtyfive.save
+
+booking_thirtysix = Booking.new(date: DateTime.strptime("09/04/2019", "%m/%d/%Y"))
+booking_thirtysix.user = simona
+booking_thirtysix.restaurant = british
+booking_thirtysix.open = false
+booking_thirtysix.save
+
+booking_thirtyseven = Booking.new(date: DateTime.strptime("09/16/2019", "%m/%d/%Y"))
+booking_thirtyseven.user = walter
+booking_thirtyseven.restaurant = british
+booking_thirtyseven.open = false
+booking_thirtyseven.save
+
+booking_thirtyeight = Booking.new(date: DateTime.strptime("09/02/2019", "%m/%d/%Y"))
+booking_thirtyeight.user = spencer
+booking_thirtyeight.restaurant = british
+booking_thirtyeight.open = false
+booking_thirtyeight.save
+
+booking_thirtynine = Booking.new(date: DateTime.strptime("01/06/2019", "%m/%d/%Y"))
+booking_thirtynine.user = ana
+booking_thirtynine.restaurant = british
+booking_thirtynine.open = false
+booking_thirtynine.save
+
+booking_forty = Booking.new(date: DateTime.strptime("01/21/2019", "%m/%d/%Y"))
+booking_forty.user = simona
+booking_forty.restaurant = british
+booking_forty.open = false
+booking_forty.save
+
+booking_fortyone = Booking.new(date: DateTime.strptime("02/07/2019", "%m/%d/%Y"))
+booking_fortyone.user = walter
+booking_fortyone.restaurant = british
+booking_fortyone.open = false
+booking_fortyone.save
+
+booking_fortytwo = Booking.new(date: DateTime.strptime("02/22/2019", "%m/%d/%Y"))
+booking_fortytwo.user = spencer
+booking_fortytwo.restaurant = british
+booking_fortytwo.open = false
+booking_fortytwo.save
+
+booking_fortythree = Booking.new(date: DateTime.strptime("08/05/2019", "%m/%d/%Y"))
+booking_fortythree.user = ana
+booking_fortythree.restaurant = italianPolpo
+booking_fortythree.open = false
+booking_fortythree.save
+
+booking_fortyfour = Booking.new(date: DateTime.strptime("04/06/2019", "%m/%d/%Y"))
+booking_fortyfour.user = simona
+booking_fortyfour.restaurant = vegan
+booking_fortyfour.open = false
+booking_fortyfour.save
+
+booking_fortyfive = Booking.new(date: DateTime.strptime("05/20/2019", "%m/%d/%Y"))
+booking_fortyfive.user = walter
+booking_fortyfive.restaurant = vegan
+booking_fortyfive.open = false
+booking_fortyfive.save
+
+booking_fortysix = Booking.new(date: DateTime.strptime("06/10/2019", "%m/%d/%Y"))
+booking_fortysix.user = spencer
+booking_fortysix.restaurant = vegan
+booking_fortysix.open = false
+booking_fortysix.save
 puts "Finished!"
 
 # REVIEWS
