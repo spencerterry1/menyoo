@@ -189,12 +189,11 @@
 }
 
 .container-to-order {
-  border-bottom: solid 1px #BEBFC1;
+  border-bottom: solid 1px $mid-gray;
   padding-top: 10px;
 }
 
 .container-ordered {
-  border-bottom: solid 1px #BEBFC1;
   padding-top: 10px;
 }
 
@@ -206,6 +205,7 @@
   height: $card-medium-height;
   margin: 16px 0px;
   margin: 0 auto;
+  border-top: 1px solid $mid-gray;
 }
 
 .card-bill-paid-items{
@@ -244,11 +244,12 @@
 
 .card-bill-summary {
   padding-top: 20px;
-  border-top: 1px solid #BEBFC1;
+  border-top: 1px solid $mid-gray;
+  padding-bottom: 20px;
 }
 
 .text-paid {
-  color: #8D8F94;
+  color: $mid-gray;
 }
 
 .text-left-to-pay {
@@ -256,9 +257,6 @@
   color: black;
 }
 
-.text-bill-paid {
-  color: $menyoo-blue;
-  i {
-    text-color: $menyoo-blue;
-  }
+.text-order-total {
+  color: $dark-gray;
 }
