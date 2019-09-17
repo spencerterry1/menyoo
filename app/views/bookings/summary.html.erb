@@ -21,12 +21,15 @@
 
 <% if @orders_not_sent_to_kitchen.count > 0 %>
   <div class="card-orders container-to-order">
-   <h2>Orders to be placed</h2>
+    <h2>Orders to be placed</h2>
 
     <% @orders_not_sent_to_kitchen_hash.each do |attendee_id, order_array| %>
 
       <div class="card-order-container card-box-shadow">
-        <h2><%= Attendee.find(attendee_id).user.first_name %>'s order</h2>
+        <div class="card-orderer">
+          <h2><%= Attendee.find(attendee_id).user.first_name %>'s order:</h2>
+          <strong> Total: <%= humanized_money_with_symbol(Attendee.find(attendee_id).orders.map(&:price).sum) %></strong>
+        </div>
         <% order_array.each do |order| %>
           <div class="card-order-container">
             <div class="card-small card-order">
@@ -64,17 +67,31 @@
 
 <% if @orders_sent_to_kitchen.count > 0 %>
   <div class="card-orders container-ordered">
+
       <h2>Orders placed with kitchen</h2>
 
       <% @orders_sent_to_kitchen_hash.each do |attendee_id, order_array| %>
-
       <div class="card-order-container card-box-shadow">
-        <h2><%= Attendee.find(attendee_id).user.first_name %>'s order</h2>
-        <% unless order_array.first.attendee.payment %>
-          <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
-            <button class = "button">Pay</button>
+        <div class="name-and-pay-button-container">
+          <div class="card-orderer">
+            <h2><%= Attendee.find(attendee_id).user.first_name %>'s order </h2>
+              Total: <%= humanized_money_with_symbol(Attendee.find(attendee_id).orders.map(&:price).sum) %>
+          </div>
+
+          <%#=  checks if attendee has paid, if no shows payment button, if yes shows status saying paid %>
+          <% if Attendee.find(attendee_id).payment == true %>
+            <button class="button button-paid">Paid</button>
+           <% else %>
+            <div class="button-pay">
+              <% unless order_array.first.attendee.payment %>
+              <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
+                <button class = "button button-short">Pay now</button>
+              <% end %>
+            <% end %>
+            </div>
           <% end %>
-        <% end %>
+        </div>
+
         <% order_array.each do |order| %>
           <div class="card-order-container">
             <div class="card-small card-order">
@@ -93,28 +110,45 @@
 <% end %>
 
 
+<%#= Payment button to pay for the whole table bill / outstanding bill  %>
+<% if @orders_sent_to_kitchen_hash.count > 0 %>
+  <div class="card-bill-summary">
+    <div class="card-table-order-summary">
+      <p><strong class="text-order-total"> Table order total:</strong> </p>
+      <p><strong class="text-order-total"> <%= humanized_money_with_symbol(@order_total) %></strong> </p>
+    </div>
+    <div class="card-table-order-summary">
+      <p class="text-paid">Bill paid: </p>
+      <p class="text-paid"> <%= humanized_money_with_symbol(@order_paid) %></p>
+    </div>
+    <div class="card-table-order-summary">
+      <p class="text-left-to-pay">Left to pay: </p>
+      <p class="text-left-to-pay"><%= humanized_money_with_symbol(@order_left_to_pay) %></p>
+    </div>
+  </div>
 
-<% if @orders.all? {|order| order.ordered == true}  && @attendees.all? {|attendee| attendee.payment == false } %>
-  <% unless @attendees.find_by(user: current_user).payment  %>
-    <%= link_to new_restaurant_booking_review_path(@restaurant,@booking, pay_for_all: true) do %>
-    <button class = "button">Pay for all</button>
-  <% end %>
-  <% end %>
+<% end %>
 
-<% elsif @attendees.all? {|attendee| attendee.payment == true} %>
+<% if @orders.all? {|order| order.ordered == true} %>
+
+  <% if @attendees.find_by(user: current_user).payment == false %>
+    <div class="button-area">
+      <%= link_to new_restaurant_booking_review_path(@restaurant,@booking, pay_for_all: true) do %>
+        <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
+      <% end %>
+    </div>
+
+  <% elsif @order_left_to_pay == 0 %>
     <div class="card-bill-paid">
       <div class="card-bill-paid-items">
         <i class="far fa-check-circle"></i>
         <p><h2>Table bill paid</h2></p>
       </div>
     </div>
+  <% end %>
+
 <% end %>
 
-<!-- <div class="button-area">
-  <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
-    <button class = "button button-long">Pay</button>
-  <% end %>
-</div> -->
 
 
 

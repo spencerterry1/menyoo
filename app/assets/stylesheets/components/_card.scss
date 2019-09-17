@@ -185,22 +185,18 @@
   }
 
 .card-order-container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .container-to-order {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px $mid-gray;
   padding-top: 10px;
 }
 
 .container-ordered {
-  border-bottom: solid 1px black;
   padding-top: 10px;
 }
 
-.button-payment {
-  padding-top: 10px;
-}
 
 .card-bill-paid {
   text-align: center;
@@ -209,6 +205,7 @@
   height: $card-medium-height;
   margin: 16px 0px;
   margin: 0 auto;
+  border-top: 1px solid $mid-gray;
 }
 
 .card-bill-paid-items{
@@ -227,6 +224,41 @@
   justify-content: space-between;
 }
 
+.card-orderer {
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.name-and-pay-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-table-order-summary {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.card-bill-summary {
+  padding-top: 20px;
+  border-top: 1px solid $mid-gray;
+  padding-bottom: 20px;
+}
 
 
+.text-paid {
+  color: $mid-gray;
+}
+
+.text-left-to-pay {
+  font-weight: bold;
+  color: black;
+}
+
+.text-order-total {
+  color: $dark-gray;
+}
 
