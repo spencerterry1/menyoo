@@ -39,7 +39,9 @@
           </div>
         <% end %>
       <% end %>
-      <%= image_tag("color-orange.png", :class => "red-notification") %>
+      <% if attendee_invitations_for_user(current_user).count != 0 %>
+        <%= image_tag("color-orange.png", :class => "red-notification") %>
+      <% end %>
     </div>
   </div>
 </div>
