@@ -26,6 +26,10 @@ p {
   margin-bottom: 0;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .grey-font {
   color: $font-color-light-grey;
 }
