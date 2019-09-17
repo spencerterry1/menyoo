@@ -153,7 +153,7 @@ italian_dish_two.remote_photo_url = "https://www.flavcity.com/wp-content/uploads
 italian_dish_two.save
 
 italian_dish_three = Dish.new(name: "Polpo caesar",
-  description: "Octopus, chicory, crispy Tuscan ham, punchy anchovy-garlic dressing",
+  description: "Octopus, chicory, Tuscan ham, anchovy-garlic dressing",
   price: 13.00,
   prep_time: 10,
   category:"appetizer")

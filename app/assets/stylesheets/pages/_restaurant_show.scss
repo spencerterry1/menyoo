@@ -1,7 +1,28 @@
 .restaurant-header {
-  margin: 8px auto 0px auto;
+  display:block;
+  justify-content:space-between;
+  padding:10px;
+  margin: 0px auto;
   text-align: center;
   p {
     margin-bottom: 0;
   }
+}
+
+#rname{
+  color:black;
+}
+
+#restaurant-address{
+  color: $navbar-gray;
+}
+
+.search-section {
+    margin-top: 10px;
+    margin-bottom:0;
+}
+
+
+.button-medium {
+    padding: 0px 42px;
 }
