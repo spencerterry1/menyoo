@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+gem 'stripe_event'
 gem 'stripe'
 gem 'pg_search'
 gem 'cloudinary', '~> 1.9.1'
@@ -22,7 +23,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
-gem 'stripe_event'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
