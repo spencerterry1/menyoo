@@ -28,13 +28,16 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.restaurant = @restaurant
-    @booking.save
 
-    @attendee = Attendee.new(accepted: true, payment: false)
-    @attendee.user = current_user
-    @attendee.booking = @booking
-    @attendee.save
-    redirect_to restaurant_booking_path(@restaurant, @booking)
+    if @booking.save
+      @attendee = Attendee.new(accepted: true, payment: false)
+      @attendee.user = current_user
+      @attendee.booking = @booking
+      @attendee.save
+      redirect_to restaurant_booking_path(@restaurant, @booking)
+    else
+      redirect_to new_restaurant_booking_path(@restaurant)
+    end
   end
 
 
