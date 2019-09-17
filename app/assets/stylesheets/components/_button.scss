@@ -21,17 +21,19 @@
   border-radius: 50px;
 }
 
-.button-accent {
-  height: 32px;
-  background-color: $menyoo-accent;
+.button-action {
+  height: 30px;
+  background-color: $menyoo-blue;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 16px auto;
+  margin: 0 auto;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 30px;
+  font-size: 14px;
+
 }
 
 
@@ -49,6 +51,8 @@
   font-size: 12px;
   margin-right: 10px;
 }
+
+
 
 .button-checkin-summary {
   padding: 0px 92px;

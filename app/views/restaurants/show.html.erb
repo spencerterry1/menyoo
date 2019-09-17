@@ -16,11 +16,30 @@
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
 
-<div class="restaurant-header">
-  <h1><%= @restaurant.name %></h1>
-  <p><%= @restaurant.address %></p>
-</div>
+<div class="restaurant-header ">
+  <h1 id="rname"><%= @restaurant.name %></h1>
+
+     <p id="raddress" ><%= @restaurant.address %></p>
 ​
+<div class="rating-stars"></div>
+<% if @restaurant.avarage_rating.zero? %>
+        <p class="ratings-stars accent-font">No reviews</p>
+      <% else %>
+        <div class="ratings-text">
+          <% @restaurant.avarage_rating.round.times do %>
+            <i class="rating-stars fas fa-star"></i>
+          <% end %>
+      <% end %>
+      (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
+   </div>
+ </div>
+
+
+
+
+
+
+
 <% if user_signed_in? %>
 ​
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
@@ -38,7 +57,7 @@
   </div>
 <% end %>
 ​
-​
+
 <div class="search-section">
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
@@ -53,15 +72,7 @@
   <% end %>
 </div>
 ​
-  <% if @restaurant.reviews.empty? %>
-      <button class="button-avarage-rating">No reviews yet</button>
-  <% else %>
-    <div>
-      <%= link_to restaurant_reviews_path(@restaurant) do %>
-        <button class="button-avarage-rating"><%= pluralize(@restaurant.reviews.size, "review") %> </button>
-      <% end %>
-    </div>
-  <% end %>
+
 ​
 ​
 ​
@@ -86,7 +97,7 @@
                 <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"} do |f| %>
                     <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
                     <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                    <%= f.submit "Order", class: "btn btn-dark" %>
+                    <%= f.submit "Order", class: "btn button-action" %>
                 <% end %>
             <% end %>
           <% end %>
@@ -95,6 +106,6 @@
     </div>
   </div>
 <% end %>
-​
+
 
 
