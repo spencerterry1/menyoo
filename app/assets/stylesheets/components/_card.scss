@@ -59,7 +59,7 @@
   width: 100%;
   max-height: 145px;
     p {
-    font-size: 13px;
+    font-size: $font-size-small;
     }
     .timeprice{
       display:flex;
@@ -248,6 +248,7 @@
   padding-bottom: 20px;
 }
 
+
 .text-paid {
   color: $mid-gray;
 }
@@ -260,3 +261,4 @@
 .text-order-total {
   color: $dark-gray;
 }
+

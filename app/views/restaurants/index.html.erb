@@ -45,11 +45,11 @@
           <%= link_to restaurant_path(restaurant) do %>
             <h3><%= restaurant.name %></h3>
           <% end %>
-          <div>
+          <div class="rating-stars">
             <% if restaurant.avarage_rating.zero? %>
-              <p style="color: #1D5CA3; font-size: 10px; width: 50px">No reviews</p>
+              <p class="ratings-stars accent-font">No reviews</p>
             <% else %>
-            <div style="line-height: 18px; font-size: 15px;">
+            <div class="ratings-text">
               <% restaurant.avarage_rating.round.times do %>
                 <i class="rating-stars fas fa-star"></i>
               <% end %>
@@ -58,7 +58,7 @@
           <% end %>
           </div>
         </div>
-        <p><%= restaurant.address %></p>
+        <p class="grey-font"><%= restaurant.address %></p>
         <p>Category: <%= restaurant.category %></p>
       </div>
     </div>

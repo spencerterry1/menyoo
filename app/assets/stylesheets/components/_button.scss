@@ -21,6 +21,20 @@
   border-radius: 50px;
 }
 
+.button-accent {
+  height: 32px;
+  background-color: $menyoo-accent;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 16px auto;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+
 .button-medium {
   padding: 0px 48px;
 }
