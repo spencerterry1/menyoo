@@ -778,6 +778,295 @@ puts "Creating Reviews..."
   review_three.save
 puts "Finished!"
 
+  review_4 = Review.new
+  review_4.booking =
+  review_4.content = ""
+  review_4.rating =
+  review_4.user =
+  review_4.save
+puts "Finished!"
+
+  review_5 = Review.new
+  review_5.booking =
+  review_5.content = ""
+  review_5.rating =
+  review_5.user =
+  review_5.save
+puts "Finished!"
+
+  review_6 = Review.new
+  review_6.booking =
+  review_6.content = ""
+  review_6.rating =
+  review_6.user =
+  review_6.save
+puts "Finished!"
+
+  review_7 = Review.new
+  review_7.booking =
+  review_7.content = ""
+  review_7.rating =
+  review_7.user =
+  review_7.save
+puts "Finished!"
+
+  review_8 = Review.new
+  review_8.booking =
+  review_8.content = ""
+  review_8.rating =
+  review_8.user =
+  review_8.save
+puts "Finished!"
+
+  review_9 = Review.new
+  review_9.booking =
+  review_9.content = ""
+  review_9.rating =
+  review_9.user =
+  review_9.save
+puts "Finished!"
+
+  review_10 = Review.new
+  review_10.booking =
+  review_10.content = ""
+  review_10.rating =
+  review_10.user =
+  review_10.save
+puts "Finished!"
+
+  review_11 = Review.new
+  review_11.booking =
+  review_11.content = ""
+  review_11.rating =
+  review_11.user =
+  review_11.save
+puts "Finished!"
+
+  review_12 = Review.new
+  review_12.booking =
+  review_12.content = ""
+  review_12.rating =
+  review_12.user =
+  review_12.save
+puts "Finished!"
+
+  review_13 = Review.new
+  review_13.booking =
+  review_13.content = ""
+  review_13.rating =
+  review_13.user =
+  review_13.save
+puts "Finished!"
+
+  review_14 = Review.new
+  review_14.booking =
+  review_14.content = ""
+  review_14.rating =
+  review_14.user =
+  review_14.save
+puts "Finished!"
+
+  review_15 = Review.new
+  review_15.booking =
+  review_15.content = ""
+  review_15.rating =
+  review_15.user =
+  review_15.save
+puts "Finished!"
+
+  review_16 = Review.new
+  review_16.booking =
+  review_16.content = ""
+  review_16.rating =
+  review_16.user =
+  review_16.save
+puts "Finished!"
+
+  review_17 = Review.new
+  review_17.booking =
+  review_17.content = ""
+  review_17.rating =
+  review_17.user =
+  review_17.save
+puts "Finished!"
+
+  review_18 = Review.new
+  review_18.booking =
+  review_18.content = ""
+  review_18.rating =
+  review_18.user =
+  review_18.save
+puts "Finished!"
+
+  review_19 = Review.new
+  review_19.booking =
+  review_19.content = ""
+  review_19.rating =
+  review_19.user =
+  review_19.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+  review_ = Review.new
+  review_.booking =
+  review_.content = ""
+  review_.rating =
+  review_.user =
+  review_.save
+puts "Finished!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ORDERS
 puts "Creating Orders..."
 
