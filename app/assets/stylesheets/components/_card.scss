@@ -189,12 +189,12 @@
 }
 
 .container-to-order {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #BEBFC1;
   padding-top: 10px;
 }
 
 .container-ordered {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #BEBFC1;
   padding-top: 10px;
 }
 
@@ -238,12 +238,27 @@
 .card-table-order-summary {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 200px;
   margin: 0 auto;
 }
 
 .card-bill-summary {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid black;
+  padding-top: 20px;
+  border-top: 1px solid #BEBFC1;
+}
+
+.text-paid {
+  color: #8D8F94;
+}
+
+.text-left-to-pay {
+  font-weight: bold;
+  color: black;
+}
+
+.text-bill-paid {
+  color: $menyoo-blue;
+  i {
+    text-color: $menyoo-blue;
+  }
 }

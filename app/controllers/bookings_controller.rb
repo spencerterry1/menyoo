@@ -82,8 +82,6 @@ class BookingsController < ApplicationController
       @order_left_to_pay += attendee.orders.where(ordered: true).map(&:price).sum
     end
 
-
-
   end
 
   def checkin
