@@ -39,8 +39,10 @@
 
 .navbar-title {
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .navbar-checkin {
@@ -58,9 +60,9 @@
 
 
 .screen-content {
-  padding: 56px 8px;
+  padding: 56px 8px 90px 8px;
   background-color: white;
-  height: 1100px;
+  min-height: 100vh;
 }
 
 .tabbar-ios {

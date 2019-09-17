@@ -29,7 +29,7 @@ class AttendeesController < ApplicationController
      @attendee.booking = @booking
      if @attendee.save
       flash[:notice] = "#{@attendee.user.first_name} has been invited"
-      redirect_to restaurant_booking_path(@booking.restaurant, @booking)
+      redirect_to restaurant_booking_attendees_path(@booking.restaurant, @booking)
     end
   end
 
