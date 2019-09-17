@@ -8,8 +8,6 @@
 
 
 
-
-
 .button {
   height: 32px;
   background-color: $menyoo-blue;
@@ -28,11 +26,14 @@
 }
 
 .button-long {
-  padding: 0px 112px;
+  padding: 0px ;
+  width: 300px;
 }
 
 .button-short {
-  padding: 0px 25px;
+  padding: 0px 15px;
+  font-size: 12px;
+  margin-right: 10px;
 }
 
 .button-checkin-summary {
@@ -43,6 +44,11 @@
   background-color: #D4D7DC;
   padding: 0px 112px;
 }
+
+.button-payment {
+  padding-top: 20px;
+}
+
 
 .order-status {
   width: 80px;
@@ -106,5 +112,16 @@
 .button_height > div {
   margin-bottom:0;
 }
+
+.button-paid {
+  padding: 0px 15px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+  background-color: green;
+}
+
+
 
 

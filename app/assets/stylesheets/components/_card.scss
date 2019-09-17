@@ -185,7 +185,7 @@
   }
 
 .card-order-container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .container-to-order {
@@ -198,9 +198,6 @@
   padding-top: 10px;
 }
 
-.button-payment {
-  padding-top: 10px;
-}
 
 .card-bill-paid {
   text-align: center;
@@ -227,4 +224,26 @@
   justify-content: space-between;
 }
 
+.card-orderer {
+  margin-left: 10px;
+  padding-top: 10px;
+}
 
+.name-and-pay-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-table-order-summary {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.card-bill-summary {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid black;
+}
