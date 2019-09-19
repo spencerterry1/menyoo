@@ -28,7 +28,14 @@
       <div class="card-order-container card-box-shadow">
         <div class="card-orderer">
           <h2><%= Attendee.find(attendee_id).user.first_name %>'s order:</h2>
-          <strong> Total: <%= humanized_money_with_symbol(Attendee.find(attendee_id).orders.map(&:price).sum) %></strong>
+          <%#= calculates order cost %>
+          <% attendee_orders =  Attendee.find(attendee_id).orders.where(ordered: false)%>
+            <% attendee_order_total = 0 %>
+            <% attendee_orders.each do |order| %>
+              <% attendee_order_total += order.dish.price %>
+            <% end %>
+
+          <strong> Total: <%= humanized_money_with_symbol(attendee_order_total) %></strong>
         </div>
         <% order_array.each do |order| %>
           <div class="card-order-container">
@@ -51,7 +58,7 @@
       <div class="button-area">
         <%= simple_form_for [@restaurant, @booking] do |f| %>
           <%= f.input :ordered, as: :hidden, value: true %>
-          <%= f.submit "Send orders to the kitchen", class: "button-accent button-medium" %>
+          <%= f.submit "Send orders to the kitchen", class: "button button-medium" %>
         <% end %>
       </div>
     <% else %>
@@ -75,7 +82,14 @@
         <div class="name-and-pay-button-container">
           <div class="card-orderer">
             <h2><%= Attendee.find(attendee_id).user.first_name %>'s order </h2>
-              Total: <%= humanized_money_with_symbol(Attendee.find(attendee_id).orders.map(&:price).sum) %>
+            <%#= calculates order cost %>
+            <% attendee_orders =  Attendee.find(attendee_id).orders.where(ordered: true)%>
+            <% attendee_order_total = 0 %>
+            <% attendee_orders.each do |order| %>
+              <% attendee_order_total += order.dish.price %>
+            <% end %>
+
+             <strong> Total: <%= humanized_money_with_symbol(attendee_order_total) %></strong>
           </div>
 
           <%#=  checks if attendee has paid, if no shows payment button, if yes shows status saying paid %>
