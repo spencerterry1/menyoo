@@ -23,7 +23,7 @@
 
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :name, input_html: {value: ""} %>
+    <p><strong><%= f.input :name, input_html: {value: ""} %></strong></p>
     <%= f.submit "Search", class: "button button-medium" %>
   <% end %>
 </div>
@@ -35,12 +35,12 @@
   <div class="card-small card-box-shadow card-submenu user flex-between">
     <%= cl_image_tag(@user.photo, :class => "avatar button-area") %>
     <div>
-      <p><%= @user.first_name %> <%= @user.last_name %></p>
+      <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
     </div>
 
     <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
       <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
-      <%= f.submit "Invite Now", class: "btn btn-dark" %>
+      <%= f.submit "Invite Now", class: "btn button-action" %>
     <% end %>
 
   </div>

@@ -73,7 +73,7 @@ italianPolpo = Restaurant.new(name: "Polpo",
 italianPolpo.remote_photo_url = "https://cdn.venuescanner.com/photos/med_1819ade4c63bde2e494a519a23114bb5.jpg"
 italianPolpo.save
 
-italianEmilias = Restaurant.new(name: "Emilia’s Crafted Pasta",
+italianEmilias = Restaurant.new(name: "Emilia’s Pasta",
 address: "43 Beak Street, Soho, London",
 category: "Italian")
 
