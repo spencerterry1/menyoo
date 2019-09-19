@@ -772,8 +772,8 @@ puts "Creating Reviews..."
 
   review_three = Review.new
   review_three.booking = booking_three
-  review_three.content = ""
-  review_three.rating = 4
+  review_three.content = "Bad"
+  review_three.rating = 2
   review_three.user = ana
   review_three.save
 puts "Finished!"
@@ -788,111 +788,111 @@ puts "Finished!"
 
   review_5 = Review.new
   review_5.booking = booking_five
-  review_5.content = ""
-  review_5.rating =
+  review_5.content = "I've been visiting Polpo for 5+ years and I have to say this one is my favourite! The friendly staff make you feel welcome every single time and the atmosphere is just soooooo nice in there. As always, the seasonal menus are as delicious as the last one."
+  review_5.rating = 5
   review_5.user = walter
   review_5.save
 puts "Finished!"
 
   review_6 = Review.new
   review_6.booking = booking_six
-  review_6.content = ""
-  review_6.rating =
+  review_6.content = "Nice cosy restaurant, amazing quality food, always busy. Everything in the restauant has an Italian touch. Loved it."
+  review_6.rating = 5
   review_6.user = spencer
   review_6.save
 puts "Finished!"
 
   review_7 = Review.new
   review_7.booking = booking_seven
-  review_7.content = ""
-  review_7.rating =
+  review_7.content = "If you’ve never been to Polpo you’ve missed out. The food is always excellent - whatever you have. The staff are awesome too and we always leave very happy."
+  review_7.rating = 5
   review_7.user = ana
   review_7.save
 puts "Finished!"
 
   review_8 = Review.new
   review_8.booking = booking_eight
-  review_8.content = ""
-  review_8.rating =
+  review_8.content = "Fantastic food, great atmosphere, perfect service. One of the few restaurants I actually rate in London!"
+  review_8.rating = 5
   review_8.user = simona
   review_8.save
 puts "Finished!"
 
   review_9 = Review.new
   review_9.booking = booking_nine
-  review_9.content = ""
-  review_9.rating =
+  review_9.content = "Love this busy bustling bar / restaurant. good for solo eats or with friends. my favourite was the meatballs .. good small dishes to share."
+  review_9.rating = 5
   review_9.user = walter
   review_9.save
 puts "Finished!"
 
   review_10 = Review.new
   review_10.booking = booking_ten
-  review_10.content = ""
-  review_10.rating =
+  review_10.content = "I visited this place multiple times. Great ambience and great service. Very well priced, good cuisine. Can't wait to get back."
+  review_10.rating = 5
   review_10.user = spencer
   review_10.save
 puts "Finished!"
 
   review_11 = Review.new
   review_11.booking = booking_eleven
-  review_11.content = ""
-  review_11.rating =
+  review_11.content = "Fantastic place, good atmosphere. The slow cooked Ragu melted in your mouth . All the dishes were tasty and I like the fact they make seasonal changes."
+  review_11.rating = 5
   review_11.user = ana
   review_11.save
 puts "Finished!"
 
   review_12 = Review.new
   review_12.booking = booking_twelve
-  review_12.content = ""
-  review_12.rating =
+  review_12.content = "Don't let Polpo's unassuming exterior put you off! This is a little gem serving fabulous tasting Italian food. Everything we ordered was delicious. Excellent and reasonably priced house wine and attentive service added to the whole experience. Would definitely recommend."
+  review_12.rating = 4
   review_12.user = simona
   review_12.save
 puts "Finished!"
 
   review_13 = Review.new
   review_13.booking = booking_thirteen
-  review_13.content = ""
-  review_13.rating =
+  review_13.content = "Amazing people with great service. I would recommend it to anyone within the area. Some of the finest food that I've ever had"
+  review_13.rating = 4
   review_13.user = walter
   review_13.save
 puts "Finished!"
 
   review_14 = Review.new
   review_14.booking = booking_fourteen
-  review_14.content = ""
-  review_14.rating =
+  review_14.content = "good"
+  review_14.rating = 4
   review_14.user = spencer
   review_14.save
 puts "Finished!"
 
   review_15 = Review.new
   review_15.booking = booking_fifteen
-  review_15.content = ""
-  review_15.rating =
+  review_15.content = "good"
+  review_15.rating = 4
   review_15.user = ana
   review_15.save
 puts "Finished!"
 
   review_16 = Review.new
   review_16.booking = booking_sixteen
-  review_16.content = ""
-  review_16.rating =
+  review_16.content = "bad"
+  review_16.rating = 2
   review_16.user = simona
   review_16.save
 puts "Finished!"
 
   review_17 = Review.new
   review_17.booking = booking_seventeen
-  review_17.content = ""
-  review_17.rating =
+  review_17.content = "good"
+  review_17.rating = 3
   review_17.user = walter
   review_17.save
 puts "Finished!"
 
   review_18 = Review.new
   review_18.booking = booking_eighteen
-  review_18.content = ""
+  review_18.content = "good"
   review_18.rating =
   review_18.user = spencer
   review_18.save
@@ -1093,8 +1093,8 @@ puts "Finished!"
 
   review_43 = Review.new
   review_43.booking = booking_fortythree
-  review_43.content = ""
-  review_43.rating =
+  review_43.content = "My friend and I dined here and enjoyed the wonderful food, charming staff and convenient location. Looking forward to my next visit."
+  review_43.rating = 5
   review_43.user = ana
   review_43.save
 puts "Finished!"
