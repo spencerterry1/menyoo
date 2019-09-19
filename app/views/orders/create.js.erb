@@ -1,3 +1,11 @@
-const buttonToChange = document.querySelector(".id-of-dish-<%= @dish.id %>");
+console.log("thanks johnny");
 
-console.log(buttonToChange);
+buttonToChange = document.querySelector(".id-of-dish-<%= @dish.id %>");
+
+console.log(buttonToChange.value);
+
+// buttonToChange.value = "Done";
+
+buttonToChange.setAttribute("value","Done");
+
+console.log('here')
