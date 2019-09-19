@@ -1,8 +1,10 @@
 .button-area {
   text-align: center;
   align-items: center;
+  display:flex;
   .invitation-buton{
-    margin:40px;
+    margin:5px;
+
   }
 }
 
@@ -20,6 +22,26 @@
   cursor: pointer;
   border-radius: 50px;
 }
+
+
+.decbutton {
+  height: 32px;
+  background-color: $menyoo-gray;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 16px auto;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+
+
+
+
+
 
 .button-action {
   height: 30px;

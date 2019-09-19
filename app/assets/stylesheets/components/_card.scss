@@ -162,6 +162,14 @@
     color: $menyoo-blue;
 }
 
+.booktime {
+   color: $menyoo-blue;
+}
+
+#invitedat > p{
+  color: $headers-font;
+}
+
 .restaurant-name-card{
   display: flex;
   justify-content: space-between;
