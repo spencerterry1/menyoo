@@ -54,7 +54,11 @@
 <% @booking.attendees.map do |attendee| %>
   <div class="card-box-shadow card-medium-attendees card-submenu">
     <div>
-      <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
+      <% if attendee.accepted %>
+        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large-blue button-area") %>
+      <% else %>
+        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
+      <% end %>
     </div>
     <div>
       <p><strong> <%= attendee.user.first_name %></strong></p>
@@ -65,7 +69,6 @@
         <% else %>
           <p><i class="fas fa-times"></i></p>
         <% end %>
-
       </div>
     </div>
   </div>
