@@ -776,7 +776,6 @@ puts "Creating Reviews..."
   review_three.rating = 2
   review_three.user = ana
   review_three.save
-puts "Finished!"
 
   review_4 = Review.new
   review_4.booking = booking_four
@@ -784,7 +783,6 @@ puts "Finished!"
   review_4.rating = 5
   review_4.user = simona
   review_4.save
-puts "Finished!"
 
   review_5 = Review.new
   review_5.booking = booking_five
@@ -792,7 +790,6 @@ puts "Finished!"
   review_5.rating = 5
   review_5.user = walter
   review_5.save
-puts "Finished!"
 
   review_6 = Review.new
   review_6.booking = booking_six
@@ -800,7 +797,6 @@ puts "Finished!"
   review_6.rating = 5
   review_6.user = spencer
   review_6.save
-puts "Finished!"
 
   review_7 = Review.new
   review_7.booking = booking_seven
@@ -808,7 +804,6 @@ puts "Finished!"
   review_7.rating = 5
   review_7.user = ana
   review_7.save
-puts "Finished!"
 
   review_8 = Review.new
   review_8.booking = booking_eight
@@ -816,7 +811,6 @@ puts "Finished!"
   review_8.rating = 5
   review_8.user = simona
   review_8.save
-puts "Finished!"
 
   review_9 = Review.new
   review_9.booking = booking_nine
@@ -824,7 +818,6 @@ puts "Finished!"
   review_9.rating = 5
   review_9.user = walter
   review_9.save
-puts "Finished!"
 
   review_10 = Review.new
   review_10.booking = booking_ten
@@ -832,7 +825,6 @@ puts "Finished!"
   review_10.rating = 5
   review_10.user = spencer
   review_10.save
-puts "Finished!"
 
   review_11 = Review.new
   review_11.booking = booking_eleven
@@ -840,7 +832,6 @@ puts "Finished!"
   review_11.rating = 5
   review_11.user = ana
   review_11.save
-puts "Finished!"
 
   review_12 = Review.new
   review_12.booking = booking_twelve
@@ -848,7 +839,6 @@ puts "Finished!"
   review_12.rating = 4
   review_12.user = simona
   review_12.save
-puts "Finished!"
 
   review_13 = Review.new
   review_13.booking = booking_thirteen
@@ -856,7 +846,6 @@ puts "Finished!"
   review_13.rating = 4
   review_13.user = walter
   review_13.save
-puts "Finished!"
 
   review_14 = Review.new
   review_14.booking = booking_fourteen
@@ -864,7 +853,6 @@ puts "Finished!"
   review_14.rating = 4
   review_14.user = spencer
   review_14.save
-puts "Finished!"
 
   review_15 = Review.new
   review_15.booking = booking_fifteen
@@ -872,7 +860,6 @@ puts "Finished!"
   review_15.rating = 4
   review_15.user = ana
   review_15.save
-puts "Finished!"
 
   review_16 = Review.new
   review_16.booking = booking_sixteen
@@ -880,216 +867,188 @@ puts "Finished!"
   review_16.rating = 2
   review_16.user = simona
   review_16.save
-puts "Finished!"
 
   review_17 = Review.new
   review_17.booking = booking_seventeen
-  review_17.content = "good"
+  review_17.content = "not bad"
   review_17.rating = 3
   review_17.user = walter
   review_17.save
-puts "Finished!"
 
   review_18 = Review.new
   review_18.booking = booking_eighteen
   review_18.content = "good"
-  review_18.rating =
+  review_18.rating = 5
   review_18.user = spencer
   review_18.save
-puts "Finished!"
 
   review_19 = Review.new
   review_19.booking = booking_nineteen
-  review_19.content = ""
-  review_19.rating =
+  review_19.content = "good"
+  review_19.rating = 5
   review_19.user = ana
   review_19.save
-puts "Finished!"
 
   review_20 = Review.new
   review_20.booking = booking_twenty
-  review_20.content = ""
-  review_20.rating =
+  review_20.content = "good"
+  review_20.rating = 4
   review_20.user = simona
   review_20.save
-puts "Finished!"
 
   review_21 = Review.new
   review_21.booking = booking_twentyone
-  review_21.content = ""
-  review_21.rating =
+  review_21.content = "bad"
+  review_21.rating = 2
   review_21.user = walter
   review_21.save
-puts "Finished!"
 
-  review_22.save
   review_22 = Review.new
   review_22.booking = booking_twentytwo
-  review_22.content = ""
-  review_22.rating =
+  review_22.content = "good"
+  review_22.rating = 4
   review_22.user = spencer
   review_22.save
-puts "Finished!"
 
   review_23 = Review.new
   review_23.booking = booking_twentythree
-  review_23.content = ""
-  review_23.rating =
+  review_23.content = "good"
+  review_23.rating = 4
   review_23.user = ana
   review_23.save
-puts "Finished!"
 
   review_24 = Review.new
   review_24.booking = booking_twentyfour
-  review_24.content = ""
-  review_24.rating =
+  review_24.content = "good"
+  review_24.rating = 5
   review_24.user = simona
   review_24.save
-puts "Finished!"
 
   review_25 = Review.new
   review_25.booking = booking_twentyfive
-  review_25.content = ""
-  review_25.rating =
+  review_25.content = "not bad"
+  review_25.rating = 3
   review_25.user = walter
   review_25.save
-puts "Finished!"
 
   review_26 = Review.new
   review_26.booking = booking_twentysix
-  review_26.content = ""
-  review_26.rating =
+  review_26.content = "not bad"
+  review_26.rating = 3
   review_26.user = spencer
   review_26.save
-puts "Finished!"
 
   review_27 = Review.new
   review_27.booking = booking_twentyseven
-  review_27.content = ""
-  review_27.rating =
+  review_27.content = "good"
+  review_27.rating = 4
   review_27.user = ana
   review_27.save
-puts "Finished!"
 
   review_28 = Review.new
   review_28.booking = booking_twentyeight
-  review_28.content = ""
-  review_28.rating =
+  review_28.content = "good"
+  review_28.rating = 5
   review_28.user = simona
   review_28.save
-puts "Finished!"
 
   review_29 = Review.new
   review_29.booking = booking_twentynine
-  review_29.content = ""
-  review_29.rating =
+  review_29.content = "good"
+  review_29.rating = 5
   review_29.user = walter
   review_29.save
-puts "Finished!"
 
   review_30 = Review.new
   review_30.booking = booking_thirty
-  review_30.content = ""
-  review_30.rating =
+  review_30.content = "bad"
+  review_30.rating = 2
   review_30.user = spencer
   review_30.save
-puts "Finished!"
 
   review_31 = Review.new
   review_31.booking = booking_thirtyone
-  review_31.content = ""
-  review_31.rating =
+  review_31.content = "bad"
+  review_31.rating = 2
   review_31.user = ana
   review_31.save
-puts "Finished!"
 
   review_32 = Review.new
   review_32.booking = booking_thirtytwo
-  review_32.content = ""
-  review_32.rating =
+  review_32.content = "not bad"
+  review_32.rating = 3
   review_32.user = simona
   review_32.save
-puts "Finished!"
 
   review_33 = Review.new
   review_33.booking = booking_thirtythree
-  review_33.content = ""
-  review_33.rating =
+  review_33.content = "good"
+  review_33.rating = 4
   review_33.user = walter
   review_33.save
-puts "Finished!"
 
   review_34 = Review.new
   review_34.booking = booking_thirtyfour
-  review_34.content = ""
-  review_34.rating =
+  review_34.content = "not bad"
+  review_34.rating = 3
   review_34.user = spencer
   review_34.save
-puts "Finished!"
 
   review_35 = Review.new
   review_35.booking = booking_thirtyfive
-  review_35.content = ""
-  review_35.rating =
+  review_35.content = "good"
+  review_35.rating = 5
   review_35.user = ana
   review_35.save
-puts "Finished!"
 
   review_36 = Review.new
   review_36.booking = booking_thirtysix
-  review_36.content = ""
-  review_36.rating =
+  review_36.content = "good"
+  review_36.rating = 5
   review_36.user = simona
   review_36.save
-puts "Finished!"
 
   review_37 = Review.new
   review_37.booking = booking_thirtyseven
-  review_37.content = ""
-  review_37.rating =
+  review_37.content = "good"
+  review_37.rating = 4
   review_37.user = walter
   review_37.save
-puts "Finished!"
 
   review_38 = Review.new
   review_38.booking = booking_thirtyeight
-  review_38.content = ""
-  review_38.rating =
+  review_38.content = "good"
+  review_38.rating = 4
   review_38.user = spencer
   review_38.save
-puts "Finished!"
 
   review_39 = Review.new
   review_39.booking = booking_thirtynine
-  review_39.content = ""
-  review_39.rating =
+  review_39.content = "not bad"
+  review_39.rating = 3
   review_39.user = ana
   review_39.save
-puts "Finished!"
 
   review_40 = Review.new
   review_40.booking = booking_forty
-  review_40.content = ""
-  review_40.rating =
+  review_40.content = "not bad"
+  review_40.rating = 3
   review_40.user = simona
   review_40.save
-puts "Finished!"
 
   review_41 = Review.new
   review_41.booking = booking_fortyone
-  review_41.content = ""
-  review_41.rating =
+  review_41.content = "good"
+  review_41.rating = 5
   review_41.user = walter
   review_41.save
-puts "Finished!"
 
   review_42 = Review.new
   review_42.booking = booking_fortytwo
-  review_42.content = ""
-  review_42.rating =
+  review_42.content = "good"
+  review_42.rating = 5
   review_42.user = spencer
   review_42.save
-puts "Finished!"
 
   review_43 = Review.new
   review_43.booking = booking_fortythree
@@ -1097,28 +1056,25 @@ puts "Finished!"
   review_43.rating = 5
   review_43.user = ana
   review_43.save
-puts "Finished!"
 
   review_44 = Review.new
   review_44.booking = booking_fortyfour
-  review_44.content = ""
-  review_44.rating =
+  review_44.content = "good"
+  review_44.rating = 4
   review_44.user = simona
   review_44.save
-puts "Finished!"
 
   review_45 = Review.new
   review_45.booking = booking_fortyfive
-  review_45.content = ""
-  review_45.rating =
+  review_45.content = "not bad"
+  review_45.rating = 3
   review_45.user = walter
   review_45.save
-puts "Finished!"
 
   review_46 = Review.new
   review_46.booking = booking_fortysix
-  review_46.content = ""
-  review_46.rating =
+  review_46.content = "good"
+  review_46.rating = 5
   review_46.user = spencer
   review_46.save
 puts "Finished!"
