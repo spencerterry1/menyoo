@@ -33,7 +33,7 @@
 <% if @user && @user != current_user %>
 
   <div class="card-small card-box-shadow card-submenu user flex-between">
-    <%= cl_image_tag(@user.photo, :class => "avatar button-area") %>
+    <%= cl_image_tag(@user.photo, :class => "avatar-small button-area") %>
     <div>
       <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
     </div>
