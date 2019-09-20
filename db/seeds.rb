@@ -98,7 +98,7 @@ french2.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9
 french2.save
 
 
-british = Restaurant.new(name: "Dean Street Townhouse",
+british = Restaurant.new(name: "Dean St. Townhouse",
   address: "69 - 71 Dean St, London",
   category: "British")
 
