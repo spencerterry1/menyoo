@@ -258,7 +258,7 @@ italianPolpo_dish_five.save
 
 
 italianEmilias_dish_one = Dish.new(name: "Finely Sliced Bresaol",
-  description: "cured beef with rocket & parmesan salad on toasted ciabatta",
+  description: "Cured beef with rocket & parmesan salad on ciabatta",
   price: 7.50,
   prep_time: 15,
   category:"appetizer")
@@ -292,7 +292,7 @@ italianEmilias_dish_three.save
 
 
 italianEmilias_dish_four = Dish.new(name: "Tuna Steak",
-  description: "Tuna fillet with tomato sauce, peperoncino and chopped parsley",
+  description: "Tuna fillet with tomato sauce, peperoncino and parsley",
   price: 12.00,
   prep_time: 15,
   category:"main")
@@ -343,7 +343,7 @@ french_dish_three.restaurant = french
 french_dish_three.remote_photo_url = "https://www.soleou.fr/img/cms/fotolia_98188624.jpg"
 french_dish_three.save
 
-french_dish_four = Dish.new(name: "Profiteroles, Sauce au Chocolat",
+french_dish_four = Dish.new(name: "Chocolat Profiteroles",
   description: "French choux pastry with a sweet cream filling and chocolate",
   price: 6.50,
   prep_time: 10,
@@ -358,7 +358,7 @@ french_dish_four.save
 
 
 british_dish_one = Dish.new(name: "Duck & Pork Terrine",
-  description: "Terrine served with crispy Sourdough, pistachios and prunes",
+  description: "Terrine served with sourdough, pistachios & prunes",
   price: 10.90,
   prep_time: 10,
   category:"appetizer")
@@ -416,8 +416,8 @@ british_dish_five.save
 
 
 
-vegan_dish_one = Dish.new(name: "Roast vegetable tagine",
-  description: "Chickpeas, roasted cauliflower, dates, tomatoes & preserved lemon",
+vegan_dish_one = Dish.new(name: "Roast Vegetable Tagine",
+  description: "Chickpeas, roasted cauliflower, dates, tomatoes & lemon",
   price: 11.00,
   prep_time: 15,
   category: "appetizer")

@@ -11,6 +11,9 @@
   display: flex;
   height: $card-large-height;
   margin: 16px 0px;
+  h3 {
+    line-height: 1.0rem;
+  }
 }
 
 .card-medium {
@@ -278,6 +281,9 @@
   form {
     margin-right: 10px;
     margin-bottom: 15px;
-
   }
+}
+
+.dish-info {
+  padding-top: 5px;
 }

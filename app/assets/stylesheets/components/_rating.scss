@@ -1,11 +1,18 @@
 .rating-stars {
   line-height: 18px;
-  font-size: 10px;
-  color: $menyoo-accent !important;
+  font-size: 9px;
+  color: $menyoo-blue !important;
+  a {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+    color: $menyoo-blue
+  }
 }
 
 .ratings-text {
   line-height: 18px;
   font-size: $font-size-small;
-  color: $menyoo-accent;
+  color: $menyoo-blue;
 }
