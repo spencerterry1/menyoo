@@ -24,7 +24,7 @@
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
     <p><strong><%= f.input :name, input_html: {value: ""} %></strong></p>
-    <%= f.submit "Search", class: "button button-medium" %>
+    <%= f.submit "Search", class: "button button-medium button-search" %>
   <% end %>
 </div>
 
@@ -32,17 +32,17 @@
 <%# if a user searches to add a guest to the table  %>
 <% if @user && @user != current_user %>
 
-  <div class="card-small card-box-shadow card-submenu user flex-between">
-    <%= cl_image_tag(@user.photo, :class => "avatar-small button-area") %>
-    <div>
-      <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
+  <div class="card-box-shadow card-medium-attendees card-submenu user attende-invite">
+    <div class="avatar-div">
+      <%= cl_image_tag(@user.photo, :class => "avatar-large button-area") %>
     </div>
-
-    <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
-      <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
-      <%= f.submit "Invite Now", class: "btn button-action" %>
-    <% end %>
-
+    <div class="attendee-invite">
+      <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
+      <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
+        <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
+        <%= f.submit "Invite Now", class: "btn button-action" %>
+      <% end %>
+    </div>
   </div>
 
 <% end %>
@@ -50,12 +50,18 @@
 
 <h1>Current Attendees</h1>
 
-
 <% @booking.attendees.map do |attendee| %>
   <div class="card-box-shadow card-medium-attendees card-submenu">
-    <div>
-      <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
-    </div>
+    <% if attendee.accepted == true %>
+      <div>
+        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area attendee-accepted") %>
+      </div>
+    <% else %>
+      <div>
+        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
+      </div>
+    <% end %>
+
     <div>
       <p><strong> <%= attendee.user.first_name %></strong></p>
       <div class="flex-between">

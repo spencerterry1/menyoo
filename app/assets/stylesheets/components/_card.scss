@@ -270,3 +270,14 @@
   color: $dark-gray;
 }
 
+.attendee-invite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  form {
+    margin-right: 10px;
+    margin-bottom: 15px;
+
+  }
+}

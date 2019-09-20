@@ -36,10 +36,6 @@
 
 
 
-
-
-
-
 <% if user_signed_in? %>
 ​
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
@@ -55,6 +51,7 @@
       <button class = "button button-long">Open a Table</button>
     <% end %>
   </div>
+
 <% end %>
 ​
 
@@ -73,8 +70,7 @@
 </div>
 ​
 
-​
-​
+
 ​
 <h2>Menu</h2>
 ​
