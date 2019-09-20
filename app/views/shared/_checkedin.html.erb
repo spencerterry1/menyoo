@@ -7,16 +7,27 @@
       <div class="qr-code">
         <%= image_tag("qrcode.jpg") %>
       </div>
-      <div class="modal-buttons button-area flex-between">
-        <div class="button-modal button-modal-cancel">Cancel</div>
+
+
+      <div class="modal-buttons  flex-between">
+
+        <div class="button-modal button-modal-cancel">
+          Cancel
+        </div>
         <% if @restaurant && @booking %>
           <%= link_to restaurant_booking_checkin_path(@restaurant, @booking) do %>
-            <div class="button-modal button-modal-checkedin">Checked-In</div>
+            <div class="button-modal button-modal-checkedin">
+              Checked-in
+            </div>
           <% end %>
         <% else %>
-          <div class="button-modal button-modal-checkedin">Wrong Path !</div>
+          <div class="button-modal button-modal-checkedin">
+            Wrong Path !
+          </div>
         <% end %>
+
       </div>
+
     </div>
   </div>
 </div>
