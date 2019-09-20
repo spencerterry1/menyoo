@@ -470,32 +470,281 @@ puts "Finished!"
 # BOOKINGS
 puts "Creating Bookings..."
 
-booking_one = Booking.new(date: DateTime.strptime("10/14/2019", "%m/%d/%Y"))
+booking_one = Booking.new(date: DateTime.strptime("06/14/2019", "%m/%d/%Y"))
 booking_one.user = walter
 booking_one.restaurant = french
 booking_one.open = false
 booking_one.save
 
-booking_two = Booking.new(date: DateTime.strptime("11/16/2019", "%m/%d/%Y"))
+booking_two = Booking.new(date: DateTime.strptime("07/16/2019", "%m/%d/%Y"))
 booking_two.user = spencer
 booking_two.restaurant = italian
 booking_two.open = false
 booking_two.save
 
-booking_three = Booking.new(date: DateTime.strptime("11/15/2019", "%m/%d/%Y"))
+booking_three = Booking.new(date: DateTime.strptime("04/15/2019", "%m/%d/%Y"))
 booking_three.user = ana
 booking_three.restaurant = british
 booking_three.open = false
 booking_three.save
 
-booking_four = Booking.new(date: DateTime.strptime("11/18/2019", "%m/%d/%Y"))
+booking_four = Booking.new(date: DateTime.strptime("08/18/2019", "%m/%d/%Y"))
 booking_four.user = simona
 booking_four.restaurant = vegan
 booking_four.open = false
 booking_four.save
 
+booking_five = Booking.new(date: DateTime.strptime("01/02/2019", "%m/%d/%Y"))
+booking_five.user = walter
+booking_five.restaurant = italianPolpo
+booking_five.open = false
+booking_five.save
 
+booking_six = Booking.new(date: DateTime.strptime("01/15/2019", "%m/%d/%Y"))
+booking_six.user = spencer
+booking_six.restaurant = italianPolpo
+booking_six.open = false
+booking_six.save
 
+booking_seven = Booking.new(date: DateTime.strptime("01/18/2019", "%m/%d/%Y"))
+booking_seven .user = ana
+booking_seven .restaurant = italianPolpo
+booking_seven .open = false
+booking_seven .save
+
+booking_eight = Booking.new(date: DateTime.strptime("01/30/2019", "%m/%d/%Y"))
+booking_eight.user = simona
+booking_eight.restaurant = italianPolpo
+booking_eight.open = false
+booking_eight.save
+
+booking_nine = Booking.new(date: DateTime.strptime("02/03/2019", "%m/%d/%Y"))
+booking_nine.user = walter
+booking_nine.restaurant = italianPolpo
+booking_nine.open = false
+booking_nine.save
+
+booking_ten = Booking.new(date: DateTime.strptime("02/16/2019", "%m/%d/%Y"))
+booking_ten.user = spencer
+booking_ten.restaurant = italianPolpo
+booking_ten.open = false
+booking_ten.save
+
+booking_eleven = Booking.new(date: DateTime.strptime("02/19/2019", "%m/%d/%Y"))
+booking_eleven.user = ana
+booking_eleven.restaurant = italianPolpo
+booking_eleven.open = false
+booking_eleven.save
+
+booking_twelve = Booking.new(date: DateTime.strptime("02/25/2019", "%m/%d/%Y"))
+booking_twelve .user = simona
+booking_twelve .restaurant = italianPolpo
+booking_twelve .open = false
+booking_twelve .save
+
+booking_thirteen = Booking.new(date: DateTime.strptime("03/04/2019", "%m/%d/%Y"))
+booking_thirteen.user = walter
+booking_thirteen.restaurant = italianPolpo
+booking_thirteen.open = false
+booking_thirteen.save
+
+booking_fourteen = Booking.new(date: DateTime.strptime("03/17/2019", "%m/%d/%Y"))
+booking_fourteen.user = spencer
+booking_fourteen.restaurant = italianEmilias
+booking_fourteen.open = false
+booking_fourteen.save
+
+booking_fifteen = Booking.new(date: DateTime.strptime("03/20/2019", "%m/%d/%Y"))
+booking_fifteen.user = ana
+booking_fifteen.restaurant = italianEmilias
+booking_fifteen.open = false
+booking_fifteen.save
+
+booking_sixteen = Booking.new(date: DateTime.strptime("03/29/2019", "%m/%d/%Y"))
+booking_sixteen.user = simona
+booking_sixteen.restaurant = italianEmilias
+booking_sixteen.open = false
+booking_sixteen.save
+
+booking_seventeen = Booking.new(date: DateTime.strptime("04/01/2019", "%m/%d/%Y"))
+booking_seventeen.user = walter
+booking_seventeen.restaurant = italianEmilias
+booking_seventeen.open = false
+booking_seventeen.save
+
+booking_eighteen = Booking.new(date: DateTime.strptime("04/16/2019", "%m/%d/%Y"))
+booking_eighteen.user = spencer
+booking_eighteen.restaurant = italianEmilias
+booking_eighteen.open = false
+booking_eighteen.save
+
+booking_nineteen = Booking.new(date: DateTime.strptime("04/21/2019", "%m/%d/%Y"))
+booking_nineteen.user = ana
+booking_nineteen.restaurant = italianEmilias
+booking_nineteen.open = false
+booking_nineteen.save
+
+booking_twenty = Booking.new(date: DateTime.strptime("04/28/2019", "%m/%d/%Y"))
+booking_twenty.user = simona
+booking_twenty.restaurant = italianEmilias
+booking_twenty.open = false
+booking_twenty.save
+
+booking_twentyone = Booking.new(date: DateTime.strptime("05/05/2019", "%m/%d/%Y"))
+booking_twentyone.user = walter
+booking_twentyone.restaurant = italianEmilias
+booking_twentyone.open = false
+booking_twentyone.save
+
+booking_twentytwo = Booking.new(date: DateTime.strptime("09/06/2019", "%m/%d/%Y"))
+booking_twentytwo.user = spencer
+booking_twentytwo.restaurant = italian
+booking_twentytwo.open = false
+booking_twentytwo.save
+
+booking_twentythree = Booking.new(date: DateTime.strptime("05/15/2019", "%m/%d/%Y"))
+booking_twentythree.user = ana
+booking_twentythree.restaurant = italian
+booking_twentythree.open = false
+booking_twentythree.save
+
+booking_twentyfour = Booking.new(date: DateTime.strptime("05/24/2019", "%m/%d/%Y"))
+booking_twentyfour.user = simona
+booking_twentyfour.restaurant = italian
+booking_twentyfour.open = false
+booking_twentyfour.save
+
+booking_twentyfive = Booking.new(date: DateTime.strptime("06/07/2019", "%m/%d/%Y"))
+booking_twentyfive.user = walter
+booking_twentyfive.restaurant = italian
+booking_twentyfive.open = false
+booking_twentyfive.save
+
+booking_twentysix = Booking.new(date: DateTime.strptime("05/01/2019", "%m/%d/%Y"))
+booking_twentysix.user = spencer
+booking_twentysix.restaurant = french
+booking_twentysix.open = false
+booking_twentysix.save
+
+booking_twentyseven = Booking.new(date: DateTime.strptime("08/23/2019", "%m/%d/%Y"))
+booking_twentyseven.user = ana
+booking_twentyseven.restaurant = french
+booking_twentyseven.open = false
+booking_twentyseven.save
+
+booking_twentyeight = Booking.new(date: DateTime.strptime("06/30/2019", "%m/%d/%Y"))
+booking_twentyeight.user = simona
+booking_twentyeight.restaurant = french2
+booking_twentyeight.open = false
+booking_twentyeight.save
+
+booking_twentynine = Booking.new(date: DateTime.strptime("06/11/2019", "%m/%d/%Y"))
+booking_twentynine.user = walter
+booking_twentynine.restaurant = french2
+booking_twentynine.open = false
+booking_twentynine.save
+
+booking_thirty = Booking.new(date: DateTime.strptime("07/29/2019", "%m/%d/%Y"))
+booking_thirty.user = spencer
+booking_thirty.restaurant = french2
+booking_thirty.open = false
+booking_thirty.save
+
+booking_thirtyone = Booking.new(date: DateTime.strptime("07/04/2019", "%m/%d/%Y"))
+booking_thirtyone.user = ana
+booking_thirtyone.restaurant = french2
+booking_thirtyone.open = false
+booking_thirtyone.save
+
+booking_thirtytwo = Booking.new(date: DateTime.strptime("07/08/2019", "%m/%d/%Y"))
+booking_thirtytwo.user = simona
+booking_thirtytwo.restaurant = french2
+booking_thirtytwo.open = false
+booking_thirtytwo.save
+
+booking_thirtythree = Booking.new(date: DateTime.strptime("08/31/2019", "%m/%d/%Y"))
+booking_thirtythree.user = walter
+booking_thirtythree.restaurant = french2
+booking_thirtythree.open = false
+booking_thirtythree.save
+
+booking_thirtyfour = Booking.new(date: DateTime.strptime("08/22/2019", "%m/%d/%Y"))
+booking_thirtyfour.user = spencer
+booking_thirtyfour.restaurant = french2
+booking_thirtyfour.open = false
+booking_thirtyfour.save
+
+booking_thirtyfive = Booking.new(date: DateTime.strptime("08/10/2019", "%m/%d/%Y"))
+booking_thirtyfive.user = ana
+booking_thirtyfive.restaurant = british
+booking_thirtyfive.open = false
+booking_thirtyfive.save
+
+booking_thirtysix = Booking.new(date: DateTime.strptime("09/04/2019", "%m/%d/%Y"))
+booking_thirtysix.user = simona
+booking_thirtysix.restaurant = british
+booking_thirtysix.open = false
+booking_thirtysix.save
+
+booking_thirtyseven = Booking.new(date: DateTime.strptime("09/16/2019", "%m/%d/%Y"))
+booking_thirtyseven.user = walter
+booking_thirtyseven.restaurant = british
+booking_thirtyseven.open = false
+booking_thirtyseven.save
+
+booking_thirtyeight = Booking.new(date: DateTime.strptime("09/02/2019", "%m/%d/%Y"))
+booking_thirtyeight.user = spencer
+booking_thirtyeight.restaurant = british
+booking_thirtyeight.open = false
+booking_thirtyeight.save
+
+booking_thirtynine = Booking.new(date: DateTime.strptime("01/06/2019", "%m/%d/%Y"))
+booking_thirtynine.user = ana
+booking_thirtynine.restaurant = british
+booking_thirtynine.open = false
+booking_thirtynine.save
+
+booking_forty = Booking.new(date: DateTime.strptime("01/21/2019", "%m/%d/%Y"))
+booking_forty.user = simona
+booking_forty.restaurant = british
+booking_forty.open = false
+booking_forty.save
+
+booking_fortyone = Booking.new(date: DateTime.strptime("02/07/2019", "%m/%d/%Y"))
+booking_fortyone.user = walter
+booking_fortyone.restaurant = british
+booking_fortyone.open = false
+booking_fortyone.save
+
+booking_fortytwo = Booking.new(date: DateTime.strptime("02/22/2019", "%m/%d/%Y"))
+booking_fortytwo.user = spencer
+booking_fortytwo.restaurant = british
+booking_fortytwo.open = false
+booking_fortytwo.save
+
+booking_fortythree = Booking.new(date: DateTime.strptime("08/05/2019", "%m/%d/%Y"))
+booking_fortythree.user = ana
+booking_fortythree.restaurant = italianPolpo
+booking_fortythree.open = false
+booking_fortythree.save
+
+booking_fortyfour = Booking.new(date: DateTime.strptime("04/06/2019", "%m/%d/%Y"))
+booking_fortyfour.user = simona
+booking_fortyfour.restaurant = vegan
+booking_fortyfour.open = false
+booking_fortyfour.save
+
+booking_fortyfive = Booking.new(date: DateTime.strptime("05/20/2019", "%m/%d/%Y"))
+booking_fortyfive.user = walter
+booking_fortyfive.restaurant = vegan
+booking_fortyfive.open = false
+booking_fortyfive.save
+
+booking_fortysix = Booking.new(date: DateTime.strptime("06/10/2019", "%m/%d/%Y"))
+booking_fortysix.user = spencer
+booking_fortysix.restaurant = vegan
+booking_fortysix.open = false
+booking_fortysix.save
 puts "Finished!"
 
 # REVIEWS
@@ -503,31 +752,333 @@ puts "Creating Reviews..."
 
   def random_rating
     result = Random.new
-    result = result.rand(3..5)
+    result = result.rand(1..5)
     return result
   end
 
   review_one = Review.new
   review_one.booking = booking_one
   review_one.content = "Recommended in a magazine as a great late night venture, this was just the most amazing place."
-  review_one.rating = random_rating
+  review_one.rating = 5
   review_one.user = walter
   review_one.save
 
   review_two = Review.new
   review_two.booking = booking_two
   review_two.content = "Loved the food and atmosphere, great music too!"
-  review_two.rating = random_rating
+  review_two.rating = 4
   review_two.user = spencer
   review_two.save
 
   review_three = Review.new
-  review_three.booking = booking_four
-  review_three.content = "Absolutely one of the best vegan restaurants in the city"
-  review_three.rating = random_rating
-  review_three.user = simona
+  review_three.booking = booking_three
+  review_three.content = "Bad"
+  review_three.rating = 2
+  review_three.user = ana
   review_three.save
+
+  review_4 = Review.new
+  review_4.booking = booking_four
+  review_4.content = "Absolutely one of the best vegan restaurants in the city"
+  review_4.rating = 5
+  review_4.user = simona
+  review_4.save
+
+  review_5 = Review.new
+  review_5.booking = booking_five
+  review_5.content = "I've been visiting Polpo for 5+ years and I have to say this one is my favourite! The friendly staff make you feel welcome every single time and the atmosphere is just soooooo nice in there. As always, the seasonal menus are as delicious as the last one."
+  review_5.rating = 5
+  review_5.user = walter
+  review_5.save
+
+  review_6 = Review.new
+  review_6.booking = booking_six
+  review_6.content = "Nice cosy restaurant, amazing quality food, always busy. Everything in the restauant has an Italian touch. Loved it."
+  review_6.rating = 5
+  review_6.user = spencer
+  review_6.save
+
+  review_7 = Review.new
+  review_7.booking = booking_seven
+  review_7.content = "If you’ve never been to Polpo you’ve missed out. The food is always excellent - whatever you have. The staff are awesome too and we always leave very happy."
+  review_7.rating = 5
+  review_7.user = ana
+  review_7.save
+
+  review_8 = Review.new
+  review_8.booking = booking_eight
+  review_8.content = "Fantastic food, great atmosphere, perfect service. One of the few restaurants I actually rate in London!"
+  review_8.rating = 5
+  review_8.user = simona
+  review_8.save
+
+  review_9 = Review.new
+  review_9.booking = booking_nine
+  review_9.content = "Love this busy bustling bar / restaurant. good for solo eats or with friends. my favourite was the meatballs .. good small dishes to share."
+  review_9.rating = 5
+  review_9.user = walter
+  review_9.save
+
+  review_10 = Review.new
+  review_10.booking = booking_ten
+  review_10.content = "I visited this place multiple times. Great ambience and great service. Very well priced, good cuisine. Can't wait to get back."
+  review_10.rating = 5
+  review_10.user = spencer
+  review_10.save
+
+  review_11 = Review.new
+  review_11.booking = booking_eleven
+  review_11.content = "Fantastic place, good atmosphere. The slow cooked Ragu melted in your mouth . All the dishes were tasty and I like the fact they make seasonal changes."
+  review_11.rating = 5
+  review_11.user = ana
+  review_11.save
+
+  review_12 = Review.new
+  review_12.booking = booking_twelve
+  review_12.content = "Don't let Polpo's unassuming exterior put you off! This is a little gem serving fabulous tasting Italian food. Everything we ordered was delicious. Excellent and reasonably priced house wine and attentive service added to the whole experience. Would definitely recommend."
+  review_12.rating = 4
+  review_12.user = simona
+  review_12.save
+
+  review_13 = Review.new
+  review_13.booking = booking_thirteen
+  review_13.content = "Amazing people with great service. I would recommend it to anyone within the area. Some of the finest food that I've ever had"
+  review_13.rating = 4
+  review_13.user = walter
+  review_13.save
+
+  review_14 = Review.new
+  review_14.booking = booking_fourteen
+  review_14.content = "good"
+  review_14.rating = 4
+  review_14.user = spencer
+  review_14.save
+
+  review_15 = Review.new
+  review_15.booking = booking_fifteen
+  review_15.content = "good"
+  review_15.rating = 4
+  review_15.user = ana
+  review_15.save
+
+  review_16 = Review.new
+  review_16.booking = booking_sixteen
+  review_16.content = "bad"
+  review_16.rating = 2
+  review_16.user = simona
+  review_16.save
+
+  review_17 = Review.new
+  review_17.booking = booking_seventeen
+  review_17.content = "not bad"
+  review_17.rating = 3
+  review_17.user = walter
+  review_17.save
+
+  review_18 = Review.new
+  review_18.booking = booking_eighteen
+  review_18.content = "good"
+  review_18.rating = 5
+  review_18.user = spencer
+  review_18.save
+
+  review_19 = Review.new
+  review_19.booking = booking_nineteen
+  review_19.content = "good"
+  review_19.rating = 5
+  review_19.user = ana
+  review_19.save
+
+  review_20 = Review.new
+  review_20.booking = booking_twenty
+  review_20.content = "good"
+  review_20.rating = 4
+  review_20.user = simona
+  review_20.save
+
+  review_21 = Review.new
+  review_21.booking = booking_twentyone
+  review_21.content = "bad"
+  review_21.rating = 2
+  review_21.user = walter
+  review_21.save
+
+  review_22 = Review.new
+  review_22.booking = booking_twentytwo
+  review_22.content = "good"
+  review_22.rating = 4
+  review_22.user = spencer
+  review_22.save
+
+  review_23 = Review.new
+  review_23.booking = booking_twentythree
+  review_23.content = "good"
+  review_23.rating = 4
+  review_23.user = ana
+  review_23.save
+
+  review_24 = Review.new
+  review_24.booking = booking_twentyfour
+  review_24.content = "good"
+  review_24.rating = 5
+  review_24.user = simona
+  review_24.save
+
+  review_25 = Review.new
+  review_25.booking = booking_twentyfive
+  review_25.content = "not bad"
+  review_25.rating = 3
+  review_25.user = walter
+  review_25.save
+
+  review_26 = Review.new
+  review_26.booking = booking_twentysix
+  review_26.content = "not bad"
+  review_26.rating = 3
+  review_26.user = spencer
+  review_26.save
+
+  review_27 = Review.new
+  review_27.booking = booking_twentyseven
+  review_27.content = "good"
+  review_27.rating = 4
+  review_27.user = ana
+  review_27.save
+
+  review_28 = Review.new
+  review_28.booking = booking_twentyeight
+  review_28.content = "good"
+  review_28.rating = 5
+  review_28.user = simona
+  review_28.save
+
+  review_29 = Review.new
+  review_29.booking = booking_twentynine
+  review_29.content = "good"
+  review_29.rating = 5
+  review_29.user = walter
+  review_29.save
+
+  review_30 = Review.new
+  review_30.booking = booking_thirty
+  review_30.content = "bad"
+  review_30.rating = 2
+  review_30.user = spencer
+  review_30.save
+
+  review_31 = Review.new
+  review_31.booking = booking_thirtyone
+  review_31.content = "bad"
+  review_31.rating = 2
+  review_31.user = ana
+  review_31.save
+
+  review_32 = Review.new
+  review_32.booking = booking_thirtytwo
+  review_32.content = "not bad"
+  review_32.rating = 3
+  review_32.user = simona
+  review_32.save
+
+  review_33 = Review.new
+  review_33.booking = booking_thirtythree
+  review_33.content = "good"
+  review_33.rating = 4
+  review_33.user = walter
+  review_33.save
+
+  review_34 = Review.new
+  review_34.booking = booking_thirtyfour
+  review_34.content = "not bad"
+  review_34.rating = 3
+  review_34.user = spencer
+  review_34.save
+
+  review_35 = Review.new
+  review_35.booking = booking_thirtyfive
+  review_35.content = "good"
+  review_35.rating = 5
+  review_35.user = ana
+  review_35.save
+
+  review_36 = Review.new
+  review_36.booking = booking_thirtysix
+  review_36.content = "good"
+  review_36.rating = 5
+  review_36.user = simona
+  review_36.save
+
+  review_37 = Review.new
+  review_37.booking = booking_thirtyseven
+  review_37.content = "good"
+  review_37.rating = 4
+  review_37.user = walter
+  review_37.save
+
+  review_38 = Review.new
+  review_38.booking = booking_thirtyeight
+  review_38.content = "good"
+  review_38.rating = 4
+  review_38.user = spencer
+  review_38.save
+
+  review_39 = Review.new
+  review_39.booking = booking_thirtynine
+  review_39.content = "not bad"
+  review_39.rating = 3
+  review_39.user = ana
+  review_39.save
+
+  review_40 = Review.new
+  review_40.booking = booking_forty
+  review_40.content = "not bad"
+  review_40.rating = 3
+  review_40.user = simona
+  review_40.save
+
+  review_41 = Review.new
+  review_41.booking = booking_fortyone
+  review_41.content = "good"
+  review_41.rating = 5
+  review_41.user = walter
+  review_41.save
+
+  review_42 = Review.new
+  review_42.booking = booking_fortytwo
+  review_42.content = "good"
+  review_42.rating = 5
+  review_42.user = spencer
+  review_42.save
+
+  review_43 = Review.new
+  review_43.booking = booking_fortythree
+  review_43.content = "My friend and I dined here and enjoyed the wonderful food, charming staff and convenient location. Looking forward to my next visit."
+  review_43.rating = 5
+  review_43.user = ana
+  review_43.save
+
+  review_44 = Review.new
+  review_44.booking = booking_fortyfour
+  review_44.content = "good"
+  review_44.rating = 4
+  review_44.user = simona
+  review_44.save
+
+  review_45 = Review.new
+  review_45.booking = booking_fortyfive
+  review_45.content = "not bad"
+  review_45.rating = 3
+  review_45.user = walter
+  review_45.save
+
+  review_46 = Review.new
+  review_46.booking = booking_fortysix
+  review_46.content = "good"
+  review_46.rating = 5
+  review_46.user = spencer
+  review_46.save
 puts "Finished!"
+
 
 # ORDERS
 puts "Creating Orders..."
