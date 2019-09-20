@@ -22,13 +22,14 @@
         <%= cl_image_tag(@attendee_invitation.booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
       </div>
       <div class="card-large-content">
-        <p> <%= @attendee_invitation.booking.user.first_name %></p>
-        <p> <%= @attendee_invitation.booking.restaurant.name %></p>
-        <p> <%= @attendee_invitation.booking.date.to_s(:invite_time) %></p>
+        <p><strong> <%= @attendee_invitation.booking.user.first_name %></strong></p>
+        <p><strong><%= @attendee_invitation.booking.restaurant.name %></p>
+        <p class ="booktime"> <%= @attendee_invitation.booking.date.to_s(:invite_time) %></p><strong></p>
       </div>
       <div class="button-area">
         <%= link_to restaurant_booking_attendee_accept_path(@attendee_invitation.booking.restaurant, @attendee_invitation.booking, @attendee_invitation) do %>
           <button class = "button button-small invitation-buton">Accept</button>
+          <button class = "decbutton button-small invitation-buton">Decline</button>
         <% end %>
       </div>
     </div>
