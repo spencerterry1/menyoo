@@ -94,6 +94,32 @@
   width: 100%;
 }
 
+.card-order-dishes {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 7px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  .dish-quantity {
+    width: 50px;
+    padding-left: 35px;
+  }
+  p {
+    font-size: $font-size-small;
+  }
+  .dish-name {
+    width: 200px;
+    p {
+      color: $gray;
+    }
+  }
+  .dish-price {
+    padding-right: 10px;
+  }
+}
+
 .order-status-card {
   display: flex;
 }
@@ -113,6 +139,11 @@
     margin-bottom: 0;
     color: $font-color-dark-grey;
   }
+}
+
+.card-booking-index {
+  margin-top: 50px;
+  padding: 30px;
 }
 
 .card-invitation{
@@ -200,15 +231,22 @@
 
 .card-order-container {
   margin-bottom: 10px;
+  padding: 13px;
 }
 
 .container-to-order {
   border-bottom: solid 1px $mid-gray;
   padding-top: 10px;
+  .container-title {
+    color: $menyoo-gray;
+  }
 }
 
 .container-ordered {
   padding-top: 10px;
+  .container-title {
+    color: $menyoo-gray;
+  }
 }
 
 
@@ -240,13 +278,17 @@
 
 .card-orderer {
   margin-left: 10px;
-  padding-top: 10px;
+  margin-bottom: 14px;
 }
 
 .name-and-pay-button-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+  button {
+    margin-right: 4px;
+  }
 }
 
 .card-table-order-summary {
@@ -295,6 +337,13 @@ h3.user-card-title {
   margin: 0;
 }
 
+
 .my-review {
   height: 140px;
-}
+
+#mapshow{
+  display:inline-block;
+  justify-content:space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding:10px;

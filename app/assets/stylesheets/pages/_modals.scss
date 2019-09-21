@@ -20,8 +20,25 @@
   text-align: center;
 }
 
-.model-content {
+.modal-box-booking {
+  margin-top: 150px;
+  width: 300px;
+  height: 300px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
+.create-booking-title {
+  margin-bottom: 40px;
+}
+
+.create-booking-button {
+  margin-top: 40px;
+}
+
 
 .qr-code img {
   width: 200px;

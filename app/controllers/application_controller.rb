@@ -60,7 +60,10 @@ class ApplicationController < ActionController::Base
       end
     end
     return @attendees_user_invitations
+  end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 
 end
