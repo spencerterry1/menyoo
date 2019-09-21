@@ -47,6 +47,7 @@ class BookingsController < ApplicationController
     @orders = @booking.orders
     @attendees = @booking.attendees
     @attendee = Attendee.where(user: current_user, booking: @booking).last
+    @orders_for_attendee = @orders.where(attendee: @attendee)
 
     @orders_not_sent_to_kitchen = @orders.where(ordered: false)
     @orders_not_sent_to_kitchen_hash = {}
@@ -131,9 +132,9 @@ class BookingsController < ApplicationController
     # call function 'convert_to_pence'
 
     customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email:  params[:stripeEmail]
-  )
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
 
     charge = Stripe::Charge.create(
       customer:     customer.id,  # You should store this customer id and re-use it.
