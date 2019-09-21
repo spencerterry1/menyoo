@@ -61,7 +61,6 @@
 <h1>Menu</h1>
 ​
 ​<% @categories.each do |category|  %>
-
   <h2><%= category %></h2>
   <% @dishes = @dishes_for_restaurant.select {|dish| dish.category == category }  %>
   <% @dishes.each do |dish|  %>
