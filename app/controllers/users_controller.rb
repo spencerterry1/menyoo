@@ -13,8 +13,7 @@ class UsersController < ApplicationController
 
   def reviews
     @user = User.find(params[:user_id])
-    @reviews = Review.joins(:booking).where("booking.user_id = #{@user.id}").order("bookings.date DESC")
-    #@reviews = Review.joins(:booking).where("restaurant_id = #{@restaurant.id}").order("bookings.date DESC")
+    @reviews = Review.joins(:booking).where("bookings.user_id = #{@user.id}").order("bookings.date DESC")
   end
 
   def edit
