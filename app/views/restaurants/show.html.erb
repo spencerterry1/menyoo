@@ -14,6 +14,7 @@
 
 <!-- Hide CheckedIn Button on Pages other than specific booking -->
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
+
 <!-- end -->
 
 <div class="restaurant-header ">
@@ -74,34 +75,36 @@
 ​
 <h2>Menu</h2>
 ​
-​
-<% @dishes_for_restaurant.each do |dish|  %>
-  <div class="card-box-shadow card-large">
-    <div class="card-large-img">
-      <%= cl_image_tag(dish.photo,width: 400, height: 300, crop: :fill) %>
-    </div>
-    <div class="card-large-content">
-      <h3><%= dish.name %></h3>
-      <p> <%= dish.description %></p>
-      <div class="flex-between dish-info">
-           <div class="timeprice">
-          <p><%= humanized_money_with_symbol(dish.price)%></p>
-          <p><i class="far fa-clock "></i> <%= dish.prep_time %></p>
-           </div>
-          <% if user_signed_in? %>
-            <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
-                <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"} do |f| %>
-                    <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-                    <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                    <%= f.submit "Order", class: "btn button-action" %>
-                <% end %>
+​<% @categories.each do |category|  %>
+  <h2><%= category %></h2>
+  <% @dishes = @dishes_for_restaurant.select {|dish| dish.category == category }  %>
+  <% @dishes.each do |dish|  %>
+    <div class="card-box-shadow card-large">
+      <div class="card-large-img">
+        <%= cl_image_tag(dish.photo,width: 400, height: 300, crop: :fill) %>
+      </div>
+      <div class="card-large-content">
+        <h3><%= dish.name %></h3>
+        <p> <%= dish.description %></p>
+        <div class="flex-between dish-info">
+             <div class="timeprice">
+            <p><%= humanized_money_with_symbol(dish.price)%></p>
+            <p><i class="far fa-clock "></i> <%= dish.prep_time %></p>
+             </div>
+            <% if user_signed_in? %>
+              <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
+                  <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"} do |f| %>
+                      <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+                      <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+                      <%= f.submit "Order", class: "btn button-action" %>
+                  <% end %>
+              <% end %>
             <% end %>
-          <% end %>
 
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
-
 
 
