@@ -28,6 +28,8 @@ class OrdersController < ApplicationController
     # @restaurant = @booking.restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
 
+    @dish = Dish.find(params[:order][:dish_id])
+
     # @booking = @attendee.booking
     @booking = bookings_open_for_user_restaurant(current_user, @restaurant).last
 
@@ -35,7 +37,10 @@ class OrdersController < ApplicationController
     @order.attendee = @attendee
 
     if @order.save
-      redirect_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee)
+      respond_to do |format|
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+      # redirect_to restaurant_path(@restaurant)
     end
   end
 

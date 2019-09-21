@@ -40,7 +40,7 @@
 
 .button-action {
   height: 30px;
-  background-color: $menyoo-blue;
+  width: 60px;
   border: none;
   color: white;
   text-align: center;
@@ -50,7 +50,14 @@
   cursor: pointer;
   border-radius: 30px;
   font-size: 14px;
+}
 
+.button-color-blue {
+  background-color: $menyoo-blue;
+}
+
+.button-color-grey {
+  background-color: $font-color-light-grey;
 }
 
 
@@ -73,8 +80,6 @@
   font-size: 12px;
   margin-right: 10px;
 }
-
-
 
 .button-checkin-summary {
   padding: 0px 92px;

@@ -41,14 +41,14 @@
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
     <div class="button-area">
       <%= link_to new_restaurant_booking_path(@restaurant) do %>
-        <button class = "button button-long">Open a Table</button>
+        <button class = "button button-long">Create a Table</button>
       <% end %>
     </div>
   <% end %>
 <% else %>
   <div class="button-area">
     <%= link_to new_restaurant_booking_path(@restaurant) do %>
-      <button class = "button button-long">Open a Table</button>
+      <button class = "button button-long">Create a Table</button>
     <% end %>
   </div>
 
@@ -90,11 +90,16 @@
            </div>
           <% if user_signed_in? %>
             <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
-                <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"} do |f| %>
-                    <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-                    <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                    <%= f.submit "Order", class: "btn button-action" %>
-                <% end %>
+                <div class = "hide" id= <%= "order-done-dish-#{dish.id}" %> >
+                  <button class="button-action button-color-grey"><i class="fas fa-check"></i></button>
+                </div>
+                <div class = "show" id=<%= "order-form-dish-#{dish.id}" %> >
+                  <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"}, remote: true do |f| %>
+                      <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+                      <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+                      <%= f.submit "Order", class: "btn button-action button-color-blue id-of-dish-#{dish.id}" %>
+                  <% end %>
+                </div>
             <% end %>
           <% end %>
 

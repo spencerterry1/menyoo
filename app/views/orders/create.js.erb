@@ -1,0 +1,11 @@
+// console.log("Create - Javascript");
+
+orderDoneButton = document.querySelector("#order-done-dish-<%= @dish.id %>");
+orderFormButton = document.querySelector("#order-form-dish-<%= @dish.id %>");
+
+orderFormButton.classList.toggle("hide");
+orderFormButton.classList.toggle("show");
+
+orderDoneButton.classList.toggle("show");
+orderDoneButton.classList.toggle("hide");
+

@@ -7,9 +7,16 @@
   width: 40px;
   border-radius: 50%;
 }
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
+}
+
+.avatar-large-blue {
+  width: 56px;
+  border-radius: 50%;
+  border: $menyoo-blue 5px solid;
 }
 
 .avatar-extra-large {
@@ -23,6 +30,7 @@
   position: absolute;
   right: -10px;
   top: -11px;
+  border: white 1px solid;
 }
 
 .avatar-bordered {

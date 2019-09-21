@@ -52,27 +52,24 @@
 
 <% @booking.attendees.map do |attendee| %>
   <div class="card-box-shadow card-medium-attendees card-submenu">
-    <% if attendee.accepted == true %>
-      <div>
-        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area attendee-accepted") %>
-      </div>
-    <% else %>
-      <div>
-        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
-      </div>
-    <% end %>
 
     <div>
-      <p><strong> <%= attendee.user.first_name %></strong></p>
-      <div class="flex-between">
-        <p style="margin-right: 24px;">Confirmed ?</p>
-        <% if attendee.accepted %>
-          <p><i class="fas fa-check"></i></p>
-        <% else %>
-          <p><i class="fas fa-times"></i></p>
-        <% end %>
+      <% if attendee.accepted %>
+        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large-blue button-area") %>
+      <% else %>
+        <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
+      <% end %>
+    </div>
 
-      </div>
+    <div>
+      <% if attendee.accepted %>
+          <p class="blue-font"><strong> <%= attendee.user.first_name %></strong></p>
+      <% else %>
+          <p><strong> <%= attendee.user.first_name %></strong></p>
+      <% end %>
+      <% if !attendee.accepted %>
+        <p style="margin-right: 24px;">Not yet confirmed</p>
+      <% end %>
     </div>
   </div>
 <% end%>
