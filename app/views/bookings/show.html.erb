@@ -1,64 +1,43 @@
 <%  @page_title = "Table Page" %>
-
 <!-- Conditional formatting of the tab buttons -->
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
-
 <!-- Path for back button -->
 <% content_for(:nav_back_path_class, "root_path") %>
 <!-- end -->
-
 <!-- Partial for the Modal -->
 <div class="checkedin-popup hide">
   <%= render 'shared/checkedin' %>
 </div>
 <!-- end -->
-
 <div>
   <div class="restaurant-header">
     <h1><%= @restaurant.name %></h1>
     <p><%= @restaurant.address %></p>
   </div>
-
-<!-- TODO: Formatting to be updated given changes done by Spencer in other branch -->
+  <!-- TODO: Formatting to be updated given changes done by Spencer in other branch -->
   <div class="card-box-shadow" style="text-align: center; margin: 16px auto; padding: 16px;">
     <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
   </div>
-
 </div>
-
 <%= link_to restaurant_booking_attendees_path(@restaurant, @booking) do %>
-  <div class="card-medium card-box-shadow flex-between card-submenu">
+  <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
     <div class="body-icon"><i class="fas fa-user-friends"></i></div>
     <h3>Invite and View attendees</h3>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
-
 <%= link_to restaurant_path(@restaurant) do %>
-  <div class="card-medium card-box-shadow flex-between card-submenu">
+  <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
     <div class="body-icon"><i class="fas fa-book-open"></i></div>
     <h3>View menu</h3>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
-
-
-<%= link_to restaurant_booking_attendee_orders_path(@restaurant, @booking, @attendee_user) do %>
-  <div class="card-medium card-box-shadow flex-between card-submenu">
-    <div class="body-icon"><i class="fas fa-utensils"></i></div>
-    <h3>Your order</h3>
-    <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
-  </div>
-<% end %>
-
 <%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees) do %>
-  <div class="card-medium card-box-shadow flex-between card-submenu">
-    <div class="body-icon"><i class="fas fa-dollar-sign"></i></div>
-    <h3>Table order</h3>
+  <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
+    <div class="body-icon"><i class="fas fa-utensils"></i></div>
+    <h3>Order and Bill</h3>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
-
-
-
