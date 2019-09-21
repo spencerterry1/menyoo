@@ -94,14 +94,14 @@
            </div>
           <% if user_signed_in? %>
             <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
-                <div class= <%= "order-done-dish-#{dish.id}" %> >
-                  Empty
+                <div class = "hide" id= <%= "order-done-dish-#{dish.id}" %> >
+                  <button class="button-action button-color-grey"><i class="fas fa-check"></i></button>
                 </div>
-                <div class= <%= "order-form-dish-#{dish.id}" %> >
+                <div class = "show" id=<%= "order-form-dish-#{dish.id}" %> >
                   <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"}, remote: true do |f| %>
                       <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
                       <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                      <%= f.submit "Order", class: "btn button-action id-of-dish-#{dish.id}" %>
+                      <%= f.submit "Order", class: "btn button-action button-color-blue id-of-dish-#{dish.id}" %>
                   <% end %>
                 </div>
             <% end %>

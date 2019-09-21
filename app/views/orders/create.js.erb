@@ -1,18 +1,11 @@
-console.log("Create - Javascript");
+// console.log("Create - Javascript");
 
-orderDoneButton = document.querySelector(".order-done-dish-<%= @dish.id %>");
+orderDoneButton = document.querySelector("#order-done-dish-<%= @dish.id %>");
+orderFormButton = document.querySelector("#order-form-dish-<%= @dish.id %>");
 
-console.log(orderDoneButton);
+orderFormButton.classList.toggle("hide");
+orderFormButton.classList.toggle("show");
 
-orderFormButton = document.querySelector(".order-form-dish-<%= @dish.id %>");
+orderDoneButton.classList.toggle("show");
+orderDoneButton.classList.toggle("hide");
 
-console.log(orderFormButton);
-
-
-
-// buttonToChange.dataset.disableWith = "Done";
-// buttonToChange.value = "Done";
-
-// // buttonToChange.setAttribute("value","Done");
-
-// console.log('Finished')
