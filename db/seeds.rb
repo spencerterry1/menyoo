@@ -779,6 +779,7 @@ puts "Creating Reviews..."
   review_5.content = "I've been visiting Polpo for 5+ years and I have to say this one is my favourite! The friendly staff make you feel welcome every single time and the atmosphere is just soooooo nice in there. As always, the seasonal menus are as delicious as the last one."
   review_5.rating = 5
   review_5.user = walter
+  review_5.title = "Just fabulous"
   review_5.save
 
   review_6 = Review.new
@@ -786,6 +787,7 @@ puts "Creating Reviews..."
   review_6.content = "Nice cosy restaurant, amazing quality food, always busy. Everything in the restauant has an Italian touch. Loved it."
   review_6.rating = 5
   review_6.user = spencer
+  review_6.title = "Perfect evening"
   review_6.save
 
   review_7 = Review.new
@@ -793,6 +795,7 @@ puts "Creating Reviews..."
   review_7.content = "If you’ve never been to Polpo you’ve missed out. The food is always excellent - whatever you have. The staff are awesome too and we always leave very happy."
   review_7.rating = 5
   review_7.user = ana
+  review_7.title = "Amazing"
   review_7.save
 
   review_8 = Review.new
@@ -800,6 +803,7 @@ puts "Creating Reviews..."
   review_8.content = "Fantastic food, great atmosphere, perfect service. One of the few restaurants I actually rate in London!"
   review_8.rating = 5
   review_8.user = simona
+  review_8.title = "Best meal ever"
   review_8.save
 
   review_9 = Review.new
@@ -807,6 +811,7 @@ puts "Creating Reviews..."
   review_9.content = "Love this busy bustling bar / restaurant. good for solo eats or with friends. my favourite was the meatballs .. good small dishes to share."
   review_9.rating = 5
   review_9.user = walter
+  review_9.title = "Wow"
   review_9.save
 
   review_10 = Review.new
@@ -814,6 +819,7 @@ puts "Creating Reviews..."
   review_10.content = "I visited this place multiple times. Great ambience and great service. Very well priced, good cuisine. Can't wait to get back."
   review_10.rating = 5
   review_10.user = spencer
+  review_10.title = "Superb"
   review_10.save
 
   review_11 = Review.new
@@ -821,6 +827,7 @@ puts "Creating Reviews..."
   review_11.content = "Fantastic place, good atmosphere. The slow cooked Ragu melted in your mouth . All the dishes were tasty and I like the fact they make seasonal changes."
   review_11.rating = 5
   review_11.user = ana
+  review_11.title = "Love it"
   review_11.save
 
   review_12 = Review.new
@@ -828,6 +835,7 @@ puts "Creating Reviews..."
   review_12.content = "Don't let Polpo's unassuming exterior put you off! This is a little gem serving fabulous tasting Italian food. Everything we ordered was delicious. Excellent and reasonably priced house wine and attentive service added to the whole experience. Would definitely recommend."
   review_12.rating = 4
   review_12.user = simona
+  review_12.title = "Never disappoints"
   review_12.save
 
   review_13 = Review.new
@@ -835,6 +843,7 @@ puts "Creating Reviews..."
   review_13.content = "Amazing people with great service. I would recommend it to anyone within the area. Some of the finest food that I've ever had"
   review_13.rating = 4
   review_13.user = walter
+  review_13.title = "Real delight"
   review_13.save
 
   review_14 = Review.new
@@ -1045,6 +1054,7 @@ puts "Creating Reviews..."
   review_43.content = "My friend and I dined here and enjoyed the wonderful food, charming staff and convenient location. Looking forward to my next visit."
   review_43.rating = 5
   review_43.user = ana
+  review_43.title = "Real italian food"
   review_43.save
 
   review_44 = Review.new

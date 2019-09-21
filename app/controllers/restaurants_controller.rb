@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
 
   def reviews
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @reviews = @restaurant.reviews
+    @reviews = Review.joins(:booking).where("restaurant_id = #{@restaurant.id}").order("bookings.date DESC")
   end
 
 end

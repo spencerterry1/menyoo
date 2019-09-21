@@ -1,3 +1,5 @@
+<%  @page_title = "My bookings" %>
+
 <!-- Conditional formatting of the tab buttons -->
 <% content_for(:tab_user_class, "tab_user_active") %>
 <!-- end -->
@@ -6,10 +8,18 @@
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
 
-<%  @page_title = "My bookings" %>
 
-<% @user.bookings.each do |booking| %>
-  <p><%= booking.date %></p>
-  <p><%= booking.restaurant.name %></p>
+
+<% @bookings.each do |booking| %>
+  <div class="card-box-shadow card-large">
+    <div class="card-large-img">
+      <%= cl_image_tag(booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="card-large-content-bookings flex-between vertical-center">
+      <div>
+        <h3><%= booking.restaurant.name %></h3>
+        <p class="blue-font"><%= booking.date.strftime("%d/%m/%Y") %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
-
