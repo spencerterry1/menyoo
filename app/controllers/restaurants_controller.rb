@@ -28,9 +28,9 @@ class RestaurantsController < ApplicationController
       @dishes_for_restaurant = @restaurant.dishes.order(:name)
     end
     @categories = @dishes_for_restaurant.map(&:category).uniq.sort
-      if @categories.include?("Dessert")
-        @categories.delete("Dessert")
-        @categories.push("Dessert")
+      if @categories.include?("Desserts")
+        @categories.delete("Desserts")
+        @categories.push("Desserts")
       end
 
 
