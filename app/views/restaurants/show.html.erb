@@ -94,11 +94,16 @@
            </div>
           <% if user_signed_in? %>
             <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
-                <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"}, remote: true do |f| %>
-                    <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-                    <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                    <%= f.submit "Order", class: "btn button-action id-of-dish-#{dish.id}" %>
-                <% end %>
+                <div class= <%= "order-done-dish-#{dish.id}" %> >
+                  Empty
+                </div>
+                <div class= <%= "order-form-dish-#{dish.id}" %> >
+                  <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"}, remote: true do |f| %>
+                      <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+                      <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+                      <%= f.submit "Order", class: "btn button-action id-of-dish-#{dish.id}" %>
+                  <% end %>
+                </div>
             <% end %>
           <% end %>
 
