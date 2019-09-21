@@ -36,10 +36,6 @@
 
 
 
-
-
-
-
 <% if user_signed_in? %>
 ​
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
@@ -55,6 +51,7 @@
       <button class = "button button-long">Open a Table</button>
     <% end %>
   </div>
+
 <% end %>
 ​
 
@@ -73,8 +70,7 @@
 </div>
 ​
 
-​
-​
+
 ​
 <h2>Menu</h2>
 ​
@@ -87,7 +83,7 @@
     <div class="card-large-content">
       <h3><%= dish.name %></h3>
       <p> <%= dish.description %></p>
-      <div class="flex-between">
+      <div class="flex-between dish-info">
            <div class="timeprice">
           <p><%= humanized_money_with_symbol(dish.price)%></p>
           <p><i class="far fa-clock "></i> <%= dish.prep_time %></p>

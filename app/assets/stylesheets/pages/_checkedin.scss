@@ -45,12 +45,18 @@
   justify-content: space-around;
 }
 
+.modal-buttons {
+  padding: 12px;
+}
+
 .button-modal-cancel {
-  width: 78px;
+  width: 107px;
   background-color: $font-color-light-grey;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .button-modal-checkedin {
-    width: 120px;
+    width: 107px;
     background-color: $menyoo-blue;
 }
