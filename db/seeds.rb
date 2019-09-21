@@ -106,16 +106,6 @@ british.remote_photo_url = "https://www.hot-dinners.com/media/reviews/photos/ori
 british.save
 
 
-british2 = Restaurant.new(name: "The Golden Chippy",
-  address: "62 Greenwich High Road, London",
-  category: "British")
-
-british2.remote_photo_url = "https://images.ctfassets.net/8vtyxq21iryq/7enojhT4PeKmG4wCEek2WO/473a92e084d25ea2abd841de6069011b/Copyright_TheNed_Zoblers-04.jpg"
-british2.save
-
-
-
-
 vegan = Restaurant.new(name: "Kalifornia Kitchen",
   address: "19 Percy St, London",
   category: "Vegan")
