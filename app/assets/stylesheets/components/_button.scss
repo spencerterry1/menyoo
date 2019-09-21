@@ -1,11 +1,12 @@
 .button-area {
   text-align: center;
   align-items: center;
-  .invitation-buton{
-    margin:5px;
+  // .invitation-buton{
+  //   margin:5px;
 
-  }
+  // }
 }
+
 
 #delete-button {
   position: absolute;
@@ -25,6 +26,7 @@
   color: $menyoo-gray;
 }
 
+
 .button {
   height: 32px;
   background-color: $menyoo-blue;
@@ -38,7 +40,6 @@
   border-radius: 50px;
 }
 
-
 .decbutton {
   height: 32px;
   background-color: $menyoo-gray;
@@ -51,8 +52,6 @@
   cursor: pointer;
   border-radius: 50px;
 }
-
-
 
 .button-action {
   height: 30px;
@@ -110,7 +109,6 @@
   padding-top: 20px;
 }
 
-
 .order-status {
   width: 80px;
   font-size: $font-size-small;
@@ -124,7 +122,6 @@
   display: inline-block;
   vertical-align: middle;
 }
-
 
 .order-status-ordered {
   background-color: #33BC29;
@@ -149,7 +146,6 @@
   cursor: pointer;
   border-radius: 50px;
 }
-
 
 .button-avarage-rating {
   height: 20px;
@@ -181,6 +177,17 @@
   text-align: center;
   font-size: 12px;
   margin-right: 10px;
+}
+
+.button-table-order {
+  margin-bottom: 64px;
+}
+
+.summary-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0px 20px 0px;
+  font-size: $font-size-title;
 }
 
 

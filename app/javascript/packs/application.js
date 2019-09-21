@@ -69,6 +69,38 @@ if (createTableButton) {
 }
 
 
+
+// =======> Table Order vs Your Order
+
+const yourButton = document.querySelector("#summary-button-your");
+const tableButton = document.querySelector("#summary-button-table");
+const yourSection = document.querySelector("#summary-section-your");
+const tableSection = document.querySelector("#summary-section-table");
+
+if (yourButton && tableButton) {
+
+  yourButton.addEventListener("click", (event) => {
+    yourSection.classList.toggle("show");
+    yourSection.classList.toggle("hide");
+    tableSection.classList.toggle("show");
+    tableSection.classList.toggle("hide");
+    yourButton.classList.toggle("grey-font");
+    tableButton.classList.toggle("grey-font");
+  });
+
+  tableButton.addEventListener("click", (event) => {
+    yourSection.classList.toggle("show");
+    yourSection.classList.toggle("hide");
+    tableSection.classList.toggle("show");
+    tableSection.classList.toggle("hide");
+    yourButton.classList.toggle("grey-font");
+    tableButton.classList.toggle("grey-font");
+  });
+
+}
+
+
+
 // =======> Button to delete typed searches in searchbars
 // =======> DeleteButton is the button to erase search in the Restaurant Index search bar
 // =======> DeleteButtonTwo is the button to erase search in the Restaurant Show search bar

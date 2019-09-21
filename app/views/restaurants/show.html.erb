@@ -1,5 +1,4 @@
 <%  @page_title = "Restaurant Page" %>
-​
 <!-- Conditional formatting of the tab buttons -->
 <% if user_signed_in? %>
   <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
@@ -11,15 +10,13 @@
   <% content_for(:tab_home_class, "tab_home_active") %>
 <% end %>
 <!-- end -->
-
 <!-- Hide CheckedIn Button on Pages other than specific booking -->
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
-
 <!-- end -->
-
 <div class="restaurant-header ">
   <h1 id="rname"><%= @restaurant.name %></h1>
-  <p id="raddress" ><%= @restaurant.address %></p>
+  <p id="raddress"><%= @restaurant.address %></p>
+
   <div class="rating-stars">
     <% if @restaurant.avarage_rating.zero? %>
       <p class="ratings-stars accent-font">No reviews</p>
@@ -28,6 +25,24 @@
         <% @restaurant.avarage_rating.round.times do %>
           <i class="rating-stars fas fa-star"></i>
         <% end %>
+
+      </div>
+    <% end %>
+    (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
+  </div>
+  <% if user_signed_in? %>
+    <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
+      <div class="button-area">
+        <button id="button-create-table" class = "button button-long">Create a Table</button>
+      </div>
+      <!-- Partial for the Create Table Modal -->
+      <div class="newbooking-popup hide">
+        <%= render 'shared/newbookingmodal' %>
+      </div>
+      <!-- end -->
+    <% end %>
+  <% else %>
+
         (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
       </div>
     <% end %>
@@ -41,31 +56,17 @@
 ​
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
     <div class="button-area">
-      <button id="button-create-table" class = "button button-long">Create a Table</button>
+      <%= link_to new_restaurant_booking_path(@restaurant) do %>
+        <button class = "button button-long">Create a Table</button>
+      <% end %>
     </div>
-
-    <!-- Partial for the Create Table Modal -->
-    <div class="newbooking-popup hide">
-      <%= render 'shared/newbookingmodal' %>
-    </div>
-    <!-- end -->
-
   <% end %>
-<% else %>
-  <div class="button-area">
-    <%= link_to new_restaurant_booking_path(@restaurant) do %>
-      <button class = "button button-long">Create a Table</button>
-    <% end %>
-  </div>
-
-<% end %>
-
-​
-
+</div>
 <div class="search-section">
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
       <%= text_field_tag :query,
+
         params[:query],
         class: "form-control",
         placeholder: "Healthy or decadent ?"
@@ -75,13 +76,8 @@
     </div>
   <% end %>
 </div>
-​
-
-
-​
 <h2>Menu</h2>
-​
-​<% @categories.each do |category|  %>
+<% @categories.each do |category|  %>
   <h2><%= category %></h2>
   <% @dishes = @dishes_for_restaurant.select {|dish| dish.category == category }  %>
   <% @dishes.each do |dish|  %>
@@ -93,29 +89,26 @@
         <h3><%= dish.name %></h3>
         <p> <%= dish.description %></p>
         <div class="flex-between dish-info">
-             <div class="timeprice">
+          <div class="timeprice">
             <p><%= humanized_money_with_symbol(dish.price)%></p>
             <p><i class="far fa-clock "></i> <%= dish.prep_time %></p>
-             </div>
-            <% if user_signed_in? %>
-              <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
-                  <div class = "hide" id= <%= "order-done-dish-#{dish.id}" %> >
-                    <button class="button-action button-color-grey"><i class="fas fa-check"></i></button>
-                  </div>
-                  <div class = "show" id=<%= "order-form-dish-#{dish.id}" %> >
-                    <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"}, remote: true do |f| %>
-                        <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
-                        <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
-                        <%= f.submit "Order", class: "btn button-action button-color-blue id-of-dish-#{dish.id}" %>
-                    <% end %>
-                  </div>
-              <% end %>
+          </div>
+          <% if user_signed_in? %>
+            <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) && !@booking.attendees.all? {|attendee| attendee.payment == true }%>
+              <div class = "hide" id= <%= "order-done-dish-#{dish.id}" %> >
+                <button class="button-action button-color-grey"><i class="fas fa-check"></i></button>
+              </div>
+              <div class = "show" id=<%= "order-form-dish-#{dish.id}" %> >
+                <%= simple_form_for [@restaurant, @booking, @attendee, @order], html:{class: "button_height"}, remote: true do |f| %>
+                  <%= f.input :dish_id , as: :hidden, input_html: { value: dish.id } %>
+                  <%= f.input :price , as: :hidden, input_html: { value: dish.price } %>
+                  <%= f.submit "Order", class: "btn button-action button-color-blue id-of-dish-#{dish.id}" %>
+                <% end %>
+              </div>
             <% end %>
-
+          <% end %>
         </div>
       </div>
     </div>
   <% end %>
 <% end %>
-
-
