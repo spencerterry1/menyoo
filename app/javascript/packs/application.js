@@ -46,8 +46,27 @@ checkedinButtons.forEach((button) => {
 
 const checkedinCancelButton = document.querySelector(".button-modal-cancel");
 
-checkedinCancelButton.addEventListener("click", (event) => {
-  checkedinModal.classList.toggle("show");
-  checkedinModal.classList.toggle("hide");
-});
+if (checkedinCancelButton) {
+  checkedinCancelButton.addEventListener("click", (event) => {
+    checkedinModal.classList.toggle("show");
+    checkedinModal.classList.toggle("hide");
+  });
+}
+
+
+// // =======> Change Order button in menu when submitted
+
+// const orderButtons = document.querySelectorAll(".button-order");
+
+// orderButtons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     console.log(event);
+//     console.log("Order placed");
+//     button.value = "Done";
+//   });
+// });
+
+
+
 
