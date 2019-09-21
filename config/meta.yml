@@ -1,0 +1,5 @@
+meta_product_name: "Menyoo"
+meta_title: "Less time waiting, more time eating"
+meta_description: "Menyoo is an app that reduces the time you spend waiting in restaurants and frees up time for you to focus on having a good time"
+meta_image: "menyoo-icon.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
