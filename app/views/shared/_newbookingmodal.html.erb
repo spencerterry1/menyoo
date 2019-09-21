@@ -1,0 +1,21 @@
+
+<div class="booking-container checkedin-modal">
+
+
+   <div class="new-booking">
+      <div class="card-box-shadow modal-box-booking">
+
+
+            <div class="container">
+              <div class="form-wrapper button-area" style="margin: 0 auto;">
+                <h2 class="create-booking-title">Select Date & Time</h2>
+
+                <%= simple_form_for [@restaurant, @booking]  do |f| %>
+                  <%= f.input :date, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
+                  <%= f.button :submit, "Create Table", class: "button create-booking-button" %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

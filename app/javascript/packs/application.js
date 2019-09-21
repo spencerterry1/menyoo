@@ -54,18 +54,29 @@ if (checkedinCancelButton) {
 }
 
 
-// // =======> Change Order button in menu when submitted
+// =======> Create Table Modal
 
-// const orderButtons = document.querySelectorAll(".button-order");
+const createTableModal = document.querySelector(".newbooking-popup");
+const createTableButton = document.querySelector("#button-create-table");
 
-// orderButtons.forEach((button) => {
-//   button.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     console.log(event);
-//     console.log("Order placed");
-//     button.value = "Done";
-//   });
-// });
+
+if (createTableButton) {
+  createTableButton.addEventListener("click", (event) => {
+      createTableModal.classList.toggle("show");
+      createTableModal.classList.toggle("hide");
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

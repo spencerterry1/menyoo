@@ -41,10 +41,15 @@
 ​
   <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
     <div class="button-area">
-      <%= link_to new_restaurant_booking_path(@restaurant) do %>
-        <button class = "button button-long">Create a Table</button>
-      <% end %>
+      <button id="button-create-table" class = "button button-long">Create a Table</button>
     </div>
+
+    <!-- Partial for the Create Table Modal -->
+    <div class="newbooking-popup hide">
+      <%= render 'shared/newbookingmodal' %>
+    </div>
+    <!-- end -->
+
   <% end %>
 <% else %>
   <div class="button-area">
@@ -54,6 +59,7 @@
   </div>
 
 <% end %>
+
 ​
 
 <div class="search-section">
