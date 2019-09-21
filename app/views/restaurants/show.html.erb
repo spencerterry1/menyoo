@@ -16,6 +16,7 @@
 <div class="restaurant-header ">
   <h1 id="rname"><%= @restaurant.name %></h1>
   <p id="raddress"><%= @restaurant.address %></p>
+
   <div class="rating-stars">
     <% if @restaurant.avarage_rating.zero? %>
       <p class="ratings-stars accent-font">No reviews</p>
@@ -24,6 +25,7 @@
         <% @restaurant.avarage_rating.round.times do %>
           <i class="rating-stars fas fa-star"></i>
         <% end %>
+
       </div>
     <% end %>
     (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
@@ -40,6 +42,19 @@
       <!-- end -->
     <% end %>
   <% else %>
+
+        (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+<% if user_signed_in? %>
+​
+  <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
     <div class="button-area">
       <%= link_to new_restaurant_booking_path(@restaurant) do %>
         <button class = "button button-long">Create a Table</button>
@@ -51,10 +66,12 @@
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
       <%= text_field_tag :query,
-   params[:query],
-   class: "form-control",
-   placeholder: "Healthy or decadent ?"
-   %>
+
+        params[:query],
+        class: "form-control",
+        placeholder: "Healthy or decadent ?"
+        %>
+​      <i id="delete-button-two", class="fas fa-times-circle"></i>
       <%= submit_tag "Search", class: "button button-medium" %>
     </div>
   <% end %>

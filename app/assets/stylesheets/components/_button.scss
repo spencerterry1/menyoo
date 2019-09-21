@@ -7,6 +7,26 @@
   // }
 }
 
+
+#delete-button {
+  position: absolute;
+  right: 19px;
+  top: 76px;
+  font-size: 18px;
+  display: none;
+  color: $menyoo-gray;
+}
+
+#delete-button-two {
+  position: absolute;
+  right: 19px;
+  top: 221px;
+  font-size: 18px;
+  display: none;
+  color: $menyoo-gray;
+}
+
+
 .button {
   height: 32px;
   background-color: $menyoo-blue;
