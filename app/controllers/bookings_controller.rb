@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings_open = bookings_open_for_user(current_user)
+    @bookings_open_notsorted = bookings_open_for_user(current_user)
+    @bookings_open = @bookings_open_notsorted.sort_by &:date
+
   end
 
   def show

@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_065524) do
     t.bigint "attendee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["attendee_id"], name: "index_orders_on_attendee_id"
     t.index ["dish_id"], name: "index_orders_on_dish_id"
   end
