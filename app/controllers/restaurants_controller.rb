@@ -23,12 +23,15 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
 
     if params[:query].present?
-      @dishes_for_restaurant = @restaurant.dishes.search_by_dish(params[:query])
-      @dishes_for_restaurant_all = @restaurant.dishes
+      @dishes_for_restaurant = @restaurant.dishes.search_by_dish(params[:query]).order(:name)
     else
-      @dishes_for_restaurant = @restaurant.dishes
-      @dishes_for_restaurant_all = @restaurant.dishes
+      @dishes_for_restaurant = @restaurant.dishes.order(:name)
     end
+    @categories = @dishes_for_restaurant.map(&:category).uniq.sort
+      if @categories.include?("Dessert")
+        @categories.delete("Dessert")
+        @categories.push("Dessert")
+      end
 
 
     if user_signed_in?
