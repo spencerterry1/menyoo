@@ -8,7 +8,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
-initMapbox();
+// initMapbox();
 
 // =======> Show / hide Map
 
@@ -68,16 +68,41 @@ if (createTableButton) {
 }
 
 
+// =======> Button to delete typed searches in searchbars
+// =======> DeleteButton is the button to erase search in the Restaurant Index search bar
+// =======> DeleteButtonTwo is the button to erase search in the Restaurant Show search bar
 
 
+const searchInput = document.querySelector("#query");
+const deleteButton = document.querySelector("#delete-button");
+const deleteButtonTwo = document.querySelector("#delete-button-two");
 
+if (searchInput && deleteButton) {
+  searchInput.addEventListener("input", (event) => {
+    if (event.target.value.length > 0) {
+      deleteButton.style.display = "block";
+    } else if (event.target.value.length === 0) {
+      deleteButton.style.display = "none"
+    }
+    deleteButton.addEventListener("click", () => {
+       searchInput.value = "";
+       deleteButton.style.display = "none";
+    });
+  });
+}
 
-
-
-
-
-
-
-
+if (searchInput && deleteButtonTwo) {
+  searchInput.addEventListener("input", (event) => {
+    if (event.target.value.length > 0) {
+      deleteButtonTwo.style.display = "block";
+    } else if (event.target.value.length === 0) {
+      deleteButtonTwo.style.display = "none"
+    }
+    deleteButtonTwo.addEventListener("click", () => {
+       searchInput.value = "";
+       deleteButtonTwo.style.display = "none";
+    });
+  });
+}
 
 
