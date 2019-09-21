@@ -23,8 +23,8 @@
 
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :name, input_html: {value: ""} %>
-    <%= f.submit "Search", class: "button button-medium" %>
+    <p><strong><%= f.input :name, input_html: {value: ""} %></strong></p>
+    <%= f.submit "Search", class: "button button-medium button-search" %>
   <% end %>
 </div>
 
@@ -32,17 +32,17 @@
 <%# if a user searches to add a guest to the table  %>
 <% if @user && @user != current_user %>
 
-  <div class="card-small card-box-shadow card-submenu user flex-between">
-    <%= cl_image_tag(@user.photo, :class => "avatar button-area") %>
-    <div>
-      <p><%= @user.first_name %> <%= @user.last_name %></p>
+  <div class="card-box-shadow card-medium-attendees card-submenu user attende-invite">
+    <div class="avatar-div">
+      <%= cl_image_tag(@user.photo, :class => "avatar-large button-area") %>
     </div>
-
-    <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
-      <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
-      <%= f.submit "Invite Now", class: "btn btn-dark" %>
-    <% end %>
-
+    <div class="attendee-invite">
+      <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
+      <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
+        <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
+        <%= f.submit "Invite Now", class: "btn button-action" %>
+      <% end %>
+    </div>
   </div>
 
 <% end %>
@@ -50,9 +50,9 @@
 
 <h1>Current Attendees</h1>
 
-
 <% @booking.attendees.map do |attendee| %>
   <div class="card-box-shadow card-medium-attendees card-submenu">
+
     <div>
       <% if attendee.accepted %>
         <%= cl_image_tag(attendee.user.photo, :class => "avatar-large-blue button-area") %>
@@ -60,6 +60,7 @@
         <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
       <% end %>
     </div>
+
     <div>
       <% if attendee.accepted %>
           <p class="blue-font"><strong> <%= attendee.user.first_name %></strong></p>

@@ -24,10 +24,12 @@
 </div>
 
 <div class="button-area">
-  <%= link_to restaurant_path(@restaurant) do %>
+  <% if @attendee.payment == false  %>
+    <%= link_to restaurant_path(@restaurant) do %>
       <button class = "button button-long">Add to Order</button>
   <% end %>
-  <h3>Total cost: £<%= @order_total %></h3>
+  <% end %>
+
 </div>
 
 <% @orders.each do |order|  %>

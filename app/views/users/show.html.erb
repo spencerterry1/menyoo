@@ -22,13 +22,14 @@
         <%= cl_image_tag(@attendee_invitation.booking.restaurant.photo,width: 400, height: 300, crop: :fill) %>
       </div>
       <div class="card-large-content">
-        <p> <%= @attendee_invitation.booking.user.first_name %></p>
-        <p> <%= @attendee_invitation.booking.restaurant.name %></p>
-        <p> <%= @attendee_invitation.booking.date.to_s(:invite_time) %></p>
+        <p><strong> <%= @attendee_invitation.booking.user.first_name %></strong></p>
+        <p><strong><%= @attendee_invitation.booking.restaurant.name %></p>
+        <p class ="booktime"> <%= @attendee_invitation.booking.date.to_s(:invite_time) %></p><strong></p>
       </div>
       <div class="button-area">
         <%= link_to restaurant_booking_attendee_accept_path(@attendee_invitation.booking.restaurant, @attendee_invitation.booking, @attendee_invitation) do %>
           <button class = "button button-small invitation-buton">Accept</button>
+          <button class = "decbutton button-small invitation-buton">Decline</button>
         <% end %>
       </div>
     </div>
@@ -40,24 +41,25 @@
 
 
 
+
   <div class="card-small card-box-shadow button-area">
     <%= link_to edit_user_registration_path, class: "link" do %>
-      <h3>Your details</h3>
+      <h3 class="user-card-title">Your details</h3>
     <% end %>
   </div>
   <div class="card-small card-box-shadow button-area">
     <%= link_to user_reviews_path(@user), class: "link" do %>
-      <h3>Your reviews</h3>
+      <h3 user-card-title>Your reviews</h3>
     <% end %>
   </div>
   <div class="card-small card-box-shadow button-area">
     <%= link_to user_bookings_path(@user), class: "link" do %>
-      <h3>Your bookings</h3>
+      <h3 user-card-title>Your bookings</h3>
     <% end %>
   </div>
   <div class="card-small card-box-shadow button-area">
     <%= link_to destroy_user_session_path, method: :delete, class: "link" do %>
-      <h3>Log out</h3>
+      <h3 class="user-card-title">Log out</h3>
     <% end %>
   </div>
 </div>

@@ -11,6 +11,9 @@
   display: flex;
   height: $card-large-height;
   margin: 16px 0px;
+  h3 {
+    line-height: 1.0rem;
+  }
 }
 
 .card-medium {
@@ -162,6 +165,14 @@
     color: $menyoo-blue;
 }
 
+.booktime {
+   color: $menyoo-blue;
+}
+
+#invitedat > p{
+  color: $headers-font;
+}
+
 .restaurant-name-card{
   display: flex;
   justify-content: space-between;
@@ -262,3 +273,21 @@
   color: $dark-gray;
 }
 
+.attendee-invite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  form {
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+.dish-info {
+  padding-top: 5px;
+}
+
+h3.user-card-title {
+  margin: 0;
+}

@@ -5,18 +5,28 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @attendee = @booking.attendees.find_by(user: current_user)
     @payment = Payment.new(attendee: @attendee, booking: @booking)
+
     if @payment.save
       if params[:pay_for_all]
         @orders = @booking.orders.where(ordered: true)
+        @order_total = 0
+        @orders.each do |order|
+          @order_total += order.dish.price
+        end
       else
         @orders = @booking.orders.where(attendee: @attendee).where(ordered: true)
+        @order_total = 0
+        @order_total = @orders.each do |order|
+          @order_total += order.dish.price
+        end
       end
+
       session = Stripe::Checkout::Session.create(
           payment_method_types: ['card'],
           line_items: [{
             name: "My orders",
             images: [@restaurant.photo_url],
-            amount: @orders.map(&:price).sum * 100,
+            amount: (@order_total.to_f * 100).to_i,
             currency: 'gbp',
             quantity: 1
           }],
@@ -24,7 +34,9 @@ class ReviewsController < ApplicationController
           cancel_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee)
         )
       @payment.update(checkout_session_id: session.id)
+
     end
+
   end
 
   def create
@@ -46,10 +58,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  #def show
-    #@user = current_user
-    #@reviews = Review.find(user_id:@user)
-  #end
 
   def destroy
     @review.destroy

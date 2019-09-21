@@ -2,7 +2,8 @@
   text-align: center;
   align-items: center;
   .invitation-buton{
-    margin:40px;
+    margin:5px;
+
   }
 }
 
@@ -20,6 +21,22 @@
   cursor: pointer;
   border-radius: 50px;
 }
+
+
+.decbutton {
+  height: 32px;
+  background-color: $menyoo-gray;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 16px auto;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+
 
 .button-action {
   height: 30px;
@@ -47,6 +64,11 @@
 .button-medium {
   padding: 0px 48px;
 }
+
+.button-search {
+  margin-top: 31px;
+}
+
 
 .button-long {
   padding: 0px ;
@@ -143,6 +165,7 @@
   font-size: 12px;
   margin-right: 10px;
 }
+
 
 
 
