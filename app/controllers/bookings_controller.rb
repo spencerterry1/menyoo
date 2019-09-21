@@ -46,6 +46,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @orders = @booking.orders
     @attendees = @booking.attendees
+    @attendee = Attendee.where(user: current_user, booking: @booking).last
 
     @orders_not_sent_to_kitchen = @orders.where(ordered: false)
     @orders_not_sent_to_kitchen_hash = {}
@@ -91,7 +92,6 @@ class BookingsController < ApplicationController
         @order_left_to_pay += order.dish.price
       end
     end
-
   end
 
   def checkin
