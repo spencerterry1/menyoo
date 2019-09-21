@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
           line_items: [{
             name: "My orders",
             images: [@restaurant.photo_url],
-            amount: (@order_total.to_f * 100).to_i,
+            amount: (@order_total.to_i * 100),
             currency: 'gbp',
             quantity: 1
           }],
@@ -34,7 +34,6 @@ class ReviewsController < ApplicationController
           cancel_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee)
         )
       @payment.update(checkout_session_id: session.id)
-
     end
 
   end
