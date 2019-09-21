@@ -3,6 +3,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   align-items: center;
   border-radius: 8px;
+  height:520px;
 }
 
 .mapboxgl-popup-content {
@@ -11,3 +12,10 @@
       color: $menyoo-blue;
     }
 }
+
+
+#c {
+  width: 400px;
+  height: 300px;
+}
+

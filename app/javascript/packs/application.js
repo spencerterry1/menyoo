@@ -1,10 +1,10 @@
 import "bootstrap";
-import "../plugins/flatpickr"
+import "../plugins/flatpickr";
 
 // import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
-import { initMapbox } from '../plugins/init_mapbox';
-import { initStarRating } from '../plugins/init_star_rating';
+import { initMapbox } from "../plugins/init_mapbox";
+import { initStarRating } from "../plugins/init_star_rating";
 
 initStarRating();
 
@@ -17,8 +17,8 @@ const mapButtons = document.querySelectorAll(".map-button");
 const featuredSection = document.querySelector(".home-featured-section");
 const mapSection = document.querySelector(".home-map-section");
 
-mapButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
+mapButtons.forEach(button => {
+  button.addEventListener("click", event => {
     mapSection.classList.toggle("show");
     mapSection.classList.toggle("hide");
     featuredSection.classList.toggle("show");
@@ -26,17 +26,15 @@ mapButtons.forEach((button) => {
   });
 });
 
-
 // =======> CheckedIn Modal
 
 const checkedinModal = document.querySelector(".checkedin-popup");
 
-
 // Toggle CheckedIn Modal from NavBar
 const checkedinButtons = document.querySelectorAll(".checkin-button");
 
-checkedinButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
+checkedinButtons.forEach(button => {
+  button.addEventListener("click", event => {
     checkedinModal.classList.toggle("show");
     checkedinModal.classList.toggle("hide");
   });
@@ -47,11 +45,14 @@ checkedinButtons.forEach((button) => {
 const checkedinCancelButton = document.querySelector(".button-modal-cancel");
 
 if (checkedinCancelButton) {
+
   checkedinCancelButton.addEventListener("click", (event) => {
+
     checkedinModal.classList.toggle("show");
     checkedinModal.classList.toggle("hide");
   });
 }
+
 
 
 // =======> Create Table Modal

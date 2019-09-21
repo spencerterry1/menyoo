@@ -1,0 +1,577 @@
+Searching 222 files for "mapbox gl canvas"
+
+0 matches
+
+Searching 222 files for "mapbox"
+
+/Users/sarahalpern/code/spencerterry1/menyoo/.env:
+    1  CLOUDINARY_URL=cloudinary://767339219952359:lJfljFWzMQ3Z5fT4OGA9Bg_KrwU@bywalterc
+    2: MAPBOX_API_KEY=pk.eyJ1Ijoid2FsdGVyYyIsImEiOiJjang3Zmx6NHIwMTQ2M3BsZ3Y4MjFzcG1mIn0.W5WvP9mm2NiDMf3LatupTw
+    3
+
+/Users/sarahalpern/code/spencerterry1/menyoo/package.json:
+    8      "jquery": "^3.4.1",
+    9      "jquery-bar-rating": "^1.2.2",
+   10:     "mapbox-gl": "^1.3.1",
+   11      "popper.js": "^1.15.0"
+   12    },
+
+/Users/sarahalpern/code/spencerterry1/menyoo/yarn.lock:
+  681    integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
+  682
+  683: "@mapbox/geojson-area@0.2.2":
+  684    version "0.2.2"
+  685:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-area/-/geojson-area-0.2.2.tgz#18d7814aa36bf23fbbcc379f8e26a22927debf10"
+  686    integrity sha1-GNeBSqNr8j+7zDefjiaiKSfevxA=
+  687    dependencies:
+  688      wgs84 "0.0.0"
+  689
+  690: "@mapbox/geojson-rewind@^0.4.0":
+  691    version "0.4.0"
+  692:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-rewind/-/geojson-rewind-0.4.0.tgz#0d3632d4c1b4a928cf10a06ade387e1c8a8c181b"
+  693    integrity sha512-b+1uPWBERW4Pet/969BNu61ZPDyH2ilIxBjJDFzxyS9TyszF9UrTQyYIl/G38clux3rtpAGGFSGTCSF/qR6UjA==
+  694    dependencies:
+  695:     "@mapbox/geojson-area" "0.2.2"
+  696      concat-stream "~1.6.0"
+  697      minimist "1.2.0"
+  698      sharkdown "^0.1.0"
+  699
+  700: "@mapbox/geojson-types@^1.0.2":
+  701    version "1.0.2"
+  702:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-types/-/geojson-types-1.0.2.tgz#9aecf642cb00eab1080a57c4f949a65b4a5846d6"
+  703    integrity sha512-e9EBqHHv3EORHrSfbR9DqecPNn+AmuAoQxV6aL8Xu30bJMJR1o8PZLZzpk1Wq7/NfCbuhmakHTPYRhoqLsXRnw==
+  704
+  705: "@mapbox/jsonlint-lines-primitives@^2.0.2":
+  706    version "2.0.2"
+  707:   resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
+  708    integrity sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
+  709
+  710: "@mapbox/mapbox-gl-supported@^1.4.0":
+  711    version "1.4.1"
+  712:   resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-supported/-/mapbox-gl-supported-1.4.1.tgz#c0a03cf75f8b0ad7b57849d6c7e91b0aec4b640f"
+  713    integrity sha512-yyKza9S6z3ELKuf6w5n6VNUB0Osu6Z93RXPfMHLIlNWohu3KqxewLOq4lMXseYJ92GwkRAxd207Pr/Z98cwmvw==
+  714
+  715: "@mapbox/point-geometry@0.1.0", "@mapbox/point-geometry@^0.1.0", "@mapbox/point-geometry@~0.1.0":
+  716    version "0.1.0"
+  717:   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  718    integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
+  719
+  720: "@mapbox/tiny-sdf@^1.1.0":
+  721    version "1.1.1"
+  722:   resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.1.1.tgz#16a20c470741bfe9191deb336f46e194da4a91ff"
+  723    integrity sha512-Ihn1nZcGIswJ5XGbgFAvVumOgWpvIjBX9jiRlIl46uQG9vJOF51ViBYHF95rEZupuyQbEmhLaDPLQlU7fUTsBg==
+  724
+  725: "@mapbox/unitbezier@^0.0.0":
+  726    version "0.0.0"
+  727:   resolved "https://registry.yarnpkg.com/@mapbox/unitbezier/-/unitbezier-0.0.0.tgz#15651bd553a67b8581fb398810c98ad86a34524e"
+  728    integrity sha1-FWUb1VOme4WB+zmIEMmK2Go0Uk4=
+  729
+  730: "@mapbox/vector-tile@^1.3.1":
+  731    version "1.3.1"
+  732:   resolved "https://registry.yarnpkg.com/@mapbox/vector-tile/-/vector-tile-1.3.1.tgz#d3a74c90402d06e89ec66de49ec817ff53409666"
+  733    integrity sha512-MCEddb8u44/xfQ3oD+Srl/tNcQoqTw3goGk2oLsrFxOTc3dUp+kAnby3PvAeeBYSMSjSPD1nd1AJA6W49WnoUw==
+  734    dependencies:
+  735:     "@mapbox/point-geometry" "~0.1.0"
+  736
+  737: "@mapbox/whoots-js@^3.1.0":
+  738    version "3.1.0"
+  739:   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
+  740    integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
+  741
+  ...
+ 4070      object-visit "^1.0.0"
+ 4071
+ 4072: mapbox-gl@^1.3.1:
+ 4073    version "1.3.1"
+ 4074:   resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.3.1.tgz#6be39a207afec3cc6ea4bc241d596140a664e46b"
+ 4075    integrity sha512-IF7b0LZd/caTiknPhm8DAcv7bhvOCXO6rsW18rmFxi8Vw0syJXKK8DLLabI5oiJXtUIgLe57XRgduQzAYrb4og==
+ 4076    dependencies:
+ 4077:     "@mapbox/geojson-rewind" "^0.4.0"
+ 4078:     "@mapbox/geojson-types" "^1.0.2"
+ 4079:     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
+ 4080:     "@mapbox/mapbox-gl-supported" "^1.4.0"
+ 4081:     "@mapbox/point-geometry" "^0.1.0"
+ 4082:     "@mapbox/tiny-sdf" "^1.1.0"
+ 4083:     "@mapbox/unitbezier" "^0.0.0"
+ 4084:     "@mapbox/vector-tile" "^1.3.1"
+ 4085:     "@mapbox/whoots-js" "^3.1.0"
+ 4086      csscolorparser "~1.0.2"
+ 4087      earcut "^2.1.5"
+ ....
+ 7118    integrity sha512-pHjWdrIoxurpmTcbfBWXaPwSmtPAHS105253P1qyEfSTV2HJddqjM+kIHquaT/L6lVJIk9ltTGc0IxR/G47hYA==
+ 7119    dependencies:
+ 7120:     "@mapbox/point-geometry" "0.1.0"
+ 7121:     "@mapbox/vector-tile" "^1.3.1"
+ 7122      pbf "^3.0.5"
+ 7123
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/assets/stylesheets/components/_map.scss:
+    1: .mapboxgl-popup {
+    2    max-width: 200px;
+    3    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    .
+    6  }
+    7
+    8: .mapboxgl-popup-content {
+    9    text-align: center;
+   10      h2 {
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/javascript/packs/application.js:
+    2  import "../plugins/flatpickr"
+    3
+    4: // import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+    5
+    6: import { initMapbox } from '../plugins/init_mapbox';
+    7  import { initStarRating } from '../plugins/init_star_rating';
+    8
+    9  initStarRating();
+   10
+   11: initMapbox();
+   12
+   13  // =======> Show / hide Map
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/javascript/plugins/init_mapbox.js:
+    1: // app/javascript/plugins/init_mapbox.js
+    2: import 'mapbox-gl/dist/mapbox-gl.css';
+    3
+    4: import mapboxgl from 'mapbox-gl';
+    5
+    6  const mapElement = document.getElementById('map');
+    7
+    8  const buildMap = () => {
+    9:   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+   10:   return new mapboxgl.Map({
+   11      container: 'map',
+   12:     style: 'mapbox://styles/walterc/cjzd48tlq061r1cmjuh5nhf3l'
+   13    });
+   14  };
+   ..
+   16  const addMarkersToMap = (map, markers) => {
+   17    markers.forEach((marker) => {
+   18:     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+   19
+   20      // Create a HTML element for your custom marker
+   ..
+   26      element.style.height = '37px';
+   27
+   28:     new mapboxgl.Marker(element)
+   29        .setLngLat([ marker.lng, marker.lat ])
+   30        .setPopup(popup)
+   ..
+   34
+   35  const fitMapToMarkers = (map, markers) => {
+   36:   const bounds = new mapboxgl.LngLatBounds();
+   37    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+   38    map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+   39  };
+   40
+   41: const initMapbox = () => {
+   42    if (mapElement) {
+   43      const map = buildMap();
+   ..
+   48  };
+   49
+   50: export { initMapbox };
+   51
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/views/restaurants/index.html.erb:
+   80        height: 600px;"
+   81        data-markers="<%= @markers.to_json %>"
+   82:       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+   83      ></div>
+   84    </div>
+
+67 matches across 7 files
+
+
+Searching 222 files for ".mapboxgl-canvas-container"
+
+0 matches
+
+Searching 222 files for ".mapboxgl"
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/assets/stylesheets/components/_map.scss:
+    1: .mapboxgl-popup {
+    2    max-width: 200px;
+    3    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+    .
+    6  }
+    7
+    8: .mapboxgl-popup-content {
+    9    text-align: center;
+   10      h2 {
+
+2 matches in 1 file
+
+
+Searching 222 files for "canvas"
+
+0 matches
+
+Searching 222 files for "class="mapboxgl-canvas""
+
+0 matches
+
+Searching 222 files for "mapbox"
+
+/Users/sarahalpern/code/spencerterry1/menyoo/.env:
+    1  CLOUDINARY_URL=cloudinary://767339219952359:lJfljFWzMQ3Z5fT4OGA9Bg_KrwU@bywalterc
+    2: MAPBOX_API_KEY=pk.eyJ1Ijoid2FsdGVyYyIsImEiOiJjang3Zmx6NHIwMTQ2M3BsZ3Y4MjFzcG1mIn0.W5WvP9mm2NiDMf3LatupTw
+    3
+
+/Users/sarahalpern/code/spencerterry1/menyoo/package.json:
+    8      "jquery": "^3.4.1",
+    9      "jquery-bar-rating": "^1.2.2",
+   10:     "mapbox-gl": "^1.3.1",
+   11      "popper.js": "^1.15.0"
+   12    },
+
+/Users/sarahalpern/code/spencerterry1/menyoo/yarn.lock:
+  681    integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
+  682
+  683: "@mapbox/geojson-area@0.2.2":
+  684    version "0.2.2"
+  685:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-area/-/geojson-area-0.2.2.tgz#18d7814aa36bf23fbbcc379f8e26a22927debf10"
+  686    integrity sha1-GNeBSqNr8j+7zDefjiaiKSfevxA=
+  687    dependencies:
+  688      wgs84 "0.0.0"
+  689
+  690: "@mapbox/geojson-rewind@^0.4.0":
+  691    version "0.4.0"
+  692:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-rewind/-/geojson-rewind-0.4.0.tgz#0d3632d4c1b4a928cf10a06ade387e1c8a8c181b"
+  693    integrity sha512-b+1uPWBERW4Pet/969BNu61ZPDyH2ilIxBjJDFzxyS9TyszF9UrTQyYIl/G38clux3rtpAGGFSGTCSF/qR6UjA==
+  694    dependencies:
+  695:     "@mapbox/geojson-area" "0.2.2"
+  696      concat-stream "~1.6.0"
+  697      minimist "1.2.0"
+  698      sharkdown "^0.1.0"
+  699
+  700: "@mapbox/geojson-types@^1.0.2":
+  701    version "1.0.2"
+  702:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-types/-/geojson-types-1.0.2.tgz#9aecf642cb00eab1080a57c4f949a65b4a5846d6"
+  703    integrity sha512-e9EBqHHv3EORHrSfbR9DqecPNn+AmuAoQxV6aL8Xu30bJMJR1o8PZLZzpk1Wq7/NfCbuhmakHTPYRhoqLsXRnw==
+  704
+  705: "@mapbox/jsonlint-lines-primitives@^2.0.2":
+  706    version "2.0.2"
+  707:   resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
+  708    integrity sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
+  709
+  710: "@mapbox/mapbox-gl-supported@^1.4.0":
+  711    version "1.4.1"
+  712:   resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-supported/-/mapbox-gl-supported-1.4.1.tgz#c0a03cf75f8b0ad7b57849d6c7e91b0aec4b640f"
+  713    integrity sha512-yyKza9S6z3ELKuf6w5n6VNUB0Osu6Z93RXPfMHLIlNWohu3KqxewLOq4lMXseYJ92GwkRAxd207Pr/Z98cwmvw==
+  714
+  715: "@mapbox/point-geometry@0.1.0", "@mapbox/point-geometry@^0.1.0", "@mapbox/point-geometry@~0.1.0":
+  716    version "0.1.0"
+  717:   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  718    integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
+  719
+  720: "@mapbox/tiny-sdf@^1.1.0":
+  721    version "1.1.1"
+  722:   resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.1.1.tgz#16a20c470741bfe9191deb336f46e194da4a91ff"
+  723    integrity sha512-Ihn1nZcGIswJ5XGbgFAvVumOgWpvIjBX9jiRlIl46uQG9vJOF51ViBYHF95rEZupuyQbEmhLaDPLQlU7fUTsBg==
+  724
+  725: "@mapbox/unitbezier@^0.0.0":
+  726    version "0.0.0"
+  727:   resolved "https://registry.yarnpkg.com/@mapbox/unitbezier/-/unitbezier-0.0.0.tgz#15651bd553a67b8581fb398810c98ad86a34524e"
+  728    integrity sha1-FWUb1VOme4WB+zmIEMmK2Go0Uk4=
+  729
+  730: "@mapbox/vector-tile@^1.3.1":
+  731    version "1.3.1"
+  732:   resolved "https://registry.yarnpkg.com/@mapbox/vector-tile/-/vector-tile-1.3.1.tgz#d3a74c90402d06e89ec66de49ec817ff53409666"
+  733    integrity sha512-MCEddb8u44/xfQ3oD+Srl/tNcQoqTw3goGk2oLsrFxOTc3dUp+kAnby3PvAeeBYSMSjSPD1nd1AJA6W49WnoUw==
+  734    dependencies:
+  735:     "@mapbox/point-geometry" "~0.1.0"
+  736
+  737: "@mapbox/whoots-js@^3.1.0":
+  738    version "3.1.0"
+  739:   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
+  740    integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
+  741
+  ...
+ 4070      object-visit "^1.0.0"
+ 4071
+ 4072: mapbox-gl@^1.3.1:
+ 4073    version "1.3.1"
+ 4074:   resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.3.1.tgz#6be39a207afec3cc6ea4bc241d596140a664e46b"
+ 4075    integrity sha512-IF7b0LZd/caTiknPhm8DAcv7bhvOCXO6rsW18rmFxi8Vw0syJXKK8DLLabI5oiJXtUIgLe57XRgduQzAYrb4og==
+ 4076    dependencies:
+ 4077:     "@mapbox/geojson-rewind" "^0.4.0"
+ 4078:     "@mapbox/geojson-types" "^1.0.2"
+ 4079:     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
+ 4080:     "@mapbox/mapbox-gl-supported" "^1.4.0"
+ 4081:     "@mapbox/point-geometry" "^0.1.0"
+ 4082:     "@mapbox/tiny-sdf" "^1.1.0"
+ 4083:     "@mapbox/unitbezier" "^0.0.0"
+ 4084:     "@mapbox/vector-tile" "^1.3.1"
+ 4085:     "@mapbox/whoots-js" "^3.1.0"
+ 4086      csscolorparser "~1.0.2"
+ 4087      earcut "^2.1.5"
+ ....
+ 7118    integrity sha512-pHjWdrIoxurpmTcbfBWXaPwSmtPAHS105253P1qyEfSTV2HJddqjM+kIHquaT/L6lVJIk9ltTGc0IxR/G47hYA==
+ 7119    dependencies:
+ 7120:     "@mapbox/point-geometry" "0.1.0"
+ 7121:     "@mapbox/vector-tile" "^1.3.1"
+ 7122      pbf "^3.0.5"
+ 7123
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/assets/stylesheets/components/_map.scss:
+    1: .mapboxgl-popup {
+    2    max-width: 200px;
+    3    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    .
+    7  }
+    8
+    9: .mapboxgl-popup-content {
+   10    text-align: center;
+   11      h2 {
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/javascript/packs/application.js:
+    2  import "../plugins/flatpickr"
+    3
+    4: // import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+    5
+    6: import { initMapbox } from '../plugins/init_mapbox';
+    7  import { initStarRating } from '../plugins/init_star_rating';
+    8
+    9  initStarRating();
+   10
+   11: initMapbox();
+   12
+   13  // =======> Show / hide Map
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/javascript/plugins/init_mapbox.js:
+    1: // app/javascript/plugins/init_mapbox.js
+    2: import 'mapbox-gl/dist/mapbox-gl.css';
+    3
+    4: import mapboxgl from 'mapbox-gl';
+    5
+    6  const mapElement = document.getElementById('map');
+    7
+    8  const buildMap = () => {
+    9:   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+   10:   return new mapboxgl.Map({
+   11      container: 'map',
+   12:     style: 'mapbox://styles/walterc/cjzd48tlq061r1cmjuh5nhf3l'
+   13    });
+   14  };
+   ..
+   16  const addMarkersToMap = (map, markers) => {
+   17    markers.forEach((marker) => {
+   18:     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+   19
+   20      // Create a HTML element for your custom marker
+   ..
+   26      element.style.height = '37px';
+   27
+   28:     new mapboxgl.Marker(element)
+   29        .setLngLat([ marker.lng, marker.lat ])
+   30        .setPopup(popup)
+   ..
+   34
+   35  const fitMapToMarkers = (map, markers) => {
+   36:   const bounds = new mapboxgl.LngLatBounds();
+   37    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+   38    map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+   39  };
+   40
+   41: const initMapbox = () => {
+   42    if (mapElement) {
+   43      const map = buildMap();
+   ..
+   48  };
+   49
+   50: export { initMapbox };
+   51
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/views/restaurants/index.html.erb:
+   80        height: 100vh;"
+   81        data-markers="<%= @markers.to_json %>"
+   82:       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+   83      ></div>
+   84    </div>
+
+67 matches across 7 files
+
+
+Searching 222 files for "mapbox"
+
+/Users/sarahalpern/code/spencerterry1/menyoo/.env:
+    1  CLOUDINARY_URL=cloudinary://767339219952359:lJfljFWzMQ3Z5fT4OGA9Bg_KrwU@bywalterc
+    2: MAPBOX_API_KEY=pk.eyJ1Ijoid2FsdGVyYyIsImEiOiJjang3Zmx6NHIwMTQ2M3BsZ3Y4MjFzcG1mIn0.W5WvP9mm2NiDMf3LatupTw
+    3
+
+/Users/sarahalpern/code/spencerterry1/menyoo/package.json:
+    8      "jquery": "^3.4.1",
+    9      "jquery-bar-rating": "^1.2.2",
+   10:     "mapbox-gl": "^1.3.1",
+   11      "popper.js": "^1.15.0"
+   12    },
+
+/Users/sarahalpern/code/spencerterry1/menyoo/yarn.lock:
+  681    integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
+  682
+  683: "@mapbox/geojson-area@0.2.2":
+  684    version "0.2.2"
+  685:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-area/-/geojson-area-0.2.2.tgz#18d7814aa36bf23fbbcc379f8e26a22927debf10"
+  686    integrity sha1-GNeBSqNr8j+7zDefjiaiKSfevxA=
+  687    dependencies:
+  688      wgs84 "0.0.0"
+  689
+  690: "@mapbox/geojson-rewind@^0.4.0":
+  691    version "0.4.0"
+  692:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-rewind/-/geojson-rewind-0.4.0.tgz#0d3632d4c1b4a928cf10a06ade387e1c8a8c181b"
+  693    integrity sha512-b+1uPWBERW4Pet/969BNu61ZPDyH2ilIxBjJDFzxyS9TyszF9UrTQyYIl/G38clux3rtpAGGFSGTCSF/qR6UjA==
+  694    dependencies:
+  695:     "@mapbox/geojson-area" "0.2.2"
+  696      concat-stream "~1.6.0"
+  697      minimist "1.2.0"
+  698      sharkdown "^0.1.0"
+  699
+  700: "@mapbox/geojson-types@^1.0.2":
+  701    version "1.0.2"
+  702:   resolved "https://registry.yarnpkg.com/@mapbox/geojson-types/-/geojson-types-1.0.2.tgz#9aecf642cb00eab1080a57c4f949a65b4a5846d6"
+  703    integrity sha512-e9EBqHHv3EORHrSfbR9DqecPNn+AmuAoQxV6aL8Xu30bJMJR1o8PZLZzpk1Wq7/NfCbuhmakHTPYRhoqLsXRnw==
+  704
+  705: "@mapbox/jsonlint-lines-primitives@^2.0.2":
+  706    version "2.0.2"
+  707:   resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
+  708    integrity sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
+  709
+  710: "@mapbox/mapbox-gl-supported@^1.4.0":
+  711    version "1.4.1"
+  712:   resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-supported/-/mapbox-gl-supported-1.4.1.tgz#c0a03cf75f8b0ad7b57849d6c7e91b0aec4b640f"
+  713    integrity sha512-yyKza9S6z3ELKuf6w5n6VNUB0Osu6Z93RXPfMHLIlNWohu3KqxewLOq4lMXseYJ92GwkRAxd207Pr/Z98cwmvw==
+  714
+  715: "@mapbox/point-geometry@0.1.0", "@mapbox/point-geometry@^0.1.0", "@mapbox/point-geometry@~0.1.0":
+  716    version "0.1.0"
+  717:   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  718    integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
+  719
+  720: "@mapbox/tiny-sdf@^1.1.0":
+  721    version "1.1.1"
+  722:   resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.1.1.tgz#16a20c470741bfe9191deb336f46e194da4a91ff"
+  723    integrity sha512-Ihn1nZcGIswJ5XGbgFAvVumOgWpvIjBX9jiRlIl46uQG9vJOF51ViBYHF95rEZupuyQbEmhLaDPLQlU7fUTsBg==
+  724
+  725: "@mapbox/unitbezier@^0.0.0":
+  726    version "0.0.0"
+  727:   resolved "https://registry.yarnpkg.com/@mapbox/unitbezier/-/unitbezier-0.0.0.tgz#15651bd553a67b8581fb398810c98ad86a34524e"
+  728    integrity sha1-FWUb1VOme4WB+zmIEMmK2Go0Uk4=
+  729
+  730: "@mapbox/vector-tile@^1.3.1":
+  731    version "1.3.1"
+  732:   resolved "https://registry.yarnpkg.com/@mapbox/vector-tile/-/vector-tile-1.3.1.tgz#d3a74c90402d06e89ec66de49ec817ff53409666"
+  733    integrity sha512-MCEddb8u44/xfQ3oD+Srl/tNcQoqTw3goGk2oLsrFxOTc3dUp+kAnby3PvAeeBYSMSjSPD1nd1AJA6W49WnoUw==
+  734    dependencies:
+  735:     "@mapbox/point-geometry" "~0.1.0"
+  736
+  737: "@mapbox/whoots-js@^3.1.0":
+  738    version "3.1.0"
+  739:   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
+  740    integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
+  741
+  ...
+ 4070      object-visit "^1.0.0"
+ 4071
+ 4072: mapbox-gl@^1.3.1:
+ 4073    version "1.3.1"
+ 4074:   resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.3.1.tgz#6be39a207afec3cc6ea4bc241d596140a664e46b"
+ 4075    integrity sha512-IF7b0LZd/caTiknPhm8DAcv7bhvOCXO6rsW18rmFxi8Vw0syJXKK8DLLabI5oiJXtUIgLe57XRgduQzAYrb4og==
+ 4076    dependencies:
+ 4077:     "@mapbox/geojson-rewind" "^0.4.0"
+ 4078:     "@mapbox/geojson-types" "^1.0.2"
+ 4079:     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
+ 4080:     "@mapbox/mapbox-gl-supported" "^1.4.0"
+ 4081:     "@mapbox/point-geometry" "^0.1.0"
+ 4082:     "@mapbox/tiny-sdf" "^1.1.0"
+ 4083:     "@mapbox/unitbezier" "^0.0.0"
+ 4084:     "@mapbox/vector-tile" "^1.3.1"
+ 4085:     "@mapbox/whoots-js" "^3.1.0"
+ 4086      csscolorparser "~1.0.2"
+ 4087      earcut "^2.1.5"
+ ....
+ 7118    integrity sha512-pHjWdrIoxurpmTcbfBWXaPwSmtPAHS105253P1qyEfSTV2HJddqjM+kIHquaT/L6lVJIk9ltTGc0IxR/G47hYA==
+ 7119    dependencies:
+ 7120:     "@mapbox/point-geometry" "0.1.0"
+ 7121:     "@mapbox/vector-tile" "^1.3.1"
+ 7122      pbf "^3.0.5"
+ 7123
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/assets/stylesheets/components/_map.scss:
+    1: .mapboxgl-popup {
+    2    max-width: 200px;
+    3    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    .
+    7  }
+    8
+    9: .mapboxgl-popup-content {
+   10    text-align: center;
+   11      h2 {
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/javascript/packs/application.js:
+    2  import "../plugins/flatpickr"
+    3
+    4: // import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+    5
+    6: import { initMapbox } from '../plugins/init_mapbox';
+    7  import { initStarRating } from '../plugins/init_star_rating';
+    8
+    9  initStarRating();
+   10
+   11: initMapbox();
+   12
+   13  // =======> Show / hide Map
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/javascript/plugins/init_mapbox.js:
+    1: // app/javascript/plugins/init_mapbox.js
+    2: import 'mapbox-gl/dist/mapbox-gl.css';
+    3
+    4: import mapboxgl from 'mapbox-gl';
+    5
+    6  const mapElement = document.getElementById('map');
+    7
+    8  const buildMap = () => {
+    9:   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+   10:   return new mapboxgl.Map({
+   11      container: 'map',
+   12:     style: 'mapbox://styles/walterc/cjzd48tlq061r1cmjuh5nhf3l'
+   13    });
+   14  };
+   ..
+   16  const addMarkersToMap = (map, markers) => {
+   17    markers.forEach((marker) => {
+   18:     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+   19
+   20      // Create a HTML element for your custom marker
+   ..
+   26      element.style.height = '37px';
+   27
+   28:     new mapboxgl.Marker(element)
+   29        .setLngLat([ marker.lng, marker.lat ])
+   30        .setPopup(popup)
+   ..
+   34
+   35  const fitMapToMarkers = (map, markers) => {
+   36:   const bounds = new mapboxgl.LngLatBounds();
+   37    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+   38    map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+   39  };
+   40
+   41: const initMapbox = () => {
+   42    if (mapElement) {
+   43      const map = buildMap();
+   ..
+   48  };
+   49
+   50: export { initMapbox };
+   51
+
+/Users/sarahalpern/code/spencerterry1/menyoo/app/views/restaurants/index.html.erb:
+   80        height: 600px;"
+   81        data-markers="<%= @markers.to_json %>"
+   82:       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+   83      ></div>
+   84    </div>
+
+67 matches across 7 files
