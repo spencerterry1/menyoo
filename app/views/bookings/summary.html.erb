@@ -17,19 +17,25 @@
   <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
 </div>
 
+<div class="summary-buttons">
+  <div id="summary-button-your">
+    <strong>Your Order</strong>
+  </div>
 
-<div id="summary-button-your">
-  Your Order
-</div>
+  <div>
+    |
+  </div>
 
-<div id="summary-button-table">
-  Table Order
+  <div id="summary-button-table" class="grey-font">
+    <strong>Table Order</strong>
+  </div>
+
 </div>
 
 
 <!-- ==========> DIV FOR YOUR ORDER <================= -->
 
-<div id="summary-section-your" class="hide">
+<div id="summary-section-your" class="">
 
   <!-- Calculation the total for the orders -->
   <% @order_total = 0 %>
@@ -80,7 +86,7 @@
 
 <!-- ==========> DIV FOR TABLE ORDER <================= -->
 
-<div id="summary-section-table" class="">
+<div id="summary-section-table" class="hide grey-font">
 
   <%#= show div with ORDERS NOT YET SENT to kitchen %>
 

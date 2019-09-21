@@ -82,6 +82,8 @@ if (yourButton && tableButton) {
     yourSection.classList.toggle("hide");
     tableSection.classList.toggle("show");
     tableSection.classList.toggle("hide");
+    yourButton.classList.toggle("grey-font");
+    tableButton.classList.toggle("grey-font");
   });
 
   tableButton.addEventListener("click", (event) => {
@@ -89,6 +91,8 @@ if (yourButton && tableButton) {
     yourSection.classList.toggle("hide");
     tableSection.classList.toggle("show");
     tableSection.classList.toggle("hide");
+    yourButton.classList.toggle("grey-font");
+    tableButton.classList.toggle("grey-font");
   });
 
 }
