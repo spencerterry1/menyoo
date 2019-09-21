@@ -1,32 +1,32 @@
 // app/javascript/plugins/init_mapbox.js
-import 'mapbox-gl/dist/mapbox-gl.css';
+import "mapbox-gl/dist/mapbox-gl.css";
 
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from "mapbox-gl";
 
-const mapElement = document.getElementById('map');
+const mapElement = document.getElementById("map");
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/walterc/cjzd48tlq061r1cmjuh5nhf3l'
+    container: "map",
+    style: "mapbox://styles/walterc/cjzd48tlq061r1cmjuh5nhf3l"
   });
 };
 
 const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
+  markers.forEach(marker => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     // Create a HTML element for your custom marker
-    const element = document.createElement('div');
-    element.className = 'marker';
+    const element = document.createElement("div");
+    element.className = "marker";
     element.style.backgroundImage = `url('${marker.image_url}')`;
-    element.style.backgroundSize = 'contain';
-    element.style.width = '30px';
-    element.style.height = '37px';
+    element.style.backgroundSize = "contain";
+    element.style.width = "30px";
+    element.style.height = "37px";
 
     new mapboxgl.Marker(element)
-      .setLngLat([ marker.lng, marker.lat ])
+      .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(map);
   });
@@ -34,7 +34,7 @@ const addMarkersToMap = (map, markers) => {
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
