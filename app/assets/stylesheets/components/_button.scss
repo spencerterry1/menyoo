@@ -1,13 +1,11 @@
 .button-area {
   text-align: center;
   align-items: center;
-  .invitation-buton{
-    margin:5px;
+  // .invitation-buton{
+  //   margin:5px;
 
-  }
+  // }
 }
-
-
 
 .button {
   height: 32px;
@@ -22,7 +20,6 @@
   border-radius: 50px;
 }
 
-
 .decbutton {
   height: 32px;
   background-color: $menyoo-gray;
@@ -35,8 +32,6 @@
   cursor: pointer;
   border-radius: 50px;
 }
-
-
 
 .button-action {
   height: 30px;
@@ -94,7 +89,6 @@
   padding-top: 20px;
 }
 
-
 .order-status {
   width: 80px;
   font-size: $font-size-small;
@@ -108,7 +102,6 @@
   display: inline-block;
   vertical-align: middle;
 }
-
 
 .order-status-ordered {
   background-color: #33BC29;
@@ -133,7 +126,6 @@
   cursor: pointer;
   border-radius: 50px;
 }
-
 
 .button-avarage-rating {
   height: 20px;
