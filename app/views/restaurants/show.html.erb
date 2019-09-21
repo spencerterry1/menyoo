@@ -1,5 +1,4 @@
 <%  @page_title = "Restaurant Page" %>
-​
 <!-- Conditional formatting of the tab buttons -->
 <% if user_signed_in? %>
   <% if any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
@@ -17,7 +16,6 @@
 <div class="restaurant-header ">
   <h1 id="rname"><%= @restaurant.name %></h1>
   <p id="raddress"><%= @restaurant.address %></p>
-  ​
   <div class="rating-stars">
     <% if @restaurant.avarage_rating.zero? %>
       <p class="ratings-stars accent-font">No reviews</p>
@@ -31,7 +29,6 @@
     (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
   </div>
   <% if user_signed_in? %>
-    ​
     <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
       <div class="button-area">
         <button id="button-create-table" class = "button button-long">Create a Table</button>
@@ -50,25 +47,20 @@
     </div>
   <% end %>
 </div>
-​
 <div class="search-section">
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
       <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Healthy or decadent ?"
-    %>
-      ​
+   params[:query],
+   class: "form-control",
+   placeholder: "Healthy or decadent ?"
+   %>
       <%= submit_tag "Search", class: "button button-medium" %>
     </div>
   <% end %>
 </div>
-​
-​
 <h2>Menu</h2>
-​
-​<% @categories.each do |category|  %>
+<% @categories.each do |category|  %>
   <h2><%= category %></h2>
   <% @dishes = @dishes_for_restaurant.select {|dish| dish.category == category }  %>
   <% @dishes.each do |dish|  %>
