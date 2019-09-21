@@ -17,9 +17,19 @@
   <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
 </div>
 
+
+<div id="summary-button-your">
+  Your Order
+</div>
+
+<div id="summary-button-table">
+  Table Order
+</div>
+
+
 <!-- ==========> DIV FOR YOUR ORDER <================= -->
 
-<div class="your-order">
+<div id="summary-section-your" class="hide">
 
   <!-- Calculation the total for the orders -->
   <% @order_total = 0 %>
@@ -27,11 +37,6 @@
     <% @order_total = @order_total + order.dish.price %>
   <% end %>
   <!-- End Calculation -->
-
-  <div class="table-header">
-    <h1><%= @restaurant.name %></h1>
-    <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
-  </div>
 
   <div class="button-area">
     <% if @attendee.payment == false  %>
@@ -75,7 +80,7 @@
 
 <!-- ==========> DIV FOR TABLE ORDER <================= -->
 
-<div class="table-order">
+<div id="summary-section-table" class="">
 
   <%#= show div with ORDERS NOT YET SENT to kitchen %>
 

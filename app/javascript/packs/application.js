@@ -68,6 +68,32 @@ if (createTableButton) {
 }
 
 
+// =======> Table Order vs Your Order
+
+const yourButton = document.querySelector("#summary-button-your");
+const tableButton = document.querySelector("#summary-button-table");
+const yourSection = document.querySelector("#summary-section-your");
+const tableSection = document.querySelector("#summary-section-table");
+
+if (yourButton && tableButton) {
+
+  yourButton.addEventListener("click", (event) => {
+    yourSection.classList.toggle("show");
+    yourSection.classList.toggle("hide");
+    tableSection.classList.toggle("show");
+    tableSection.classList.toggle("hide");
+  });
+
+  tableButton.addEventListener("click", (event) => {
+    yourSection.classList.toggle("show");
+    yourSection.classList.toggle("hide");
+    tableSection.classList.toggle("show");
+    tableSection.classList.toggle("hide");
+  });
+
+}
+
+
 
 
 
