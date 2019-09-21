@@ -44,6 +44,13 @@
         <button class = "button button-long">Create a Table</button>
       <% end %>
     </div>
+
+    <!-- Partial for the Create Table Modal -->
+    <div class="checkedin-popup">
+      <%= render 'shared/newbookingmodal' %>
+    </div>
+    <!-- end -->
+
   <% end %>
 <% else %>
   <div class="button-area">
@@ -53,6 +60,7 @@
   </div>
 
 <% end %>
+
 ​
 
 <div class="search-section">
