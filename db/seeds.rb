@@ -125,7 +125,7 @@ italian_dish_one = Dish.new(name: "La gran carbonara",
   description: "Homemade spaghetti chitarra, pecorino, egg and parmesan",
   price: 12.00,
   prep_time: 15,
-  category:"Main")
+  category:"Mains")
 
 italian_dish_one.restaurant = italian
 italian_dish_one.remote_photo_url = "https://s23209.pcdn.co/wp-content/uploads/2014/03/IMG_2622edit.jpg"
@@ -136,7 +136,7 @@ italian_dish_two = Dish.new(name: "Filippo spicy balls",
   description: "Spicy pork & nduja meatballs topped with rich tomato sauce",
   price: 14.00,
   prep_time: 10,
-  category:"Main")
+  category:"Mains")
 
 italian_dish_two.restaurant = italian
 italian_dish_two.remote_photo_url = "https://www.flavcity.com/wp-content/uploads/2018/06/meatballs-tomato-sauce.jpg"
@@ -146,7 +146,7 @@ italian_dish_three = Dish.new(name: "Polpo caesar",
   description: "Octopus, chicory, Tuscan ham, anchovy-garlic dressing",
   price: 13.00,
   prep_time: 10,
-  category:"Appetizer")
+  category:"Appetizers")
 
 
 italian_dish_three.restaurant = italian
@@ -157,7 +157,7 @@ italian_dish_four = Dish.new(name: "Pizza fritta",
   description: "Fried mini pizza filled with ricotta, tomato sauce and anchovies",
   price: 7.00,
   prep_time: 15,
-  category:"Appetizer")
+  category:"Appetizers")
 
 
 italian_dish_four.restaurant = italian
@@ -170,7 +170,7 @@ italianPolpo_dish_one = Dish.new(name: "Bruschette",
   description: "Broad bean, mint and ricotta on sourdough toast",
   price: 7.50,
   prep_time: 15,
-  category:"Appetizer")
+  category:"Appetizers")
 
 italianPolpo_dish_one.restaurant = italianPolpo
 italianPolpo_dish_one.remote_photo_url = "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--9867_10.jpg?itok=4rSVp4Z3"
@@ -181,7 +181,7 @@ italianPolpo_dish_two = Dish.new(name: "Sautéed Prawns",
   description: "Fresh Prawns served with garlic and chilly",
   price: 9.50,
   prep_time: 10,
-  category:"Appetizer")
+  category:"Appetizers")
 
 italianPolpo_dish_two.restaurant = italianPolpo
 italianPolpo_dish_two.remote_photo_url = "https://www.bbcgoodfood.com/sites/default/files/styles/bbcgf_recipe/public/user-recipe/IMG_5639_4.jpg?itok=kO41R7VI"
@@ -193,7 +193,7 @@ italianPolpo_dish_three = Dish.new(name: "Duck Gnocchi",
   description: "Fresh potato gnocchi served with black olive & tomato ragù",
   price: 9.00 ,
   prep_time: 13,
-  category:"Main")
+  category:"Mains")
 
 italianPolpo_dish_three.restaurant = italianPolpo
 italianPolpo_dish_three.remote_photo_url = "https://cdn.shopify.com/s/files/1/1725/5449/products/gnoc_900x.jpg?v=1559559463"
@@ -204,7 +204,7 @@ italianPolpo_dish_four = Dish.new(name: "Pizzette",
   description: "Mini pizzas with asparagus, prosciutto & tallegio",
   price: 12.00 ,
   prep_time: 15,
-  category:"Main")
+  category:"Mains")
 
 italianPolpo_dish_four.restaurant = italianPolpo
 italianPolpo_dish_four.remote_photo_url = "https://assets.epicurious.com/photos/560dd7357b55306961bfa96b/6:4/w_620%2Ch_413/234405.jpg"
@@ -216,7 +216,7 @@ italianPolpo_dish_six = Dish.new(name: "Sea Bass",
   description: "Pan-fried sea bass with broad bean & artichoke vignole",
   price: 11.00,
   prep_time: 20,
-  category:"Main")
+  category:"Mains")
 
 italianPolpo_dish_six.restaurant = italianPolpo
 italianPolpo_dish_six.remote_photo_url = "https://gbc-cdn-public-media.azureedge.net/img49327.768x512.jpg"
@@ -226,7 +226,7 @@ italianPolpo_dish_seven = Dish.new(name: "Flank Steak",
   description: "Premium steak with watercress & Portobello mushrooms",
   price: 15.00 ,
   prep_time: 15 ,
-  category:"Main")
+  category:"Mains")
 
 italianPolpo_dish_seven.restaurant = italianPolpo
 italianPolpo_dish_seven.remote_photo_url = "https://img.maximummedia.ie/her_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtaGVyLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDEzXFxcLzEyXFxcL1NjcmVlbi1zaG90LTIwMTMtMTItMDgtYXQtMTEuMTIuNDkucG5nXCIsXCJ3aWR0aFwiOjc2NyxcImhlaWdodFwiOjQzMSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lmhlci5pZVxcXC9hc3NldHNcXFwvaW1hZ2VzXFxcL2hlclxcXC9uby1pbWFnZS5wbmc_aWQ9MGQyZDYyN2MwNTliOWVkY2FiMGRcIixcIm9wdGlvbnNcIjpbXX0iLCJoYXNoIjoiMjUzZWE3MDBhNjBhZTc3NzNhZGFhNjA0NmI3MzEyMzAwYjM4ZDA4ZSJ9/screen-shot-2013-12-08-at-11-12-49.png"
@@ -238,7 +238,7 @@ italianPolpo_dish_five = Dish.new(name: "Panna cotta",
   description: "Creamy dessert served with cream and strawberries",
   price: 7.50 ,
   prep_time: 5 ,
-  category:"Dessert")
+  category:"Desserts")
 
 italianPolpo_dish_five.restaurant = italianPolpo
 italianPolpo_dish_five.remote_photo_url = "https://gbc-cdn-public-media.azureedge.net/img24987.1426x713.jpg"
@@ -251,7 +251,7 @@ italianEmilias_dish_one = Dish.new(name: "Finely Sliced Bresaol",
   description: "Cured beef with rocket & parmesan salad on ciabatta",
   price: 7.50,
   prep_time: 15,
-  category:"Appetizer")
+  category:"Appetizers")
 
 italianEmilias_dish_one.restaurant = italianEmilias
 italianEmilias_dish_one.remote_photo_url = "https://www.bigtonisitalian.com/images/bresaola-jpg-1008.webp"
@@ -262,7 +262,7 @@ italianEmilias_dish_two = Dish.new(name: "Burrata with toasted ciabatta",
   description: "Creamy cheese drizzeled with virgin Olive Oil",
   price: 9.50,
   prep_time: 10,
-  category:"Appetizer")
+  category:"Appetizers")
 
 italianEmilias_dish_two.restaurant = italianEmilias
 italianEmilias_dish_two.remote_photo_url = "https://heartbeetkitchen.com/foodblog/wp-content/uploads/2016/09/Burrata-with-Roasted-Tomatoes-21.jpg"
@@ -274,7 +274,7 @@ italianEmilias_dish_three = Dish.new(name: "Mushroom Linguini",
   description: "Creamy walnut and chesnut Mushroom sauce",
   price: 12.00,
   prep_time: 15,
-  category:"Main")
+  category:"Mains")
 
 italianEmilias_dish_three.restaurant = italianEmilias
 italianEmilias_dish_three.remote_photo_url = "https://i2.wp.com/www.lifeasastrawberry.com/wp-content/uploads/2012/12/creamy-mushroom-garlic-sauce-27.jpg"
@@ -285,7 +285,7 @@ italianEmilias_dish_four = Dish.new(name: "Tuna Steak",
   description: "Tuna fillet with tomato sauce, peperoncino and parsley",
   price: 12.00,
   prep_time: 15,
-  category:"Main")
+  category:"Mains")
 
 italianEmilias_dish_four.restaurant = italianEmilias
 italianEmilias_dish_four.remote_photo_url = "https://www.miterrunofood.com/wp-content/uploads/2017/04/Southern-Italian-Tuna-Steak-min.jpg"
@@ -296,7 +296,7 @@ italianEmilias_dish_five = Dish.new(name: "Tiramisu",
   description: "Coffee, cream and chocolate cake",
   price: 8.50,
   prep_time: 5 ,
-  category:"Dessert")
+  category:"Desserts")
 
 italianEmilias_dish_five.restaurant = italianEmilias
 italianEmilias_dish_five.remote_photo_url = "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2018/01/tiramisu.jpg"
@@ -307,7 +307,7 @@ french_dish_one = Dish.new(name: "Soupe à l’Oignon Gratinée",
   description: "Slow-cooked caramelized onions, gruyere and Parmesan cheese",
   price: 5.95,
   prep_time: 10,
-  category:"Appetizer")
+  category:"Appetizers")
 
 french_dish_one.restaurant = french
 french_dish_one.remote_photo_url = "https://static.cuisineaz.com/610x610/i22753-soupe-a-l-oignon-gratinee.jpg"
@@ -317,7 +317,7 @@ french_dish_two = Dish.new(name: "Boeuf Bourguignon",
   description: "Beef braised in a Burgundy wine sauce",
   price: 15.50,
   prep_time: 15,
-  category:"Main")
+  category:"Mains")
 
 french_dish_two.restaurant = french
 french_dish_two.remote_photo_url = "https://www.cookomix.com/wp-content/uploads/2017/08/boeuf-bourguinon-thermomix-800x600.jpg"
@@ -327,7 +327,7 @@ french_dish_three = Dish.new(name: "Sardines à la Provençale",
   description: "Butterflied sardines, tomatoes and olives",
   price: 12.75,
   prep_time: 15,
-  category:"Appetizer")
+  category:"Appetizers")
 
 french_dish_three.restaurant = french
 french_dish_three.remote_photo_url = "https://www.soleou.fr/img/cms/fotolia_98188624.jpg"
@@ -337,7 +337,7 @@ french_dish_four = Dish.new(name: "Chocolat Profiteroles",
   description: "French choux pastry with a sweet cream filling and chocolate",
   price: 6.50,
   prep_time: 10,
-  category:"Dessert")
+  category:"Desserts")
 
 french_dish_four.restaurant = french
 french_dish_four.remote_photo_url = "https://www.atelierdeschefs.com/media/recette-e11064-profiterole-a-la-vanille-et-sauce-chocolat.jpg"
@@ -351,7 +351,7 @@ british_dish_one = Dish.new(name: "Duck & Pork Terrine",
   description: "Terrine served with sourdough, pistachios & prunes",
   price: 10.90,
   prep_time: 10,
-  category:"Appetizer")
+  category:"Appetizers")
 
 british_dish_one.restaurant = british
 british_dish_one.remote_photo_url = "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--441467_11.jpg?itok=CLLyjsjD"
@@ -362,7 +362,7 @@ british_dish_two = Dish.new(name: "Mushroom Pate",
   description: "Pate served with crispy sourdough and tomato jam (v)",
   price: 9.00,
   prep_time: 9,
-  category:"Appetizer")
+  category:"Appetizers")
 
 british_dish_two.restaurant = british
 british_dish_two.remote_photo_url = "https://realfood.tesco.com/media/images/RFO-1400x919-VEGAN-PATE-Christmas-1b1e10a6-f8d7-4718-aab6-41584cad9aab-0-1400x919.jpg"
@@ -373,7 +373,7 @@ british_dish_three = Dish.new(name: "Monkfish & Prawn Curry",
   description: "British take on an Indian classic, on a bed of wild rice",
   price: 20.00,
   prep_time:25 ,
-  category:"Main")
+  category:"Mains")
 
 british_dish_three.restaurant = british
 british_dish_three.remote_photo_url = "https://crackingcurries.files.wordpress.com/2013/04/p1010686.jpg"
@@ -384,7 +384,7 @@ british_dish_four = Dish.new(name: "Rib-eye steak",
   description: "Prime aged steak served with chips and  béarnaise sauce",
   price: 29.00,
   prep_time: 20,
-  category:"Main")
+  category:"Mains")
 
 british_dish_four.restaurant = british
 british_dish_four.remote_photo_url = "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--15306_12.jpg?itok=ynNfCRVJ"
@@ -392,10 +392,10 @@ british_dish_four.save
 
 
 british_dish_five = Dish.new(name: "Sticky Toffee Pudding",
-  description: "Traditional British dessert served with Devon Clotted Cream",
+  description: "Traditional British Desserts served with Devon Clotted Cream",
   price: 7.50,
   prep_time: 10,
-  category:"Dessert")
+  category:"Desserts")
 
 british_dish_five.restaurant = british
 british_dish_five.remote_photo_url = "https://images.buffalonews.com/gallery-images/2019/08/02/big_thumbnail/1013396067%20Black%20Sheep%2015%20Cantillon.JPG"
@@ -410,7 +410,7 @@ vegan_dish_one = Dish.new(name: "Roast Vegetable Tagine",
   description: "Chickpeas, roasted cauliflower, dates, tomatoes & lemon",
   price: 11.00,
   prep_time: 15,
-  category: "Appetizer")
+  category: "Appetizers")
 
 vegan_dish_one.restaurant = vegan
 vegan_dish_one.remote_photo_url = "https://1033651.v1.pressablecdn.com/wp-content/uploads/2017/01/roasted-vegetable-and-chickpea-tagine-with-harissa-b-1200x750.jpg"
@@ -422,7 +422,7 @@ vegan_dish_two = Dish.new(name: "Jackfruit Tacos",
   description: "Pulled jackfruit, fennel caper salad and roasted tomatoes",
   price: 13.00,
   prep_time:15,
-  category: "Main")
+  category: "Mains")
 
 vegan_dish_two.restaurant = vegan
 vegan_dish_two.remote_photo_url = "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2017/05/pulled-jackfruit-tacos-lunch-800x1200.jpg"
@@ -434,7 +434,7 @@ vegan_dish_three = Dish.new(name: "Kalifornia Guac Burger",
   description: "Bean burger, guacamole, rainbow slaw, served with thyme fries",
   price:14.50,
   prep_time:20,
-  category: "Main")
+  category: "Mains")
 
 vegan_dish_three.restaurant = vegan
 vegan_dish_three.remote_photo_url = "https://www.emilieeats.com/wp-content/uploads/2017/07/sweet-earth-asian-veggie-burgers-mango-cabbage-slaw-sriracha-sauce-vegan-healthy-easy-dinner-12.jpg"
@@ -445,7 +445,7 @@ vegan_dish_four = Dish.new(name: "Chocolate Orange Mousse Cake",
   description: "Delicious, creamy, refined sugar free and gluten free",
   price: 8.00,
   prep_time: 5,
-  category: "Dessert")
+  category: "Desserts")
 
 vegan_dish_four.restaurant = vegan
 vegan_dish_four.remote_photo_url = "https://i.pinimg.com/564x/d6/e3/e3/d6e3e39afa9b1d64fdeef8237c1b0d1d.jpg"
@@ -779,6 +779,7 @@ puts "Creating Reviews..."
   review_5.content = "I've been visiting Polpo for 5+ years and I have to say this one is my favourite! The friendly staff make you feel welcome every single time and the atmosphere is just soooooo nice in there. As always, the seasonal menus are as delicious as the last one."
   review_5.rating = 5
   review_5.user = walter
+  review_5.title = "Just fabulous"
   review_5.save
 
   review_6 = Review.new
@@ -786,6 +787,7 @@ puts "Creating Reviews..."
   review_6.content = "Nice cosy restaurant, amazing quality food, always busy. Everything in the restauant has an Italian touch. Loved it."
   review_6.rating = 5
   review_6.user = spencer
+  review_6.title = "Perfect evening"
   review_6.save
 
   review_7 = Review.new
@@ -793,6 +795,7 @@ puts "Creating Reviews..."
   review_7.content = "If you’ve never been to Polpo you’ve missed out. The food is always excellent - whatever you have. The staff are awesome too and we always leave very happy."
   review_7.rating = 5
   review_7.user = ana
+  review_7.title = "Amazing"
   review_7.save
 
   review_8 = Review.new
@@ -800,6 +803,7 @@ puts "Creating Reviews..."
   review_8.content = "Fantastic food, great atmosphere, perfect service. One of the few restaurants I actually rate in London!"
   review_8.rating = 5
   review_8.user = simona
+  review_8.title = "Best meal ever"
   review_8.save
 
   review_9 = Review.new
@@ -807,6 +811,7 @@ puts "Creating Reviews..."
   review_9.content = "Love this busy bustling bar / restaurant. good for solo eats or with friends. my favourite was the meatballs .. good small dishes to share."
   review_9.rating = 5
   review_9.user = walter
+  review_9.title = "Wow"
   review_9.save
 
   review_10 = Review.new
@@ -814,6 +819,7 @@ puts "Creating Reviews..."
   review_10.content = "I visited this place multiple times. Great ambience and great service. Very well priced, good cuisine. Can't wait to get back."
   review_10.rating = 5
   review_10.user = spencer
+  review_10.title = "Superb"
   review_10.save
 
   review_11 = Review.new
@@ -821,6 +827,7 @@ puts "Creating Reviews..."
   review_11.content = "Fantastic place, good atmosphere. The slow cooked Ragu melted in your mouth . All the dishes were tasty and I like the fact they make seasonal changes."
   review_11.rating = 5
   review_11.user = ana
+  review_11.title = "Love it"
   review_11.save
 
   review_12 = Review.new
@@ -828,6 +835,7 @@ puts "Creating Reviews..."
   review_12.content = "Don't let Polpo's unassuming exterior put you off! This is a little gem serving fabulous tasting Italian food. Everything we ordered was delicious. Excellent and reasonably priced house wine and attentive service added to the whole experience. Would definitely recommend."
   review_12.rating = 4
   review_12.user = simona
+  review_12.title = "Never disappoints"
   review_12.save
 
   review_13 = Review.new
@@ -835,6 +843,7 @@ puts "Creating Reviews..."
   review_13.content = "Amazing people with great service. I would recommend it to anyone within the area. Some of the finest food that I've ever had"
   review_13.rating = 4
   review_13.user = walter
+  review_13.title = "Real delight"
   review_13.save
 
   review_14 = Review.new
@@ -1045,6 +1054,7 @@ puts "Creating Reviews..."
   review_43.content = "My friend and I dined here and enjoyed the wonderful food, charming staff and convenient location. Looking forward to my next visit."
   review_43.rating = 5
   review_43.user = ana
+  review_43.title = "Real italian food"
   review_43.save
 
   review_44 = Review.new

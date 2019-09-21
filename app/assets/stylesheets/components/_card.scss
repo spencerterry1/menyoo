@@ -165,6 +165,7 @@
   align-items: center;
   margin: 15px 0;
   border-radius: 8px;
+  max-height: 400px;
   img {
     margin: 4px;
   }
@@ -185,11 +186,13 @@
 .review-whole{
   width: 100%;
   padding: 16px;
+  max-height :400px;
   small{
     color: gray;
 
   }
 }
+
 
 .icon-stars{
     font-size: 11px;
@@ -334,11 +337,13 @@ h3.user-card-title {
   margin: 0;
 }
 
+
+.my-review {
+  height: 140px;
+
 #mapshow{
   display:inline-block;
   justify-content:space-between;
   align-items: center;
   margin: 0 auto;
   padding:10px;
-
-}

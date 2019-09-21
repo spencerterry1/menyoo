@@ -28,9 +28,9 @@ class RestaurantsController < ApplicationController
       @dishes_for_restaurant = @restaurant.dishes.order(:name)
     end
     @categories = @dishes_for_restaurant.map(&:category).uniq.sort
-      if @categories.include?("Dessert")
-        @categories.delete("Dessert")
-        @categories.push("Dessert")
+      if @categories.include?("Desserts")
+        @categories.delete("Desserts")
+        @categories.push("Desserts")
       end
 
 
@@ -47,7 +47,7 @@ class RestaurantsController < ApplicationController
 
   def reviews
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @reviews = @restaurant.reviews
+    @reviews = Review.joins(:booking).where("restaurant_id = #{@restaurant.id}").order("bookings.date DESC")
   end
 
 end

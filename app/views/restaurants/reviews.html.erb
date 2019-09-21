@@ -8,14 +8,17 @@
 
 <%  @page_title = @restaurant.name %>
 
-<% @restaurant.reviews.each do |review| %>
+<% @reviews.each do |review| %>
   <div class= "review-card">
-    <div class>
+    <div class=review-avatar>
       <%= cl_image_tag review.user.photo, class: "avatar" %>
+      <div>
+        <small><%= review.user.first_name %></small>
+      </div>
     </div>
     <div class="review-whole">
       <div class="restaurant-name-card">
-        <small><%= review.user.first_name %></small>
+        <strong><%= review.title %></strong>
         <div style="line-height: 18px; font-size: 15px;">
           <div class="review-content-stars">
             <div style="display:flex;">
@@ -27,6 +30,7 @@
         </div>
       </div>
       <p><%= review.content %></p>
+      <small><%= review.booking.date.strftime("%d/%m/%Y") %></small>
     </div>
   </div>
 <% end %>

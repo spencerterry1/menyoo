@@ -9,9 +9,9 @@
 <%  @page_title = "My reviews" %>
 
 
-  <% @user.reviews.each do |review| %>
+  <% @reviews.each do |review| %>
   <% restaurant = review.booking.restaurant %>
-    <div class="card-box-shadow card-large">
+    <div class="card-box-shadow card-large my-review">
       <div class="card-large-img">
         <%= cl_image_tag(restaurant.photo,width: 400, height: 300, crop: :fill) %>
       </div>
@@ -30,7 +30,8 @@
             </div>
           </div>
         </div>
-        <p><%= review.content %></p>
+        <p><%= review.content.truncate(80) %></p>
+        <small><%= review.booking.date.strftime("%d/%m/%Y") %></small>
       </div>
     </div>
   <% end %>
