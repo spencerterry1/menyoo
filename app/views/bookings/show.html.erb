@@ -10,11 +10,11 @@
   <%= render 'shared/checkedin' %>
 </div>
 <!-- end -->
-<div class="booking-carousel flex-between">
+<div class="booking-carousel flex-between" style="position: relative;">
   <% if (@booking_index - 1) >= 0 %>
     <%= link_to restaurant_booking_path(@prev_booking.restaurant, @prev_booking) do %>
       <div class="carousel-button carousel-back">
-        <i class="fas fa-chevron-left"></i>
+        <p><strong><i class="fas fa-chevron-left"></i></strong></p>
       </div>
     <% end %>
   <% else %>
@@ -33,7 +33,7 @@
   <% if (@booking_index + 1) <= (@number_bookings - 1) %>
     <%= link_to restaurant_booking_path(@next_booking.restaurant, @next_booking) do %>
       <div class="carousel-button carousel-forward">
-        <i class="fas fa-chevron-right"></i>
+        <p><strong><i class="fas fa-chevron-right"></i></strong></p>
       </div>
     <% end %>
   <% else %>
