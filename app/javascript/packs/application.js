@@ -8,7 +8,7 @@ import { initStarRating } from "../plugins/init_star_rating";
 
 initStarRating();
 
-// initMapbox();
+initMapbox();
 
 // =======> Show / hide Map
 
