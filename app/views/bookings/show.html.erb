@@ -11,17 +11,33 @@
 </div>
 <!-- end -->
 <div class="booking-carousel flex-between">
-  <div class="carousel-button carousel-back">
-    <i class="fas fa-chevron-left"></i>
-  </div>
+  <% if (@booking_index + 1) <= (@number_bookings - 1) %>
+    <%= link_to restaurant_booking_path(@next_booking.restaurant, @next_booking) do %>
+      <div class="carousel-button carousel-back">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="carousel-button carousel-back">
+      <p></p>
+    </div>
+  <% end %>
   <div class="card-box-shadow card-carousel">
     <div class="card-large-img">
       <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
     </div>
   </div>
-  <div class="carousel-button carousel-forward">
-    <i class="fas fa-chevron-right"></i>
-  </div>
+  <% if (@booking_index - 1) >= 0 %>
+    <%= link_to restaurant_booking_path(@prev_booking.restaurant, @prev_booking) do %>
+      <div class="carousel-button carousel-forward">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="carousel-button carousel-forward">
+      <p></p>
+    </div>
+  <% end %>
 </div>
 <div>
   <div class="restaurant-header">
