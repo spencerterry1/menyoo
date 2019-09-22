@@ -47,6 +47,7 @@
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
       <%= text_field_tag :query,
+
         params[:query],
         class: "form-control",
         placeholder: "Healthy or decadent ?"
