@@ -26,12 +26,13 @@
   display: flex;
   height: $card-large-height;
   margin: 16px 0px;
+  position: relative;
   h3 {
     line-height: 1.0rem;
   }
 }
 
-.card-carousel img {
+.card-carousel-img img {
   height: $card-large-height;
   width: 100%;
   object-fit: cover;

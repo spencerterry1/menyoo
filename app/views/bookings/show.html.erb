@@ -23,8 +23,11 @@
     </div>
   <% end %>
   <div class="card-box-shadow card-carousel">
-    <div class="card-large-img">
+    <div class="card-carousel-img">
       <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
+    </div>
+    <div>
+      <%= cl_image_tag(current_user.photo, :class => "avatar-booking") %>
     </div>
   </div>
   <% if (@booking_index + 1) <= (@number_bookings - 1) %>
