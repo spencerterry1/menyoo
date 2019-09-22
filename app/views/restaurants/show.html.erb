@@ -27,8 +27,8 @@
         (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
       </div>
     <% end %>
-
   </div>
+
   <% if user_signed_in? %>
     <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
       <div class="button-area">
@@ -41,14 +41,12 @@
       <!-- end -->
     <% end %>
   <% else %>
-    (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
   <% end %>
 </div>
 <div class="search-section">
   <%= form_tag restaurant_path(@restaurant), method: :get do %>
     <div class="search-form-control button-area">
       <%= text_field_tag :query,
-
         params[:query],
         class: "form-control",
         placeholder: "Healthy or decadent ?"
