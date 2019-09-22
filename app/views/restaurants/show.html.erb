@@ -24,9 +24,10 @@
         <% @restaurant.avarage_rating.round.times do %>
           <i class="rating-stars fas fa-star"></i>
         <% end %>
+        (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
       </div>
     <% end %>
-    (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
+
   </div>
   <% if user_signed_in? %>
     <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
