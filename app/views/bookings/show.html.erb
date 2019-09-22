@@ -11,8 +11,8 @@
 </div>
 <!-- end -->
 <div class="booking-carousel flex-between">
-  <% if (@booking_index + 1) <= (@number_bookings - 1) %>
-    <%= link_to restaurant_booking_path(@next_booking.restaurant, @next_booking) do %>
+  <% if (@booking_index - 1) >= 0 %>
+    <%= link_to restaurant_booking_path(@prev_booking.restaurant, @prev_booking) do %>
       <div class="carousel-button carousel-back">
         <i class="fas fa-chevron-left"></i>
       </div>
@@ -27,8 +27,8 @@
       <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
     </div>
   </div>
-  <% if (@booking_index - 1) >= 0 %>
-    <%= link_to restaurant_booking_path(@prev_booking.restaurant, @prev_booking) do %>
+  <% if (@booking_index + 1) <= (@number_bookings - 1) %>
+    <%= link_to restaurant_booking_path(@next_booking.restaurant, @next_booking) do %>
       <div class="carousel-button carousel-forward">
         <i class="fas fa-chevron-right"></i>
       </div>
@@ -45,7 +45,7 @@
     <p><%= @restaurant.address %></p>
   </div>
   <!-- TODO: Formatting to be updated given changes done by Spencer in other branch -->
-  <div class="card-box-shadow" style="text-align: center; margin: 16px auto; padding: 16px;">
+  <div class="card-box-shadow" style="text-align: center; margin: 16px auto 35px auto; padding: 16px;">
     <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
   </div>
 </div>

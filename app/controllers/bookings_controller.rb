@@ -1,12 +1,14 @@
 class BookingsController < ApplicationController
+  before_action :set_first_booking
+  before_action :set_first_restaurant
 
   def index
-    @bookings_open = bookings_open_for_user(current_user)
+    @bookings_open = bookings_open_for_user(current_user).sort_by &:date
   end
 
   def show
     @booking = Booking.find(params[:id])
-    @bookings_open = bookings_open_for_user(current_user)
+    @bookings_open = bookings_open_for_user(current_user).sort_by &:date
     @restaurant = @booking.restaurant
     @users = User.all
     @attendee = Attendee.new
