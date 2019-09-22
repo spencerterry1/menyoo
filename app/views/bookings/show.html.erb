@@ -1,4 +1,4 @@
-<%  @page_title = "Table Page" %>
+<%  @page_title = "Your Upcoming Tables" %>
 <!-- Conditional formatting of the tab buttons -->
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
@@ -66,7 +66,7 @@
 <%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
     <div class="body-icon"><i class="fas fa-utensils"></i></div>
-    <h3>Order and Bill</h3>
+    <h3>Order and Pay</h3>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
