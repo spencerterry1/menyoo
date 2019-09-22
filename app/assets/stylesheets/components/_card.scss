@@ -16,6 +16,28 @@
   }
 }
 
+.card-large img {
+  height: $card-large-height;
+  width: $card-large-height;
+  object-fit: cover;
+}
+
+.card-carousel {
+  display: flex;
+  height: $card-large-height;
+  margin: 16px 0px;
+  h3 {
+    line-height: 1.0rem;
+  }
+}
+
+.card-carousel img {
+  height: $card-large-height;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
 .card-medium {
   display: flex;
   height: $card-medium-height;
@@ -38,11 +60,6 @@
   margin: 16px 0px;
 }
 
-.card-large img {
-  height: $card-large-height;
-  width: $card-large-height;
-  object-fit: cover;
-}
 
 .card-medium img {
   height: $card-large-height;
@@ -142,7 +159,7 @@
 }
 
 .card-booking-index {
-  margin-top: 50px;
+  margin-top: 24px;
   padding: 30px;
 }
 

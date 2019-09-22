@@ -10,6 +10,19 @@
   <%= render 'shared/checkedin' %>
 </div>
 <!-- end -->
+<div class="booking-carousel flex-between">
+  <div class="carousel-button carousel-back">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+  <div class="card-box-shadow card-carousel">
+    <div class="card-large-img">
+      <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
+    </div>
+  </div>
+  <div class="carousel-button carousel-forward">
+    <i class="fas fa-chevron-right"></i>
+  </div>
+</div>
 <div>
   <div class="restaurant-header">
     <h1><%= @restaurant.name %></h1>
