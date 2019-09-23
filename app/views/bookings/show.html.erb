@@ -29,7 +29,7 @@
       <%= cl_image_tag(@restaurant.photo, crop: :fill) %>
     </div>
     <div>
-      <%= cl_image_tag(current_user.photo, :class => "avatar-booking") %>
+      <%= cl_image_tag(@booking.user.photo, :class => "avatar-booking") %>
     </div>
   </div>
   <% if (@booking_index + 1) <= (@number_bookings - 1) %>
