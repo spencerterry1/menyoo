@@ -1,5 +1,5 @@
 <div class="navbar-ios">
-  <div class="navbar-content" style="margin-bottom: 30px;">
+  <div class="navbar-content">
     <div class="navbar-back same-space">
       <%= link_to request.referer.present? ? request.referer : root_path do %>
         <p class="<%= yield(:nav_chevron_class) %>">
