@@ -25,7 +25,7 @@
 .card-carousel {
   display: flex;
   height: 150px;
-  margin: 8px 0px 16px 0px;
+  margin: 8px 0px 4px 0px;
   position: relative;
   h3 {
     line-height: 1.0rem;
@@ -92,10 +92,7 @@
         padding:5px;
       }
     }
-
   }
-
-
 
 .card-large-content-bookings {
   padding: 16px;
@@ -160,7 +157,7 @@
 }
 
 .card-booking-index {
-  margin-top: 20px;
+  margin-top: 16px;
   padding: 30px;
 }
 
