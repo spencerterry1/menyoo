@@ -93,7 +93,7 @@ a:hover {
 
 .carousel-button {
   height: 100%;
-  width: 40px;
+  width: 50px;
   top: 0;
   display: flex;
   align-items: center;
@@ -103,15 +103,16 @@ a:hover {
   p {
     color: white;
     font-size: 30px;
+    padding: 12px;
   }
 }
 
 .carousel-back {
-  left: 24px;
+  left: 0px;
   justify-content: flex-start;
 }
 
 .carousel-forward {
-  right: 12px;
+  right: 0px;
   justify-content: flex-end;
 }
