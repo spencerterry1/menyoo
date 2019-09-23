@@ -13,11 +13,11 @@
 <div class="booking-carousel flex-between" style="position: relative;">
   <% if (@booking_index - 1) >= 0 %>
     <%= link_to restaurant_booking_path(@prev_booking.restaurant, @prev_booking) do %>
-      <div class="carousel-button">
-        <div class="carousel-back">
-          <p><i class="fas fa-chevron-left"></i></p>
-        </div>
+      <!-- <div class="carousel-button"> -->
+      <div class="carousel-back">
+        <p><i class="fas fa-chevron-left"></i></p>
       </div>
+      <!-- </div> -->
     <% end %>
   <% else %>
     <div class="carousel-button">
@@ -34,11 +34,11 @@
   </div>
   <% if (@booking_index + 1) <= (@number_bookings - 1) %>
     <%= link_to restaurant_booking_path(@next_booking.restaurant, @next_booking) do %>
-      <div class="carousel-button">
-        <div class="carousel-forward">
-          <p><i class="fas fa-chevron-right"></i></p>
-        </div>
+      <!-- <div class="carousel-button"> -->
+      <div class="carousel-forward">
+        <p><i class="fas fa-chevron-right"></i></p>
       </div>
+      <!-- </div> -->
     <% end %>
   <% else %>
     <div class="carousel-button">
