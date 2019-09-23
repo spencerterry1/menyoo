@@ -24,8 +24,8 @@
 
 .card-carousel {
   display: flex;
-  height: $card-large-height;
-  margin: 16px 0px;
+  height: 150px;
+  margin: 8px 0px 16px 0px;
   position: relative;
   h3 {
     line-height: 1.0rem;
@@ -33,7 +33,7 @@
 }
 
 .card-carousel-img img {
-  height: $card-large-height;
+  height: 150px;
   width: 100%;
   object-fit: cover;
   object-position: bottom;
