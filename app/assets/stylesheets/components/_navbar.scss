@@ -8,6 +8,7 @@
   top: 0;
   width: 100vw;
   overflow: hidden;
+  z-index: 3;
 }
 
 .navbar-content {
@@ -71,9 +72,10 @@
   height: 88px;
   background-color: $navbar-gray;
   position: fixed;
-  // left: 0;
+  left: 0;
   bottom: 0;
   width: 100vw;
+  z-index: 3;
 }
 
 .tabbar-content {
