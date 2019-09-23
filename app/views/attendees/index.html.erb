@@ -14,7 +14,7 @@
 <h1>Invite Attendees</h1>
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <p><strong><%= f.input :name, input_html: {value: ""} %></strong></p>
+    <p><strong><%= f.input :name, label: false, input_html: {value: ""} %></strong></p>
     <%= f.submit "Search", class: "button button-medium button-search" %>
   <% end %>
 </div>
@@ -33,7 +33,7 @@
     </div>
   </div>
 <% end %>
-<h1>Current Attendees</h1>
+<h1 style="margin-top: 24px;">Current Attendees</h1>
 <% @booking.attendees.map do |attendee| %>
   <div class="card-box-shadow card-medium-attendees card-submenu">
     <div>
