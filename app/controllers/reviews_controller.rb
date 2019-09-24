@@ -27,7 +27,6 @@ class ReviewsController < ApplicationController
       end
 
       session = Stripe::Checkout::Session.create(
-
           payment_method_types: ['card'],
           line_items: [{
             name: "My orders",
@@ -36,12 +35,10 @@ class ReviewsController < ApplicationController
             currency: 'gbp',
             quantity: 1
           }],
-          success_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/attendees/#{@attendee.id}/orders",
-          cancel_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/attendees/#{@attendee.id}/orders"
+          success_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary",
+          cancel_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary",
         )
-
       @payment.update(checkout_session_id: session.id)
-
     end
 
   end
