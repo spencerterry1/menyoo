@@ -70,7 +70,7 @@ italianPolpo = Restaurant.new(name: "Polpo",
   address: "41 Beak Street, Soho, London",
   category: "Italian")
 
-italianPolpo.remote_photo_url = "https://cdn.venuescanner.com/photos/med_1819ade4c63bde2e494a519a23114bb5.jpg"
+italianPolpo.remote_photo_url = "https://www.cityam.com/wp-content/uploads/2019/05/bright-5be0480c1c4ac.jpg"
 italianPolpo.save
 
 italianEmilias = Restaurant.new(name: "Emilia’s Pasta",
@@ -244,6 +244,65 @@ italianPolpo_dish_five.restaurant = italianPolpo
 italianPolpo_dish_five.remote_photo_url = "https://gbc-cdn-public-media.azureedge.net/img24987.1426x713.jpg"
 italianPolpo_dish_five.save
 
+
+
+italianPolpo_dish_eight = Dish.new(name: "Arancini",
+  description: "Rice balls stuffed with nduja, breaded and fried",
+  price: 4.30 ,
+  prep_time: 10 ,
+  category:"Appetizers")
+
+italianPolpo_dish_eight.restaurant = italianPolpo
+italianPolpo_dish_eight.remote_photo_url = "https://www.strongertogether.coop/sites/default/files/Arancini%20.jpg"
+italianPolpo_dish_eight.save
+
+
+
+italianPolpo_dish_nine = Dish.new(name: "Caprese skewers",
+  description: "Mini mozzarella balls, cherry tomatoes, basil leaves, balsamic vinegar",
+  price: 3.80 ,
+  prep_time: 5 ,
+  category:"Appetizers")
+
+italianPolpo_dish_nine.restaurant = italianPolpo
+italianPolpo_dish_nine.remote_photo_url = "https://iowagirleats.com/wp-content/uploads/2012/02/CapreseSkewers_4.jpg"
+italianPolpo_dish_nine.save
+
+
+
+italianPolpo_dish_ten = Dish.new(name: "Tiramisu pot",
+  description: "Coffee-flavoured dessert with a mascarpone cheese cream",
+  price: 5.30 ,
+  prep_time: 10 ,
+  category:"Desserts")
+
+italianPolpo_dish_ten.restaurant = italianPolpo
+italianPolpo_dish_ten.remote_photo_url = "https://blog.williams-sonoma.com/wp-content/uploads/2013/12/WS_DOD_Tiramisu_3569.jpg"
+italianPolpo_dish_ten.save
+
+
+
+italianPolpo_dish_eleven = Dish.new(name: "Nutella pizzetta",
+  description: "Pizza dough, nutella, chocolate chips",
+  price: 6.50,
+  prep_time: 5 ,
+  category:"Desserts")
+
+italianPolpo_dish_eleven.restaurant = italianPolpo
+italianPolpo_dish_eleven.remote_photo_url = "https://uncutrecipes.com/Images-Recipes-Nutella/Nutella-Pizza-with-Chocolate-Chips.jpg"
+italianPolpo_dish_eleven.save
+
+
+
+italianPolpo_dish_twelve = Dish.new(name: "Affogato al caffè",
+  description: "Vanilla gelato topped with a shot of hot espresso",
+  price: 4.00,
+  prep_time: 5 ,
+  category:"Desserts")
+
+italianPolpo_dish_twelve.restaurant = italianPolpo
+italianPolpo_dish_twelve.remote_photo_url = "http://www.veryeatalian.com/wp-content/uploads/2015/03/Affogato-al-caffe-veryEATalian-25.jpg"
+italianPolpo_dish_twelve.save
 
 
 
