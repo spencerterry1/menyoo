@@ -40,7 +40,7 @@
       <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
       <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
         <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
-        <%= f.submit "Invite Now", class: "btn button-action" %>
+        <%= f.submit "Invite Now", class: "button button-invite" %>
       <% end %>
     </div>
   </div>

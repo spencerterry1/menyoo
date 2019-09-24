@@ -67,6 +67,12 @@
   font-size: 14px;
 }
 
+.button-invite {
+  background-color: $menyoo-blue;
+  width: 90px;
+  font-size: $font-size-small;
+}
+
 .button-color-blue {
   background-color: $menyoo-blue;
 }
@@ -96,6 +102,13 @@
   margin-right: 10px;
 }
 
+.button-paid {
+  color: white;
+  background-color: $mid-gray;
+}
+
+
+
 .button-checkin-summary {
   padding: 0px 92px;
 }
@@ -108,6 +121,7 @@
 .button-payment {
   padding-top: 20px;
 }
+
 
 .order-status {
   width: 80px;
@@ -170,14 +184,6 @@
   margin-bottom:0;
 }
 
-.button-paid {
-  width: 75px;
-  color: white;
-  background-color: $mid-gray;
-  text-align: center;
-  font-size: 12px;
-  margin-right: 10px;
-}
 
 .button-table-order {
   margin-bottom: 64px;
