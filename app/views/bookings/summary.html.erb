@@ -126,7 +126,7 @@
               </div>
               <%#=  checks if attendee has paid, if no shows payment button, if yes shows status saying paid %>
               <% if Attendee.find(attendee_id).payment == true %>
-                <button class="button button-paid">Paid</button>
+                <button class="button button-short button-paid">Paid</button>
               <% else %>
                 <div class="button-pay">
                   <% unless order_array.first.attendee.payment %>
