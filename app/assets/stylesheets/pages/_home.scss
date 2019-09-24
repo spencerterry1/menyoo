@@ -144,3 +144,17 @@ a:hover {
     padding: 12px;
   }
 }
+
+.new-review {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.new-review-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

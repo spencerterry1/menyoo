@@ -1,20 +1,18 @@
-
+<%  @page_title = "Your Review" %>
 <!-- Hide CheckedIn Button on Pages other than specific booking -->
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
-
-<div>
+<div class="new-review">
   <%= simple_form_for([@restaurant, @booking, @review], remote: true) do |f| %>
-   <h1>How was your experience?</h1>
-   <br>
-   <%= f.input :title %>
-   <%= f.input :content %>
-   <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-   <%= f.submit "Submit", class: "button button-medium", id: "form-submit" do%>
-   <% end %>
+
+    <h1>How was your experience?</h1>
+    <br>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", wrapper_html: {class: "new-review-rating"}%>
+    <%= f.submit "Submit", class: "button button-medium", id: "form-submit" do%>
+    <% end %>
   <% end %>
 </div>
-
 <div class="d-none" id="payment">
   <h1>Thank you for your feedback!</h1>
   <br>
@@ -22,23 +20,20 @@
   <p>Please click on the link below to proceed with payment</p>
   <button class="button button-medium" id="pay">PAY</button>
 </div>
-
-
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    const payment = document.getElementById('payment');
-    const formSubmit = document.querySelector("#form-submit");
-    formSubmit.addEventListener("click", () => {
-      document.querySelector("form").classList.add("d-none");
-      payment.classList.remove("d-none");
-    })
-
-    const paymentButton = document.getElementById('pay');
-    paymentButton.addEventListener('click', () => {
-      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-          sessionId: '<%= @payment.checkout_session_id %>'
-        });
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const payment = document.getElementById('payment');
+  const formSubmit = document.querySelector("#form-submit");
+  formSubmit.addEventListener("click", () => {
+    document.querySelector("form").classList.add("d-none");
+    payment.classList.remove("d-none");
+  })
+  
+  const paymentButton = document.getElementById('pay');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+        sessionId: '<%= @payment.checkout_session_id %>'
       });
-  </script>
-
+    });
+</script>
