@@ -90,7 +90,7 @@ italianPolpo = Restaurant.new(name: "Polpo",
   address: "41 Beak Street, Soho, London",
   category: "Italian")
 
-italianPolpo.remote_photo_url = "https://cdn.venuescanner.com/photos/med_1819ade4c63bde2e494a519a23114bb5.jpg"
+italianPolpo.remote_photo_url = "https://www.cityam.com/wp-content/uploads/2019/05/bright-5be0480c1c4ac.jpg"
 italianPolpo.save
 
 italianEmilias = Restaurant.new(name: "Emilia’s Pasta",
@@ -188,7 +188,7 @@ italian_dish_four.save
 
 italianPolpo_dish_one = Dish.new(name: "Bruschette",
   description: "Broad bean, mint and ricotta on sourdough toast",
-  price: 7.50,
+  price: 7.00,
   prep_time: 15,
   category:"Appetizers")
 
@@ -199,7 +199,7 @@ italianPolpo_dish_one.save
 
 italianPolpo_dish_two = Dish.new(name: "Sautéed Prawns",
   description: "Fresh Prawns served with garlic and chilly",
-  price: 9.50,
+  price: 9.00,
   prep_time: 10,
   category:"Appetizers")
 
@@ -256,7 +256,7 @@ italianPolpo_dish_seven.save
 
 italianPolpo_dish_five = Dish.new(name: "Panna cotta",
   description: "Creamy dessert served with cream and strawberries",
-  price: 7.50 ,
+  price: 7.00 ,
   prep_time: 5 ,
   category:"Desserts")
 
@@ -266,10 +266,69 @@ italianPolpo_dish_five.save
 
 
 
+italianPolpo_dish_eight = Dish.new(name: "Arancini",
+  description: "Rice balls stuffed with nduja, breaded and fried",
+  price: 4.30 ,
+  prep_time: 10 ,
+  category:"Appetizers")
+
+italianPolpo_dish_eight.restaurant = italianPolpo
+italianPolpo_dish_eight.remote_photo_url = "https://www.strongertogether.coop/sites/default/files/Arancini%20.jpg"
+italianPolpo_dish_eight.save
+
+
+
+italianPolpo_dish_nine = Dish.new(name: "Caprese skewers",
+  description: "Mini mozzarella balls, cherry tomatoes, basil leaves, balsamic vinegar",
+  price: 3.80 ,
+  prep_time: 5 ,
+  category:"Appetizers")
+
+italianPolpo_dish_nine.restaurant = italianPolpo
+italianPolpo_dish_nine.remote_photo_url = "https://iowagirleats.com/wp-content/uploads/2012/02/CapreseSkewers_4.jpg"
+italianPolpo_dish_nine.save
+
+
+
+italianPolpo_dish_ten = Dish.new(name: "Tiramisu pot",
+  description: "Coffee-flavoured dessert with a mascarpone cheese cream",
+  price: 5.30 ,
+  prep_time: 10 ,
+  category:"Desserts")
+
+italianPolpo_dish_ten.restaurant = italianPolpo
+italianPolpo_dish_ten.remote_photo_url = "https://blog.williams-sonoma.com/wp-content/uploads/2013/12/WS_DOD_Tiramisu_3569.jpg"
+italianPolpo_dish_ten.save
+
+
+
+italianPolpo_dish_eleven = Dish.new(name: "Nutella pizzetta",
+  description: "Pizza dough, nutella, chocolate chips",
+  price: 6.50,
+  prep_time: 5 ,
+  category:"Desserts")
+
+italianPolpo_dish_eleven.restaurant = italianPolpo
+italianPolpo_dish_eleven.remote_photo_url = "https://uncutrecipes.com/Images-Recipes-Nutella/Nutella-Pizza-with-Chocolate-Chips.jpg"
+italianPolpo_dish_eleven.save
+
+
+
+italianPolpo_dish_twelve = Dish.new(name: "Affogato al caffè",
+  description: "Vanilla gelato topped with a shot of hot espresso",
+  price: 4.00,
+  prep_time: 5 ,
+  category:"Desserts")
+
+italianPolpo_dish_twelve.restaurant = italianPolpo
+italianPolpo_dish_twelve.remote_photo_url = "http://www.veryeatalian.com/wp-content/uploads/2015/03/Affogato-al-caffe-veryEATalian-25.jpg"
+italianPolpo_dish_twelve.save
+
+
 
 italianEmilias_dish_one = Dish.new(name: "Finely Sliced Bresaol",
   description: "Cured beef with rocket & parmesan salad on ciabatta",
-  price: 7.50,
+  price: 7.00,
   prep_time: 15,
   category:"Appetizers")
 
@@ -280,7 +339,7 @@ italianEmilias_dish_one.save
 
 italianEmilias_dish_two = Dish.new(name: "Burrata with toasted ciabatta",
   description: "Creamy cheese drizzeled with virgin Olive Oil",
-  price: 9.50,
+  price: 9.00,
   prep_time: 10,
   category:"Appetizers")
 
@@ -314,7 +373,7 @@ italianEmilias_dish_four.save
 
 italianEmilias_dish_five = Dish.new(name: "Tiramisu",
   description: "Coffee, cream and chocolate cake",
-  price: 8.50,
+  price: 8.00,
   prep_time: 5 ,
   category:"Desserts")
 
@@ -325,7 +384,7 @@ italianEmilias_dish_five.save
 
 french_dish_one = Dish.new(name: "Soupe à l’Oignon Gratinée",
   description: "Slow-cooked caramelized onions, gruyere and Parmesan cheese",
-  price: 5.95,
+  price: 5.00,
   prep_time: 10,
   category:"Appetizers")
 
@@ -335,7 +394,7 @@ french_dish_one.save
 
 french_dish_two = Dish.new(name: "Boeuf Bourguignon",
   description: "Beef braised in a Burgundy wine sauce",
-  price: 15.50,
+  price: 15.00,
   prep_time: 15,
   category:"Mains")
 
@@ -345,7 +404,7 @@ french_dish_two.save
 
 french_dish_three = Dish.new(name: "Sardines à la Provençale",
   description: "Butterflied sardines, tomatoes and olives",
-  price: 12.75,
+  price: 12.00,
   prep_time: 15,
   category:"Appetizers")
 
@@ -355,7 +414,7 @@ french_dish_three.save
 
 french_dish_four = Dish.new(name: "Chocolat Profiteroles",
   description: "French choux pastry with a sweet cream filling and chocolate",
-  price: 6.50,
+  price: 6.00,
   prep_time: 10,
   category:"Desserts")
 
@@ -369,7 +428,7 @@ french_dish_four.save
 
 british_dish_one = Dish.new(name: "Duck & Pork Terrine",
   description: "Terrine served with sourdough, pistachios & prunes",
-  price: 10.90,
+  price: 10.00,
   prep_time: 10,
   category:"Appetizers")
 
@@ -413,7 +472,7 @@ british_dish_four.save
 
 british_dish_five = Dish.new(name: "Sticky Toffee Pudding",
   description: "Traditional British Desserts served with Devon Clotted Cream",
-  price: 7.50,
+  price: 7.00,
   prep_time: 10,
   category:"Desserts")
 
@@ -452,7 +511,7 @@ vegan_dish_two.save
 
 vegan_dish_three = Dish.new(name: "Kalifornia Guac Burger",
   description: "Bean burger, guacamole, rainbow slaw, served with thyme fries",
-  price:14.50,
+  price:14.00,
   prep_time:20,
   category: "Mains")
 

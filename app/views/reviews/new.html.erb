@@ -4,6 +4,7 @@
 <!-- end -->
 <div class="new-review">
   <%= simple_form_for([@restaurant, @booking, @review], remote: true) do |f| %>
+
     <h1>How was your experience?</h1>
     <br>
     <%= f.input :content %>
