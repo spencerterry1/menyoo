@@ -8,6 +8,7 @@
   left: 0px;
   top: 48px;
   background-color: rgba(0,0,0,0.4);
+  z-index: 2;
 }
 
 .modal-box {
@@ -15,8 +16,6 @@
   width: 300px;
   height: 400px;
   padding: 24px;
-  display: flex;
-  align-items: center;
   text-align: center;
 }
 
@@ -67,13 +66,13 @@
 }
 
 .button-modal-cancel {
-  width: 107px;
+  width: 90px;
   background-color: $font-color-light-grey;
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-left: 9px;
 }
 
 .button-modal-checkedin {
     width: 107px;
+    margin-right: 9px;
     background-color: $menyoo-blue;
 }

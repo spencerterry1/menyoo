@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   helper_method :bookings_open_for_user_restaurant
   helper_method :any_booking_open_for_user_restaurant?
   helper_method :attendee_invitations_for_user
+  helper_method :set_first_booking
+  helper_method :set_first_restaurant
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
@@ -64,6 +66,33 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
+  def set_first_booking
+    if user_signed_in?
+      user = current_user
+      if bookings_open_for_user(user).count !=0
+        @bookings_open = bookings_open_for_user(user).sort_by &:date
+        @booking_first = @bookings_open[0]
+        return @booking_first
+      end
+      return nil
+    end
+    return nil
+  end
+
+  def set_first_restaurant
+    if user_signed_in?
+      user = current_user
+      if bookings_open_for_user(user).count !=0
+        @bookings_open = bookings_open_for_user(user).sort_by &:date
+        @booking_first = @bookings_open[0]
+        @restaurant_first = @booking_first.restaurant
+        return @restaurant_first
+      end
+      return nil
+    end
+    return nil
   end
 
 end

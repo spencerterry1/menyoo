@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
 
   # before_action :set_attendee, except: [:destroy]
+  before_action :set_first_booking
+  before_action :set_first_restaurant
 
   def index
     # @restaurant = @booking.restaurant

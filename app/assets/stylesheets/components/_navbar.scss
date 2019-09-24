@@ -8,6 +8,7 @@
   top: 0;
   width: 100vw;
   overflow: hidden;
+  z-index: 3;
 }
 
 .navbar-content {
@@ -17,7 +18,7 @@
   height: 36px;
   padding: 8px;
   margin-top: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .navbar-back {
@@ -71,9 +72,10 @@
   height: 88px;
   background-color: $navbar-gray;
   position: fixed;
-  // left: 0;
+  left: 0;
   bottom: 0;
   width: 100vw;
+  z-index: 3;
 }
 
 .tabbar-content {

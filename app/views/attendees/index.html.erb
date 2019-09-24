@@ -1,37 +1,25 @@
 <%  @page_title = "Attendees" %>
-
-
-
-
 <!-- Conditional formatting of the tab buttons -->
 <% content_for(:tab_table_class, "tab_table_active") %>
 <!-- end -->
-
 <!-- Partial for the Modal -->
 <div class="checkedin-popup hide">
   <%= render 'shared/checkedin' %>
 </div>
 <!-- end -->
-
-
 <div class="table-header">
   <h1><%= @booking.restaurant.name %></h1>
   <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
 </div>
-
 <h1>Invite Attendees</h1>
-
 <div>
   <%= simple_form_for :search, url: restaurant_booking_attendees_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <p><strong><%= f.input :name, input_html: {value: ""} %></strong></p>
+    <p><strong><%= f.input :name, label: false, input_html: {value: ""} %></strong></p>
     <%= f.submit "Search", class: "button button-medium button-search" %>
   <% end %>
 </div>
-
-
 <%# if a user searches to add a guest to the table  %>
 <% if @user && @user != current_user %>
-
   <div class="card-box-shadow card-medium-attendees card-submenu user attende-invite">
     <div class="avatar-div">
       <%= cl_image_tag(@user.photo, :class => "avatar-large button-area") %>
@@ -40,19 +28,16 @@
       <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
       <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
         <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
-        <%= f.submit "Invite Now", class: "button button-invite" %>
+        <%= f.submit "Invite Now", class: "button button-small" %>
+
+
       <% end %>
     </div>
   </div>
-
 <% end %>
-
-
-<h1>Current Attendees</h1>
-
+<h1 style="margin-top: 24px;">Current Attendees</h1>
 <% @booking.attendees.map do |attendee| %>
   <div class="card-box-shadow card-medium-attendees card-submenu">
-
     <div>
       <% if attendee.accepted %>
         <%= cl_image_tag(attendee.user.photo, :class => "avatar-large-blue button-area") %>
@@ -60,12 +45,11 @@
         <%= cl_image_tag(attendee.user.photo, :class => "avatar-large button-area") %>
       <% end %>
     </div>
-
     <div>
       <% if attendee.accepted %>
-          <p class="blue-font"><strong> <%= attendee.user.first_name %></strong></p>
+        <p class="blue-font"><strong> <%= attendee.user.first_name %></strong></p>
       <% else %>
-          <p><strong> <%= attendee.user.first_name %></strong></p>
+        <p><strong> <%= attendee.user.first_name %></strong></p>
       <% end %>
       <% if !attendee.accepted %>
         <p style="margin-right: 24px;">Not yet confirmed</p>

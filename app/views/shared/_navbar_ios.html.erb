@@ -1,6 +1,5 @@
 <div class="navbar-ios">
   <div class="navbar-content">
-
     <div class="navbar-back same-space">
       <%= link_to request.referer.present? ? request.referer : root_path do %>
         <p class="<%= yield(:nav_chevron_class) %>">
@@ -8,7 +7,6 @@
         </p>
       <% end %>
     </div>
-
     <div class="navbar-title same-space">
       <% if current_page?('/') %>
         <p class="menyoo-title"><strong>Menyoo</strong></p>
@@ -16,8 +14,6 @@
         <p><strong><%= @page_title %></strong></p>
       <% end %>
     </div>
-
-
     <div class="navbar-checkin same-space">
       <% if @booking %>
         <% if @booking.checkedin %>
@@ -29,7 +25,5 @@
         <p class="<%= yield(:nav_checkedin_class) %>"><i class="fas fa-toggle-off"></i></p>
       <% end %>
     </div>
-
   </div>
 </div>
-

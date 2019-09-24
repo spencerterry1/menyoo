@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_first_booking
+  before_action :set_first_restaurant
 
   def show
     @user = current_user

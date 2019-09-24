@@ -1,13 +1,11 @@
 <!-- Conditional formatting of the tab buttons -->
 <% content_for(:tab_user_class, "tab_user_active") %>
 <!-- end -->
-
 <!-- Hide CheckedIn Button on Pages other than specific booking -->
 <% content_for(:nav_checkedin_class, "nav_checkedin_invisible") %>
 <!-- end -->
-
 <%  @page_title = @restaurant.name %>
-
+<h1>Reviews</h1>
 <% @reviews.each do |review| %>
   <div class= "review-card">
     <div class=review-avatar>

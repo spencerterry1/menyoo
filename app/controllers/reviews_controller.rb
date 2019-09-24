@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :set_first_booking
+  before_action :set_first_restaurant
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.find(params[:booking_id])
@@ -24,6 +27,7 @@ class ReviewsController < ApplicationController
       end
 
       session = Stripe::Checkout::Session.create(
+
           payment_method_types: ['card'],
           line_items: [{
             name: "My orders",
@@ -35,6 +39,7 @@ class ReviewsController < ApplicationController
           success_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee),
           cancel_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee)
         )
+
       @payment.update(checkout_session_id: session.id)
 
     end

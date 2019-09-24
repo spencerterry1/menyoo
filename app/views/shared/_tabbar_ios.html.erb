@@ -6,14 +6,13 @@
         <p class="<%= yield(:tab_home_class) %>"><i class="fas fa-home"></i></p>
       <% end %>
     </div>
-
     <!-- Your Table Tab -->
     <div class="navbar-title">
       <% if user_signed_in? %>
         <% if bookings_open_for_user(current_user).count != 0 %>
-          <% @booking = bookings_open_for_user(current_user).last %>
-          <% @restaurant = @booking.restaurant %>
-          <%=  link_to restaurant_bookings_path(@restaurant) do %>
+          <!--           <% @booking = bookings_open_for_user(current_user).last %>
+          <% @restaurant = @booking.restaurant %> -->
+          <%=  link_to restaurant_booking_path(@restaurant_first, @booking_first) do %>
             <p class="<%= yield(:tab_table_class) %>"><i class="fas fa-utensils"></i></p>
           <% end %>
         <% else %>
@@ -23,7 +22,6 @@
         <p class = "tab-unavailable"><i class="fas fa-utensils"></i></p>
       <% end %>
     </div>
-
     <!-- User Profile Tab -->
     <div class="navbar-title">
       <% if user_signed_in? %>

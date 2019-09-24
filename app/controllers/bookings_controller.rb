@@ -1,11 +1,14 @@
 class BookingsController < ApplicationController
+  before_action :set_first_booking
+  before_action :set_first_restaurant
 
   def index
-    @bookings_open = bookings_open_for_user(current_user)
+    @bookings_open = bookings_open_for_user(current_user).sort_by &:date
   end
 
   def show
     @booking = Booking.find(params[:id])
+    @bookings_open = bookings_open_for_user(current_user).sort_by &:date
     @restaurant = @booking.restaurant
     @users = User.all
     @attendee = Attendee.new
@@ -14,6 +17,18 @@ class BookingsController < ApplicationController
 
     # calls search_for_users method if a user tries to type in the search bar to add another use to the table
     search_for_users if params[:search]
+
+    # Logic to identify index of the Booking considered, the previous and the next, if any
+    @booking_index = @bookings_open.index(@booking)
+    @number_bookings = @bookings_open.length
+    if (@booking_index - 1) >= 0
+      @prev_booking_index = @booking_index - 1
+      @prev_booking = @bookings_open[@prev_booking_index]
+    end
+    if (@booking_index + 1) <= (@number_bookings - 1)
+      @next_booking_index = @booking_index + 1
+      @next_booking = @bookings_open[@next_booking_index]
+    end
   end
 
 

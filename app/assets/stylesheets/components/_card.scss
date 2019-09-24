@@ -16,6 +16,29 @@
   }
 }
 
+.card-large img {
+  height: $card-large-height;
+  width: $card-large-height;
+  object-fit: cover;
+}
+
+.card-carousel {
+  display: flex;
+  height: 150px;
+  margin: 8px 0px 4px 0px;
+  position: relative;
+  h3 {
+    line-height: 1.0rem;
+  }
+}
+
+.card-carousel-img img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
 .card-medium {
   display: flex;
   height: $card-medium-height;
@@ -38,11 +61,6 @@
   margin: 16px 0px;
 }
 
-.card-large img {
-  height: $card-large-height;
-  width: $card-large-height;
-  object-fit: cover;
-}
 
 .card-medium img {
   height: $card-large-height;
@@ -74,10 +92,7 @@
         padding:5px;
       }
     }
-
   }
-
-
 
 .card-large-content-bookings {
   padding: 16px;
@@ -142,9 +157,31 @@
 }
 
 .card-booking-index {
-  margin-top: 50px;
+  margin-top: 16px;
   padding: 30px;
+  background-color: white;
 }
+
+.body-icon {
+  font-size: 19px;
+  color: $font-color-light-grey;
+  h3 {
+    font-size: 16px;
+    color: $font-color-light-grey;
+  }
+}
+
+// // Original
+// background-color: white;
+// color: $font-color-light-grey
+
+// $font-color-light-grey
+// $font-color-dark-grey
+// $navbar-gray
+// $menyoo-blue
+// $menyoo-gray
+// medium blue: #8493A3
+// light blue: #C1CFDC
 
 .card-invitation{
   padding: 16px;
@@ -163,7 +200,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  margin: 15px 0;
+  margin: 16px 0;
+  padding: 16px;
   border-radius: 8px;
   max-height: 400px;
   img {
@@ -185,12 +223,18 @@
 
 .review-whole{
   width: 100%;
-  padding: 16px;
+  margin-left: 16px;
   max-height :400px;
   small{
     color: gray;
 
   }
+}
+
+.review-avatar {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 

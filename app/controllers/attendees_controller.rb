@@ -1,6 +1,7 @@
 class AttendeesController < ApplicationController
-
   before_action :set_booking, except: [:destroy]
+  before_action :set_first_booking
+  before_action :set_first_restaurant
 
   def index
     @booking = Booking.find(params[:booking_id])
@@ -24,10 +25,10 @@ class AttendeesController < ApplicationController
   end
 
   def create
-     @attendee = Attendee.new(attendee_params)
-     # raise
-     @attendee.booking = @booking
-     if @attendee.save
+    @attendee = Attendee.new(attendee_params)
+    # raise
+    @attendee.booking = @booking
+    if @attendee.save
       flash[:notice] = "#{@attendee.user.first_name} has been invited"
       redirect_to restaurant_booking_attendees_path(@booking.restaurant, @booking)
     end

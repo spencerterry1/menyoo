@@ -20,12 +20,15 @@
     <% if @restaurant.avarage_rating.zero? %>
       <p class="ratings-stars accent-font">No reviews</p>
     <% else %>
-      <div class="ratings-text">
-        <% @restaurant.avarage_rating.round.times do %>
-          <i class="rating-stars fas fa-star"></i>
-        <% end %>
-        (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
-      </div>
+
+      <%= link_to restaurant_reviews_path(@restaurant) do %>
+        <div class="ratings-text">
+          <% @restaurant.avarage_rating.round.times do %>
+            <i class="rating-stars fas fa-star"></i>
+          <% end %>
+          (<%= @restaurant.reviews.size %>)
+        </div>
+      <% end %>
     <% end %>
   </div>
 

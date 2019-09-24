@@ -42,6 +42,10 @@ a:hover {
   color: $menyoo-accent;
 }
 
+.container-ios {
+  position: relative;
+}
+
 .menyoo-title {
   font-family: $menyoo-font;
   font-size: 28px;
@@ -69,11 +73,6 @@ a:hover {
   margin-top: 24px;
 }
 
-.body-icon {
-  font-size: 19px;
-  color: $font-color-light-grey;
-}
-
 .blue-font {
   color: $menyoo-blue;
 }
@@ -89,4 +88,59 @@ a:hover {
 .table-header {
   margin: 8px auto 24px auto;
   text-align: center;
+}
+
+.carousel-button {
+  height: 100%;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  margin: 8px 0 16px 0;
+  p {
+    color: white;
+    font-size: 30px;
+    padding: 12px;
+  }
+}
+
+.carousel-back {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 150px;
+  width: 50px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.25);
+  margin: 8px 0 16px 0;
+  z-index: 1;
+  p {
+    color: white;
+    font-size: 30px;
+    padding: 12px;
+  }
+}
+
+.carousel-forward {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 150px;
+  width: 50px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.25);
+  margin: 8px 0 16px 0;
+  z-index: 1;
+  p {
+    color: white;
+    font-size: 30px;
+    padding: 12px;
+  }
 }
