@@ -85,11 +85,11 @@ class BookingsController < ApplicationController
     end
 
     # calculates total order price (orders sent to kitchen)
-    ordered_orders = @orders.where(ordered: true)
-    @order_total = 0
-    ordered_orders.each do |order|
-      @order_total += order.dish.price
-    end
+    @order_total = @booking.orders.where(ordered: true).map(&:price).sum
+    # @order_total = 0
+    # ordered_orders.each do |order|
+    #   @order_total += order.dish.price
+    # end
 
     # calculates total paid
     paid_orders = @attendees.where(payment: true)
@@ -108,6 +108,7 @@ class BookingsController < ApplicationController
         @order_left_to_pay += order.dish.price
       end
     end
+
   end
 
   def checkin

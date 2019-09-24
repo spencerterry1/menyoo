@@ -11,32 +11,37 @@ class ReviewsController < ApplicationController
 
     if @payment.save
       if params[:pay_for_all]
-        @orders = @booking.orders.where(ordered: true)
+        attendee_orders = @booking.attendees.where(payment: false)
         @order_total = 0
-        @orders.each do |order|
-          @order_total += order.dish.price
+        attendee_orders.each do |attendee|
+          attendee.orders.each do |order|
+            @order_total += order.dish.price
+          end
         end
+        # price amount for whole table
+        @amount = (@order_total.to_i) * 100
       else
-        @orders = @booking.orders.where(attendee: @attendee).where(ordered: true)
-        @order_total = 0
-        @order_total = @orders.each do |order|
-          @order_total += order.dish.price
-        end
+        @order_total = @booking.orders.where(attendee: @attendee).where(ordered: true).map(&:price).sum
+        # price amount for jsut current user
+        @amount = (@order_total.to_i) * 100
       end
 
       session = Stripe::Checkout::Session.create(
-        payment_method_types: ['card'],
-        line_items: [{
-                       name: "My orders",
-                       images: [@restaurant.photo_url],
-                       amount: (@order_total.to_i * 100),
-                       currency: 'gbp',
-                       quantity: 1
-        }],
-        success_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee),
-        cancel_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee)
-      )
+
+          payment_method_types: ['card'],
+          line_items: [{
+            name: "My orders",
+            images: [@restaurant.photo_url],
+            amount: @amount,
+            currency: 'gbp',
+            quantity: 1
+          }],
+          success_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee),
+          cancel_url: restaurant_booking_attendee_orders_url(@restaurant, @booking, @attendee)
+        )
+
       @payment.update(checkout_session_id: session.id)
+
     end
 
   end

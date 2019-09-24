@@ -116,10 +116,9 @@
   width: 100%;
   height: 20px;
   display: flex;
-  justify-content: space-between;
   .dish-quantity {
     width: 50px;
-    padding-left: 35px;
+    padding-left: 45px;
   }
   p {
     font-size: $font-size-small;
@@ -132,6 +131,7 @@
   }
   .dish-price {
     padding-right: 10px;
+    padding-left: 30px;
   }
 }
 
@@ -331,7 +331,9 @@
   align-items: center;
   margin-bottom: 15px;
   button {
-    margin-right: 4px;
+    margin-right: 6px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
