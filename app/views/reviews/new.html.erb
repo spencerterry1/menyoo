@@ -7,6 +7,7 @@
   <%= simple_form_for([@restaurant, @booking, @review], remote: true) do |f| %>
    <h1>How was your experience?</h1>
    <br>
+   <%= f.input :title %>
    <%= f.input :content %>
    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
    <%= f.submit "Submit", class: "button button-medium", id: "form-submit" do%>
