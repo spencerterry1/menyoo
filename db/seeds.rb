@@ -963,14 +963,14 @@ puts "Creating Reviews..."
   review_26 = Review.new
   review_26.booking = booking_twentysix
   review_26.content = "Overrated and full of hipsters!"
-  review_26.rating = 3
+  review_26.rating = 2
   review_26.user = spencer
   review_26.save
 
   review_27 = Review.new
   review_27.booking = booking_twentyseven
-  review_27.content = "My mum and dad were very happy with their meal. Great family atmosphere."
-  review_27.rating = 4
+  review_27.content = "My mum and dad were very not happy with their meal. Awful atmosphere."
+  review_27.rating = 2
   review_27.user = ana
   review_27.save
 
