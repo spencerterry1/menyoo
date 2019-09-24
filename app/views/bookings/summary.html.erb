@@ -83,7 +83,7 @@
           <% order_array.each do |order| %>
             <div class="card-order-dishes">
               <div class="dish-name">
-                <p><strong> <%= order.dish.name %></strong> </p>
+                <p><%= order.dish.name %></p>
               </div>
               <div>
                 <p class="dish-quantity">x1</p>
@@ -134,7 +134,7 @@
               <% else %>
                 <div class="button-pay">
                   <% unless order_array.first.attendee.payment %>
-                    <%= link_to new_restaurant_booking_review_path(@restaurant,@booking) do %>
+                    <%= link_to new_restaurant_booking_review_path(@restaurant, @booking) do %>
                       <button class = "button button-short">Pay now</button>
                     <% end %>
                   <% end %>
@@ -177,7 +177,7 @@
       <% if @orders.all? {|order| order.ordered == true} %>
         <% if @attendees.find_by(user: current_user).payment == false %>
           <div class="button-area">
-            <%= link_to new_restaurant_booking_review_path(@restaurant,@booking, pay_for_all: true) do %>
+            <%= link_to new_restaurant_booking_review_path(@restaurant, @booking, pay_for_all: true) do %>
               <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
             <% end %>
           </div>

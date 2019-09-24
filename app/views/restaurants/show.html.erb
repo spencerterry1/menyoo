@@ -20,6 +20,7 @@
     <% if @restaurant.avarage_rating.zero? %>
       <p class="ratings-stars accent-font">No reviews</p>
     <% else %>
+
       <%= link_to restaurant_reviews_path(@restaurant) do %>
         <div class="ratings-text">
           <% @restaurant.avarage_rating.round.times do %>
@@ -30,6 +31,7 @@
       <% end %>
     <% end %>
   </div>
+
   <% if user_signed_in? %>
     <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
       <div class="button-area">
@@ -42,7 +44,6 @@
       <!-- end -->
     <% end %>
   <% else %>
-    (<%= link_to @restaurant.reviews.size, restaurant_reviews_path(@restaurant) %>)
   <% end %>
 </div>
 <div class="search-section">
