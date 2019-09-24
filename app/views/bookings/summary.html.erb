@@ -24,11 +24,7 @@
 </div>
 <!-- ==========> DIV FOR YOUR ORDER <================= -->
 <div id="summary-section-your" class="">
-  <!-- Calculation the total for the orders -->
-  <% @order_total = 0 %>
-  <% @orders_for_attendee.each do |order|  %>
-    <% @order_total = @order_total + order.dish.price %>
-  <% end %>
+
   <!-- End Calculation -->
   <div class="button-area">
     <% if @attendee.payment == false  %>
@@ -193,3 +189,4 @@
         <% end %>
       <% end %>
     </div>
+
