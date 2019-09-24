@@ -24,7 +24,11 @@
 </div>
 <!-- ==========> DIV FOR YOUR ORDER <================= -->
 <div id="summary-section-your" class="">
-
+  <!-- Calculation the total for the orders -->
+  <% @order_total = 0 %>
+  <% @orders_for_attendee.each do |order|  %>
+    <% @order_total = @order_total + order.dish.price %>
+  <% end %>
   <!-- End Calculation -->
   <div class="button-area">
     <% if @attendee.payment == false  %>
@@ -126,7 +130,7 @@
               </div>
               <%#=  checks if attendee has paid, if no shows payment button, if yes shows status saying paid %>
               <% if Attendee.find(attendee_id).payment == true %>
-                <button class="button button-short button-paid">Paid</button>
+                <button class="button button-paid">Paid</button>
               <% else %>
                 <div class="button-pay">
                   <% unless order_array.first.attendee.payment %>
@@ -158,7 +162,7 @@
         <div class="card-bill-summary">
           <div class="card-table-order-summary">
             <p><strong class="text-order-total"> Table order total:</strong> </p>
-            <p><strong class="text-order-total"> <%= humanized_money_with_symbol(@order_total) %></strong> </p>
+            <p><strong class="text-order-total"> <%= humanized_money_with_symbol(@order_table_total) %></strong> </p>
           </div>
           <div class="card-table-order-summary">
             <p class="text-paid">Bill paid: </p>
@@ -189,4 +193,6 @@
         <% end %>
       <% end %>
     </div>
+
+
 

@@ -20,7 +20,6 @@
     <% if @restaurant.avarage_rating.zero? %>
       <p class="ratings-stars accent-font">No reviews</p>
     <% else %>
-
       <%= link_to restaurant_reviews_path(@restaurant) do %>
         <div class="ratings-text">
           <% @restaurant.avarage_rating.round.times do %>
@@ -31,7 +30,6 @@
       <% end %>
     <% end %>
   </div>
-
   <% if user_signed_in? %>
     <% if !any_booking_open_for_user_restaurant?(current_user, @restaurant) %>
       <div class="button-area">
@@ -55,15 +53,13 @@
         class: "form-control",
         placeholder: "Healthy or decadent ?"
         %>
-      ​      <i id="delete-button-two", class="fas fa-times-circle"></i>
+      ​ <i id="delete-button-two", class="fas fa-times-circle"></i>
       <%= submit_tag "Search", class: "button button-medium" %>
     </div>
   <% end %>
 </div>
-​
 <h1>Menu</h1>
-​
-​<% @categories.each do |category|  %>
+<% @categories.each do |category|  %>
   <h2><%= category %></h2>
   <% @dishes = @dishes_for_restaurant.select {|dish| dish.category == category }  %>
   <% @dishes.each do |dish|  %>
