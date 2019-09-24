@@ -59,21 +59,27 @@
 <%= link_to restaurant_booking_attendees_path(@restaurant, @booking) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
     <div class="body-icon"><i class="fas fa-user-friends"></i></div>
-    <h3>Invite and View attendees</h3>
+    <div class="body-icon">
+      <h3>Invite and View attendees</h3>
+    </div>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
 <%= link_to restaurant_path(@restaurant) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
     <div class="body-icon"><i class="fas fa-book-open"></i></div>
-    <h3>View menu</h3>
+    <div class="body-icon">
+      <h3>View menu</h3>
+    </div>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
 <%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees) do %>
   <div class="card-medium card-box-shadow flex-between card-submenu card-booking-index">
     <div class="body-icon"><i class="fas fa-utensils"></i></div>
-    <h3>Order and Pay</h3>
+    <div class="body-icon">
+      <h3>Order and Pay</h3>
+    </div>
     <div class="body-icon"><i class="fas fa-chevron-right"></i></div>
   </div>
 <% end %>
