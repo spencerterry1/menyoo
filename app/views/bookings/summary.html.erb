@@ -162,7 +162,7 @@
         <div class="card-bill-summary">
           <div class="card-table-order-summary">
             <p><strong class="text-order-total"> Table order total:</strong> </p>
-            <p><strong class="text-order-total"> <%= humanized_money_with_symbol(@order_total) %></strong> </p>
+            <p><strong class="text-order-total"> <%= humanized_money_with_symbol(@order_table_total) %></strong> </p>
           </div>
           <div class="card-table-order-summary">
             <p class="text-paid">Bill paid: </p>
@@ -193,3 +193,6 @@
         <% end %>
       <% end %>
     </div>
+
+
+
