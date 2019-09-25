@@ -27,16 +27,18 @@
 <script>
   const payment = document.getElementById('payment');
   const formSubmit = document.querySelector("#form-submit");
-  formSubmit.addEventListener("click", () => {
-    document.querySelector("form").classList.add("d-none");
-    payment.classList.remove("d-none");
-  })
+  <% if @order_left_to_pay > 0 %>
+    formSubmit.addEventListener("click", () => {
+      document.querySelector("form").classList.add("d-none");
+      payment.classList.remove("d-none");
+    })
   
-  const paymentButton = document.getElementById('pay');
-  paymentButton.addEventListener('click', () => {
-    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-        stripe.redirectToCheckout({
-        sessionId: '<%= @payment.checkout_session_id %>'
+    const paymentButton = document.getElementById('pay');
+    paymentButton.addEventListener('click', () => {
+      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+          sessionId: '<%= @payment.checkout_session_id %>'
+        });
       });
-    });
+  <% end %>
 </script>

@@ -119,6 +119,9 @@ class BookingsController < ApplicationController
     end
 
     # logic for new review on same page
+
+    @amount = 0
+
     if @order_left_to_pay > 0
       @payment = Payment.new(attendee: @attendee, booking: @booking)
 
