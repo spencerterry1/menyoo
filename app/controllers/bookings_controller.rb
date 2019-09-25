@@ -119,39 +119,41 @@ class BookingsController < ApplicationController
     end
 
     # logic for new review on same page
-    @payment = Payment.new(attendee: @attendee, booking: @booking)
+    if @order_left_to_pay > 0
+      @payment = Payment.new(attendee: @attendee, booking: @booking)
 
-    if @payment.save
-      if params[:pay_for_all]
-        # attendee_orders = @booking.attendees.where(payment: false)
-        # @order_total = 0
-        # attendee_orders.each do |attendee|
-        #   attendee.orders.each do |order|
-        #     @order_total += order.dish.price
-        #   end
-        # end
-        # price amount for whole table
-        # @amount = (@order_total.to_i) * 100
-        @amount = (@order_left_to_pay.to_i) * 100
-      else
-        @order_total = @booking.orders.where(attendee: @attendee).where(ordered: true).map(&:price).sum
-        # price amount for jsut current user
-        @amount = (@order_total.to_i) * 100
+      if @payment.save
+        if params[:pay_for_all]
+          # attendee_orders = @booking.attendees.where(payment: false)
+          # @order_total = 0
+          # attendee_orders.each do |attendee|
+          #   attendee.orders.each do |order|
+          #     @order_total += order.dish.price
+          #   end
+          # end
+          # price amount for whole table
+          # @amount = (@order_total.to_i) * 100
+          @amount = (@order_left_to_pay.to_i) * 100
+        else
+          @order_total = @booking.orders.where(attendee: @attendee).where(ordered: true).map(&:price).sum
+          # price amount for jsut current user
+          @amount = (@order_total.to_i) * 100
+        end
+
+        session = Stripe::Checkout::Session.create(
+          payment_method_types: ['card'],
+          line_items: [{
+                         name: "My orders",
+                         images: [@restaurant.photo_url],
+                         amount: @amount,
+                         currency: 'gbp',
+                         quantity: 1
+          }],
+          success_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary",
+          cancel_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary",
+        )
+        @payment.update(checkout_session_id: session.id)
       end
-
-      session = Stripe::Checkout::Session.create(
-        payment_method_types: ['card'],
-        line_items: [{
-                       name: "My orders",
-                       images: [@restaurant.photo_url],
-                       amount: @amount,
-                       currency: 'gbp',
-                       quantity: 1
-        }],
-        success_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary",
-        cancel_url: "http://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary",
-      )
-      @payment.update(checkout_session_id: session.id)
     end
 
   end
