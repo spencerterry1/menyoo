@@ -1,19 +1,23 @@
-<div class="new-review">
-  <%= simple_form_for([@restaurant, @booking, @review], remote: true) do |f| %>
-    <h1>How was your experience?</h1>
-    <br>
-    <%= f.input :content %>
-    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", wrapper_html: {class: "new-review-rating"}%>
-    <%= f.submit "Submit", class: "button button-medium", id: "form-submit" do%>
-    <% end %>
-  <% end %>
-</div>
-<div class="d-none" id="payment">
-  <h1>Thank you for your feedback!</h1>
-  <br>
-  <p>Your total bill amounts to £<%= (@amount / 100).to_f.round(2) %></p>
-  <p>Please click on the link below to proceed with payment</p>
-  <button class="button button-medium" id="pay">PAY</button>
+<div class="checkedin-modal">
+  <div class="card-box-shadow modal-box-review">
+    <div class="new-review">
+      <%= simple_form_for([@restaurant, @booking, @review], remote: true) do |f| %>
+        <h1>How was your experience?</h1>
+        <br>
+        <%= f.input :content %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", wrapper_html: {class: "new-review-rating"}%>
+        <%= f.submit "Submit", class: "button button-medium", id: "form-submit" do%>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="d-none" id="payment">
+      <h1>Thank you for your feedback!</h1>
+      <br>
+      <p>Your total bill amounts to £<%= (@amount / 100).to_f.round(2) %></p>
+      <p>Please click on the link below to proceed with payment</p>
+      <button class="button button-medium" id="pay">PAY</button>
+    </div>
+  </div>
 </div>
 <!-- JS - Required ? -->
 <script src="https://js.stripe.com/v3/"></script>
