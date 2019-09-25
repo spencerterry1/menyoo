@@ -138,20 +138,38 @@ if (searchInput && deleteButtonTwo) {
   });
 }
 
-// =======> New Review and Intermediary Pay Modal
+// =======> New Review and Intermediary Pay Modal - Call from individual Pay
 
 const newReviewModal = document.querySelector(".newreview-popup");
 const newReviewButtons = document.querySelectorAll(".button-new-review");
-
+const newReviewTableButton = document.querySelector("#button-pay-table");
+document.addEventListener("DOMContentLoaded", () => {
+  let url = window.location.href.split("&");
+  let modal = url[url.length - 1];
+  if (modal == "modal") {
+    newReviewModal.classList.toggle("show");
+    newReviewModal.classList.toggle("hide");
+  }
+})
 
 newReviewButtons.forEach(button => {
   if (button) {
     button.addEventListener("click", event => {
+      event.preventDefault();
       newReviewModal.classList.toggle("show");
       newReviewModal.classList.toggle("hide");
     });
   }
 });
+
+if (newReviewTableButton) {
+  newReviewTableButton.addEventListener("click", event => {
+    event.preventDefault();
+    window.location.replace(`${event.currentTarget.href}&modal`)
+    // newReviewModal.classList.toggle("show");
+    // newReviewModal.classList.toggle("hide");
+  });
+}
 
 
 

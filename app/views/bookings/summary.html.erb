@@ -181,7 +181,7 @@
       <% if @orders.all? {|order| order.ordered == true} %>
         <% if @attendees.find_by(user: current_user).payment == false %>
           <div class="button-area">
-            <%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees, pay_for_all: true) do %>
+            <%= link_to restaurant_booking_summary_url(@restaurant, @booking, pay_for_all: true), id: "button-pay-table" do %>
               <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
             <% end %>
           </div>
