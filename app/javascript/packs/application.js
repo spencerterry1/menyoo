@@ -138,4 +138,20 @@ if (searchInput && deleteButtonTwo) {
   });
 }
 
+// =======> New Review and Intermediary Pay Modal
+
+const newReviewModal = document.querySelector(".newreview-popup");
+const newReviewButtons = document.querySelectorAll(".button-new-review");
+
+
+newReviewButtons.forEach(button => {
+  if (button) {
+    button.addEventListener("click", event => {
+      newReviewModal.classList.toggle("show");
+      newReviewModal.classList.toggle("hide");
+    });
+  }
+});
+
+
 

@@ -63,7 +63,7 @@
 <!-- ==========> DIV FOR TABLE ORDER <================= -->
 <div id="summary-section-table" class="">
   <!-- Partial for the Create Table Modal -->
-  <div class="newreview-popup">
+  <div class="newreview-popup hide">
     <%= render 'shared/newreviewmodal' %>
   </div>
   <!-- end -->
@@ -140,9 +140,7 @@
                 <div class="button-pay">
                   <% unless order_array.first.attendee.payment %>
                     <!-- !!!!!!!! Replace with MODAL !!!! -->
-                    <%= link_to new_restaurant_booking_review_path(@restaurant, @booking) do %>
-                      <button class = "button button-short">Pay now</button>
-                    <% end %>
+                    <button class = "button button-short button-new-review">Pay now</button>
                   <% end %>
                 </div>
               <% end %>
@@ -183,7 +181,7 @@
       <% if @orders.all? {|order| order.ordered == true} %>
         <% if @attendees.find_by(user: current_user).payment == false %>
           <div class="button-area">
-            <%= link_to new_restaurant_booking_review_path(@restaurant, @booking, pay_for_all: true) do %>
+            <%= link_to restaurant_booking_summary_path(@restaurant, @booking, @attendees, pay_for_all: true) do %>
               <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
             <% end %>
           </div>
