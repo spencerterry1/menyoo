@@ -73,6 +73,93 @@ rob = User.new(
 rob.remote_photo_url =  'https://kitt.lewagon.com/placeholder/users/krokrob'
 rob.save
 
+
+ben = User.new(
+  first_name: 'Benjamin',
+  last_name: 'Baranger',
+  email: 'ben@gmail.com',
+  password: 'secret'
+  )
+ben.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-U63SAARK8-cf2c97eaf5f2-72'
+ben.save
+
+agota = User.new(
+  first_name: 'Agota',
+  last_name: 'Kocsis',
+  email: 'agota@gmail.com',
+  password: 'secret'
+  )
+agota.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-UHAFRJP5H-20ffc3d9bde8-72'
+agota.save
+
+
+sam = User.new(
+  first_name: 'Sam',
+  last_name: 'Cheesam',
+  email: 'sam@gmail.com',
+  password: 'secret'
+  )
+sam.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-UHQCP01EG-a6582ce35d87-72'
+sam.save
+
+katherine = User.new(
+  first_name: 'Katherine',
+  last_name: 'Smith',
+  email: 'katherine@gmail.com',
+  password: 'secret'
+  )
+katherine.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-UCPGN10PQ-92ef96a13b65-72'
+katherine.save
+
+
+johnny = User.new(
+  first_name: 'Johnny',
+  last_name: 'Smith',
+  email: 'johnny@gmail.com',
+  password: 'secret'
+  )
+johnny.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-UFC6HPQ56-a45952a987b8-72'
+johnny.save
+
+
+
+sunny = User.new(
+  first_name: 'Sunny',
+  last_name: 'Smith',
+  email: 'sunnny@gmail.com',
+  password: 'secret'
+  )
+sunny.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-UHQCP4P0U-69f9d8fbeecb-72'
+sunny.save
+
+
+marco = User.new(
+  first_name: 'Marco',
+  last_name: 'Smith',
+  email: 'marco@gmail.com',
+  password: 'secret'
+  )
+marco.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-U9J238QUR-d300c6040074-72'
+marco.save
+
+alex = User.new(
+  first_name: 'Alex',
+  last_name: 'Smith',
+  email: 'alex@gmail.com',
+  password: 'secret'
+  )
+alex.remote_photo_url =  'https://ca.slack-edge.com/T02NE0241-U1LDR6C7M-203275a6b9d3-72'
+alex.save
+
+
+
+
+
+
+
+
+
+
 puts "Finished!"
 
 # RESTAURANTS
@@ -564,14 +651,14 @@ booking_four.open = false
 booking_four.save
 
 booking_five = Booking.new(date: DateTime.strptime("01/02/2019", "%m/%d/%Y"))
-booking_five.user = walter
+booking_five.user = sunny
 booking_five.restaurant = italianPolpo
 booking_five.open = false
 booking_five.save
 
 
 booking_seven = Booking.new(date: DateTime.strptime("01/18/2019", "%m/%d/%Y"))
-booking_seven .user = ana
+booking_seven .user = johnny
 booking_seven .restaurant = italianPolpo
 booking_seven .open = false
 booking_seven .save
@@ -583,7 +670,7 @@ booking_eight.open = false
 booking_eight.save
 
 booking_nine = Booking.new(date: DateTime.strptime("02/03/2019", "%m/%d/%Y"))
-booking_nine.user = walter
+booking_nine.user = katherine
 booking_nine.restaurant = italianPolpo
 booking_nine.open = false
 booking_nine.save
@@ -746,7 +833,7 @@ booking_thirtysix.open = false
 booking_thirtysix.save
 
 booking_thirtyseven = Booking.new(date: DateTime.strptime("09/16/2019", "%m/%d/%Y"))
-booking_thirtyseven.user = walter
+booking_thirtyseven.user = alex
 booking_thirtyseven.restaurant = british
 booking_thirtyseven.open = false
 booking_thirtyseven.save
@@ -770,7 +857,7 @@ booking_forty.open = false
 booking_forty.save
 
 booking_fortyone = Booking.new(date: DateTime.strptime("02/07/2019", "%m/%d/%Y"))
-booking_fortyone.user = walter
+booking_fortyone.user = sam
 booking_fortyone.restaurant = british
 booking_fortyone.open = false
 booking_fortyone.save
@@ -806,14 +893,14 @@ booking_fortysix.open = false
 booking_fortysix.save
 
 
-booking_fortyseven = Booking.new(date: DateTime.strptime("08/04/2018", "%m/%d/%Y"))
+booking_fortyseven = Booking.new(date: DateTime.strptime("08/12/2018", "%m/%d/%Y"))
 booking_fortyseven.user = arthur
 booking_fortyseven.restaurant = italianPolpo
 booking_fortyseven.open = false
 booking_fortyseven.save
 
 booking_fortyeight = Booking.new(date: DateTime.strptime("10/02/2019", "%m/%d/%Y"))
-booking_fortyeight.user = sarah
+booking_fortyeight.user = ben
 booking_fortyeight.restaurant = italianPolpo
 booking_fortyeight.open = false
 booking_fortyeight.save
@@ -825,12 +912,13 @@ booking_fortynine.restaurant = italianPolpo
 booking_fortynine.open = false
 booking_fortynine.save
 
-booking_fifty = Booking.new(date: DateTime.strptime("10/01/2019", "%m/%d/%Y"))
-booking_fifty.user = arthur
-booking_fifty.restaurant = italian
-booking_fifty.open = false
-booking_fifty.save
 
+
+booking_fiftyone = Booking.new(date: DateTime.strptime("10/04/2018", "%m/%d/%Y"))
+booking_fiftyone.user = marco
+booking_fiftyone.restaurant = italianPolpo
+booking_fiftyone.open = false
+booking_fiftyone.save
 
 
 
@@ -878,7 +966,7 @@ puts "Creating Reviews..."
   review_5.booking = booking_five
   review_5.content = "I've been visiting Polpo for 5+ years and I have to say this one is my favourite! The friendly staff make you feel welcome every single time and the atmosphere is just soooooo nice in there. As always, the seasonal menus are as delicious as the last one."
   review_5.rating = 5
-  review_5.user = walter
+  review_5.user = sunny
   review_5.title = "Just fabulous"
   review_5.save
 
@@ -888,14 +976,14 @@ puts "Creating Reviews..."
   review_7.booking = booking_seven
   review_7.content = "If you’ve never been to Polpo you’ve missed out. The food is always excellent - whatever you have. The staff are awesome too and we always leave very happy."
   review_7.rating = 5
-  review_7.user = ana
+  review_7.user = johnny
   review_7.title = "Amazing"
   review_7.save
 
   review_8 = Review.new
   review_8.booking = booking_eight
   review_8.content = "Fantastic food, great atmosphere, perfect service. One of the few restaurants I actually rate in London!"
-  review_8.rating = 5
+  review_8.rating = 4
   review_8.user = simona
   review_8.title = "Best meal ever"
   review_8.save
@@ -904,7 +992,7 @@ puts "Creating Reviews..."
   review_9.booking = booking_nine
   review_9.content = "Love this busy bustling bar / restaurant. good for solo eats or with friends. my favourite was the meatballs .. good small dishes to share."
   review_9.rating = 5
-  review_9.user = walter
+  review_9.user = katherine
   review_9.title = "Wow"
   review_9.save
 
@@ -912,7 +1000,7 @@ puts "Creating Reviews..."
   review_10.booking = booking_ten
   review_10.content = "I visited this place multiple times. Great ambience and great service. Very well priced, good cuisine. Can't wait to get back."
   review_10.rating = 5
-  review_10.user = spencer
+  review_10.user = walter
   review_10.title = "Superb"
   review_10.save
 
@@ -928,15 +1016,15 @@ puts "Creating Reviews..."
   review_12.booking = booking_twelve
   review_12.content = "Don't let Polpo's unassuming exterior put you off! This is a little gem serving fabulous tasting Italian food. Everything we ordered was delicious. Excellent and reasonably priced house wine and attentive service added to the whole experience. Would definitely recommend."
   review_12.rating = 4
-  review_12.user = simona
+  review_12.user = sarah
   review_12.title = "Never disappoints. Try the desserts. They are great."
   review_12.save
 
   review_13 = Review.new
   review_13.booking = booking_thirteen
   review_13.content = "Amazing people with great service. I would recommend it to anyone within the area. Some of the finest food that I've ever had"
-  review_13.rating = 4
-  review_13.user = walter
+  review_13.rating = 5
+  review_13.user = arthur
   review_13.title = "Real delight"
   review_13.save
 
@@ -945,7 +1033,7 @@ puts "Creating Reviews..."
   review_15 = Review.new
   review_15.booking = booking_fifteen
   review_15.content = "I can see what all the fuss is about but please add more vegan meals to your menu."
-  review_15.rating = 4
+  review_15.rating = 3
   review_15.user = ana
   review_15.save
 
@@ -966,7 +1054,7 @@ puts "Creating Reviews..."
   review_18 = Review.new
   review_18.booking = booking_eighteen
   review_18.content = "good"
-  review_18.rating = 5
+  review_18.rating = 3
   review_18.user = spencer
   review_18.save
 
@@ -1092,21 +1180,21 @@ puts "Creating Reviews..."
   review_36 = Review.new
   review_36.booking = booking_thirtysix
   review_36.content = "good"
-  review_36.rating = 5
+  review_36.rating = 3
   review_36.user = simona
   review_36.save
 
   review_37 = Review.new
   review_37.booking = booking_thirtyseven
   review_37.content = "good"
-  review_37.rating = 4
+  review_37.rating = 3
   review_37.user = walter
   review_37.save
 
   review_38 = Review.new
   review_38.booking = booking_thirtyeight
   review_38.content = "good"
-  review_38.rating = 4
+  review_38.rating = 3
   review_38.user = spencer
   review_38.save
 
@@ -1126,9 +1214,10 @@ puts "Creating Reviews..."
 
   review_41 = Review.new
   review_41.booking = booking_fortyone
-  review_41.content = "good"
+  review_41.content = "This is THE place to eat. Go check it out."
   review_41.rating = 5
   review_41.user = walter
+  review_41.title = "Lives Up to the Hype!"
   review_41.save
 
   review_42 = Review.new
@@ -1142,7 +1231,7 @@ puts "Creating Reviews..."
   review_43.booking = booking_fortythree
   review_43.content = "My friend and I dined here and enjoyed the wonderful food, charming staff and convenient location. Looking forward to my next visit."
   review_43.rating = 5
-  review_43.user = ana
+  review_43.user = rob
   review_43.title = "Real italian food"
   review_43.save
 
@@ -1170,41 +1259,33 @@ puts "Creating Reviews..."
   review_47 = Review.new
   review_47.booking = booking_fortyseven
   review_47.content = "This is pretty good. Nice atmosphere and the service wasn't too bad. But, if you're looking for authenticity, go to Italy!"
-  review_47.rating = 3
-  review_47.user = arthur
+  review_47.rating = 4
+  review_47.user = alex
   review_47.title = "Just OK."
   review_47.save
 
   review_48 = Review.new
   review_48.booking = booking_fortyeight
-  review_48.content = "We really enjoyed our dinner. The staff created such a welcoming nice atmosphere. The queue for the toilet was very long, so 4 stars from us."
-  review_48.rating = 4
-  review_48.user = sarah
+  review_48.content = "We really enjoyed our dinner. The staff created such a welcoming nice atmosphere. The queue for the toilet was very long, so 5 stars from us."
+  review_48.rating = 5
+  review_48.user = ben
   review_48.title = "Happppyyy"
   review_48.save
 
   review_49 = Review.new
   review_49.booking = booking_fortynine
-  review_49.content = "I had heard so much about this place before going. However our food was cold and late and the service was appauling. I guess the atmosphere makes it an ok experience but I won't be coming back."
-  review_49.rating = 2
-  review_49.user = rob
-  review_49.title = "Terrible Place"
+  review_49.content = "I had heard so much about this place before going. We will be coming back."
+  review_49.rating = 5
+  review_49.user = agota
+  review_49.title = "Pretty tasty!"
   review_49.save
 
-
-  review_50 = Review.new
-  review_50.booking = booking_fifty
-  review_50.content = "A fun place to hang out and have a drink but let down but the very average food."
-  review_50.rating = 3
-  review_50.user = arthur
-  review_50.title = "Average at best"
-  review_50.save
-
   review_51 = Review.new
-  review_51.booking = booking_fifty
-  review_51.content = "Really hated this place. Avoid at all costs."
-  review_51.rating = 2
-  review_51.user = sarah
+  review_51.booking = booking_fiftyone
+  review_51.content = "Was ok. Not good enough to come back."
+  review_51.rating = 3
+  review_51.user = marco
+  review_51.title = "This isn't Italy"
   review_51.save
 
 
