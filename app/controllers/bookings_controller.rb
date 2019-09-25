@@ -124,7 +124,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.checkedin = true
     @booking.save
-    redirect_to restaurant_booking_path(@restaurant, @booking)
+    @attendee = Attendee.where(user: current_user, booking: @booking).last
+    redirect_to restaurant_booking_summary_path(@restaurant, @booking, @attendees)
   end
 
   def update
