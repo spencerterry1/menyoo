@@ -11,15 +11,18 @@
       <% end %>
     </div>
     <div class="d-none" id="payment">
-      <h1>Thank you for your feedback!</h1>
-      <br>
-      <p>Your total bill amounts to £<%= (@amount / 100).to_f.round(2) %></p>
-      <p>Please click on the link below to proceed with payment</p>
-      <button class="button button-medium" id="pay">PAY</button>
+      <div class="new-review">
+        <h1>Thank you for your feedback!</h1>
+        <br>
+        <p style="margin-top: 24px;">Your total bill amount</p>
+        <p style="margin-top: 16px;"><strong>£<%= (@amount / 100).to_f.round(2) %></strong></p>
+        <!-- <p>Please click on the link below to proceed with payment</p> -->
+        <button class="button button-medium" id="pay" style="margin-top: 50px;">PAY</button>
+      </div>
     </div>
   </div>
 </div>
-<!-- JS - Required ? -->
+<!-- JS -->
 <script src="https://js.stripe.com/v3/"></script>
 <script>
   const payment = document.getElementById('payment');
