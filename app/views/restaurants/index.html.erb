@@ -78,13 +78,15 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-  <% @restaurants.each do |r| %>
+
+  <% @restaurants.each do |restaurant| %>
     <div id="mapshow">
-      <p><strong><%= r.name %></strong></p>
-      <p><%= r.address %></p>
-      <p><%= r.category %></p>
-    </div>
-  <% end %>
-</div>
-</div>
+    <%= link_to restaurant_path(restaurant) do %>
+     <h3><strong><%= restaurant.name %></strong></h3>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.category %></p>
+        </div>
+    <% end %>
+    <% end %>
+
 </div>
