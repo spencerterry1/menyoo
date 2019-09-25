@@ -62,6 +62,11 @@
 <!-- ==========> END - DIV FOR YOUR ORDER <================= -->
 <!-- ==========> DIV FOR TABLE ORDER <================= -->
 <div id="summary-section-table" class="">
+  <!-- Partial for the Create Table Modal -->
+  <div class="newreview-popup">
+    <%= render 'shared/newreviewmodal' %>
+  </div>
+  <!-- end -->
   <%#= show div with ORDERS NOT YET SENT to kitchen %>
   <% if @orders_not_sent_to_kitchen.count > 0 %>
     <div class="card-orders container-to-order">
@@ -134,6 +139,7 @@
               <% elsif Attendee.find(attendee_id).user.first_name == current_user.first_name %>
                 <div class="button-pay">
                   <% unless order_array.first.attendee.payment %>
+                    <!-- !!!!!!!! Replace with MODAL !!!! -->
                     <%= link_to new_restaurant_booking_review_path(@restaurant, @booking) do %>
                       <button class = "button button-short">Pay now</button>
                     <% end %>
