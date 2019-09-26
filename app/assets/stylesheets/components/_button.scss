@@ -40,6 +40,19 @@
   border-radius: 50px;
 }
 
+.button-invitation {
+  height: 32px;
+  background-color: $menyoo-blue;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 6px auto;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
 .decbutton {
   height: 32px;
   background-color: $menyoo-gray;
@@ -48,7 +61,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 16px auto;
+  margin: 6px auto;
   cursor: pointer;
   border-radius: 50px;
 }
