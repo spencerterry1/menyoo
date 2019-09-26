@@ -22,7 +22,7 @@ spencer.save
 
 ana = User.new(first_name: 'Ana',
                last_name: 'Bebic',
-               email: 'anabebic.x@gmail.com',
+               email: 'ana@g.com',
                password: 'secret',
                )
 ana.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441302/gijfiyet0ja2cy57oalc.jpg"
