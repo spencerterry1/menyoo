@@ -181,8 +181,14 @@
       <% if @orders.all? {|order| order.ordered == true} %>
         <% if @attendees.find_by(user: current_user).payment == false %>
           <div class="button-area">
-            <%= link_to restaurant_booking_summary_url(@restaurant, @booking, pay_for_all: true), id: "button-pay-table" do %>
-              <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
+            <% if ENV['RAILS_ENV'].to_s == 'production' %>
+              <a id="button-pay-table" href= <%= "https://www.menyoo-app.co.uk/restaurants/#{@restaurant.id}/bookings/#{@booking.id}/summary?pay_for_all=true&modal" %>>
+                <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
+              </a>
+            <% else %>
+              <%= link_to restaurant_booking_summary_url(@restaurant, @booking, pay_for_all: true), id: "button-pay-table" do %>
+                <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
+              <% end %>
             <% end %>
           </div>
         <% elsif @order_left_to_pay == 0 %>
