@@ -69,7 +69,7 @@
       See Featured
     </div>
   </div>
-  <div class="card-box-shadow">
+  <div class="card-box-shadow map-section">
     <div id="map"
       class="test-ana"
       style="width: 400px;
@@ -78,15 +78,13 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
   <% @restaurants.each do |restaurant| %>
     <div id="mapshow">
-    <%= link_to restaurant_path(restaurant) do %>
-     <h3><strong><%= restaurant.name %></strong></h3>
+      <%= link_to restaurant_path(restaurant) do %>
+        <h3><strong><%= restaurant.name %></strong></h3>
         <p><%= restaurant.address %></p>
         <p><%= restaurant.category %></p>
-        </div>
+      </div>
     <% end %>
-    <% end %>
-
+  <% end %>
 </div>
