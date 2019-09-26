@@ -12,18 +12,18 @@
   <p class="blue-font">Table for <%= @booking.date.to_s(:table_time) %></p>
 </div>
 <div class="summary-buttons">
-  <div id="summary-button-your">
-    <strong>Your Order</strong>
+  <div id="summary-button-table">
+    <strong>Table Order & Bill</strong>
   </div>
   <div>
     |
   </div>
-  <div id="summary-button-table" class="grey-font">
-    <strong>Table Order & Bill</strong>
+  <div id="summary-button-your" class="grey-font">
+    <strong>Your Order</strong>
   </div>
 </div>
 <!-- ==========> DIV FOR YOUR ORDER <================= -->
-<div id="summary-section-your" class="">
+<div id="summary-section-your" class="hide grey-font">
   <!-- Calculation the total for the orders -->
   <% @order_total = 0 %>
   <% @orders_for_attendee.each do |order|  %>
@@ -61,7 +61,12 @@
 </div>
 <!-- ==========> END - DIV FOR YOUR ORDER <================= -->
 <!-- ==========> DIV FOR TABLE ORDER <================= -->
-<div id="summary-section-table" class="hide grey-font">
+<div id="summary-section-table" class="">
+  <!-- Partial for the Create Table Modal -->
+  <div class="newreview-popup hide">
+    <%= render 'shared/newreviewmodal' %>
+  </div>
+  <!-- end -->
   <%#= show div with ORDERS NOT YET SENT to kitchen %>
   <% if @orders_not_sent_to_kitchen.count > 0 %>
     <div class="card-orders container-to-order">
@@ -134,9 +139,8 @@
               <% elsif Attendee.find(attendee_id).user.first_name == current_user.first_name %>
                 <div class="button-pay">
                   <% unless order_array.first.attendee.payment %>
-                    <%= link_to new_restaurant_booking_review_path(@restaurant, @booking) do %>
-                      <button class = "button button-short">Pay now</button>
-                    <% end %>
+                    <!-- !!!!!!!! Replace with MODAL !!!! -->
+                    <button class = "button button-short button-new-review">Pay now</button>
                   <% end %>
                 </div>
               <% end %>
@@ -177,7 +181,7 @@
       <% if @orders.all? {|order| order.ordered == true} %>
         <% if @attendees.find_by(user: current_user).payment == false %>
           <div class="button-area">
-            <%= link_to new_restaurant_booking_review_path(@restaurant, @booking, pay_for_all: true) do %>
+            <%= link_to restaurant_booking_summary_url(@restaurant, @booking, pay_for_all: true), id: "button-pay-table" do %>
               <button class = "button button-long button-table-pay">Pay remaining bill: <strong> <%= humanized_money_with_symbol(@order_left_to_pay) %></strong> </button>
             <% end %>
           </div>
@@ -193,6 +197,3 @@
         <% end %>
       <% end %>
     </div>
-
-
-

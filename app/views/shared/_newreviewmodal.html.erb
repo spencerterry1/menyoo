@@ -1,0 +1,44 @@
+<div class="checkedin-modal">
+  <div class="card-box-shadow modal-box-review">
+    <div class="new-review">
+      <%= simple_form_for([@restaurant, @booking, @review], remote: true) do |f| %>
+        <h1>How was your experience?</h1>
+        <br>
+        <%= f.input :content %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", wrapper_html: {class: "new-review-rating"}%>
+        <%= f.submit "Submit", class: "button button-medium", id: "form-submit" do%>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="d-none" id="payment">
+      <div class="new-review">
+        <h1>Thank you for your feedback!</h1>
+        <br>
+        <p style="margin-top: 24px;">Your total bill amount</p>
+        <p style="margin-top: 16px;"><strong>£<%= (@amount / 100).to_f.round(2) %></strong></p>
+        <!-- <p>Please click on the link below to proceed with payment</p> -->
+        <button class="button button-medium" id="pay" style="margin-top: 50px;">PAY</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JS -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const payment = document.getElementById('payment');
+  const formSubmit = document.querySelector("#form-submit");
+  <% if @order_left_to_pay > 0 %>
+    formSubmit.addEventListener("click", () => {
+      document.querySelector("form").classList.add("d-none");
+      payment.classList.remove("d-none");
+    })
+  
+    const paymentButton = document.getElementById('pay');
+    paymentButton.addEventListener('click', () => {
+      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+          sessionId: '<%= @payment.checkout_session_id %>'
+        });
+      });
+  <% end %>
+</script>
