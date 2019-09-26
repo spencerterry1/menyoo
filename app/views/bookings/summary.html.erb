@@ -105,7 +105,7 @@
         <div class="button-area">
           <%= simple_form_for [@restaurant, @booking] do |f| %>
             <%= f.input :ordered, as: :hidden, value: true %>
-            <%= f.submit "Send orders to the kitchen", class: "button button-medium button-table-order" %>
+            <%= f.submit "Send orders to the kitchen", class: "button button-medium button-table-order", data: {confirm: "Order sent to the kitchen"} %>
           <% end %>
         </div>
       <% else %>
