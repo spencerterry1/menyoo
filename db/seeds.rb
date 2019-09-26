@@ -366,7 +366,7 @@ italianPolpo_dish_eight.save
 
 
 italianPolpo_dish_nine = Dish.new(name: "Caprese skewers",
-                                  description: "Mini mozzarella balls, cherry tomatoes, basil leaves, balsamic vinegar",
+                                  description: "Mini mozzarella balls, cherry tomatoes, basil leaves",
                                   price: 3.00 ,
                                   prep_time: 5 ,
                                   category:"Appetizers")
