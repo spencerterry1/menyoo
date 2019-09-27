@@ -11,6 +11,7 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.new
     if @search.present?
       @name = @search[:name].capitalize
+      @users = User.where(first_name: @name)
       @user = User.where(first_name: @name).first
     end
   end

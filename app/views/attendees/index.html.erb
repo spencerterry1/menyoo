@@ -19,21 +19,21 @@
   <% end %>
 </div>
 <%# if a user searches to add a guest to the table  %>
-<% if @user && @user != current_user %>
-  <div class="card-box-shadow card-medium-attendees card-submenu user attende-invite">
-    <div class="avatar-div">
-      <%= cl_image_tag(@user.photo, :class => "avatar-large button-area") %>
+<% if @users %>
+  <% if @user != current_user %>
+    <div class="card-box-shadow card-medium-attendees card-submenu user attende-invite">
+      <div class="avatar-div">
+        <%= cl_image_tag(@user.photo, :class => "avatar-large button-area") %>
+      </div>
+      <div class="attendee-invite">
+        <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
+        <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
+          <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
+          <%= f.submit "Invite Now", class: "button button-small" %>
+        <% end %>
+      </div>
     </div>
-    <div class="attendee-invite">
-      <p><strong><%=@user.first_name %> <%=@user.last_name %></strong></p>
-      <%= simple_form_for [@booking.restaurant, @booking, @attendee] do |f| %>
-        <%= f.input :user_id , as: :hidden, input_html: { value: @user.id } %>
-        <%= f.submit "Invite Now", class: "button button-small" %>
-
-
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
 <h1 style="margin-top: 24px;">Current Attendees</h1>
 <% @booking.attendees.map do |attendee| %>
