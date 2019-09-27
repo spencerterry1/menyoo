@@ -28,6 +28,14 @@ ana = User.new(first_name: 'Ana',
 ana.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441302/gijfiyet0ja2cy57oalc.jpg"
 ana.save
 
+anasere = User.new(first_name: 'Ana',
+                   last_name: 'Sere',
+                   email: 'anasere@lewagon.org',
+                   password: 'secret',
+                   )
+anasere.remote_photo_url = "https://kitt.lewagon.com/placeholder/users/AnaDaks"
+anasere.save
+
 walter = User.new(
   first_name: 'Walter',
   last_name: 'Cegarra',
