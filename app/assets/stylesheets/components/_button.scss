@@ -17,10 +17,14 @@
   color: $menyoo-gray;
 }
 
+.search-area {
+  position: relative;
+}
+
 #delete-button-two {
   position: absolute;
   right: 19px;
-  top: 221px;
+  top: 10px;
   font-size: 18px;
   display: none;
   color: $menyoo-gray;
