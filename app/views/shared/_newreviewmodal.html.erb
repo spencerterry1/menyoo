@@ -15,7 +15,7 @@
         <h1>Thank you for your feedback!</h1>
         <br>
         <p style="margin-top: 24px;">Your total bill amount</p>
-        <p style="margin-top: 16px;"><strong>£<%= (@amount / 100).to_f.round(2) %></strong></p>
+        <p style="margin-top: 16px;"><strong><%= humanized_money_with_symbol(@amount_disp) %></strong></p>
         <!-- <p>Please click on the link below to proceed with payment</p> -->
         <button class="button button-medium" id="pay" style="margin-top: 50px;">PAY</button>
       </div>

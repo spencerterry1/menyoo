@@ -137,10 +137,12 @@ class BookingsController < ApplicationController
           # price amount for whole table
           # @amount = (@order_total.to_i) * 100
           @amount = (@order_left_to_pay.to_i) * 100
+          @amount_disp = @order_left_to_pay
         else
           @order_total = @booking.orders.where(attendee: @attendee).where(ordered: true).map(&:price).sum
           # price amount for jsut current user
           @amount = (@order_total.to_i) * 100
+          @amount_disp = @order_total
         end
 
         session = Stripe::Checkout::Session.create(
