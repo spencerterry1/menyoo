@@ -587,7 +587,7 @@ vegan_dish_one = Dish.new(name: "Roast Vegetable Tagine",
                           category: "Appetizers")
 
 vegan_dish_one.restaurant = vegan
-vegan_dish_one.remote_photo_url = "https://1033651.v1.pressablecdn.com/wp-content/uploads/2017/01/roasted-vegetable-and-chickpea-tagine-with-harissa-b-1200x750.jpg"
+vegan_dish_one.remote_photo_url = "https://cdn.sunbasket.com/3a0328a7-5c98-4150-9b87-3d9d55b7511d.jpg"
 vegan_dish_one.save
 
 
