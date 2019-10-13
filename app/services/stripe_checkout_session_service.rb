@@ -12,12 +12,11 @@ class StripeCheckoutSessionService
 
     if (event.data.object.display_items[0].amount / 100.0).round(2) == attendees_not_paid_sum
       payment.booking.attendees.update_all(payment: true)
-      payment.booking.open = false
-
+      payment.booking.update(open: false)
     else
       payment.attendee.update(payment: true)
-      if attendees_not_paid == false
-        payment.booking.open = false
+      if attendees_not_paid.length = 0
+        payment.booking.update(open: false)
       end
     end
   end
