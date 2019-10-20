@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :restaurants , only: [:index, :show] do
       get "reviews", to: "restaurants#reviews", as: :reviews
       resources :dishes, only: [:index, :show]
-      resources :bookings, only: [:index, :show, :new, :create, :update]  do
+      resources :bookings, only: [:index, :show, :new, :create, :update, :destroy]  do
         post 'pay', to: 'bookings#pay'
         get 'summary', to: 'bookings#summary'
         get 'checkin', to: 'bookings#checkin'
