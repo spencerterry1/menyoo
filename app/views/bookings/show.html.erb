@@ -45,7 +45,12 @@
       <p></p>
     </div>
   <% end %>
+  <%# gives the lead booker the option to close the booking as long as there are no orders sent to kitchen -%>
+    <% if @booking.user == current_user && @booking.orders.where(ordered: true).length == 0 %>
+      <p class="close-button"> Close booking <%= link_to "", restaurant_booking_path(@restaurant, @booking), method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <% end %>
 </div>
+
 <div>
   <div class="restaurant-header">
     <h1><%= @restaurant.name %></h1>
