@@ -299,7 +299,7 @@ italianPolpo_dish_two = Dish.new(name: "Sautéed Prawns",
                                  category:"Appetizers")
 
 italianPolpo_dish_two.restaurant = italianPolpo
-italianPolpo_dish_two.remote_photo_url = "https://www.bbcgoodfood.com/sites/default/files/styles/bbcgf_recipe/public/user-recipe/IMG_5639_4.jpg?itok=kO41R7VI"
+italianPolpo_dish_two.remote_photo_url = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiU9dLgzaHnAhUCCRoKHTVjA7IQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.missfresh.com%2Fen%2Frecipe%2F1189-duck-confit-gnocchi&psig=AOvVaw2Xw4AQugEuMUXWxbPdnqy1&ust=1580139828880291"
 italianPolpo_dish_two.save
 
 
