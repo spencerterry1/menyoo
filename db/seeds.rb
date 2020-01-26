@@ -299,7 +299,7 @@ italianPolpo_dish_two = Dish.new(name: "Sautéed Prawns",
                                  category:"Appetizers")
 
 italianPolpo_dish_two.restaurant = italianPolpo
-italianPolpo_dish_two.remote_photo_url = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiU9dLgzaHnAhUCCRoKHTVjA7IQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.missfresh.com%2Fen%2Frecipe%2F1189-duck-confit-gnocchi&psig=AOvVaw2Xw4AQugEuMUXWxbPdnqy1&ust=1580139828880291"
+italianPolpo_dish_two.remote_photo_url = "https://res.cloudinary.com/dw1lypxzb/image/upload/v1580054201/1189-11040-duck-confit-gnocch-1040x650-72dpi-7_595_xfhgit.jpg"
 italianPolpo_dish_two.save
 
 
@@ -311,7 +311,7 @@ italianPolpo_dish_three = Dish.new(name: "Duck Gnocchi",
                                    category:"Mains")
 
 italianPolpo_dish_three.restaurant = italianPolpo
-italianPolpo_dish_three.remote_photo_url = "https://cdn.shopify.com/s/files/1/1725/5449/products/gnoc_900x.jpg?v=1559559463"
+italianPolpo_dish_three.remote_photo_url = "https://res.cloudinary.com/dw1lypxzb/image/upload/v1580054201/1189-11040-duck-confit-gnocch-1040x650-72dpi-7_595_xfhgit.jpg"
 italianPolpo_dish_three.save
 
 
