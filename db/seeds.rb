@@ -213,20 +213,20 @@ french2.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9
 french2.save
 
 
-british = Restaurant.new(name: "Dean St. Townhouse",
-                         address: "69 - 71 Dean St, London",
-                         category: "British")
-
-british.remote_photo_url = "https://www.hot-dinners.com/media/reviews/photos/original/d2/f3/2d/deanst-89-1550062352.jpg"
-british.save
-
-
 vegan = Restaurant.new(name: "Kalifornia Kitchen",
                        address: "19 Percy St, London",
                        category: "Vegan")
 
 vegan.remote_photo_url = "https://assets.londonist.com/uploads/2019/01/i875/0h3a1641.jpg"
 vegan.save
+
+
+british = Restaurant.new(name: "Dean St. Townhouse",
+                         address: "69 - 71 Dean St, London",
+                         category: "British")
+
+british.remote_photo_url = "https://www.hot-dinners.com/media/reviews/photos/original/d2/f3/2d/deanst-89-1550062352.jpg"
+british.save
 
 puts "Finished!"
 
