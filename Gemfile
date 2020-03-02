@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+gem 'activeadmin'
 gem 'stripe_event'
 gem 'stripe'
 gem 'pg_search'
