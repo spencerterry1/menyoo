@@ -3,6 +3,9 @@ ActiveAdmin.setup do |config|
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
+
+  config.skip_before_action :authenticate_user!
+
   #
   config.site_title = "Menyoo"
 
@@ -55,6 +58,9 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # within the application controller.
   config.authentication_method = :authenticate_admin_user!
+
+
+
 
   # == User Authorization
   #
