@@ -1,42 +1,35 @@
 ActiveAdmin.register_page "Dashboard" do
-  menu priority: 1
-  
- content title: proc { I18n.t("active_admin.dashboard") } do
-
- columns do
-
-    
-
-    column do
-      open_bookings = current_admin_user.restaurant.bookings.where(open:true)
-      panel "Open Tables" do
-	      	open_orders = []
-	      	open_bookings.each do |booking|
-	      		open_orders << booking.orders.where(ordered:true) 
-	      	end
-	      	open_orders.flatten!
-	      	open_orders.sort_by(&:created_at)
 
 
-	      	table_for open_orders do
-	      		column("Order ID") { |order| order.id }
-	      		column("Attendee ID") { |order| order.attendee.id}
-	      		column("Booking ID") { |order| order.attendee.booking.id }
-	      		column("Ordered?") { |order| order.ordered }
-	      		column("Time Ordered") { |order| order.updated_at }
-	      		column("Price") { |order| order.price }
-	      		column ("Payment Status") { |order| order.attendee.payment }
-	      	end	
-      end
-    end
+content only: :index do
+	render 'index'
+end
 
-    column do  
-    	panel "Closed Tables" do
-    		
-    	end
-    end
+controller do
 
-  
-  end # end columns
- end
+
+	def index
+		# fetch all open orders for the Admin's restaurant
+		@open_bookings = current_admin_user.restaurant.bookings.where(open:true)
+		# create a nested hash for all open orders to display in admin dashboard (as the index)
+		@open_orders = Hash.new { |hash, key| hash[key] =[]}
+		# iterate through all open bookings, attendees and attendee orders to create a hested hash
+		# format of nested hash >> {booking: [{attendee: [order 1, order X...]}]}
+		@open_bookings.each do |booking|
+			booking.attendees.each do |attendee, booking_id|
+				attendee_orders_hash = Hash.new { |hash, key| hash[key] =[]}
+				attendee.orders.each do |order, attendee_id, booking_id|
+					if (attendee_orders_hash[attendee.id])
+						attendee_orders_hash[attendee.id] << order.dish.name
+					else
+						attendee_orders_hash[attendee.id] = order.dish.name
+					end
+				end
+				# nests the open orders hash as the value of the booking ID key before iterating on to next booking
+				@open_orders[booking.id] << attendee_orders_hash
+			end
+		end
+	end
+
+end
 end

@@ -1345,4 +1345,7 @@ attendee_four.booking = booking_one
 attendee_four.save
 
 puts "Finished!"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+
+
+
