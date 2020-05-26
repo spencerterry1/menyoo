@@ -1345,3 +1345,7 @@ attendee_four.booking = booking_one
 attendee_four.save
 
 puts "Finished!"
+
+
+
+

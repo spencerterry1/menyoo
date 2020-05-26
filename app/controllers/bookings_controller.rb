@@ -85,6 +85,8 @@ class BookingsController < ApplicationController
       end
     end
 
+    
+
     # calculates total order price (orders sent to kitchen)
     # all_orders = @booking.orders.where(ordered: true)
     # @order_total = 0
