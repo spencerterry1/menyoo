@@ -1,6 +1,8 @@
 
 
-<h1><% @open_orders %> </h1>	
+<div class="search-bar">
+	
+</div>	
 
 <div class="grid-container grid-title">
 	
@@ -16,9 +18,17 @@
 
 </div>
 
-	<div class="grid-container"> 
+<div class="container-bookings"> 
+
+		
+		<div class="container-orders"> 
 
 		<% @open_orders.each do |booking_id, attendee| %>
+
+		<div class="container-booking"> 
+
+			<div class="grid-container order-table"> 
+
 
 			<% booking = Booking.find(booking_id) %>
 
@@ -55,35 +65,65 @@
  -->
 			<% total_bill = @orders_in_booking.sum {|order| order.price} %> 
 			<% total_bill = '%.2f' % total_bill %>
-			<div class="grid-item"> <%= humanized_money_with_symbol(total_bill) %> </div>
-
+			<div class="grid-item"> <b> <%= humanized_money_with_symbol(total_bill) %> </b>  </div>
 			<div class="grid-item">  
 				<% if booking.attendees.all? {|attendee| attendee.payment == true} %>
-					Paid
+					<button class="button-payment-status-paid">Paid </button>	
 				<% else %>
-					Unpaid
+					<button class="button-payment-status-unpaid">Unpaid</button>
 				<% end %>
 			</div>
 
-		<% end %>
-	
+		</div>
+
+		<!-- Hidden div with order information per Attendee - expands on click of button
+ -->
+		<div class=""> 
+
+			<div class="container-attendee"> 
+
+				<h5>Table order</h5>
+
+				<% attendee.each do |attendee| %>
+
+					<div class="grid-sub-container"> 
+
+						<% attendee = Attendee.find(attendee.keys[0]) %>
+						<div class="grid-item"> <p> <b>ID:</b> <%= attendee.id %></p></div>	
+						<div class="grid-item"> <p><b> Attendee:</b> <%= attendee.user.email %> </p> </div>	
+						<div class="grid-item"> <p><b>Orders: </b> <%= attendee.orders.count  %></p> </div>
+						<div class="grid-item"> <p><b> Bill:</b><%= humanized_money_with_symbol(attendee.orders.sum { |order| order.price }) %></p> </div>
+						<div class="grid-item"> 
+							<% if attendee.payment == true %>
+								<button class="button-payment-status-paid attendee-button"> Paid</button>
+							<% else %>
+								<button class="button-payment-status-unpaid attendee-button"> Unpaid </button>
+							<% end %>
+						</div>
+
+					</div>
+					
+					<% attendee.orders.each do |order| %>
+
+						<div class="grid-sub-container">
+							<div class="grid-item attendee-orders"> </div>
+							<div class="grid-item attendee-orders"> <%= order.dish.name %> </div>
+							<div class="grid-item attendee-orders"> </div>
+							<div class="grid-item attendee-orders"> <%= humanized_money_with_symbol(order.dish.price) %></div>
+							<div class="grid-item attendee-orders"> </div>
+						</div>
+					<% end %>
+
+				<% end %>
+
+			</div>
+
+		</div>
+
 	</div>
 
+	<% end %>
 
-		<!-- <div class> 
-			<% @open_orders.each do |booking_id, attendee| %>
-
-				<% booking = Booking.find(booking_id) %>
-				<div class="admin-dash-columns"> 
-					<p> <%= booking.id %> </p>
-					<p> <%= booking.user.first_name %> </p>
-					<p> <%= booking.attendees.count %> </p>
-					<p> <%= booking.open %></p>
-					<p> <%= booking.checkedin %></p>
-					<p> ££tbc </p>
-				</div>
-				<% end %>
-		</div> -->
-
+</div>
 
 </div>
