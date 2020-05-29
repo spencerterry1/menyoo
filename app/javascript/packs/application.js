@@ -171,5 +171,15 @@ if (newReviewTableButton) {
   });
 }
 
+// test to see Active Admin 
+
+const buttons = document.querySelectorAll(".order-button");
+if (buttons) {
+  console.log("testing works")
+}
+
+console.log("testing testin testing")
+
+
 
 

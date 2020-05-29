@@ -1,3 +1,2 @@
-//= require rails-ujs
-//= require_tree .
-//= require serviceworker-companion
+
+console.log("app.js loading")

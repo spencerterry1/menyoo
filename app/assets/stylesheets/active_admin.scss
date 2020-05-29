@@ -160,12 +160,13 @@ body {
 .container-booking {
 	margin-top: 10px;
 	margin-bottom: 10px;
-	padding-bottom: 10px;
 	box-shadow: 1.5px 1.5px 2px 2px #ccc;
 }
 
 
-
+.order-button:hover {
+	color: $middle-gray;
+}
 
 
 
