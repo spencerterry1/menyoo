@@ -178,6 +178,8 @@ body {
 	}
 }
 
+// Login page styles
+
 body.logged_out {
 	h2 {
 		background-image: none;
@@ -197,4 +199,11 @@ body input[type=submit] {
 body input[type=submit]:hover {
 	background-image: none;
 	background-color: $menyoo-blue;
+}
+
+
+// login 'success' flash message
+
+body.flash {
+	background-image: none;
 }
