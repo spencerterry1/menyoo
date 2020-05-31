@@ -169,11 +169,32 @@ body {
 }
 
 
+.active_admin {
+	.content_wrapper {
+	font-family: $body-font;
+	}
+	h2 {
+		background-image: none;
+	}
+}
 
+body.logged_out {
+	h2 {
+		background-image: none;
+		background-color: $menyoo-blue;
+	}
+}
 
+body.active_admin_content {
+	font-family: $body-font;
+}
 
+body input[type=submit] {
+	background-image: none;
+	background-color: $menyoo-gray;
+}
 
-
-
-
-
+body input[type=submit]:hover {
+	background-image: none;
+	background-color: $menyoo-blue;
+}

@@ -7,7 +7,6 @@ end
 
 controller do
 
-
 	def index
 		# fetch all open orders for the Admin's restaurant
 		@open_bookings = current_admin_user.restaurant.bookings.where(open:true)
@@ -29,7 +28,12 @@ controller do
 				@open_orders[booking.id] << attendee_orders_hash
 			end
 		end
+
 	end
+
+# member_action :refresh_orders, method: :get do
+#  	render 'refresh_orders'
+# end 
 
 end
 end
