@@ -1,0 +1,106 @@
+
+<div id= ""> 
+
+	<% @open_orders.each do |booking| %>
+
+		<div class="container-bookings container-booking"> 
+
+			<div class="grid-container order-table"> 
+
+			<% booking = Booking.where(id: booking) %>
+			<% booking = booking[0] %>
+
+			<div class="grid-item">  <i class="order-button fas fa-plus-circle"></i></div>	
+			<div class="grid-item">  <%= booking.id %>  </div>	
+			<div class="grid-item">  <%= booking.user.first_name    %></div>
+			<div class="grid-item">  <%= booking.attendees.count %></div>
+			<div class="grid-item">  <%= booking.ordered %></div>
+			<div class="grid-item">  <%= booking.orders.count %></div>
+
+		
+<!-- 		Time since ordering calculation based on time first order placed
+ -->
+ 			<% @orders_in_booking = booking.orders %>
+ 			<% @orders_in_booking = @orders_in_booking.sort_by { |order| order.created_at } %> 
+			<div class="grid-item">  
+				<% if @orders_in_booking == nil %>
+					Not ordered
+				<% else %>
+					<% time_now = DateTime.now.utc %>
+					<% order_time = @orders_in_booking.first.created_at.utc%>
+					<% elapsed_time = ((time_now - order_time ) / 1.minutes).to_i %>
+
+					<% if elapsed_time > 60 %>
+						<p class="over-an-hour"><%= number_with_delimiter(elapsed_time, :delimiter => ',') %> minutes 
+					<% else %>
+						<%= elapsed_time %> minutes
+					<% end %>
+				<% end %>
+			</div>
+
+<!-- 		Calculation of bill price
+ -->
+<!-- 		number_to_currency order.total_price 
+ -->
+			<% total_bill = @orders_in_booking.sum {|order| order.price} %> 
+			<% total_bill = '%.2f' % total_bill %>
+			<div class="grid-item"> <b> <%= humanized_money_with_symbol(total_bill) %> </b>  </div>
+			<div class="grid-item">  
+				<% if booking.attendees.all? {|attendee| attendee.payment == true} %>
+					<button class="button-payment-status-paid">Paid </button>	
+				<% else %>
+					<button class="button-payment-status-unpaid">Unpaid</button>
+				<% end %>
+			</div>
+
+		</div>
+
+		<!-- Hidden div with order information per Attendee - expands on click of button
+ -->
+		<div id="container-table-order"> 
+
+			<div class="hide container-attendee"> 
+
+				<h5>Table order</h5>
+
+				<% booking.attendees.each do |attendee| %>
+
+					<div class="grid-sub-container"> 
+
+						<% attendee = Attendee.find(attendee.id) %>
+						<div class="grid-item"> <p> <b>ID:</b> <%= attendee.id %></p></div>	
+						<div class="grid-item"> <p><b> Attendee:</b> <%= attendee.user.first_name %> <%= attendee.user.last_name %></p> </div>	
+						<div class="grid-item"> <p><b>Orders: </b> <%= attendee.orders.count  %></p> </div>
+						<div class="grid-item"> <p><b> Bill:</b><%= humanized_money_with_symbol(attendee.orders.sum { |order| order.price }) %></p> </div>
+						<div class="grid-item"> 
+							<% if attendee.payment == true %>
+								<button class="button-payment-status-paid attendee-button"> Paid</button>
+							<% else %>
+								<button class="button-payment-status-unpaid attendee-button"> Unpaid </button>
+							<% end %>
+						</div>
+
+					</div>
+					
+					<% attendee.orders.each do |order| %>
+
+						<div class="grid-sub-container">
+							<div class="grid-item attendee-orders"> </div>
+							<div class="grid-item attendee-orders"> <%= order.dish.name %> </div>
+							<div class="grid-item attendee-orders"> </div>
+							<div class="grid-item attendee-orders"> <%= humanized_money_with_symbol(order.dish.price) %></div>
+							<div class="grid-item attendee-orders"> </div>
+						</div>
+					<% end %>
+
+				<% end %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<% end %>
+
+</div>

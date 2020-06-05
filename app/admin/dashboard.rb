@@ -1,7 +1,7 @@
 ActiveAdmin.register_page "Dashboard" do
 
 
-content only: :index do
+content only: [:index, :refresh_orders] do
 	render 'index'
 end
 
@@ -28,12 +28,9 @@ controller do
 				@open_orders[booking.id] << attendee_orders_hash
 			end
 		end
-
 	end
 
-# member_action :refresh_orders, method: :get do
-#  	render 'refresh_orders'
-# end 
 
 end
+
 end
