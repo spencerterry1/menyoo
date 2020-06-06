@@ -11,6 +11,9 @@ ActiveAdmin.register AdminUser do
     actions
   end
 
+  collection_action :refresh_orders, method: :get do
+  end
+
   filter :email
   filter :current_sign_in_at
   filter :sign_in_count
