@@ -9,7 +9,7 @@ controller do
 
 	def index
 		# fetch all open orders for the Admin's restaurant
-		@open_bookings = current_admin_user.restaurant.bookings.where(open:true)
+		@open_bookings = current_admin_user.restaurant.bookings.where(open:true, ordered:true)
 		# create a nested hash for all open orders to display in admin dashboard (as the index)
 		@open_orders = Hash.new { |hash, key| hash[key] =[]}
 		# iterate through all open bookings, attendees and attendee orders to create a hested hash

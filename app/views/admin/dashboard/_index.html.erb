@@ -18,7 +18,7 @@
 
 </div>
 
-<div id="container" > 
+<div class="container" > 
 
 	<%= render 'shared/ad_dashboard' %>
 
@@ -26,12 +26,15 @@
 
  
  <script>
- 		$(document).ready(function() {
-           setInterval(function() {
-            $("#container").load("admin/bookings/refresh_orders");
-            console.log("AJAX request loaded fuck yes!")
-        }, 6000);
-});
+
+ 	 $(document).ready(function() {
+
+ 		setInterval(function() {
+	        $("#container").load("admin/bookings/refresh_orders");
+	           console.log("Request sent")
+	        }, 6000);
+		});
+ 		
 </script>
 
 

@@ -86,14 +86,13 @@ class BookingsController < ApplicationController
     end
 
     
+    if @orders.all? { |order| order.ordered == true }
+      @booking.update(ordered:true)
+      @booking.save
+    end
+
 
     # calculates total order price (orders sent to kitchen)
-    # all_orders = @booking.orders.where(ordered: true)
-    # @order_total = 0
-    # all_orders.each do |order|
-    #   @order_total += order.dish.price
-    # end
-
     @orders_all = @attendees
     @order_table_total = 0.0
     @orders_all.each do |attendee|
@@ -129,15 +128,6 @@ class BookingsController < ApplicationController
 
       if @payment.save
         if params[:pay_for_all]
-          # attendee_orders = @booking.attendees.where(payment: false)
-          # @order_total = 0
-          # attendee_orders.each do |attendee|
-          #   attendee.orders.each do |order|
-          #     @order_total += order.dish.price
-          #   end
-          # end
-          # price amount for whole table
-          # @amount = (@order_total.to_i) * 100
           @amount = (@order_left_to_pay.to_i) * 100
           @amount_disp = @order_left_to_pay
         else
