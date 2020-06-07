@@ -7,7 +7,7 @@
 
 			<div class="grid-container order-table"> 
 
-			<% booking = Booking.where(id: booking) %>
+			<% booking = Booking.where(id: booking, ordered:true) %>
 			<% booking = booking[0] %>
 
 			<div class="grid-item">  <i class="order-button fas fa-plus-circle"></i></div>	
@@ -37,6 +37,8 @@
 					<% end %>
 				<% end %>
 			</div>
+
+
 
 <!-- 		Calculation of bill price
  -->
@@ -100,6 +102,7 @@
 		</div>
 
 	</div>
+
 
 	<% end %>
 

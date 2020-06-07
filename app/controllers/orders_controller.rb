@@ -38,12 +38,13 @@ class OrdersController < ApplicationController
     @attendee = Attendee.where(user: current_user, booking: @booking).last
     @order.attendee = @attendee
 
-    if @order.save
+    @order.save
       respond_to do |format|
+        format.html {redirect_to restaurant_booking_summary_path(@restaurant, @booking)}
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
       # redirect_to restaurant_path(@restaurant)
-    end
+    
   end
 
   def edit
