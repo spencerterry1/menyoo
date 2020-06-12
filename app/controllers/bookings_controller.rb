@@ -65,6 +65,8 @@ class BookingsController < ApplicationController
     @orders_for_attendee = @orders.where(attendee: @attendee)
     @review = Review.new
 
+    
+    # orders NOT SENT  to kitchen hash created
     @orders_not_sent_to_kitchen = @orders.where(ordered: false)
     @orders_not_sent_to_kitchen_hash = {}
     @orders_not_sent_to_kitchen.each do |order|
@@ -75,6 +77,7 @@ class BookingsController < ApplicationController
       end
     end
 
+    # orders SENT to kitchen hash created
     @orders_sent_to_kitchen = @orders.where(ordered: true)
     @orders_sent_to_kitchen_hash = {}
     @orders_sent_to_kitchen.each do |order|
@@ -85,10 +88,14 @@ class BookingsController < ApplicationController
       end
     end
 
-    
+    # Update the status of the booking to booking.ordered = true   
     if @orders.all? { |order| order.ordered == true }
-      @booking.update(ordered:true)
-      @booking.save
+      if (@booking.checkedin == true)
+        @booking.update(ordered:true)
+        order_time = DateTime.now
+        @booking.update(ordertime:order_time)
+        @booking.save
+      end
     end
 
 
@@ -152,6 +159,7 @@ class BookingsController < ApplicationController
         @payment.update(checkout_session_id: session.id)
       end
     end
+
   end
 
   def destroy

@@ -4,7 +4,7 @@
 	
 </div>	
 
-<div class="grid-container grid-title">
+<div id="grid-container" class="grid-container grid-title">
 	
 	<div class="grid-item"> <h2>Orders </h2> </div>	
 	<div class="grid-item"> <h2>Booking ID</h2> </div>	
@@ -18,24 +18,12 @@
 
 </div>
 
-<div class="container" > 
+<div id="container-main"> 
 
 	<%= render 'shared/ad_dashboard' %>
 
 </div>
 
- 
- <script>
-
- 	 $(document).ready(function() {
-
- 		setInterval(function() {
-	        $("#container").load("admin/bookings/refresh_orders");
-	           console.log("Request sent")
-	        }, 6000);
-		});
- 		
-</script>
 
 
 

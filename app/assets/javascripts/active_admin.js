@@ -25,57 +25,63 @@ function showTableOrders(event) {
     }
 }
 
-// ShowTableOrders called after DOM is loaded first time
+// ShowTableOrders called after DOM is loaded first time so selectors are found
 
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     showTableOrders(event)
-});
-
-// ShowTableOrders called again immediately after Ajax auto-update function on dashboar
-
-$( document ).ajaxComplete(function(event) {
-        console.log('Re-called ShowTableOrders');
-        showTableOrders(event) 
+    reloadDashboard();
 
 });
 
 
+// Function to send AJAX request every 10 seconds + send alerts if there are new orders / orders paid
 
+function reloadDashboard() {
+    $(document).ready(function() {
 
+        // declare a global variable for the count of orders on 1st page load
+        window.countBeforeUpdated = $('#container-main').find('.container-bookings').length;
+        console.log("count before reload = " + countBeforeUpdated);
 
-// MUTATION OBSERVER added to Container to alert user of new orders 
+        // function to check DB for new orders every 10 seconds
+        setInterval(function() {
+            $("#container-main").load("admin/bookings/refresh_orders");
+            }, 10000);
 
+        // function triggered after AJAX call made to compare orders before + after and calculate difference
+        $(document).ajaxComplete(function(event) {
+            
+            console.log("count before reload = " + countBeforeUpdated);
 
+            const countAfterUpdated = $('#container-main').find('.container-bookings').length;
+            console.log("count after reload = " + countAfterUpdated);
 
-// Callback function to execute when mutations are observed
-const callback = function(mutationsList, observer) {
-    // Use traditional 'for loops' for IE 11
-    for (let mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            console.log('New order placed');
-            console.log(mutation);
-            // alert("new order added");
-        }
-    }
-};
+            const newOrderCount = countAfterUpdated - countBeforeUpdated
 
-// Observes after page load and sets node to watch + what config changes to detect
+            // alerts to user based on changes to order counts
+            if (newOrderCount == 1) {
+                alert(1 + " new order!") 
+            } else if (newOrderCount > 1) {
+                alert(newOrderCount + " new orders!") 
+            } else if (newOrderCount == -1) {
+                alert("An order was paid")
+            } else if (newOrderCount < -1) {
+                alert(newOrderCount + " orders have been paid")
+            }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    const targetNode = document.getElementById('container');
-    const config = { childList: true };
-    // setObserver(event, targetNode, config)
-    const observer = new MutationObserver(callback);
-    // Create an observer instance linked to the callback function
-    observer.observe(targetNode, config);
-});
+            window.countBeforeUpdated = countAfterUpdated;
+            console.log("count before updated = " + countAfterUpdated)
 
-// Start observing the target node for configured mutations
-// function setObserver(event, targetNode, config) {
-    
-    
-// }
+            // re-trigger function to re-add event Listeners after each AJAX request
+            // without these the event listeners are removed by the preceding AJAX call
+            showTableOrders(event) 
+
+            });
+        });
+    }       
+
+        
 
 
 

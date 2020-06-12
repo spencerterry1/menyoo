@@ -139,7 +139,7 @@
 
               <% else %>
 
-                <% if Attendee.find(attendee_id).user.first_name == current_user.first_name %>
+                <% if Attendee.find(attendee_id).user.first_name == current_user.first_name && Attendee.find(attendee_id).payment == false %>
                   <div class="button-pay">
                     <% unless order_array.first.attendee.payment %>
                       <!-- !!!!!!!! Replace with MODAL !!!! -->
@@ -205,4 +205,8 @@
           </div>
         <% end %>
       <% end %>
+
+    
+
+
     </div>

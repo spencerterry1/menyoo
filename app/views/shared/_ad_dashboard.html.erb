@@ -1,13 +1,12 @@
+<div id="container-insert"> 
 
-<div id= "container"> 
-
-	<% @open_orders.each do |booking| %>
+<% @open_orders.each do |booking| %>
 
 		<div class="container-bookings container-booking"> 
 
 			<div class="grid-container order-table"> 
 
-			<% booking = Booking.where(id: booking, ordered:true) %>
+			<% booking = Booking.where(id: booking, ordered:true, checkedin: true) %>
 			<% booking = booking[0] %>
 
 			<div class="grid-item">  <i class="order-button fas fa-plus-circle"></i></div>	
@@ -15,19 +14,19 @@
 			<div class="grid-item">  <%= booking.user.first_name    %></div>
 			<div class="grid-item">  <%= booking.attendees.count %></div>
 			<div class="grid-item">  <%= booking.ordered %></div>
-			<div class="grid-item">  <%= booking.orders.count %></div>
+			<div class="grid-item">  <%= booking.orders.where(ordered:true).count %></div>
 
 		
 <!-- 		Time since ordering calculation based on time first order placed
  -->
- 			<% @orders_in_booking = booking.orders %>
+ 			<% @orders_in_booking = booking.orders.where(ordered:true) %>
  			<% @orders_in_booking = @orders_in_booking.sort_by { |order| order.created_at } %> 
 			<div class="grid-item">  
 				<% if @orders_in_booking == nil %>
 					Not ordered
 				<% else %>
-					<% time_now = DateTime.now.utc %>
-					<% order_time = @orders_in_booking.first.created_at.utc%>
+					<% time_now = (DateTime.now).utc %>
+					<% order_time = booking.ordertime %>
 					<% elapsed_time = ((time_now - order_time ) / 1.minutes).to_i %>
 
 					<% if elapsed_time > 60 %>
@@ -37,8 +36,8 @@
 					<% end %>
 				<% end %>
 			</div>
-
-
+	
+			
 
 <!-- 		Calculation of bill price
  -->
@@ -104,6 +103,7 @@
 	</div>
 
 
-	<% end %>
+
+<% end %>
 
 </div>
