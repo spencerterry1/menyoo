@@ -163,6 +163,28 @@ body {
 	box-shadow: 1.5px 1.5px 2px 2px #ccc;
 }
 
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 3.5s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 1;
+		border: $menyoo-blue 4px solid;
+	}
+	100% {
+		opacity: 1;
+		border: $menyoo-blue 4px solid;
+	}
+}
+
 
 .order-button:hover {
 	color: $middle-gray;
@@ -207,3 +229,10 @@ body input[type=submit]:hover {
 body.flash {
 	background-image: none;
 }
+
+
+// Fade effect on new orders
+
+
+
+

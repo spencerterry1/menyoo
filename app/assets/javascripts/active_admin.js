@@ -35,6 +35,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+// Function to assign fade in class to order DIVs3
+
+function fadeIn() {
+    let ordersAfterUpdated = document.getElementsByClassName('container-booking');
+    ordersAfterUpdated = ordersAfterUpdated.item(ordersAfterUpdated.length -1);
+    ordersAfterUpdated.classList.add("fade-in");
+    console.log(ordersAfterUpdated.class);
+}
+
+
+
 // Function to send AJAX request every 10 seconds + send alerts if there are new orders / orders paid
 
 function reloadDashboard() {
@@ -52,17 +63,21 @@ function reloadDashboard() {
         // function triggered after AJAX call made to compare orders before + after and calculate difference
         $(document).ajaxComplete(function(event) {
             
-            console.log("count before reload = " + countBeforeUpdated);
+            // console.log("count before reload = " + countBeforeUpdated);
 
             const countAfterUpdated = $('#container-main').find('.container-bookings').length;
-            console.log("count after reload = " + countAfterUpdated);
+            // console.log("count after reload = " + countAfterUpdated);
 
             const newOrderCount = countAfterUpdated - countBeforeUpdated
 
+            // fadeIn()
+
             // alerts to user based on changes to order counts
             if (newOrderCount == 1) {
+                fadeIn()
                 alert(1 + " new order!") 
             } else if (newOrderCount > 1) {
+                fadeIn()
                 alert(newOrderCount + " new orders!") 
             } else if (newOrderCount == -1) {
                 alert("An order was paid")
@@ -71,7 +86,7 @@ function reloadDashboard() {
             }
 
             window.countBeforeUpdated = countAfterUpdated;
-            console.log("count before updated = " + countAfterUpdated)
+            // console.log("count before updated = " + countAfterUpdated)
 
             // re-trigger function to re-add event Listeners after each AJAX request
             // without these the event listeners are removed by the preceding AJAX call
