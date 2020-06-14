@@ -25,6 +25,7 @@ ActiveAdmin.register Booking do
     def get_new_orders # same method as in DASHBOARD / INDEX
     # fetch all open orders for the Admin's restaurant
     @open_bookings = current_admin_user.restaurant.bookings.where(checkedin:true, open:true, ordered:true)
+    @open_bookings = @open_bookings.sort_by {|booking| booking.ordertime }
     # create a nested hash for all open orders to display in admin dashboard (as the index)
     @open_orders = Hash.new { |hash, key| hash[key] =[]}
     # iterate through all open bookings, attendees and attendee orders to create a hested hash
