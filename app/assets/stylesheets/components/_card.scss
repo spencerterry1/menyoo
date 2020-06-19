@@ -254,12 +254,13 @@
 .restaurant-name-card{
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items:center;
   margin-bottom: 8px;
   h3 {
     margin-bottom: 0;
   }
 }
+
 
 .reviews-count{
   line-height: 18px;

@@ -1,5 +1,7 @@
 ActiveAdmin.register_page "Dashboard" do
 
+menu :priority => 1
+
 
 content only: [:index, :refresh_orders] do
 	render 'index'

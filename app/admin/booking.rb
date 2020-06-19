@@ -1,5 +1,6 @@
 ActiveAdmin.register Booking do
 
+  menu :priority => 2
 
   actions :index, :refresh_orders
 
@@ -7,13 +8,11 @@ ActiveAdmin.register Booking do
 
   before_action :get_new_orders
 
-  
   collection_action :refresh_orders, method: :get do
   end
 
   controller do 
 
- 
     def refresh_orders
       @open_orders = get_new_orders
       respond_to do |format|

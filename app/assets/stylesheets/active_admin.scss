@@ -18,6 +18,8 @@
 // Import custom fonts and styles
 @import "config/colors";
 @import "config/fonts";
+@import "config/variables";
+@import "components/card";
 
 // Import font awesome
 @import "font-awesome-sprockets";
@@ -231,8 +233,67 @@ body.flash {
 }
 
 
-// Fade effect on new orders
+// Restaurant Menu styles
+
+.card-dish-name {
+	font-weight: bold;
+	font-size: $font-size-small;
+}
+
+.card-dish-large-content {
+  padding: 16px;
+  width: 100%;
+  max-height: 145px;
+    p {
+    font-size: $font-size-small;
+    }
+    .timeprice{
+      display:flex;
+      justify-content:space-between;
+      width: 100px;
+      p {
+        color: $menyoo-blue;
+        font-weight:bold;
+        padding:5px;
+      }
+    }
+  }
 
 
+  // Grid container for Dishes
+
+.grid-container-menu {
+	display: grid;
+	// grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: auto;
+	align-items: center;
+	.grid-item {
+		font-size: $font-size-small;
+	}
+	p {
+		padding-bottom: 0;
+	}
+}
+
+.card-dish-large {
+  display: flex;
+  max-height: $card-x-large-height;
+  margin: 16px 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  h3 {
+    line-height: 1.0rem;
+    font-weight: bold;
+  }
+}
+
+.card-dish-box-shadow {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  align-items: center;
+  border-radius: 8px;
+}
 
 

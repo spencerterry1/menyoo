@@ -1,0 +1,39 @@
+
+<h2>Appetisers</h2>
+<div class="container-menu-items grid-container-menu">
+	
+		<% @appetizers.each do |dish | %>
+		<div class=" card-dish-large card-dish-box-shadow"> 
+
+			<div class="card-large-image"> 
+				<%= link_to cl_image_tag(dish.photo, width: 200, height: 150, crop: :fill) %>
+			</div>
+
+			<div class="card-dish-large-content"> 
+				<div class="restaurant-name-card card-dish-name"> 
+					<%= dish.name %>
+	
+					<%= link_to admin_restaurant_menu_view_dish_path do %>
+					<i class="far fa-edit"></i> 
+					<% end %>
+				</div>
+				<p> <%= dish.description  %> </p>
+				<p class="restaurant-name-card card-dish-name"> <%= humanized_money_with_symbol(dish.price) %> </p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+
+<h2>Mains</h2>
+
+
+<h2>Desserts</h2>
+
+
+<h2>Sides</h2>
+
+
+<h2>Drinks</h2>
+
