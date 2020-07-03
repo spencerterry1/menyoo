@@ -1,4 +1,4 @@
-ActiveAdmin.register Attendee do
+ActiveAdmin.register Attendee, as: 'Past Order' do
 
 menu :priority => 4
 

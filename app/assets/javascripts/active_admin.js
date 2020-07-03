@@ -57,7 +57,7 @@ function reloadDashboard() {
 
         // function to check DB for new orders every 10 seconds
         setInterval(function() {
-            $("#container-main").load("admin/bookings/refresh_orders");
+            $("#container-main").load("dashboard/refresh_orders");
             }, 10000);
 
         // function triggered after AJAX call made to compare orders before + after and calculate difference

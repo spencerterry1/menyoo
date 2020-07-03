@@ -1,4 +1,54 @@
-<div id="container-insert"> 
+
+
+<div class="container-dashboard">
+
+
+<% @open_orders.each do |booking| %>
+
+	<div class="container-grid checkedin">
+
+		<h2>Checked-in </h2> 
+
+			<% booking = Booking.where(id: booking, ordered:false, checkedin: true) %>
+			<% booking = booking[0] %>
+
+			<div class="container-grid-item"> 
+
+			 	<div> <i class="order-button fas fa-plus-circle"></i></div>
+				<div>  <%= booking.id %>  </div>	
+				<div>  <%= booking.user.first_name%></div>
+				<div>  <%= booking.attendees.count %></div>
+
+			</div>
+
+		<div>
+			
+
+		</div>
+
+	</div>
+
+	<div class="container-grid ordered">
+		
+		<h2> Ordered</h2> 
+
+	</div>
+
+	<div class="container-grid paid">
+
+		<h2> Paid</h2> 
+
+	</div>
+
+
+	<% end %>
+
+
+</div> 
+
+
+
+<!-- <div id="container-insert"> 
 
 
 <% @open_orders.each do |booking| %>
@@ -17,9 +67,7 @@
 			<div class="grid-item">  <%= booking.ordered %></div>
 			<div class="grid-item">  <%= booking.orders.where(ordered:true).count %></div>
 
-		
-<!-- 		Time since ordering calculation based on time first order placed
- -->
+
  			<% @orders_in_booking = booking.orders.where(ordered:true) %>
  			<% @orders_in_booking = @orders_in_booking.sort_by { |order| order.created_at } %> 
 			<div class="grid-item">  
@@ -40,10 +88,7 @@
 	
 
 
-<!-- 		Calculation of bill price
- -->
-<!-- 		number_to_currency order.total_price 
- -->
+
 			<% total_bill = @orders_in_booking.sum {|order| order.price} %> 
 			<% total_bill = '%.2f' % total_bill %>
 			<div class="grid-item"> <b> <%= humanized_money_with_symbol(total_bill) %> </b>  </div>
@@ -57,8 +102,7 @@
 
 		</div>
 
-		<!-- Hidden div with order information per Attendee - expands on click of button
- -->
+
 		<div id="container-table-order"> 
 
 			<div class="hide container-attendee"> 
@@ -107,4 +151,4 @@
 
 <% end %>
 
-</div>
+</div> -->
