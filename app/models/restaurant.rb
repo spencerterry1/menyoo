@@ -7,6 +7,7 @@ class Restaurant < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings, dependent: :destroy
   has_many :admin_users
+  has_many :attendees, through: :bookings
 
   validates :name, presence: true
   validates :address, presence: true

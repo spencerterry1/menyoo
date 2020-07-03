@@ -1,11 +1,5 @@
 
 
-<% dishes = Dish.where(restaurant: current_admin_user.restaurant) %>
-<% appetizers = dishes.where(category:'Appetizers') %>
-<% mains = dishes.where(category:'Mains')%>
-<% desserts = dishes.where(category:'Sides')  %>
-
-
 <h2>Appetisers</h2>
 <div class="container-menu-items grid-container-menu">
 	
@@ -47,8 +41,92 @@
 				<div class="restaurant-name-card card-dish-name"> 
 					<%= dish.name %>
 	
-					
+					<%= link_to admin_dish_path(dish.id) do %>
 					<i class="far fa-edit"></i> 
+					<% end %>
+				
+				</div>
+				<p> <%= dish.description  %> </p>
+				<p class="restaurant-name-card card-dish-name"> <%= humanized_money_with_symbol(dish.price) %> </p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+<!-- ADD DESSERTS, DRINKS + SIDES -->
+
+<h2>Desserts</h2>
+<div class="container-menu-items grid-container-menu">
+	
+		<% desserts.each do |dish | %>
+		<div class=" card-dish-large card-dish-box-shadow"> 
+
+			<div class="card-large-image"> 
+				<%= link_to cl_image_tag(dish.photo, width: 200, height: 150, crop: :fill) %>
+			</div>
+
+			<div class="card-dish-large-content"> 
+				<div class="restaurant-name-card card-dish-name"> 
+					<%= dish.name %>
+	
+					<%= link_to admin_dish_path(dish.id) do %>
+					<i class="far fa-edit"></i> 
+					<% end %>
+				
+				</div>
+				<p> <%= dish.description  %> </p>
+				<p class="restaurant-name-card card-dish-name"> <%= humanized_money_with_symbol(dish.price) %> </p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+<h2>Drinks</h2>
+<div class="container-menu-items grid-container-menu">
+	
+		<% drinks.each do |dish | %>
+		<div class=" card-dish-large card-dish-box-shadow"> 
+
+			<div class="card-large-image"> 
+				<%= link_to cl_image_tag(dish.photo, width: 200, height: 150, crop: :fill) %>
+			</div>
+
+			<div class="card-dish-large-content"> 
+				<div class="restaurant-name-card card-dish-name"> 
+					<%= dish.name %>
+	
+					<%= link_to admin_dish_path(dish.id) do %>
+					<i class="far fa-edit"></i> 
+					<% end %>
+				
+				</div>
+				<p> <%= dish.description  %> </p>
+				<p class="restaurant-name-card card-dish-name"> <%= humanized_money_with_symbol(dish.price) %> </p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+<h2>Sides</h2>
+<div class="container-menu-items grid-container-menu">
+	
+		<% sides.each do |dish | %>
+		<div class=" card-dish-large card-dish-box-shadow"> 
+
+			<div class="card-large-image"> 
+				<%= link_to cl_image_tag(dish.photo, width: 200, height: 150, crop: :fill) %>
+			</div>
+
+			<div class="card-dish-large-content"> 
+				<div class="restaurant-name-card card-dish-name"> 
+					<%= dish.name %>
+	
+					<%= link_to admin_dish_path(dish.id) do %>
+					<i class="far fa-edit"></i> 
+					<% end %>
 				
 				</div>
 				<p> <%= dish.description  %> </p>

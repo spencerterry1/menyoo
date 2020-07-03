@@ -1,0 +1,64 @@
+
+<div class="container-review-grid"> 
+
+	<div class="card-average-rating grid-item border"> 
+		<h2> <b> Average rating</b> </h2>
+
+		<div class="container-average-score">
+			<p> <h1 class="review-score"><%= average_score %> </h1> </p>
+			<div class="stars"> 
+				<p><% average_score.times do %><i class="fas fa-star icon-stars"></i> <% end %> </p>
+			</div>	
+		</div>
+
+	</div>
+
+	<div class="card-new-reviews grid-item border"> 
+		<h2><b> Total reviews</b></h2> 
+		<div class="container-new-reviews">
+			<div class="container-new-review-div"> 
+				<h4> Total reviews</h4> 
+				<h2> <%= total_reviews  %></h2>
+			</div>
+			<div class="container-new-review-div"> 
+				<h4>Reviews this month </h4> 
+				<h2> <%= reviews_this_month %> </h2>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="card-total-reviews grid-item"> 
+		<span> <h2> <b> Review breakdown</b> </h2>  </span>
+
+		<div class="container-stars">
+
+			<div class="stars"> 
+				<p><% 5.times do %><i class="fas fa-star icon-stars"></i> <% end %> </p>
+				<p class="score-text"> <%= five_stars %></p> 
+			</div>
+
+			<div class="stars"> 
+				<p><% 4.times do %><i class="fas fa-star icon-stars"></i> <% end %> </p>
+				<p class="score-text"> <%= four_stars %></p> 
+			</div>
+
+			<div class="stars"> 
+				<p><% 3.times do %><i class="fas fa-star icon-stars"></i> <% end %> </p>
+				<p class="score-text"> <%= three_stars %></p> 
+			</div>
+
+			<div class="stars"> 
+				<p><% 2.times do %><i class="fas fa-star icon-stars"></i> <% end %> </p>
+				<p class="score-text"> <%= two_stars %></p> 
+			</div>
+
+			<div class="stars"> 
+				<p><% 1.times do %><i class="fas fa-star icon-stars"></i> <% end %> </p>
+				<p class="score-text"> <%= one_stars %></p> 
+			</div>
+
+	</div>
+
+</div>
+

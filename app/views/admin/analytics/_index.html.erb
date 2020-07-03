@@ -1,0 +1,51 @@
+
+<div class="container-review-grid"> 
+
+	<div class="card-average-rating grid-item card-box-shadow"> 
+		<h2> Average rating</h2>
+	</div>
+	<div class="card-new-reviews grid-item card-box-shadow"> 
+		<h2> New reviews</h2> 
+	</div>
+	<div class="card-total-reviews grid-item card-box-shadow"> 
+		<h2>Review breakdown </h2> 
+	</div>
+
+</div>
+
+
+<div class="container-reviews "> 
+
+	<h2>Reviews</h2>
+	
+	<% @reviews_array.each do |review| %>
+
+
+	<div class="card-review card-medium card-dish-box-shadow">
+
+		<div class="card-large-image "><%= cl_image_tag(review.user.photo, width: 200, height: 150, crop: :fill) %>
+		</div>
+
+		<div class="card-large-content card-review-content"> 
+
+			<div class="review-rating-flex"> 
+				<p> <% review.rating.times do %>
+		                <i class="fas fa-star icon-stars"></i>
+		            <% end %>
+				</p>
+				<div class=review-id> Review ID: <%=  review.id %></div>	
+
+			</div>
+			<p class="review-title"> <em> <%= review.title %></em> </p>
+			<p class="review-content"> <%=  review.content %></p> 
+			<p class="review-date"><%=  review.created_at.strftime("%d/%m/%Y")%></p> 
+		</div>
+
+	</div>
+
+
+
+	<% end %>
+
+</div>
+
