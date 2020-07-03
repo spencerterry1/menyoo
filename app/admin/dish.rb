@@ -17,6 +17,6 @@ controller do
     def scoped_collection
       end_of_association_chain.where(restaurant: current_admin_user.restaurant)
     end
-  end
+ end
 
 end

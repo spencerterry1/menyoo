@@ -1,6 +1,7 @@
 class Attendee < ApplicationRecord
   belongs_to :user
   belongs_to :booking
+  has_one :restaurant, through: :booking
   has_many :orders, dependent: :destroy
   has_many :payments, dependent: :destroy
 
