@@ -15,7 +15,22 @@ controller do
 
 	def index
 
-		# fetch all open orders for the Admin's restaurant
+
+		# Checked in bookings
+		@checkedin_bookings = current_admin_user.restaurant.bookings.where(checkedin: true, open:true, ordered:false)
+		@checkedin_bookings = @checkedin_bookings.sort_by {|booking| booking.ordertime }
+
+		@checkedin_bookings_hash = Hash.new
+
+		@checkedin_bookings.each do |booking|
+			@attendees_array = []
+			booking.attendees.each do |attendee, booking_id|
+				@attendees_array << attendee
+				end
+			@checkedin_bookings_hash[booking.id] = @attendees_array
+		end
+
+		# Bookings with open orders
 		@open_bookings = current_admin_user.restaurant.bookings.where(checkedin: true, open:true, ordered:true)
 		@open_bookings = @open_bookings.sort_by {|booking| booking.ordertime }
 		# create a nested hash for all open orders to display in admin dashboard (as the index)
@@ -38,20 +53,7 @@ controller do
 		end
 
 
-		# Checked in bookings
 
-		@checkedin_bookings = current_admin_user.restaurant.bookings.where(checkedin: true, open:true, ordered:false)
-		@checkedin_bookings = @checkedin_bookings.sort_by {|booking| booking.ordertime }
-
-		@checkedin_bookings_hash = Hash.new
-
-		@checkedin_bookings.each do |booking|
-			@attendees_array = []
-			booking.attendees.each do |attendee, booking_id|
-				@attendees_array << attendee
-				end
-			@checkedin_bookings_hash[booking.id] = @attendees_array
-		end
 
 		# Paid bookings
 		@paid_bookings = current_admin_user.restaurant.bookings.where(checkedin:true, open:false, ordered:true)
@@ -73,6 +75,7 @@ controller do
 				@paid_bookings_hash[booking.id] << attendee_orders_hash
 			end
 		end
+
 	end
 
 

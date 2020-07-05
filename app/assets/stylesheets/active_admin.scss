@@ -50,7 +50,7 @@ body {
 	}
 }
 
-.grid-container {
+.grid-container-ordered {
 	display: grid;
 	// grid-template-columns: repeat(7, 1fr);
 	grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -121,14 +121,11 @@ body {
 
 
 .container-attendee {
-	margin: 5px;
-	margin-right: 25px;
-	margin-left: 25px;
+	margin-top: 15px;
+	padding-top: 5px;
 	border-top: 1px solid $mid-light-gray;
-	padding: 10px 0px;
 	h5 {
 		margin: 0px;
-		padding-left: 1.5%;
 	}
 }
 
@@ -264,8 +261,45 @@ body.flash {
   .container-dashboard {
   	display: grid;
   	grid-template-columns: 1fr 1fr 1fr;
-  	grid-auto-rows: 150px;
-  }
+  	// grid-auto-rows: 150px;
+  	.container-grid {
+  		.grid-item-flex {
+  			display: flex;
+  			justify-content: space-between;
+  			align-items: center;
+  		}
+	  	.container-grid-item {
+	  		padding: 13px;
+	  		width: 87%;
+	  	}
+		.grid-item {
+			line-height: 20px;
+			align-items: center;
+		}
+		i {
+			font-size: $font-size-small;
+		}
+  	}
+ }
+
+ .button-status-checkedin {
+    border-radius: 200px;
+    width: 90px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: $font-size-x-small;
+    font-family: $body-font;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    background-color: #FEDA7A;
+    background-image: none;
+    text-shadow: none;
+    // box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+    color: $menyoo-gray;
+    border: none;
+    pointer-events: none;
+}
 
 
   // Grid container for Dishes

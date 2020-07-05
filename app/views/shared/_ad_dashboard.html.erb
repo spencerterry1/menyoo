@@ -1,9 +1,10 @@
 
 
-<div class="container-dashboard">
+
+<div class="container-dashboard container-insert">
 
 
-<% @open_orders.each do |booking| %>
+<% @checkedin_bookings_hash.each do |booking| %>
 
 	<div class="container-grid checkedin">
 
@@ -12,57 +13,117 @@
 			<% booking = Booking.where(id: booking, ordered:false, checkedin: true) %>
 			<% booking = booking[0] %>
 
-			<div class="container-grid-item"> 
+			<% time_now = (DateTime.now).utc %>
+			<% checkin_time = booking.checkin_time%>
+			<% elapsed_time = ((time_now - checkin_time ) / 1.minutes).to_i %>
 
-			 	<div> <i class="order-button fas fa-plus-circle"></i></div>
-				<div>  <%= booking.id %>  </div>	
-				<div>  <%= booking.user.first_name%></div>
-				<div>  <%= booking.attendees.count %></div>
 
+			<div class="container-bookings container-grid-item card-box-shadow"> 
+
+				<div class="grid-item-flex">
+					<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
+				 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
+				</div>
+
+				<div class="grid-item"> <b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
+				<div class="grid-item"> <b> Attendees: </b> <%= booking.attendees.count %></div>
+
+				<div class="grid-item-flex"> 
+
+					<div class="grid-item"> 
+						<b> Time since check-in: </b>
+						<% if elapsed_time > 60 %>
+							<em class="over-an-hour"><%= number_with_delimiter(elapsed_time, :delimiter => ',') %>  minutes </em> 
+						<% else %>
+							<em> <%= elapsed_time %> minutes</em> 
+						<% end %> 
+					</div>
+
+					<div class="grid-item"> 
+						<button class="button-status-checkedin">Checked in </button>	
+					</div>
+
+					</div>
+
+					<div>
+				</div>
+
+			<div class="hide container-attendee"> 
+
+				<h5>Other attendees: [<%= booking.attendees.count  %>]</h5>
+				<% booking.attendees.each do |attendee| %>
+					<div class="grid-item">  <%= attendee.user.first_name  %> <%= attendee.user.last_name  %></div>
+				<% end %>
 			</div>
-
-		<div>
-			
-
-		</div>
-
-	</div>
-
-	<div class="container-grid ordered">
 		
-		<h2> Ordered</h2> 
-
-	</div>
-
-	<div class="container-grid paid">
-
-		<h2> Paid</h2> 
-
-	</div>
+		</div>
 
 
 	<% end %>
+	</div> 
 
 
-</div> 
+	<% @open_orders.each do |booking| %>
+
+	<div class="container-grid ordered">
+
+		<h2>Ordered </h2> 
+
+		<div class="container-bookings container-grid-item card-box-shadow ">
+
+			<% booking = Booking.where(id: booking, ordered:true, checkedin: true) %>
+			<% booking = booking[0] %>
+
+			<% time_now = (DateTime.now).utc %>
+			<% checkin_time = booking.checkin_time%>
+			<% elapsed_time = ((time_now - checkin_time ) / 1.minutes).to_i %>
 
 
+			<div class="grid-item-flex">
+				<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
+			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
+			</div>
 
-<!-- <div id="container-insert"> 
+			<div class="grid-item"> <b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
+			<div class="grid-item"> <b> Attendees: </b> <%= booking.attendees.count %></div>
+			<div class="grid-item"> <b> Orders: </b> <%= booking.orders.count %></div>
 
+			<div class="grid-item-flex"> 
+	
+			<div class="grid-item"> 
+				<b> Time since ordering: </b>
+					<% if elapsed_time > 60 %>
+						<em class="over-an-hour"><%= number_with_delimiter(elapsed_time, :delimiter => ',') %>  minutes </em> 
+					<% else %>
+						<em> <%= elapsed_time %> minutes</em> 
+					<% end %> 
+				</div>
 
-<% @open_orders.each do |booking| %>
+				<div class="grid-item"> 
+					<button class="button-status-checkedin">Ordered </button>	
+				</div>
+
+			</div>
+		</div> 
+
+	</div>
+
+	<% end %>
+
+<!-- 
+
+	<% @open_orders.each do |booking| %>
 
 		<div class="container-bookings container-booking "> 
 
-			<div class="grid-container order-table"> 
+			<div class="grid-container-ordered order-table"> 
 
 			<% booking = Booking.where(id: booking, ordered:true, checkedin: true) %>
 			<% booking = booking[0] %>
 
 			<div class="grid-item">  <i class="order-button fas fa-plus-circle"></i></div>	
 			<div class="grid-item">  <%= booking.id %>  </div>	
-			<div class="grid-item">  <%= booking.user.first_name    %></div>
+			<div class="grid-item">  <%= booking.user.first_name %></div>
 			<div class="grid-item">  <%= booking.attendees.count %></div>
 			<div class="grid-item">  <%= booking.ordered %></div>
 			<div class="grid-item">  <%= booking.orders.where(ordered:true).count %></div>
@@ -147,8 +208,7 @@
 
 	</div>
 
-
-
 <% end %>
 
-</div> -->
+</div>  -->
+</div>

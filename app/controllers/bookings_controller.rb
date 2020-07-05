@@ -172,6 +172,7 @@ class BookingsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.find(params[:booking_id])
     @booking.checkedin = true
+    @booking.checkin_time = DateTime.now
     @booking.save
     @attendee = Attendee.where(user: current_user, booking: @booking).last
     redirect_to restaurant_booking_summary_path(@restaurant, @booking, @attendees)
