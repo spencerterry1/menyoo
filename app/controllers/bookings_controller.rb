@@ -43,6 +43,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.restaurant = @restaurant
+    @booking.bill_payment = false
 
     if @booking.save
       @attendee = Attendee.new(accepted: true, payment: false)
@@ -89,13 +90,11 @@ class BookingsController < ApplicationController
     end
 
     # Update the status of the booking to booking.ordered = true   
-    if @orders.all? { |order| order.ordered == true }
-      if (@booking.checkedin == true)
+    if @orders.length > 0 && @orders.all? { |order| order.ordered == true && order.id} && @booking.checkedin == true
         @booking.update(ordered:true)
         order_time = DateTime.now
         @booking.update(ordertime:order_time)
         @booking.save
-      end
     end
 
 
@@ -172,6 +171,7 @@ class BookingsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.find(params[:booking_id])
     @booking.checkedin = true
+    @booking.checkin_time = DateTime.now
     @booking.save
     @attendee = Attendee.where(user: current_user, booking: @booking).last
     redirect_to restaurant_booking_summary_path(@restaurant, @booking, @attendees)
@@ -219,6 +219,9 @@ class BookingsController < ApplicationController
 
     @attendees.each do |attendee|
       attendee.payment = true
+      @booking.payment_time = DateTime.now
+      @booking.open = false
+      @booking.bill_payment = true
       attendee.save
     end
 

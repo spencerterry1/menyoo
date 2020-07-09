@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_135715) do
+ActiveRecord::Schema.define(version: 2020_07_09_065915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 2020_06_19_135715) do
     t.boolean "ordered"
     t.boolean "checkedin"
     t.datetime "ordertime"
+    t.datetime "checkin_time"
+    t.datetime "payment_time"
+    t.boolean "bill_payment"
     t.index ["restaurant_id"], name: "index_bookings_on_restaurant_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

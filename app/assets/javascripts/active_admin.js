@@ -37,12 +37,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 // Function to assign fade in class to order DIVs3
 
-function fadeIn() {
-    let ordersAfterUpdated = document.getElementsByClassName('container-booking');
-    ordersAfterUpdated = ordersAfterUpdated.item(ordersAfterUpdated.length -1);
-    ordersAfterUpdated.classList.add("fade-in");
-    console.log(ordersAfterUpdated.class);
-}
+// function fadeIn() {
+//     let ordersAfterUpdated = document.getElementsByClassName('container-booking');
+//     ordersAfterUpdated = ordersAfterUpdated.item(ordersAfterUpdated.length -1);
+//     ordersAfterUpdated.classList.add("fade-in");
+//     console.log(ordersAfterUpdated.class);
+// }
 
 
 
@@ -57,16 +57,16 @@ function reloadDashboard() {
 
         // function to check DB for new orders every 10 seconds
         setInterval(function() {
-            $("#container-main").load("dashboard/refresh_orders");
+            $("#container-main").load("admin/dashboard/refresh_orders");
             }, 10000);
 
         // function triggered after AJAX call made to compare orders before + after and calculate difference
         $(document).ajaxComplete(function(event) {
             
-            // console.log("count before reload = " + countBeforeUpdated);
+            console.log("count before reload = " + countBeforeUpdated);
 
             const countAfterUpdated = $('#container-main').find('.container-bookings').length;
-            // console.log("count after reload = " + countAfterUpdated);
+            console.log("count after reload = " + countAfterUpdated);
 
             const newOrderCount = countAfterUpdated - countBeforeUpdated
 
@@ -74,10 +74,10 @@ function reloadDashboard() {
 
             // alerts to user based on changes to order counts
             if (newOrderCount == 1) {
-                fadeIn()
+                // fadeIn()
                 alert(1 + " new order!") 
             } else if (newOrderCount > 1) {
-                fadeIn()
+                // fadeIn()
                 alert(newOrderCount + " new orders!") 
             } else if (newOrderCount == -1) {
                 alert("An order was paid")
