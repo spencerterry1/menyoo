@@ -50,7 +50,7 @@ body {
 	}
 }
 
-.grid-container-ordered {
+.grid-container {
 	display: grid;
 	// grid-template-columns: repeat(7, 1fr);
 	grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -75,37 +75,41 @@ body {
 	margin: 0;
 }
 
-.button-payment {
-	border-radius: 5px;
+
+.button-payment-status-unpaid {
+    border-radius: 200px;
     display: inline-block;
-    text-align: center;
-    width: 3em;
     font-weight: bold;
     font-size: $font-size-x-small;
     font-family: $body-font;
     line-height: 12px;
     margin-right: 3px;
-    padding: 7px 16px ;
-    background-color: white;
+    padding: 7px 16px 6px;
+    background-color: $payment-button-unpaid;
     background-image: none;
     text-shadow: none;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    border: none;
     pointer-events: none;
 }
 
-.status-paid {
-    border: 1.5px solid $button-color-paid;;
-    color: $button-color-paid;
+
+.button-payment-status-paid {
+    border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: $font-size-x-small;
+    font-family: $body-font;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    background-color: $payment-button-paid;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+    pointer-events: none;
 }
-
-.status-unpaid {
-    border: 1.5px solid $button-color-unpaid;
-    color: $button-color-unpaid;
-}
-
-
-
-
 
 .attendee-button {
     padding-top: 5px;
@@ -117,33 +121,33 @@ body {
 
 
 .container-attendee {
-	margin-top: 15px;
-	padding-top: 10px;
+	margin: 5px;
+	margin-right: 25px;
+	margin-left: 25px;
 	border-top: 1px solid $mid-light-gray;
+	padding: 10px 0px;
 	h5 {
 		margin: 0px;
+		padding-left: 1.5%;
 	}
 }
 
 .grid-sub-container {
 	display: grid;
 	// grid-template-columns: repeat(7, 1fr);
-	grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr;
 	// grid-auto-rows: 100px;
 	align-items: center;
+	padding-left: 1.5%;
 	margin-bottom: 1px;
 	p {
 		position: relative;
 		top: 10px;
-		margin-bottom: 5px;
+		padding-bottom: 5px;
+		margin-bottom: 0px;
 	}
 	.grid-item {
 		align-items: center;
-		text-align: left;
-		padding-left: 7px;
-	}
-	.grid-item-first{
-		padding-left: 0px;
 	}
 	.grid-item-attendee-title {
 	font-size: $font-size-small;
@@ -260,64 +264,8 @@ body.flash {
   .container-dashboard {
   	display: grid;
   	grid-template-columns: 1fr 1fr 1fr;
-  	// grid-auto-rows: 150px;
-  	.container-grid {
-  		.grid-item-flex {
-  			display: flex;
-  			justify-content: space-between;
-  			align-items: center;
-  		}
-	  	.container-grid-item {
-	  		padding: 13px;
-	  		width: 90%;
-	  		margin-bottom: 9px;
-	  		.invisible {
-	  			color:white
-	  		}
-	  		button {
-	  			width:8em;
-	  		}
-	  		button.ordered {
-	  			background-color: $button-color-ordered;
-	  			color: white;
-	  		}
-	  		button.checkedin {
-	  			background-color: $button-color-checkedin;
-	  			color: white;
-	  		}
-	  		button.closed {
-	  			background-color: $button-color-closed;
-	  			color: white;
-	  		}
-	  	}
-		.grid-item {
-			line-height: 20px;
-			align-items: center;
-		}
-		i {
-			font-size: $font-size-small;
-		}
-  	}
- }
-
- .button-status-checkedin {
-    border-radius: 5px;
-    width: 90px;
-    display: inline-block;
-    font-weight: bold;
-    font-size: $font-size-x-small;
-    font-family: $body-font;
-    line-height: 15px;
-    margin-right: 3px;
-    padding: 7px 16px 6px;
-    background-color: #FEDA7A;
-    background-image: none;
-    text-shadow: none;
-    // box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
-    color: $menyoo-gray;
-    border: none;
-    pointer-events: none;
-}
+  	grid-auto-rows: 150px;
+  }
 
 
   // Grid container for Dishes

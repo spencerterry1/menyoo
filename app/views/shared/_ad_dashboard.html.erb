@@ -1,185 +1,106 @@
 
 
-<div class="container-dashboard container-insert">
+<div class="container-dashboard">
 
 
-	<div class="container-grid checkedin ">
+<% @open_orders.each do |booking| %>
 
-		<h2>Checked-in</h2>
+	<div class="container-grid checkedin">
 
-		<% @checkedin_bookings_hash.each do |booking| %>
-
-			<div class="container-bookings container-grid-item card-box-shadow"> 
-
+		<h2>Checked-in </h2> 
 
 			<% booking = Booking.where(id: booking, ordered:false, checkedin: true) %>
 			<% booking = booking[0] %>
 
-			<% time_now = (DateTime.now).utc %>
-			<% checkin_time = booking.checkin_time%>
-			<% elapsed_time = ((time_now - checkin_time ) / 1.minutes).to_i %>
+			<div class="container-grid-item"> 
 
-				<div class="grid-item-flex">
-					<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
-				 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
-				</div>
+			 	<div> <i class="order-button fas fa-plus-circle"></i></div>
+				<div>  <%= booking.id %>  </div>	
+				<div>  <%= booking.user.first_name%></div>
+				<div>  <%= booking.attendees.count %></div>
 
-				<div class="grid-item"> <b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
-				<div class="grid-item"> <b> Attendees: </b> <%= booking.attendees.count %></div>
-				<div class="grid-item invisible"> N/A </div>
-
-
-				<div class="grid-item-flex"> 
-					
-					<div class="grid-item"> 
-						<b> Time since check-in: </b>
-						<% if elapsed_time > 60 %>
-							<em class="over-an-hour"><%= number_with_delimiter(elapsed_time, :delimiter => ',') %>  minutes </em> 
-						<% else %>
-							<em> <%= elapsed_time %> minutes</em> 
-						<% end %> 
-					</div>
-
-					<div class="grid-item"> 
-						<button class="button-status-checkedin checkedin">Checked in </button>	
-					</div>
-
-				</div>
-
-			<div class="hide container-attendee"> 
-				<h5>Other attendees [<%= booking.attendees.count %>]:</h5>
-				<% booking.attendees.each do |attendee| %>
-					<div class="grid-item">  <%= attendee.user.first_name  %> <%= attendee.user.last_name  %></div>
-				<% end %>
 			</div>
-		
+
+		<div>
+			
+
 		</div>
 
-	<% end %>
-	</div> 
-
-
+	</div>
 
 	<div class="container-grid ordered">
+		
+		<h2> Ordered</h2> 
 
-		<h2>Ordered </h2> 
+	</div>
 
-		<% @open_orders.each do |booking| %>
+	<div class="container-grid paid">
+
+		<h2> Paid</h2> 
+
+	</div>
 
 
-		<div class="container-bookings container-grid-item card-box-shadow ">
+	<% end %>
+
+
+</div> 
+
+
+
+<!-- <div id="container-insert"> 
+
+
+<% @open_orders.each do |booking| %>
+
+		<div class="container-bookings container-booking "> 
+
+			<div class="grid-container order-table"> 
 
 			<% booking = Booking.where(id: booking, ordered:true, checkedin: true) %>
 			<% booking = booking[0] %>
 
-			<% time_now = (DateTime.now).utc %>
-			<% checkin_time = booking.checkin_time%>
-			<% elapsed_time = ((time_now - checkin_time ) / 1.minutes).to_i %>
+			<div class="grid-item">  <i class="order-button fas fa-plus-circle"></i></div>	
+			<div class="grid-item">  <%= booking.id %>  </div>	
+			<div class="grid-item">  <%= booking.user.first_name    %></div>
+			<div class="grid-item">  <%= booking.attendees.count %></div>
+			<div class="grid-item">  <%= booking.ordered %></div>
+			<div class="grid-item">  <%= booking.orders.where(ordered:true).count %></div>
 
 
-			<div class="grid-item-flex">
-				<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
-			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
-			</div>
+ 			<% @orders_in_booking = booking.orders.where(ordered:true) %>
+ 			<% @orders_in_booking = @orders_in_booking.sort_by { |order| order.created_at } %> 
+			<div class="grid-item">  
+				<% if @orders_in_booking == nil %>
+					Not ordered
+				<% else %>
+					<% time_now = (DateTime.now).utc %>
+					<% order_time = booking.ordertime %>
+					<% elapsed_time = ((time_now - order_time ) / 1.minutes).to_i %>
 
-			<div class="grid-item"> <b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
-			<div class="grid-item"> <b> Attendees: </b> <%= booking.attendees.count %></div>
-			<div class="grid-item"> <b> Orders: </b> <%= booking.orders.count %></div>
-
-			<div class="grid-item-flex"> 
-	
-			<div class="grid-item"> 
-				<b> Time since order: </b>
 					<% if elapsed_time > 60 %>
-						<em class="over-an-hour"><%= number_with_delimiter(elapsed_time, :delimiter => ',') %>  minutes </em> 
+						<p class="over-an-hour"><%= number_with_delimiter(elapsed_time, :delimiter => ',') %> minutes 
 					<% else %>
-						<em> <%= elapsed_time %> minutes</em> 
-					<% end %> 
-				</div>
-
-				<div class="grid-item"> 
-					<button class="button-status-checkedin ordered">Ordered</button>	
-				</div>
-
-			</div>
-
-		<div id="container-table-order"> 
-
-			<div class="hide container-attendee"> 
-
-				<h5>Table order</h5>
-
-				<% booking.attendees.each do |attendee| %>
-
-					<div class="grid-sub-container"> 
-
-						<% attendee = Attendee.find(attendee.id) %>
-						<div class="grid-item grid-item-first">  <b>ID:</b> <%= attendee.id %></div>	
-						<div class="grid-item"> <%= attendee.user.first_name %> <%= attendee.user.last_name %> </div>	
-						<div class="grid-item"> <b>Orders: </b> <%= attendee.orders.count  %></div>
-						<div class="grid-item"> <b> Bill: </b><%= humanized_money_with_symbol(attendee.orders.sum { |order| order.price }) %> </div>
-						<div class="grid-item"> 
-							<% if attendee.payment == true %>
-								<div class="button-payment status-paid">PAID</div>
-							<% else %>
-								<div class="button-payment status-unpaid">UNPAID</div>
-							<% end %>
-						</div>
-
-					</div>
-					
-					<% attendee.orders.each do |order| %>
-
-						<div class="grid-sub-container">
-							<div class="grid-item attendee-orders"> </div>
-							<div class="grid-item attendee-orders"> <%= order.dish.name %> </div>
-							<div class="grid-item attendee-orders"> </div>
-							<div class="grid-item attendee-orders"> <%= humanized_money_with_symbol(order.dish.price) %></div>
-							<div class="grid-item attendee-orders"> </div>
-						</div>
+						<%= elapsed_time %> minutes
 					<% end %>
-
 				<% end %>
-
 			</div>
-
-		</div> 
-
-	</div>
-
-	<% end %>
-	</div>
-
-
-	<div class="container-grid ordered">
-
-		<h2>Closed </h2> 
-
-		<% @paid_bookings_hash.each do |booking|  %>
-
-
-		<div class="container-bookings container-grid-item card-box-shadow ">
-
-			<% booking = Booking.find(booking[0]) %>
-
-			<div class="grid-item-flex">
-				<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
-			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
-			</div>
-
-			<div class="grid-item"> <b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
-			<div class="grid-item"> <b> Attendees: </b> <%= booking.attendees.count %></div>
-			<div class="grid-item"> <b> Orders: </b> <%= booking.orders.count %></div>
-
-			<div class="grid-item-flex"> 
 	
-			<div class="grid-item"> <b> Paid at: </b> <%= booking.payment_time.strftime("%H:%M")  %> </div>
 
-				<div class="grid-item"> 
-					<button class="button-status-checkedin closed">Closed </button>	
-				</div>
 
+
+			<% total_bill = @orders_in_booking.sum {|order| order.price} %> 
+			<% total_bill = '%.2f' % total_bill %>
+			<div class="grid-item"> <b> <%= humanized_money_with_symbol(total_bill) %> </b>  </div>
+			<div class="grid-item">  
+				<% if booking.attendees.all? {|attendee| attendee.payment == true} %>
+					<button class="button-payment-status-paid">Paid </button>	
+				<% else %>
+					<button class="button-payment-status-unpaid">Unpaid</button>
+				<% end %>
 			</div>
+
+		</div>
 
 
 		<div id="container-table-order"> 
@@ -193,15 +114,15 @@
 					<div class="grid-sub-container"> 
 
 						<% attendee = Attendee.find(attendee.id) %>
-						<div class="grid-item grid-item-first">  <b>ID:</b> <%= attendee.id %></div>	
-						<div class="grid-item"> <%= attendee.user.first_name %> <%= attendee.user.last_name %> </div>	
-						<div class="grid-item"> <b>Orders: </b> <%= attendee.orders.count  %></div>
-						<div class="grid-item"> <b> Bill: </b><%= humanized_money_with_symbol(attendee.orders.sum { |order| order.price }) %> </div>
+						<div class="grid-item"> <p> <b>ID:</b> <%= attendee.id %></p></div>	
+						<div class="grid-item"> <p><b> Attendee:</b> <%= attendee.user.first_name %> <%= attendee.user.last_name %></p> </div>	
+						<div class="grid-item"> <p><b>Orders: </b> <%= attendee.orders.count  %></p> </div>
+						<div class="grid-item"> <p><b> Bill:</b><%= humanized_money_with_symbol(attendee.orders.sum { |order| order.price }) %></p> </div>
 						<div class="grid-item"> 
 							<% if attendee.payment == true %>
-								<div class="button-payment status-paid">PAID</div>
+								<button class="button-payment-status-paid attendee-button"> Paid</button>
 							<% else %>
-								<div class="button-payment status-unpaid">UNPAID</div>
+								<button class="button-payment-status-unpaid attendee-button"> Unpaid </button>
 							<% end %>
 						</div>
 
@@ -222,13 +143,12 @@
 
 			</div>
 
-		</div> 
+		</div>
 
 	</div>
 
-	<% end %>
-	</div>
 
 
-</div>
-</div>
+<% end %>
+
+</div> -->
