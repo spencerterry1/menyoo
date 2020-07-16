@@ -297,6 +297,20 @@ body.flash {
 		i {
 			font-size: $font-size-small;
 		}
+		.box-uncheck {
+			color: black;
+			// border: 0.5px solid black;
+			border-radius: 20%;
+			margin-left: 5px;
+			margin-right: 2px;
+		}
+		.box-check {
+			color: black;
+			// border: 0.5px solid black;
+			border-radius: 20%;
+			margin-left: 5px;
+			margin-right: 2px;
+		}
   	}
  }
 
