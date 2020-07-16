@@ -5,7 +5,7 @@
 
 	<div class="container-grid checkedin ">
 
-		<h2>Checked-in</h2>
+		<h2>Checked-in [<%= @checkedin_bookings_hash.count %>]</h2>
 
 		<% @checkedin_bookings_hash.each do |booking| %>
 
@@ -20,7 +20,7 @@
 			<% elapsed_time = ((time_now - checkin_time ) / 1.minutes).to_i %>
 
 				<div class="grid-item-flex">
-					<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
+					<div class="grid-item id-div"> <b>Booking ID: </b><%= booking.id %></div>	
 				 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
 				</div>
 
@@ -62,7 +62,7 @@
 
 	<div class="container-grid ordered">
 
-		<h2>Ordered </h2> 
+		<h2>Ordered [<%= @open_orders.count %>]</h2> 
 
 		<% @open_orders.each do |booking| %>
 
@@ -78,13 +78,37 @@
 
 
 			<div class="grid-item-flex">
-				<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
+				<div class="grid-item id-div"> <b>Booking ID: </b> <%= booking.id %></div>	
 			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
 			</div>
 
-			<div class="grid-item"> <b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
-			<div class="grid-item"> <b> Attendees: </b> <%= booking.attendees.count %></div>
-			<div class="grid-item"> <b> Orders: </b> <%= booking.orders.count %></div>
+			<div class="grid-item"> 
+				<b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %>
+			</div>
+
+			<div class="grid-item-flex"> 
+				<div> <b> Attendees: </b> <%= booking.attendees.count %></div>
+				
+				<% if booking.service_status == true %>
+					<div> <b> Table served? </b>
+					    <%= link_to ('<i class="fa fa-check-square box-check" aria-hidden="true"></i>').html_safe, admin_dashboard_update_service_status_path(booking: booking.id),
+				            method: :patch,
+				            data: {confirm: "Are you sure?"}  %> 
+					</div>
+				<% else %>
+					<div> <b> Table served? </b>  
+					    <%= link_to ('<i class="fa fa-square box-uncheck" aria-hidden="true"></i>').html_safe, admin_dashboard_update_service_status_path(booking: booking.id),
+				            method: :patch,
+				            data: {confirm: "Are you sure?"}  %> 
+					</div>
+
+				<% end %>
+
+			</div>
+
+			<div class="grid-item"> 
+				<div> <b> Orders: </b> <%= booking.orders.count %></div>
+			</div>
 
 			<div class="grid-item-flex"> 
 	
@@ -153,7 +177,7 @@
 
 	<div class="container-grid ordered">
 
-		<h2>Closed </h2> 
+		<h2>Closed [<%= @paid_bookings_hash.count  %>] </h2> 
 
 		<% @paid_bookings_hash.each do |booking|  %>
 
@@ -162,8 +186,9 @@
 
 			<% booking = Booking.find(booking[0]) %>
 
+
 			<div class="grid-item-flex">
-				<div class="grid-item"> <b>Booking ID: </b><%= booking.id %></div>	
+				<div class="grid-item id-div"> <b>Booking ID: </b><%= booking.id %></div>	
 			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
 			</div>
 

@@ -12,5 +12,7 @@ class Booking < ApplicationRecord
     self.open = true if self.open.nil?
     self.ordered = false if self.ordered.nil?
     self.checkedin = false if self.checkedin.nil?
+    self.service_status = false if self.service_status.nil?
+    self.bill_payment = false if self.bill_payment.nil?
   end
 end
