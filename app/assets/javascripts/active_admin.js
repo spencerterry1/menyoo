@@ -35,15 +35,36 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-// Function to assign fade in class to order DIVs3
 
-// function fadeIn() {
-//     let ordersAfterUpdated = document.getElementsByClassName('container-booking');
-//     ordersAfterUpdated = ordersAfterUpdated.item(ordersAfterUpdated.length -1);
-//     ordersAfterUpdated.classList.add("fade-in");
-//     console.log(ordersAfterUpdated.class);
+// Declare function to assign fade in class to order DIVs - Checked In / Ordered / Paid
+
+function fadeInCheckedInBookings(element) {
+    let tagetNode = document.getElementById(element)
+    alert(`New checkin - Booking: ${element}`);
+    console.log("NEW CHECKINS" + element)
+    tagetNode.parentNode.parentNode.classList.add("fade-in-checked-in");
+}
+
+function fadeInOrderedBookings(element) {
+    let tagetNode = document.getElementById(element)
+    alert(`New orders for booking: ${element}`);
+    console.log("NEW ORDERS")
+    tagetNode.parentNode.parentNode.classList.add("fade-in-ordered");
+}
+
+function fadeInPaidBookings(element) {
+    let tagetNode = document.getElementById(element)
+    alert(`Bill paid - Booking: ${element}`);
+    console.log("NEW PAIDS")
+    tagetNode.parentNode.parentNode.classList.add("fade-in-paid");
+}
+
+
+// function checkedInOrders() {
+//     const CheckedInCountAfterUpdated = $('#container-main').find('.checkedin_bookings').length;
+//     const newCheckedInCount = CheckedInCountAfterUpdated - checkedInCountBeforeUpdated
+//     console.log(checkedInCountBeforeUpdated + ' checked in bookings');
 // }
-
 
 
 // Function to send AJAX request every 10 seconds + send alerts if there are new orders / orders paid
@@ -51,9 +72,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function reloadDashboard() {
     $(document).ready(function() {
 
-        // declare a global variable for the count of orders on 1st page load
-        window.countBeforeUpdated = $('#container-main').find('.container-bookings').length;
-        console.log("count before reload = " + countBeforeUpdated);
+        // Capture CHECKED IN bookings on 1st page load
+        window.checkedInCountBeforeUpdated = document.querySelectorAll('.checkedin-booking-id');
+        window.checkedInCountBeforeUpdatedArray = []
+        checkedInCountBeforeUpdated.forEach(element => {
+            let id = Number(element.id)
+            checkedInCountBeforeUpdatedArray.push(id)
+        });
+
+        // Capture ORDERED bookings on 1st page load
+        window.orderedCountBeforeUpdated = document.querySelectorAll('.ordered-booking-id');
+        window.orderedCountBeforeUpdatedArray = []
+        orderedCountBeforeUpdated.forEach(element => {
+            let id = Number(element.id)
+            orderedCountBeforeUpdatedArray.push(id)
+        });
+
+        // Capture PAID bookings on 1st page load
+        window.paidCountBeforeUpdatedArray = []
+        window.paidCountBeforeUpdated = document.querySelectorAll('.paid-booking-id');
+        paidCountBeforeUpdated.forEach(element => {
+            let id = Number(element.id)
+            paidCountBeforeUpdatedArray.push(id)
+        });
 
         // function to check DB for new orders every 10 seconds
         setInterval(function() {
@@ -62,34 +103,69 @@ function reloadDashboard() {
 
         // function triggered after AJAX call made to compare orders before + after and calculate difference
         $(document).ajaxComplete(function(event) {
-            
-            console.log("count before reload = " + countBeforeUpdated);
 
-            const countAfterUpdated = $('#container-main').find('.container-bookings').length;
-            console.log("count after reload = " + countAfterUpdated);
 
-            const newOrderCount = countAfterUpdated - countBeforeUpdated
+            // Capture ORDERED bookings after 1st page load
+            window.checkedInCountAfterUpdated = document.querySelectorAll('.checkedin-booking-id')
+            window.checkedInCountAfterUpdatedArray = []
+            checkedInCountAfterUpdated.forEach((element) => {
+                let id = Number(element.id)
+                checkedInCountAfterUpdatedArray.push(id)
+            })
+            // Compare ORDERED bookings with those in first load - if new ones then call the fadeIn function to apply dynamic styling
+            checkedInCountAfterUpdatedArray.forEach((element) => {
+                if (checkedInCountBeforeUpdatedArray.includes(element)) {
+                    console.log("no new CHECKINS")
+                } else {
+                    console.log("new CHECKINS")
+                    fadeInCheckedInBookings(element)
+                }
+                // Reset the updated count to be the new starting (before update) count for next page load
+                window.checkedInCountBeforeUpdatedArray = window.checkedInCountAfterUpdatedArray
+            });
+            // console.log("BEFORE: " + checkedInCountBeforeUpdatedArray + " " + " AFTER: " + checkedInCountAfterUpdatedArray)
+            // console.log("New BEFORE COUNT: " + checkedInCountAfterUpdatedArray)
 
-            // fadeIn()
+            // Capture ORDERED bookings after 1st page load
+            window.orderedCountAfterUpdated = document.querySelectorAll('.ordered-booking-id')
+            window.orderedCountAfterUpdatedArray = []
+            orderedCountAfterUpdated.forEach((element) => {
+                let id = Number(element.id)
+                orderedCountAfterUpdatedArray.push(id)
+            })
+            // Compare ORDERED bookings with those in first load - if new ones then call the fadeIn function to apply dynamic styling
+            orderedCountAfterUpdatedArray.forEach((element) => {
+                if (orderedCountBeforeUpdatedArray.includes(element)) {
+                    console.log("no new ORDERS")
+                } else {
+                    console.log("new ORDERS")
+                    fadeInOrderedBookings(element)
+                }
+                console.log("NEW: " + orderedCountAfterUpdatedArray + "OLD: " + orderedCountBeforeUpdatedArray)
+                // Reset the updated count to be the new starting (before update) count for next page load
+                window.orderedCountBeforeUpdatedArray = window.orderedCountAfterUpdatedArray
+            });
 
-            // alerts to user based on changes to order counts
-            if (newOrderCount == 1) {
-                // fadeIn()
-                alert(1 + " new order!") 
-            } else if (newOrderCount > 1) {
-                // fadeIn()
-                alert(newOrderCount + " new orders!") 
-            } else if (newOrderCount == -1) {
-                alert("An order was paid")
-            } else if (newOrderCount < -1) {
-                alert(newOrderCount + " orders have been paid")
-            }
+            // Capture PAID bookings after 1st page load
+            window.paidCountAfterUpdated = document.querySelectorAll('.paid-booking-id')
+            window.paidCountAfterUpdatedArray = []
+            paidCountAfterUpdated.forEach((element) => {
+                let id = Number(element.id)
+                paidCountAfterUpdatedArray.push(id)
+            })
+            // Compare PAID bookings with those in first load - if new ones then call the fadeIn function to apply dynamic styling
+            paidCountAfterUpdatedArray.forEach((element) => {
+                if (paidCountBeforeUpdatedArray.includes(element)) {
+                    console.log("no new PAIDS")
+                } else {
+                    console.log("new PAIDS")
+                    fadeInPaidBookings(element)
+                }
+                // Reset the updated count to be the new starting (before update) count for next page load
+                window.paidCountBeforeUpdatedArray = window.paidCountAfterUpdatedArray
+            });
 
-            window.countBeforeUpdated = countAfterUpdated;
-            // console.log("count before updated = " + countAfterUpdated)
 
-            // re-trigger function to re-add event Listeners after each AJAX request
-            // without these the event listeners are removed by the preceding AJAX call
             showTableOrders(event) 
 
             });

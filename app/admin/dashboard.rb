@@ -50,7 +50,7 @@ controller do
 
    def get_checkedin_bookings
    		@checkedin_bookings = current_admin_user.restaurant.bookings.where(checkedin: true, open:true, ordered:false)
-		@checkedin_bookings = @checkedin_bookings.sort_by {|booking| booking.ordertime }
+		@checkedin_bookings = @checkedin_bookings.sort_by {|booking| booking.checkin_time }
 
 		@checkedin_bookings_hash = Hash.new
 
