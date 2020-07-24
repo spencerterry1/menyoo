@@ -104,8 +104,7 @@ function reloadDashboard() {
         // function triggered after AJAX call made to compare orders before + after and calculate difference
         $(document).ajaxComplete(function(event) {
 
-
-            // Capture ORDERED bookings after 1st page load
+            // Capture CHECKEDIN bookings after 1st page load
             window.checkedInCountAfterUpdated = document.querySelectorAll('.checkedin-booking-id')
             window.checkedInCountAfterUpdatedArray = []
             checkedInCountAfterUpdated.forEach((element) => {
@@ -123,8 +122,6 @@ function reloadDashboard() {
                 // Reset the updated count to be the new starting (before update) count for next page load
                 window.checkedInCountBeforeUpdatedArray = window.checkedInCountAfterUpdatedArray
             });
-            // console.log("BEFORE: " + checkedInCountBeforeUpdatedArray + " " + " AFTER: " + checkedInCountAfterUpdatedArray)
-            // console.log("New BEFORE COUNT: " + checkedInCountAfterUpdatedArray)
 
             // Capture ORDERED bookings after 1st page load
             window.orderedCountAfterUpdated = document.querySelectorAll('.ordered-booking-id')
@@ -141,7 +138,7 @@ function reloadDashboard() {
                     console.log("new ORDERS")
                     fadeInOrderedBookings(element)
                 }
-                console.log("NEW: " + orderedCountAfterUpdatedArray + "OLD: " + orderedCountBeforeUpdatedArray)
+                console.log("NEW ORDERED: " + orderedCountAfterUpdatedArray + " OLD ORDERED: " + orderedCountBeforeUpdatedArray)
                 // Reset the updated count to be the new starting (before update) count for next page load
                 window.orderedCountBeforeUpdatedArray = window.orderedCountAfterUpdatedArray
             });
