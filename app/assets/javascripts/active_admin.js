@@ -55,16 +55,11 @@ function fadeInOrderedBookings(element) {
 function fadeInPaidBookings(element) {
     let tagetNode = document.getElementById(element)
     alert(`Bill paid - Booking: ${element}`);
-    console.log("NEW PAIDS")
+    console.log('new paids style function called')
     tagetNode.parentNode.parentNode.classList.add("fade-in-paid");
+
 }
 
-
-// function checkedInOrders() {
-//     const CheckedInCountAfterUpdated = $('#container-main').find('.checkedin_bookings').length;
-//     const newCheckedInCount = CheckedInCountAfterUpdated - checkedInCountBeforeUpdated
-//     console.log(checkedInCountBeforeUpdated + ' checked in bookings');
-// }
 
 
 // Function to send AJAX request every 10 seconds + send alerts if there are new orders / orders paid
