@@ -9,7 +9,7 @@
 
 		<% @checkedin_bookings_hash.each do |booking| %>
 
-			<div class="container-bookings container-grid-item card-box-shadow"> 
+			<div class="container-bookings container-grid-item card-box-shadow checkedin_bookings"> 
 
 
 			<% booking = Booking.where(id: booking, ordered:false, checkedin: true) %>
@@ -20,7 +20,7 @@
 			<% elapsed_time = ((time_now - checkin_time ) / 1.minutes).to_i %>
 
 				<div class="grid-item-flex">
-					<div class="grid-item id-div"> <b>Booking ID: </b><%= booking.id %></div>	
+					<div id="<%= booking.id %>" class="grid-item id-div checkedin-booking-id"> <b>Booking ID: </b><%= booking.id %></div>	
 				 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
 				</div>
 
@@ -47,7 +47,7 @@
 				</div>
 
 			<div class="hide container-attendee"> 
-				<h5>Other attendees [<%= booking.attendees.count %>]:</h5>
+				<h5>All attendees [<%= booking.attendees.count %>]:</h5>
 				<% booking.attendees.each do |attendee| %>
 					<div class="grid-item">  <%= attendee.user.first_name  %> <%= attendee.user.last_name  %></div>
 				<% end %>
@@ -78,15 +78,16 @@
 
 
 			<div class="grid-item-flex">
-				<div class="grid-item id-div"> <b>Booking ID: </b> <%= booking.id %></div>	
+					<div id="<%= booking.id %>" class="grid-item id-div ordered-booking-id"> <b>Booking ID: </b><%= booking.id %></div>	
 			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
 			</div>
+
 
 			<div class="grid-item"> 
 				<b>Lead: </b> <%= booking.user.first_name %> <%= booking.user.last_name %>
 			</div>
 
-			<div class="grid-item-flex"> 
+			<div class="grid-item-flex grid-item"> 
 				<div> <b> Attendees: </b> <%= booking.attendees.count %></div>
 				
 				<% if booking.service_status == true %>
@@ -107,10 +108,10 @@
 			</div>
 
 			<div class="grid-item"> 
-				<div> <b> Orders: </b> <%= booking.orders.count %></div>
+				<b> Orders: </b> <%= booking.orders.count %>
 			</div>
 
-			<div class="grid-item-flex"> 
+			<div class="grid-item-flex "> 
 	
 			<div class="grid-item"> 
 				<b> Time since order: </b>
@@ -188,7 +189,7 @@
 
 
 			<div class="grid-item-flex">
-				<div class="grid-item id-div"> <b>Booking ID: </b><%= booking.id %></div>	
+				<div id="<%= booking.id %>" class="grid-item id-div paid-booking-id"> <b>Booking ID: </b><%= booking.id %></div>	
 			 	<div class="grid-item"> <i class="order-button fas fa-plus-circle"></i></div>
 			</div>
 
